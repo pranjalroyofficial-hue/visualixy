@@ -4,19 +4,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     
+    <title>Visualixy | 111+ Free Professional Tools & Templates</title>
+    <meta name="description" content="Ultimate digital hub with 111+ free tools. PDF, Excel, Image, and SEO tools all in one place. Built for creators.">
     <meta name="google-site-verification" content="jMp7icjOP34wszoRC-Gpy94eoqTmJZO2_NIcBWcvBmA" />
     
     <meta name="monetag" content="474e7bfefe468c76ba4810c6a8357f64">
     <script src="https://quge5.com/88/tag.min.js" data-zone="218253" async data-cfasync="false"></script>
     
     <link rel="manifest" href="manifest.json">
-    <meta name="theme-color" content="#2874f0"> <link rel="apple-touch-icon" href="icon-192x192.png">
-
-    <title>Visualixy Pro | 111+ Premium Web Tools</title>
-    <meta name="description" content="Visualixy is the ultimate e-commerce style tool hub. 111+ free tools including Image Resizer, Excel Generator, PDF Converter, and more.">
-    <meta name="author" content="Pranjal Roy">
-    <meta name="robots" content="index, follow">
-
     <link rel="stylesheet" href="style.css">
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
@@ -31,213 +26,271 @@
     <header class="app-header">
         <div class="header-left" onclick="showTool('home')">
             <i class='bx bxs-bolt-circle logo-icon'></i>
-            <div class="logo-text">VISUALIXY<span>PRO</span></div>
+            <div class="logo-text">VISUALIXY</div>
         </div>
         <div class="header-right">
-            <button id="installAppBtn" class="install-btn" style="display: none;"><i class='bx bx-download'></i> Install App</button>
-            <a href="#" onclick="openDirectLink()" class="hidden-action-btn"><i class='bx bxs-gift'></i></a>
+            <button class="shop-btn-animate" onclick="openDirectLink()">
+                <i class='bx bxs-store-alt'></i> SHOP
+            </button>
+            <button id="installAppBtn" class="install-btn" style="display: none;"><i class='bx bx-download'></i></button>
         </div>
     </header>
 
-    <div class="search-container">
-        <div class="search-box">
-            <i class='bx bx-search'></i>
-            <input type="text" id="searchInput" placeholder="Search for PDF, Excel, Compress, Resizer...">
-            <i class='bx bx-microphone mic-icon'></i>
+    <div class="hero-section">
+        <div class="search-wrapper">
+            <div class="search-box">
+                <i class='bx bx-search'></i>
+                <input type="text" id="searchInput" placeholder="Search 111+ Premium Tools...">
+                <i class='bx bx-microphone mic-icon'></i>
+            </div>
         </div>
-    </div>
-
-    <div class="ticker-wrap">
-        <div class="ticker">
-            <div class="ticker__item">🚀 Welcome to Visualixy Pro! 111+ Tools completely FREE.</div>
-            <div class="ticker__item">🔥 Try our new "Smart Data to Excel" Converter.</div>
-            <div class="ticker__item">📱 Install Visualixy as an App for offline speed!</div>
-            <div class="ticker__item">✨ 100% Safe, Secure, and Client-Side Processing.</div>
+        
+        <div class="ticker-wrap">
+            <div class="ticker">
+                <div class="ticker__item">🔥 NEW: Smart Excel Generator Live!</div>
+                <div class="ticker__item">🚀 111+ Tools Completely Free & Secure</div>
+                <div class="ticker__item">✨ No Server Uploads - 100% Client Side</div>
+            </div>
         </div>
     </div>
 
     <main id="home-view" class="view-section active">
         
+        <div class="native-ad-wrapper-large" onclick="openDirectLink()">
+            <div class="ad-tag">SPONSORED</div>
+            <div class="ad-inner">
+                <i class='bx bxs-gift bounce-icon'></i>
+                <div class="ad-text-box">
+                    <h3>Unlock Premium VS Code Templates</h3>
+                    <p>Get professional source code for your next big project!</p>
+                </div>
+                <button class="ad-cta">VIEW NOW</button>
+            </div>
+        </div>
+
         <section class="category-section vip-section">
-            <h2 class="section-title"><i class='bx bxs-crown crown-icon'></i> Top Premium Tools</h2>
-            <div class="grid vip-grid" id="vipGrid">
-                <div class="tool-card vip-card" data-tags="text to pdf document convert" onclick="showTool('text2pdf')"><div class="icon-wrap"><i class='bx bxs-file-pdf'></i></div><span>Text to PDF</span></div>
-                <div class="tool-card vip-card" data-tags="image compress size reduce mb kb" onclick="showTool('imgcompress')"><div class="icon-wrap"><i class='bx bx-collapse-alt'></i></div><span>Image Compressor</span></div>
-                <div class="tool-card vip-card" data-tags="image resize dimension width height crop" onclick="showTool('imgresize')"><div class="icon-wrap"><i class='bx bx-expand-alt'></i></div><span>Image Resizer</span></div>
-                <div class="tool-card vip-card" data-tags="qr code generator maker" onclick="showTool('qrcode')"><div class="icon-wrap"><i class='bx bx-qr-scan'></i></div><span>QR Generator</span></div>
-                <div class="tool-card vip-card" data-tags="barcode maker product ean upc" onclick="showTool('barcode')"><div class="icon-wrap"><i class='bx bx-barcode-reader'></i></div><span>Barcode Maker</span></div>
-                <div class="tool-card vip-card" data-tags="photo filter enhance bright contrast" onclick="showTool('photofilter')"><div class="icon-wrap"><i class='bx bxs-magic-wand'></i></div><span>Photo Filter</span></div>
-                <div class="tool-card vip-card" data-tags="passport size photo background color maker" onclick="showTool('passport')"><div class="icon-wrap"><i class='bx bx-user-pin'></i></div><span>Passport Photo</span></div>
-                <div class="tool-card vip-card" data-tags="invoice receipt bill maker generate" onclick="showTool('receipt')"><div class="icon-wrap"><i class='bx bx-receipt'></i></div><span>Receipt Maker</span></div>
-                <div class="tool-card vip-card" data-tags="cv resume maker builder templates" onclick="showTool('resume')"><div class="icon-wrap"><i class='bx bx-id-card'></i></div><span>Resume Builder</span></div>
-                <div class="tool-card vip-card" data-tags="image to pdf convert jpg png" onclick="showTool('img2pdf')"><div class="icon-wrap"><i class='bx bx-images'></i></div><span>Image to PDF</span></div>
-                <div class="tool-card vip-card" data-tags="json csv data to excel xlsx sheet smart" onclick="showTool('data2excel')"><div class="icon-wrap"><i class='bx bx-table'></i></div><span>Data to Excel</span></div>
+            <h2 class="section-title"><i class='bx bxs-crown crown-icon'></i> Most Popular & Excel</h2>
+            <div class="grid premium-grid">
+                <div class="tool-card vip-card" data-tags="json csv data to excel sheet" onclick="showTool('data2excel')">
+                    <div class="icon-wrap excel-bg"><i class='bx bxs-spreadsheet'></i></div>
+                    <span>Data 2 Excel</span>
+                </div>
+                <div class="tool-card vip-card" data-tags="text to pdf convert" onclick="showTool('text2pdf')">
+                    <div class="icon-wrap"><i class='bx bxs-file-pdf'></i></div>
+                    <span>Text to PDF</span>
+                </div>
+                <div class="tool-card vip-card" data-tags="image compress size reduce" onclick="showTool('imgcompress')">
+                    <div class="icon-wrap"><i class='bx bx-collapse-alt'></i></div>
+                    <span>Compressor</span>
+                </div>
+                <div class="tool-card vip-card" data-tags="image resize width height" onclick="showTool('imgresize')">
+                    <div class="icon-wrap"><i class='bx bx-expand-alt'></i></div>
+                    <span>Resizer</span>
+                </div>
+                <div class="tool-card vip-card" data-tags="qr generator maker" onclick="showTool('qrcode')">
+                    <div class="icon-wrap"><i class='bx bx-qr-scan'></i></div>
+                    <span>QR Maker</span>
+                </div>
+                <div class="tool-card vip-card" data-tags="barcode maker" onclick="showTool('barcode')">
+                    <div class="icon-wrap"><i class='bx bx-barcode-reader'></i></div>
+                    <span>Barcode</span>
+                </div>
             </div>
         </section>
 
-        <div class="native-ad-container direct-link-banner" onclick="openDirectLink()">
-            <div class="dl-content">
-                <i class='bx bx-gift bounce-icon'></i>
-                <div class="dl-text">
-                    <h3>Claim Your Free Gift!</h3>
-                    <p>Click here to unlock special offers and support Visualixy.</p>
-                </div>
-                <button class="dl-btn-small">Unlock Now</button>
+        ```
+
+
+<section class="category-section">
+            <h2 class="section-title">🖼️ Image & Media Tools</h2>
+            <div class="grid regular-grid">
+                <div class="tool-card" data-tags="youtube yt thumbnail" onclick="showTool('yt')"><i class='bx bxl-youtube'></i><span>YT Thumb</span></div>
+                <div class="tool-card" data-tags="svg to png convert" onclick="showTool('svg2png')"><i class='bx bx-image-alt'></i><span>SVG 2 PNG</span></div>
+                <div class="tool-card" data-tags="base64 to image decode" onclick="showTool('b64img')"><i class='bx bx-code-block'></i><span>B64 2 IMG</span></div>
+                <div class="tool-card" data-tags="image to base64 encode" onclick="showTool('imgb64')"><i class='bx bx-image-base64'></i><span>IMG 2 B64</span></div>
+                <div class="tool-card" data-tags="watermark photo add text" onclick="showTool('watermark')"><i class='bx bx-water'></i><span>Watermark</span></div>
+                <div class="tool-card" data-tags="meme generator maker" onclick="showTool('meme')"><i class='bx bx-smile'></i><span>Meme Gen</span></div>
+                <div class="tool-card" data-tags="favicon maker website icon" onclick="showTool('favicon')"><i class='bx bx-layout'></i><span>Favicon</span></div>
+                <div class="tool-card" data-tags="color picker photo extract" onclick="showTool('imgcolor')"><i class='bx bx-color-fill'></i><span>Color Pick</span></div>
+                <div class="tool-card" data-tags="webp to jpg png convert" onclick="showTool('webpjpg')"><i class='bx bx-transfer-alt'></i><span>WebP 2 JPG</span></div>
+                <div class="tool-card" data-tags="jpg to webp converter" onclick="showTool('jpgwebp')"><i class='bx bx-transfer'></i><span>JPG 2 WebP</span></div>
+                <div class="tool-card" data-tags="voice recorder audio webm" onclick="showTool('voicerec')"><i class='bx bx-microphone'></i><span>Voice Rec</span></div>
+                <div class="tool-card" data-tags="screen recorder video mp4" onclick="showTool('screenrec')"><i class='bx bx-video-recording'></i><span>Screen Rec</span></div>
+                <div class="tool-card" data-tags="speech to text dictation" onclick="showTool('stt')"><i class='bx bx-user-voice'></i><span>Speech 2 Text</span></div>
+                <div class="tool-card" data-tags="text to speech tts" onclick="showTool('tts')"><i class='bx bx-volume-full'></i><span>Text 2 Audio</span></div>
+                <div class="tool-card" data-tags="image cropper cut photo" onclick="showTool('crop')"><i class='bx bx-crop'></i><span>Cropper</span></div>
+                <div class="tool-card" data-tags="gif maker from images" onclick="showTool('gifmaker')"><i class='bx bx-film'></i><span>GIF Maker</span></div>
+                <div class="tool-card" data-tags="audio volume booster" onclick="showTool('volboost')"><i class='bx bx-speaker'></i><span>Vol Boost</span></div>
+                <div class="tool-card" data-tags="video to audio mp3" onclick="showTool('vid2mp3')"><i class='bx bx-music'></i><span>Vid 2 MP3</span></div>
+                <div class="tool-card" data-tags="photo collage maker grid" onclick="showTool('collage')"><i class='bx bx-grid-alt'></i><span>Collage</span></div>
+                <div class="tool-card" data-tags="pixel art generator 8bit" onclick="showTool('pixelart')"><i class='bx bx-grid-small'></i><span>Pixel Art</span></div>
+            </div>
+        </section>
+
+        <div class="native-ad-wrapper-mini" onclick="openDirectLink()">
+            <div class="ad-tag">ADS</div>
+            <div class="ad-flex">
+                <i class='bx bxs-zap ripple-icon'></i>
+                <p>Build 10x Faster with Premium Web Templates!</p>
+                <i class='bx bx-chevron-right'></i>
             </div>
         </div>
 
         <section class="category-section">
-            <h2 class="section-title">🖼️ Image & Media Tools</h2>
+            <h2 class="section-title">📝 Text & Content Tools</h2>
             <div class="grid regular-grid">
-                <div class="tool-card" data-tags="youtube yt thumbnail downloader" onclick="showTool('yt')"><i class='bx bxl-youtube'></i><span>YT Thumbnail</span></div>
-                <div class="tool-card" data-tags="svg to png convert" onclick="showTool('svg2png')"><i class='bx bx-image-alt'></i><span>SVG to PNG</span></div>
-                <div class="tool-card" data-tags="base64 to image decode" onclick="showTool('b64img')"><i class='bx bx-code-block'></i><span>Base64 to IMG</span></div>
-                <div class="tool-card" data-tags="image to base64 encode" onclick="showTool('imgb64')"><i class='bx bx-image-base64'></i><span>IMG to Base64</span></div>
-                <div class="tool-card" data-tags="watermark photo add text" onclick="showTool('watermark')"><i class='bx bx-water'></i><span>Watermark Add</span></div>
-                <div class="tool-card" data-tags="meme generator text on image" onclick="showTool('meme')"><i class='bx bx-smile'></i><span>Meme Gen</span></div>
-                <div class="tool-card" data-tags="favicon maker website icon" onclick="showTool('favicon')"><i class='bx bx-layout'></i><span>Favicon Maker</span></div>
-                <div class="tool-card" data-tags="color picker photo extract hex" onclick="showTool('imgcolor')"><i class='bx bx-color-fill'></i><span>Color Picker</span></div>
-                <div class="tool-card" data-tags="webp to jpg png convert" onclick="showTool('webpjpg')"><i class='bx bx-transfer-alt'></i><span>WebP to JPG</span></div>
-                <div class="tool-card" data-tags="jpg to webp converter" onclick="showTool('jpgwebp')"><i class='bx bx-transfer'></i><span>JPG to WebP</span></div>
-                <div class="tool-card" data-tags="voice recorder audio webm" onclick="showTool('voicerec')"><i class='bx bx-microphone'></i><span>Voice Record</span></div>
-                <div class="tool-card" data-tags="screen recorder video mp4" onclick="showTool('screenrec')"><i class='bx bx-video-recording'></i><span>Screen Record</span></div>
-                <div class="tool-card" data-tags="speech to text dictation" onclick="showTool('stt')"><i class='bx bx-user-voice'></i><span>Speech to Text</span></div>
-                <div class="tool-card" data-tags="text to speech tts voice" onclick="showTool('tts')"><i class='bx bx-volume-full'></i><span>Text to Speech</span></div>
-                <div class="tool-card" data-tags="image cropper cut photo" onclick="showTool('crop')"><i class='bx bx-crop'></i><span>Image Cropper</span></div>
-                <div class="tool-card" data-tags="gif maker from images" onclick="showTool('gifmaker')"><i class='bx bx-film'></i><span>GIF Maker</span></div>
-                <div class="tool-card" data-tags="audio volume booster" onclick="showTool('volboost')"><i class='bx bx-speaker'></i><span>Volume Booster</span></div>
-                <div class="tool-card" data-tags="video to audio mp3" onclick="showTool('vid2mp3')"><i class='bx bx-music'></i><span>Video to MP3</span></div>
-                <div class="tool-card" data-tags="photo collage maker grid" onclick="showTool('collage')"><i class='bx bx-grid-alt'></i><span>Photo Collage</span></div>
-                <div class="tool-card" data-tags="pixel art generator 8bit" onclick="showTool('pixelart')"><i class='bx bx-grid-small'></i><span>Pixel Art Gen</span></div>
-            </div>
-        </section>
+                ```
 
-        <section class="category-section">
+
+<section class="category-section">
             <h2 class="section-title">📝 Text & Content Tools</h2>
             <div class="grid regular-grid">
                 <div class="tool-card" data-tags="ai humanizer bypass" onclick="showTool('humanizer')"><i class='bx bx-bot'></i><span>AI Humanizer</span></div>
-                <div class="tool-card" data-tags="word character counter" onclick="showTool('wordcount')"><i class='bx bx-list-ol'></i><span>Word Counter</span></div>
-                <div class="tool-card" data-tags="case changer uppercase lowercase" onclick="showTool('case')"><i class='bx bx-font-case'></i><span>Case Changer</span></div>
+                <div class="tool-card" data-tags="word character counter" onclick="showTool('wordcount')"><i class='bx bx-list-ol'></i><span>Word Count</span></div>
+                <div class="tool-card" data-tags="case changer uppercase lowercase" onclick="showTool('case')"><i class='bx bx-font-case'></i><span>Case Change</span></div>
                 <div class="tool-card" data-tags="lorem ipsum dummy text" onclick="showTool('lorem')"><i class='bx bx-note'></i><span>Lorem Ipsum</span></div>
-                <div class="tool-card" data-tags="remove extra spaces whitespace" onclick="showTool('spaces')"><i class='bx bx-space-bar'></i><span>Clean Spaces</span></div>
-                <div class="tool-card" data-tags="text reverser flip" onclick="showTool('reverse')"><i class='bx bx-transfer'></i><span>Text Reverser</span></div>
-                <div class="tool-card" data-tags="duplicate line remover" onclick="showTool('removedup')"><i class='bx bx-minus-front'></i><span>Remove Dups</span></div>
-                <div class="tool-card" data-tags="find replace text" onclick="showTool('findrep')"><i class='bx bx-search-alt'></i><span>Find & Replace</span></div>
-                <div class="tool-card" data-tags="markdown to html" onclick="showTool('md2html')"><i class='bx bxl-markdown'></i><span>MD to HTML</span></div>
-                <div class="tool-card" data-tags="text to html converter" onclick="showTool('html')"><i class='bx bx-code-curly'></i><span>Text to HTML</span></div>
-                <div class="tool-card" data-tags="alphabetical order sorter A-Z" onclick="showTool('sort')"><i class='bx bx-sort-a-z'></i><span>A-Z Sorter</span></div>
-                <div class="tool-card" data-tags="prefix suffix adder text" onclick="showTool('prefix')"><i class='bx bx-arrow-to-right'></i><span>Prefix Adder</span></div>
-                <div class="tool-card" data-tags="syllable counter text" onclick="showTool('syllable')"><i class='bx bx-font-family'></i><span>Syllable Count</span></div>
+                <div class="tool-card" data-tags="remove extra spaces whitespace" onclick="showTool('spaces')"><i class='bx bx-space-bar'></i><span>Clean Space</span></div>
+                <div class="tool-card" data-tags="text reverser flip" onclick="showTool('reverse')"><i class='bx bx-transfer'></i><span>Reverser</span></div>
+                <div class="tool-card" data-tags="duplicate line remover" onclick="showTool('removedup')"><i class='bx bx-minus-front'></i><span>Remove Dup</span></div>
+                <div class="tool-card" data-tags="find replace text" onclick="showTool('findrep')"><i class='bx bx-search-alt'></i><span>Find & Rep</span></div>
+                <div class="tool-card" data-tags="markdown to html" onclick="showTool('md2html')"><i class='bx bxl-markdown'></i><span>MD 2 HTML</span></div>
+                <div class="tool-card" data-tags="text to html converter" onclick="showTool('html')"><i class='bx bx-code-curly'></i><span>Text 2 HTML</span></div>
+                <div class="tool-card" data-tags="alphabetical order sorter" onclick="showTool('sort')"><i class='bx bx-sort-a-z'></i><span>A-Z Sorter</span></div>
+                <div class="tool-card" data-tags="prefix suffix adder text" onclick="showTool('prefix')"><i class='bx bx-arrow-to-right'></i><span>Prefix Add</span></div>
+                <div class="tool-card" data-tags="syllable counter text" onclick="showTool('syllable')"><i class='bx bx-font-family'></i><span>Syllable</span></div>
                 <div class="tool-card" data-tags="comma separated list maker" onclick="showTool('comma')"><i class='bx bx-list-ul'></i><span>Comma List</span></div>
-                <div class="tool-card" data-tags="notepad online sticky note" onclick="showTool('notepad')"><i class='bx bx-notepad'></i><span>Online Notepad</span></div>
+                <div class="tool-card" data-tags="notepad online sticky note" onclick="showTool('notepad')"><i class='bx bx-notepad'></i><span>Notepad</span></div>
                 <div class="tool-card" data-tags="morse code translator" onclick="showTool('morse')"><i class='bx bx-radio-circle-marked'></i><span>Morse Code</span></div>
                 <div class="tool-card" data-tags="zalgo text glitch generator" onclick="showTool('zalgo')"><i class='bx bx-ghost'></i><span>Glitch Text</span></div>
-                <div class="tool-card" data-tags="fancy font text generator" onclick="showTool('fancy')"><i class='bx bx-font'></i><span>Fancy Fonts</span></div>
-                <div class="tool-card" data-tags="reading time calculator" onclick="showTool('readtime')"><i class='bx bx-time'></i><span>Reading Time</span></div>
-                <div class="tool-card" data-tags="text encrypter decrypter aes" onclick="showTool('encrypt')"><i class='bx bx-lock-alt'></i><span>Text Encrypt</span></div>
+                <div class="tool-card" data-tags="fancy font text generator" onclick="showTool('fancy')"><i class='bx bx-font'></i><span>Fancy Font</span></div>
+                <div class="tool-card" data-tags="reading time calculator" onclick="showTool('readtime')"><i class='bx bx-time'></i><span>Read Time</span></div>
+                <div class="tool-card" data-tags="text encrypter decrypter aes" onclick="showTool('encrypt')"><i class='bx bx-lock-alt'></i><span>Text Crypt</span></div>
             </div>
         </section>
 
-        <div class="native-ad-container direct-link-banner" onclick="openDirectLink()">
-            <div class="dl-content">
-                <i class='bx bx-gift bounce-icon'></i>
-                <div class="dl-text">
-                    <h3>Claim Your Free Gift!</h3>
-                    <p>Click here to unlock special offers and support Visualixy.</p>
+        <div class="native-ad-wrapper-large" onclick="openDirectLink()">
+            <div class="ad-tag">PROMO</div>
+            <div class="ad-inner-v2">
+                <div class="ad-info">
+                    <h3>Visualixy Digital Store</h3>
+                    <p>High-quality PHP scripts and HTML templates for your business.</p>
                 </div>
-                <button class="dl-btn-small">Unlock Now</button>
+                <button class="ad-btn-premium">EXPLORE</button>
             </div>
         </div>
 
         <section class="category-section">
             <h2 class="section-title">👨‍💻 Dev & SEO Tools</h2>
             <div class="grid regular-grid">
-                <div class="tool-card" data-tags="json formatter beautifier" onclick="showTool('json')"><i class='bx bx-code-alt'></i><span>JSON Formatter</span></div>
-                <div class="tool-card" data-tags="base64 encode decode" onclick="showTool('base64')"><i class='bx bx-data'></i><span>Base64 Tool</span></div>
+                <div class="tool-card" data-tags="json formatter beautifier" onclick="showTool('json')"><i class='bx bx-code-alt'></i><span>JSON Form</span></div>
+                <div class="tool-card" data-tags="base64 encode decode" onclick="showTool('base64')"><i class='bx bx-data'></i><span>Base64</span></div>
                 <div class="tool-card" data-tags="url encoder decoder link" onclick="showTool('urlenc')"><i class='bx bx-link'></i><span>URL Encode</span></div>
-                <div class="tool-card" data-tags="css minifier compressor dev" onclick="showTool('cssmin')"><i class='bx bxl-css3'></i><span>CSS Minifier</span></div>
-                <div class="tool-card" data-tags="html minifier compressor dev" onclick="showTool('htmlmin')"><i class='bx bxl-html5'></i><span>HTML Minifier</span></div>
-                <div class="tool-card" data-tags="js minifier javascript" onclick="showTool('jsmin')"><i class='bx bxl-javascript'></i><span>JS Minifier</span></div>
-                <div class="tool-card" data-tags="uuid v4 guid generator dev" onclick="showTool('uuid')"><i class='bx bx-hash'></i><span>UUID Gen</span></div>
-                <div class="tool-card" data-tags="rgb to hex color" onclick="showTool('rgbhex')"><i class='bx bx-palette'></i><span>RGB to HEX</span></div>
-                <div class="tool-card" data-tags="hex to rgb color" onclick="showTool('hexrgb')"><i class='bx bxs-color-fill'></i><span>HEX to RGB</span></div>
-                <div class="tool-card" data-tags="css gradient generator" onclick="showTool('gradient')"><i class='bx bx-water'></i><span>CSS Gradient</span></div>
+                <div class="tool-card" data-tags="css minifier compressor" onclick="showTool('cssmin')"><i class='bx bxl-css3'></i><span>CSS Minify</span></div>
+                <div class="tool-card" data-tags="html minifier compressor" onclick="showTool('htmlmin')"><i class='bx bxl-html5'></i><span>HTML Minify</span></div>
+                <div class="tool-card" data-tags="js minifier javascript" onclick="showTool('jsmin')"><i class='bx bxl-javascript'></i><span>JS Minify</span></div>
+                <div class="tool-card" data-tags="uuid v4 guid generator" onclick="showTool('uuid')"><i class='bx bx-hash'></i><span>UUID Gen</span></div>
+                <div class="tool-card" data-tags="rgb to hex color" onclick="showTool('rgbhex')"><i class='bx bx-palette'></i><span>RGB 2 HEX</span></div>
+                <div class="tool-card" data-tags="hex to rgb color" onclick="showTool('hexrgb')"><i class='bx bxs-color-fill'></i><span>HEX 2 RGB</span></div>
+                <div class="tool-card" data-tags="css gradient generator" onclick="showTool('gradient')"><i class='bx bx-water'></i><span>Gradient</span></div>
                 <div class="tool-card" data-tags="css box shadow generator" onclick="showTool('shadow')"><i class='bx bx-box'></i><span>Box Shadow</span></div>
                 <div class="tool-card" data-tags="privacy policy generator" onclick="showTool('privacy')"><i class='bx bx-shield-quarter'></i><span>Privacy Gen</span></div>
-                <div class="tool-card" data-tags="utm link builder marketing seo" onclick="showTool('utm')"><i class='bx bx-target-lock'></i><span>UTM Builder</span></div>
-                <div class="tool-card" data-tags="url slug generator seo" onclick="showTool('slug')"><i class='bx bx-link-alt'></i><span>Slug Gen</span></div>
-                <div class="tool-card" data-tags="meta tag generator seo" onclick="showTool('metatag')"><i class='bx bx-code'></i><span>Meta Tags</span></div>
-                <div class="tool-card" data-tags="robots.txt generator seo" onclick="showTool('robots')"><i class='bx bx-bot'></i><span>Robots.txt Gen</span></div>
-                <div class="tool-card" data-tags="xml sitemap generator" onclick="showTool('sitemap')"><i class='bx bx-map-alt'></i><span>Sitemap Gen</span></div>
-                <div class="tool-card" data-tags="jwt decoder json web token" onclick="showTool('jwt')"><i class='bx bx-key'></i><span>JWT Decoder</span></div>
-                <div class="tool-card" data-tags="csv to json converter" onclick="showTool('csvjson')"><i class='bx bx-transfer'></i><span>CSV to JSON</span></div>
-                <div class="tool-card" data-tags="json to csv converter" onclick="showTool('jsoncsv')"><i class='bx bx-transfer-alt'></i><span>JSON to CSV</span></div>
-            </div>
-        </section>
+                
 
-        <section class="category-section">
+
+<section class="category-section">
             <h2 class="section-title">💰 Calculators & Finance</h2>
             <div class="grid regular-grid">
                 <div class="tool-card" data-tags="age calculator birthday" onclick="showTool('age')"><i class='bx bx-calendar'></i><span>Age Calc</span></div>
-                <div class="tool-card" data-tags="bmi calculator health" onclick="showTool('bmi')"><i class='bx bx-body'></i><span>BMI Calc</span></div>
-                <div class="tool-card" data-tags="discount tax calculator percent" onclick="showTool('discount')"><i class='bx bx-purchase-tag'></i><span>Discount Calc</span></div>
-                <div class="tool-card" data-tags="emi loan calculator" onclick="showTool('emi')"><i class='bx bx-home-alt'></i><span>EMI Calc</span></div>
+                <div class="tool-card" data-tags="bmi calculator health body mass" onclick="showTool('bmi')"><i class='bx bx-body'></i><span>BMI Calc</span></div>
+                <div class="tool-card" data-tags="discount tax calculator percent" onclick="showTool('discount')"><i class='bx bx-purchase-tag'></i><span>Discount</span></div>
+                <div class="tool-card" data-tags="emi loan calculator mortgage" onclick="showTool('emi')"><i class='bx bx-home-alt'></i><span>EMI Calc</span></div>
                 <div class="tool-card" data-tags="gst tax calculator india" onclick="showTool('gst')"><i class='bx bx-rupee'></i><span>GST Calc</span></div>
                 <div class="tool-card" data-tags="sip mutual fund return calc" onclick="showTool('sip')"><i class='bx bx-line-chart'></i><span>SIP Calc</span></div>
-                <div class="tool-card" data-tags="percentage calc math" onclick="showTool('percent')"><i class='bx bx-math'></i><span>Percentage Calc</span></div>
-                <div class="tool-card" data-tags="currency converter money exchange" onclick="showTool('currency')"><i class='bx bx-money'></i><span>Currency Calc</span></div>
+                <div class="tool-card" data-tags="percentage calc math" onclick="showTool('percent')"><i class='bx bx-math'></i><span>Percent %</span></div>
+                <div class="tool-card" data-tags="currency converter money exchange" onclick="showTool('currency')"><i class='bx bx-money'></i><span>Currency</span></div>
                 <div class="tool-card" data-tags="salary pay take home calc" onclick="showTool('salary')"><i class='bx bx-wallet'></i><span>Salary Calc</span></div>
                 <div class="tool-card" data-tags="roi return on investment" onclick="showTool('roi')"><i class='bx bx-trending-up'></i><span>ROI Calc</span></div>
-                <div class="tool-card" data-tags="compound interest calc" onclick="showTool('compound')"><i class='bx bx-chart'></i><span>Compound Int.</span></div>
+                <div class="tool-card" data-tags="compound interest calc wealth" onclick="showTool('compound')"><i class='bx bx-chart'></i><span>Compound</span></div>
                 <div class="tool-card" data-tags="bmr basal metabolic rate" onclick="showTool('bmr')"><i class='bx bx-dumbbell'></i><span>BMR Calc</span></div>
-                <div class="tool-card" data-tags="calorie counter daily intake" onclick="showTool('calorie')"><i class='bx bx-restaurant'></i><span>Calorie Calc</span></div>
-                <div class="tool-card" data-tags="pregnancy due date calc" onclick="showTool('pregnancy')"><i class='bx bx-child'></i><span>Due Date Calc</span></div>
+                <div class="tool-card" data-tags="calorie counter daily intake" onclick="showTool('calorie')"><i class='bx bx-restaurant'></i><span>Calorie</span></div>
+                <div class="tool-card" data-tags="pregnancy due date calc" onclick="showTool('pregnancy')"><i class='bx bx-child'></i><span>Due Date</span></div>
                 <div class="tool-card" data-tags="freelance hourly rate calc" onclick="showTool('freelance')"><i class='bx bx-time-five'></i><span>Hourly Rate</span></div>
-                <div class="tool-card" data-tags="paypal stripe fee calc" onclick="showTool('fee')"><i class='bx bxl-paypal'></i><span>Gateway Fee</span></div>
-                <div class="tool-card" data-tags="crypto profit loss calc" onclick="showTool('crypto')"><i class='bx bxl-bitcoin'></i><span>Crypto Calc</span></div>
-                <div class="tool-card" data-tags="scientific calculator math" onclick="showTool('scientific')"><i class='bx bx-calculator'></i><span>Scientific Calc</span></div>
-                <div class="tool-card" data-tags="tip split bill calc" onclick="showTool('tip')"><i class='bx bx-group'></i><span>Tip Splitter</span></div>
+                <div class="tool-card" data-tags="paypal stripe fee calc gateway" onclick="showTool('fee')"><i class='bx bxl-paypal'></i><span>Fee Calc</span></div>
+                <div class="tool-card" data-tags="crypto profit loss calc bitcoin" onclick="showTool('crypto')"><i class='bx bxl-bitcoin'></i><span>Crypto Calc</span></div>
+                <div class="tool-card" data-tags="scientific calculator math" onclick="showTool('scientific')"><i class='bx bx-calculator'></i><span>Scientific</span></div>
+                <div class="tool-card" data-tags="tip split bill calc" onclick="showTool('tip')"><i class='bx bx-group'></i><span>Tip Split</span></div>
                 <div class="tool-card" data-tags="margin markup profit calc" onclick="showTool('margin')"><i class='bx bx-store'></i><span>Margin Calc</span></div>
             </div>
         </section>
+
+        <div class="native-ad-wrapper-mini" onclick="openDirectLink()">
+            <div class="ad-tag">GIFT</div>
+            <div class="ad-flex">
+                <i class='bx bxs-hot ripple-icon' style="color: #ff4d4d;"></i>
+                <p>Limited Offer: Get Professional VS Code Themes Free!</p>
+                <button class="ad-btn-small">CLAIM</button>
+            </div>
+        </div>
 
         <section class="category-section">
             <h2 class="section-title">🛠️ Utilities & Fun</h2>
             <div class="grid regular-grid">
                 <div class="tool-card" data-tags="password secure generator" onclick="showTool('pass')"><i class='bx bx-lock-alt'></i><span>Secure Pass</span></div>
-                <div class="tool-card" data-tags="password strength validator check" onclick="showTool('passval')"><i class='bx bx-check-shield'></i><span>Pass Validator</span></div>
-                <div class="tool-card" data-tags="random number generator rng" onclick="showTool('rng')"><i class='bx bx-dice-5'></i><span>RNG Number</span></div>
+                <div class="tool-card" data-tags="password strength validator check" onclick="showTool('passval')"><i class='bx bx-check-shield'></i><span>Pass Check</span></div>
+                <div class="tool-card" data-tags="random number generator rng" onclick="showTool('rng')"><i class='bx bx-dice-5'></i><span>RNG</span></div>
                 <div class="tool-card" data-tags="stopwatch timer lap" onclick="showTool('stopwatch')"><i class='bx bx-stopwatch'></i><span>Stopwatch</span></div>
                 <div class="tool-card" data-tags="countdown timer custom" onclick="showTool('countdown')"><i class='bx bx-timer'></i><span>Countdown</span></div>
-                <div class="tool-card" data-tags="pomodoro study focus timer" onclick="showTool('pomodoro')"><i class='bx bx-brain'></i><span>Pomodoro Timer</span></div>
-                <div class="tool-card" data-tags="what is my ip address info" onclick="showTool('myip')"><i class='bx bx-globe'></i><span>My IP Checker</span></div>
+                ```
+
+
+<div class="tool-card" data-tags="pomodoro study focus timer" onclick="showTool('pomodoro')"><i class='bx bx-brain'></i><span>Pomodoro</span></div>
+                <div class="tool-card" data-tags="what is my ip address info" onclick="showTool('myip')"><i class='bx bx-globe'></i><span>My IP</span></div>
                 <div class="tool-card" data-tags="device info browser screen" onclick="showTool('deviceinfo')"><i class='bx bx-devices'></i><span>Device Info</span></div>
-                <div class="tool-card" data-tags="unit converter length weight" onclick="showTool('unit')"><i class='bx bx-ruler'></i><span>Unit Converter</span></div>
-                <div class="tool-card" data-tags="timezone converter world clock" onclick="showTool('timezone')"><i class='bx bx-world'></i><span>Timezone Calc</span></div>
-                <div class="tool-card" data-tags="binary to text decoder" onclick="showTool('bin2txt')"><i class='bx bx-chip'></i><span>Binary to Text</span></div>
-                <div class="tool-card" data-tags="text to binary encoder" onclick="showTool('txt2bin')"><i class='bx bx-memory-card'></i><span>Text to Binary</span></div>
-                <div class="tool-card" data-tags="md5 hash generator" onclick="showTool('md5')"><i class='bx bx-barcode'></i><span>MD5 Hash Gen</span></div>
-                <div class="tool-card" data-tags="sha256 hash secure" onclick="showTool('sha256')"><i class='bx bx-shield'></i><span>SHA-256 Hash</span></div>
-                <div class="tool-card" data-tags="wheel of fortune name picker" onclick="showTool('wheel')"><i class='bx bx-aperture'></i><span>Name Picker</span></div>
-                <div class="tool-card" data-tags="coin flip heads tails toss" onclick="showTool('coin')"><i class='bx bx-coin'></i><span>Coin Flipper</span></div>
+                <div class="tool-card" data-tags="unit converter length weight" onclick="showTool('unit')"><i class='bx bx-ruler'></i><span>Unit Conv</span></div>
+                <div class="tool-card" data-tags="timezone converter world clock" onclick="showTool('timezone')"><i class='bx bx-world'></i><span>Timezone</span></div>
+                <div class="tool-card" data-tags="binary to text decoder" onclick="showTool('bin2txt')"><i class='bx bx-chip'></i><span>Bin 2 Text</span></div>
+                <div class="tool-card" data-tags="text to binary encoder" onclick="showTool('txt2bin')"><i class='bx bx-memory-card'></i><span>Text 2 Bin</span></div>
+                <div class="tool-card" data-tags="md5 hash generator" onclick="showTool('md5')"><i class='bx bx-barcode'></i><span>MD5 Hash</span></div>
+                <div class="tool-card" data-tags="sha256 hash secure" onclick="showTool('sha256')"><i class='bx bx-shield'></i><span>SHA-256</span></div>
+                <div class="tool-card" data-tags="wheel of fortune name picker" onclick="showTool('wheel')"><i class='bx bx-aperture'></i><span>Wheel Spin</span></div>
+                <div class="tool-card" data-tags="coin flip heads tails toss" onclick="showTool('coin')"><i class='bx bx-coin'></i><span>Coin Flip</span></div>
                 <div class="tool-card" data-tags="typing speed test wpm" onclick="showTool('typing')"><i class='bx bx-keyboard'></i><span>Typing Test</span></div>
                 <div class="tool-card" data-tags="todo list task manager" onclick="showTool('todo')"><i class='bx bx-check-square'></i><span>To-Do List</span></div>
-                <div class="tool-card" data-tags="word scrambler mixer game" onclick="showTool('scramble')"><i class='bx bx-shuffle'></i><span>Word Scrambler</span></div>
-                <div class="tool-card" data-tags="love calculator fun" onclick="showTool('love')"><i class='bx bxs-heart'></i><span>Love Calculator</span></div>
+                <div class="tool-card" data-tags="word scrambler mixer game" onclick="showTool('scramble')"><i class='bx bx-shuffle'></i><span>Scrambler</span></div>
+                <div class="tool-card" data-tags="love calculator fun" onclick="showTool('love')"><i class='bx bxs-heart'></i><span>Love Calc</span></div>
             </div>
         </section>
 
-        <div class="native-ad-container direct-link-banner" onclick="openDirectLink()">
-            <div class="dl-content">
-                <i class='bx bx-gift bounce-icon'></i>
-                <div class="dl-text">
-                    <h3>Claim Your Free Gift!</h3>
-                    <p>Click here to unlock special offers and support Visualixy.</p>
+        <footer class="main-footer">
+            <div class="footer-top" onclick="openDirectLink()">
+                <div class="footer-ad-banner">
+                    <i class='bx bxs-star'></i>
+                    <span>Support Visualixy: Click here to explore our Premium Partner Offers!</span>
                 </div>
-                <button class="dl-btn-small">Unlock Now</button>
             </div>
-        </div>
-
+            
+            <div class="footer-main">
+                <div class="footer-brand">
+                    <div class="logo-text">VISUALIXY<span>PRO</span></div>
+                    <p>The ultimate destination for 111+ free professional web tools. Built with speed and privacy in mind.</p>
+                </div>
+                
+                <div class="footer-links">
+                    <a href="#" onclick="showTool('privacy')">Privacy Policy</a>
+                    <a href="#" onclick="openDirectLink()">Sitemap</a>
+                    <a href="https://instagram.com/pranjal_roy24" target="_blank">Contact Developer</a>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2026 Visualixy Hub. Designed by <b>Pranjal Roy</b>.</p>
+                <div class="social-icons">
+                    <i class='bx bxl-instagram' onclick="window.open('https://instagram.com/pranjal_roy24')"></i>
+                    <i class='bx bxl-github'></i>
+                    <i class='bx bxl-youtube'></i>
+                </div>
+            </div>
+        </footer>
     </main>
 
     <main id="tool-view" class="view-section" style="display: none;">
@@ -246,14 +299,11 @@
             <h2 id="tool-title">Tool Name</h2>
         </div>
         
-        <div class="native-ad-container mini-ad direct-link-banner" onclick="openDirectLink()">
-            <div class="dl-content">
-                <i class='bx bx-gift bounce-icon'></i>
-                <div class="dl-text">
-                    <h3>Claim Your Free Gift!</h3>
-                    <p>Click here to unlock special offers and support Visualixy.</p>
-                </div>
-                <button class="dl-btn-small">Unlock Now</button>
+        <div class="native-ad-wrapper-mini" onclick="openDirectLink()" style="margin: 10px;">
+            <div class="ad-flex">
+                <i class='bx bxs-check-shield' style="color: #32d74b;"></i>
+                <p>Secure Tool Active. Support us by visiting our sponsor.</p>
+                <button class="ad-btn-small">VISIT</button>
             </div>
         </div>
         
@@ -265,11 +315,5 @@
     </main>
 
     <script src="script.js"></script>
-    
-    <script>
-        if ('serviceWorker' in navigator) {
-            navigator.serviceWorker.register('/sw.js').then(()=>console.log("PWA Registered"));
-        }
-    </script>
 </body>
 </html>

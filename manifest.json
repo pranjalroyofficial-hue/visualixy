@@ -1,23 +1,54 @@
 {
-  "name": "Visualixy Pro Tools",
+  "name": "Visualixy | 111+ Free Professional Tools",
   "short_name": "Visualixy",
-  "description": "111+ Free Premium Tools & Calculators",
+  "description": "The ultimate hub for 111+ free professional tools, Excel generators, and SEO utilities. Fast, secure, and private.",
   "start_url": "/",
   "display": "standalone",
-  "background_color": "#ffffff",
-  "theme_color": "#2874f0",
+  "background_color": "#000000",
+  "theme_color": "#000000",
+  "orientation": "portrait",
+  "categories": ["productivity", "utilities", "developer_tools", "education"],
   "icons": [
     {
-      "src": "https://cdn-icons-png.flaticon.com/512/3003/3003551.png",
+      "src": "icon-192x192.png",
       "sizes": "192x192",
       "type": "image/png",
       "purpose": "any maskable"
     },
     {
-      "src": "https://cdn-icons-png.flaticon.com/512/3003/3003551.png",
+      "src": "icon-512x512.png",
       "sizes": "512x512",
       "type": "image/png",
       "purpose": "any maskable"
+    }
+  ],
+  "shortcuts": [
+    {
+      "name": "Data to Excel",
+      "short_name": "Excel",
+      "url": "/#data2excel",
+      "icons": [{ "src": "icon-192x192.png", "sizes": "192x192" }]
+    },
+    {
+      "name": "Text to PDF",
+      "short_name": "PDF",
+      "url": "/#text2pdf",
+      "icons": [{ "src": "icon-192x192.png", "sizes": "192x192" }]
+    },
+    {
+      "name": "Image Compressor",
+      "short_name": "Compress",
+      "url": "/#imgcompress",
+      "icons": [{ "src": "icon-192x192.png", "sizes": "192x192" }]
+    }
+  ],
+  "screenshots": [
+    {
+      "src": "screenshot-mobile.png",
+      "sizes": "1080x1920",
+      "type": "image/png",
+      "form_factor": "narrow",
+      "label": "Visualixy Home Screen"
     }
   ]
 }

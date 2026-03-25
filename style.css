@@ -1,569 +1,128 @@
 /* =========================================
-   1. VARIABLES & BASE SETUP (Modern Theme)
+   VISUALIXY ULTIMATE CLEAN UI (FIXED)
 ========================================= */
 :root {
-    --primary: #2874f0; /* Flipkart Blue */
-    --primary-hover: #1b5bc9;
-    --vip-grad: linear-gradient(135deg, #FFD700 0%, #FDB931 100%); /* Gold VIP */
-    --bg-color: #f1f3f6; /* Flipkart light gray bg */
-    --card-bg: #ffffff;
-    --text-dark: #212121;
-    --text-muted: #878787;
-    --border-color: #e0e0e0;
-    --shadow-sm: 0 1px 2px rgba(0,0,0,0.05);
-    --shadow-md: 0 4px 10px rgba(0,0,0,0.08);
-    --shadow-hover: 0 10px 20px rgba(40, 116, 240, 0.15);
+    --primary: #FFD700;
+    --bg-dark: #000000;
+    --bg-card: #121212;
+    --border: #1d1d1f;
+    --text-dim: #8e8e93;
 }
 
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: 'Plus Jakarta Sans', sans-serif;
-    -webkit-tap-highlight-color: transparent; /* Removes blue tap highlight on mobile */
+* { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Plus Jakarta Sans', sans-serif; }
+
+body { 
+    background-color: var(--bg-dark); 
+    color: white; 
+    overflow-x: hidden; 
+    display: flex; 
+    flex-direction: column; 
+    align-items: center; 
 }
 
-body {
-    background-color: var(--bg-color);
-    color: var(--text-dark);
-    overflow-x: hidden;
-    padding-bottom: 80px; /* Space for bottom scroll */
-}
-
-/* =========================================
-   2. HEADER & NAVIGATION (App Style)
-========================================= */
-.app-header {
-    background: var(--primary);
-    color: white;
-    padding: 12px 16px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    position: sticky;
-    top: 0;
-    z-index: 1000;
-    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-}
-
-.header-left {
-    display: flex;
-    align-items: center;
-    gap: 8px;
-    cursor: pointer;
-}
-
-.logo-icon {
-    font-size: 28px;
-    color: #FFD700; /* Gold Icon */
-}
-
-.logo-text {
-    font-size: 20px;
-    font-weight: 800;
-    letter-spacing: 0.5px;
-    font-style: italic;
-}
-
-.logo-text span {
-    color: #FFD700;
-}
-
-.header-right {
-    display: flex;
-    align-items: center;
-    gap: 12px;
-}
-
-.install-btn {
-    background: white;
-    color: var(--primary);
-    border: none;
-    padding: 6px 12px;
-    border-radius: 4px;
-    font-weight: 700;
-    font-size: 13px;
-    cursor: pointer;
-    display: flex;
-    align-items: center;
-    gap: 4px;
-    box-shadow: var(--shadow-sm);
-}
-
-.hidden-action-btn {
-    color: white;
-    font-size: 24px;
-    text-decoration: none;
-    display: flex;
-    align-items: center;
-}
-
-/* =========================================
-   3. SMART SEARCH BAR
-========================================= */
-.search-container {
-    background: var(--primary);
-    padding: 0 16px 16px 16px;
-    position: sticky;
-    top: 54px; /* Just below header */
-    z-index: 999;
-}
-
-.search-box {
-    background: white;
-    display: flex;
-    align-items: center;
-    padding: 0 12px;
-    border-radius: 6px;
-    height: 42px;
-    box-shadow: var(--shadow-sm);
-}
-
-.search-box i {
-    color: var(--primary);
-    font-size: 20px;
-}
-
-.search-box input {
-    flex: 1;
-    border: none;
-    outline: none;
-    padding: 0 10px;
-    font-size: 14px;
-    color: var(--text-dark);
-}
-
-.mic-icon {
-    color: var(--text-muted) !important;
-}
-
-/* =========================================
-   4. AUTO-SLIDER (MARQUEE) - Hardware Accelerated
-========================================= */
-.ticker-wrap {
-    background: #fff8e1; /* Light yellow background */
-    width: 100%;
-    overflow: hidden;
-    padding: 8px 0;
-    border-bottom: 1px solid #ffe082;
-}
-
-.ticker {
-    display: flex;
-    width: max-content;
-    animation: ticker 25s linear infinite;
-}
-
-.ticker:hover {
-    animation-play-state: paused;
-}
-
-.ticker__item {
-    font-size: 13px;
-    font-weight: 600;
-    color: #e65100;
-    padding: 0 2rem;
-    white-space: nowrap;
-}
-
-@keyframes ticker {
-    0% { transform: translate3d(0, 0, 0); }
-    100% { transform: translate3d(-50%, 0, 0); } /* Uses GPU for smooth scroll */
-}
-
-/* =========================================
-   5. MAIN LAYOUT & SECTIONS
-========================================= */
+/* --- Centered View --- */
 .view-section {
-    max-width: 1200px; /* Max width for PC */
+    width: 100%;
+    max-width: 1200px; /* PC par content center rahega */
     margin: 0 auto;
-    display: none;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
 }
 
-.view-section.active {
-    display: block;
-    animation: fadeIn 0.4s ease;
-}
-
-@keyframes fadeIn {
-    from { opacity: 0; transform: translateY(10px); }
-    to { opacity: 1; transform: translateY(0); }
-}
-
+/* --- Fixed Category Section --- */
 .category-section {
-    background: white;
-    margin: 12px;
-    padding: 16px;
-    border-radius: 12px;
-    box-shadow: var(--shadow-sm);
+    background: #0a0a0a;
+    border: 1px solid var(--border);
+    border-radius: 28px;
+    padding: 30px 20px;
+    margin-bottom: 40px;
+    width: 100%;
 }
 
 .section-title {
     font-size: 16px;
-    font-weight: 700;
-    margin-bottom: 16px;
+    font-weight: 800;
+    margin-bottom: 25px;
+    text-transform: uppercase;
     display: flex;
     align-items: center;
-    gap: 8px;
+    gap: 10px;
+    color: white;
 }
 
-/* =========================================
-   6. VIP PREMIUM ZONE (Glassmorphism & Gold)
-========================================= */
-.vip-section {
-    background: linear-gradient(to bottom, #ffffff, #f4f8ff);
-    border: 1px solid #d4e3fb;
-}
-
-.crown-icon {
-    color: #f59e0b;
-    font-size: 22px;
-}
-
-.vip-card {
-    border: 1px solid rgba(40, 116, 240, 0.2) !important;
-    background: rgba(255, 255, 255, 0.8) !important;
-    backdrop-filter: blur(10px); /* Glassmorphism */
-}
-
-.vip-card .icon-wrap {
-    background: var(--vip-grad);
-    width: 48px;
-    height: 48px;
-    border-radius: 12px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin: 0 auto 10px auto;
-    box-shadow: 0 4px 10px rgba(253, 185, 49, 0.3);
-}
-
-.vip-card i {
-    color: white !important;
-    font-size: 26px !important;
-    margin-bottom: 0 !important;
-}
-
-/* =========================================
-   7. THE GRID SYSTEM (Mobile & PC)
-========================================= */
+/* --- The Ultimate Grid (Centered) --- */
 .grid {
     display: grid;
-    gap: 12px;
+    grid-template-columns: repeat(auto-fill, minmax(110px, 1fr));
+    gap: 15px;
+    justify-content: center;
 }
 
-/* MOBILE DEFAULT: 3 Columns */
-.regular-grid, .vip-grid {
-    grid-template-columns: repeat(3, 1fr);
-}
-
-/* THE APP TOOL CARD */
+/* --- Glowing Tool Card --- */
 .tool-card {
-    background: var(--card-bg);
-    border: 1px solid var(--border-color);
-    border-radius: 10px;
-    padding: 16px 8px;
-    text-align: center;
-    cursor: pointer;
-    transition: all 0.2s ease;
+    background: var(--bg-card);
+    border: 1px solid #1a1a1a;
+    border-radius: 20px;
+    padding: 20px 10px;
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: flex-start;
+    justify-content: center;
+    gap: 12px;
+    cursor: pointer;
+    transition: 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.tool-card:hover {
+    transform: translateY(-8px);
+    border-color: var(--primary);
+    box-shadow: 0 10px 30px rgba(255, 215, 0, 0.1);
 }
 
 .tool-card i {
-    font-size: 32px;
+    font-size: 30px;
     color: var(--primary);
-    margin-bottom: 8px;
-    transition: transform 0.2s ease;
+    filter: drop-shadow(0 0 8px rgba(255, 215, 0, 0.3));
 }
 
 .tool-card span {
-    font-size: 11px;
-    font-weight: 600;
-    color: var(--text-dark);
-    line-height: 1.2;
-    /* Limit to 2 lines */
-    display: -webkit-box;
-    -webkit-line-clamp: 2;
-    -webkit-box-orient: vertical;
-    overflow: hidden;
-}
-
-/* Hover Effects */
-.tool-card:hover {
-    border-color: var(--primary);
-    box-shadow: var(--shadow-hover);
-    transform: translateY(-3px);
-}
-
-.tool-card:hover i {
-    transform: scale(1.1);
-}
-
-/* =========================================
-   8. ADVERTISEMENT CONTAINERS
-========================================= */
-.native-ad-container {
-    background: #f8f9fa;
-    border: 1px dashed #ced4da;
-    border-radius: 8px;
-    min-height: 90px;
-    margin: 16px 12px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    position: relative;
-    overflow: hidden;
-}
-
-.ad-badge {
-    position: absolute;
-    top: 0;
-    left: 0;
-    background: #e9ecef;
-    color: #868e96;
-    font-size: 9px;
-    padding: 2px 6px;
-    border-bottom-right-radius: 4px;
-    text-transform: uppercase;
-    font-weight: bold;
-}
-
-/* =========================================
-   9. INDIVIDUAL TOOL VIEW UI
-========================================= */
-.tool-header {
-    background: white;
-    padding: 16px;
-    display: flex;
-    align-items: center;
-    gap: 16px;
-    border-bottom: 1px solid var(--border-color);
-    position: sticky;
-    top: 54px; /* Below main header */
-    z-index: 998;
-}
-
-.back-btn {
-    background: transparent;
-    border: none;
-    font-size: 24px;
-    color: var(--text-dark);
-    cursor: pointer;
-    display: flex;
-    align-items: center;
-}
-
-.tool-header h2 {
-    font-size: 18px;
+    font-size: 10px;
     font-weight: 700;
-}
-
-.tool-workspace {
-    background: white;
-    margin: 16px 12px;
-    padding: 20px;
-    border-radius: 12px;
-    box-shadow: var(--shadow-sm);
-}
-
-/* Form Elements inside Tools */
-.tool-workspace textarea, 
-.tool-workspace input[type="text"], 
-.tool-workspace input[type="number"], 
-.tool-workspace input[type="date"], 
-.tool-workspace select {
-    width: 100%;
-    padding: 14px;
-    border: 1px solid var(--border-color);
-    border-radius: 8px;
-    font-size: 14px;
-    margin-bottom: 16px;
-    background: #fafafa;
-    outline: none;
-    transition: 0.2s;
-}
-
-.tool-workspace textarea:focus, 
-.tool-workspace input:focus, 
-.tool-workspace select:focus {
-    border-color: var(--primary);
-    background: white;
-    box-shadow: 0 0 0 3px rgba(40, 116, 240, 0.1);
-}
-
-.main-btn {
-    width: 100%;
-    background: #ff9f00; /* Flipkart Orange for Action */
-    color: white;
-    border: none;
-    padding: 14px;
-    border-radius: 8px;
-    font-size: 16px;
-    font-weight: 700;
-    cursor: pointer;
-    margin-bottom: 12px;
-    box-shadow: 0 4px 6px rgba(255, 159, 0, 0.2);
-    transition: 0.2s;
-}
-
-.main-btn:active {
-    transform: scale(0.98);
-}
-
-.dl-btn {
-    width: 100%;
-    background: white;
-    color: var(--primary);
-    border: 1px solid var(--border-color);
-    padding: 12px;
-    border-radius: 8px;
-    font-weight: 700;
-    cursor: pointer;
-}
-
-.res-box {
-    background: #eef4ff;
-    color: var(--primary);
-    padding: 16px;
-    border-radius: 8px;
+    color: var(--text-dim);
     text-align: center;
-    font-weight: 700;
-    margin-bottom: 16px;
-    border: 1px dashed var(--primary);
-    word-break: break-all;
+    text-transform: uppercase;
 }
 
-/* =========================================
-   10. MEDIA QUERIES (Tablet & PC)
-========================================= */
-
-/* For Tablets */
-@media (min-width: 600px) {
-    .regular-grid, .vip-grid {
-        grid-template-columns: repeat(4, 1fr);
-    }
-    .tool-card span {
-        font-size: 12px;
-    }
-}
-
-/* For Laptops/Desktops */
-@media (min-width: 900px) {
-    .regular-grid, .vip-grid {
-        grid-template-columns: repeat(6, 1fr); /* 6 Tools in one line for PC */
-        gap: 20px;
-    }
-    
-    .category-section {
-        margin: 20px 0; /* Removing side margins on PC since container centers it */
-        padding: 24px;
-    }
-
-    .tool-card {
-        padding: 24px 12px;
-    }
-    
-    .tool-card i {
-        font-size: 38px;
-    }
-
-    .tool-card span {
-        font-size: 13px;
-    }
-
-    .search-container {
-        padding: 0 0 20px 0;
-        background: transparent;
-    }
-
-    .search-box {
-        max-width: 600px;
-        margin: 0 auto;
-        height: 50px;
-        border-radius: 25px;
-        box-shadow: var(--shadow-md);
-    }
-}
-
-/* =========================================
-   11. DIRECT LINK BANNER HACK (NEW)
-========================================= */
-.direct-link-banner {
-    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); /* Premium Purple Gradient */
-    color: white;
-    cursor: pointer;
-    border: none !important; /* Removes the dashed border */
-    padding: 15px 20px;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-    border-radius: 12px;
-}
-
-.direct-link-banner:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 10px 25px rgba(118, 75, 162, 0.4);
-}
-
-.dl-content {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
+/* --- Header Fix --- */
+.app-header {
     width: 100%;
-    gap: 15px;
+    height: 65px;
+    background: rgba(0,0,0,0.8);
+    backdrop-filter: blur(20px);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 25px;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    border-bottom: 1px solid var(--border);
 }
 
-.bounce-icon {
-    font-size: 40px;
-    color: #FFD700; /* Gold Icon */
-    animation: bounce 2s infinite;
-}
-
-.dl-text {
-    flex: 1;
-    text-align: left;
-}
-
-.dl-text h3 {
-    font-size: 16px;
-    font-weight: 800;
-    margin-bottom: 4px;
-    color: #ffffff;
-}
-
-.dl-text p {
-    font-size: 12px;
-    opacity: 0.9;
-    margin: 0;
-}
-
-.dl-btn-small {
-    background: #FFD700;
-    color: #212121;
-    border: none;
-    padding: 10px 18px;
-    border-radius: 20px;
-    font-weight: 800;
-    font-size: 12px;
-    cursor: pointer;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.2);
-    transition: 0.2s;
-    white-space: nowrap; /* Prevents button text from wrapping */
-}
-
-.dl-btn-small:hover {
-    background: #ffffff;
-}
-
-@keyframes bounce {
-    0%, 20%, 50%, 80%, 100% {transform: translateY(0);}
-    40% {transform: translateY(-8px);}
-    60% {transform: translateY(-4px);}
-}
-
-/* Mobile responsive for banner */
+/* --- Mobile Fix (3 in a row) --- */
 @media (max-width: 600px) {
-    .dl-content { flex-direction: column; text-align: center; }
-    .dl-text { text-align: center; margin-bottom: 10px; }
+    .grid {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 10px;
+    }
+    .tool-card { padding: 15px 5px; }
+}
+
+/* --- Ad Banners (Centered) --- */
+.native-ad-wrapper-large, .native-ad-wrapper-mini {
+    width: 100%;
+    margin: 20px 0;
+    border-radius: 20px;
+    overflow: hidden;
 }

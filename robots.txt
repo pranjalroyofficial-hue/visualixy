@@ -1,0 +1,10 @@
+User-agent: *
+Allow: /
+Allow: /#*
+
+# Best SEO Practices for Visualixy
+Sitemap: https://visualixy.in/sitemap.xml
+
+# Prevent crawling of temporary files
+Disallow: /private/
+Disallow: /config/
