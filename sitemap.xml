@@ -1,59 +1,69 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" 
-        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
-        xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 
-        http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
-
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  
   <url>
     <loc>https://visualixy.in/</loc>
-    <lastmod>2026-03-25</lastmod>
+    <lastmod>2026-03-21</lastmod>
     <changefreq>daily</changefreq>
     <priority>1.0</priority>
   </url>
 
   <url><loc>https://visualixy.in/#data2excel</loc><changefreq>weekly</changefreq><priority>0.9</priority></url>
-  <url><loc>https://visualixy.in/#text2pdf</loc><changefreq>weekly</changefreq><priority>0.9</priority></url>
   <url><loc>https://visualixy.in/#imgcompress</loc><changefreq>weekly</changefreq><priority>0.9</priority></url>
   <url><loc>https://visualixy.in/#imgresize</loc><changefreq>weekly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://visualixy.in/#text2pdf</loc><changefreq>weekly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://visualixy.in/#img2pdf</loc><changefreq>weekly</changefreq><priority>0.9</priority></url>
   <url><loc>https://visualixy.in/#qrcode</loc><changefreq>weekly</changefreq><priority>0.9</priority></url>
   <url><loc>https://visualixy.in/#barcode</loc><changefreq>weekly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://visualixy.in/#photofilter</loc><changefreq>weekly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://visualixy.in/#passport</loc><changefreq>weekly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://visualixy.in/#receipt</loc><changefreq>weekly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://visualixy.in/#resume</loc><changefreq>weekly</changefreq><priority>0.9</priority></url>
 
-  <url><loc>https://visualixy.in/#yt</loc><priority>0.8</priority></url>
-  <url><loc>https://visualixy.in/#svg2png</loc><priority>0.8</priority></url>
-  <url><loc>https://visualixy.in/#imgb64</loc><priority>0.8</priority></url>
-  <url><loc>https://visualixy.in/#voicerec</loc><priority>0.8</priority></url>
-  <url><loc>https://visualixy.in/#screenrec</loc><priority>0.8</priority></url>
-  <url><loc>https://visualixy.in/#tts</loc><priority>0.8</priority></url>
-  <url><loc>https://visualixy.in/#watermark</loc><priority>0.8</priority></url>
-  <url><loc>https://visualixy.in/#meme</loc><priority>0.8</priority></url>
-  <url><loc>https://visualixy.in/#favicon</loc><priority>0.8</priority></url>
-  <url><loc>https://visualixy.in/#webpjpg</loc><priority>0.8</priority></url>
+  <url><loc>https://visualixy.in/#yt</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://visualixy.in/#svg2png</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://visualixy.in/#watermark</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://visualixy.in/#meme</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://visualixy.in/#colorpicker</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://visualixy.in/#webpjpg</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://visualixy.in/#crop</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://visualixy.in/#tts</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
 
-  <url><loc>https://visualixy.in/#humanizer</loc><priority>0.8</priority></url>
-  <url><loc>https://visualixy.in/#wordcount</loc><priority>0.8</priority></url>
-  <url><loc>https://visualixy.in/#json</loc><priority>0.8</priority></url>
-  <url><loc>https://visualixy.in/#case</loc><priority>0.8</priority></url>
-  <url><loc>https://visualixy.in/#lorem</loc><priority>0.8</priority></url>
-  <url><loc>https://visualixy.in/#privacy</loc><priority>0.8</priority></url>
-  <url><loc>https://visualixy.in/#metatag</loc><priority>0.8</priority></url>
-  <url><loc>https://visualixy.in/#base64</loc><priority>0.8</priority></url>
-  <url><loc>https://visualixy.in/#cssmin</loc><priority>0.8</priority></url>
-  <url><loc>https://visualixy.in/#uuid</loc><priority>0.8</priority></url>
+  <url><loc>https://visualixy.in/#humanizer</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://visualixy.in/#wordcount</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://visualixy.in/#case</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://visualixy.in/#lorem</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://visualixy.in/#spaces</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://visualixy.in/#md2html</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://visualixy.in/#html</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://visualixy.in/#notepad</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
 
-  <url><loc>https://visualixy.in/#age</loc><priority>0.7</priority></url>
-  <url><loc>https://visualixy.in/#bmi</loc><priority>0.7</priority></url>
-  <url><loc>https://visualixy.in/#emi</loc><priority>0.7</priority></url>
-  <url><loc>https://visualixy.in/#gst</loc><priority>0.7</priority></url>
-  <url><loc>https://visualixy.in/#sip</loc><priority>0.7</priority></url>
-  <url><loc>https://visualixy.in/#discount</loc><priority>0.7</priority></url>
-  <url><loc>https://visualixy.in/#salary</loc><priority>0.7</priority></url>
-  <url><loc>https://visualixy.in/#roi</loc><priority>0.7</priority></url>
+  <url><loc>https://visualixy.in/#json</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://visualixy.in/#base64</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://visualixy.in/#cssmin</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://visualixy.in/#htmlmin</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://visualixy.in/#uuid</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://visualixy.in/#rgbhex</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://visualixy.in/#privacy</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://visualixy.in/#slug</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://visualixy.in/#metatag</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://visualixy.in/#sitemap</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
 
-  <url><loc>https://visualixy.in/#pass</loc><priority>0.6</priority></url>
-  <url><loc>https://visualixy.in/#rng</loc><priority>0.6</priority></url>
-  <url><loc>https://visualixy.in/#coin</loc><priority>0.6</priority></url>
-  <url><loc>https://visualixy.in/#love</loc><priority>0.6</priority></url>
-  <url><loc>https://visualixy.in/#typing</loc><priority>0.6</priority></url>
-  <url><loc>https://visualixy.in/#todo</loc><priority>0.6</priority></url>
+  <url><loc>https://visualixy.in/#age</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://visualixy.in/#bmi</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://visualixy.in/#discount</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://visualixy.in/#emi</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://visualixy.in/#gst</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://visualixy.in/#percent</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://visualixy.in/#salary</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://visualixy.in/#crypto</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+
+  <url><loc>https://visualixy.in/#pass</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://visualixy.in/#rng</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://visualixy.in/#stopwatch</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://visualixy.in/#myip</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://visualixy.in/#md5</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://visualixy.in/#typing</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://visualixy.in/#todo</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
 
 </urlset>

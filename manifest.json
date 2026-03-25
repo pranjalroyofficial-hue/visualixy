@@ -1,12 +1,12 @@
 {
-  "name": "Visualixy | 111+ Free Professional Tools",
+  "name": "Visualixy | 100+ Free Professional Tools",
   "short_name": "Visualixy",
-  "description": "The ultimate hub for 111+ free professional tools, Excel generators, and SEO utilities. Fast, secure, and private.",
+  "description": "Access 100+ free professional tools, calculators, and premium VS Code website templates in one place.",
   "start_url": "/",
   "display": "standalone",
+  "orientation": "portrait",
   "background_color": "#000000",
   "theme_color": "#000000",
-  "orientation": "portrait",
   "categories": ["productivity", "utilities", "developer_tools", "education"],
   "icons": [
     {
@@ -24,20 +24,12 @@
   ],
   "shortcuts": [
     {
-      "name": "Data to Excel",
-      "short_name": "Excel",
-      "url": "/#data2excel",
-      "icons": [{ "src": "icon-192x192.png", "sizes": "192x192" }]
-    },
-    {
-      "name": "Text to PDF",
-      "short_name": "PDF",
+      "name": "PDF Tools",
       "url": "/#text2pdf",
       "icons": [{ "src": "icon-192x192.png", "sizes": "192x192" }]
     },
     {
-      "name": "Image Compressor",
-      "short_name": "Compress",
+      "name": "Image Tools",
       "url": "/#imgcompress",
       "icons": [{ "src": "icon-192x192.png", "sizes": "192x192" }]
     }
@@ -48,7 +40,7 @@
       "sizes": "1080x1920",
       "type": "image/png",
       "form_factor": "narrow",
-      "label": "Visualixy Home Screen"
+      "label": "Visualixy Premium Hub"
     }
   ]
 }
