@@ -1,0 +1,16 @@
+{
+  "name": "Visualixy Audio Novels",
+  "short_name": "Visualixy",
+  "start_url": "/index.html",
+  "display": "standalone",
+  "background_color": "#030712",
+  "theme_color": "#111827",
+  "orientation": "portrait",
+  "icons": [
+    {
+      "src": "https://cdn-icons-png.flaticon.com/512/3504/3504190.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}
