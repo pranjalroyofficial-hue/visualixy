@@ -3,152 +3,302 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>VISUALIXY - Premium Novels & Audio Series</title>
+    <title>VISUALIXY - Ultimate Cyberpunk Audio Novels & Manga</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="manifest" href="manifest.json">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
     <style>
-        /* Smooth Custom Scrollbar */
-        ::-webkit-scrollbar { width: 6px; height: 6px; }
-        ::-webkit-scrollbar-thumb { background: #4b5563; border-radius: 10px; }
+        ::-webkit-scrollbar { width: 4px; height: 4px; }
+        ::-webkit-scrollbar-thumb { background: #f59e0b; border-radius: 10px; }
+        .no-scrollbar::-webkit-scrollbar { display: none; }
         .bottom-nav { position: fixed; bottom: 0; left: 0; right: 0; z-index: 100; }
         @media (min-width: 768px) { .bottom-nav { position: sticky; top: 0; bottom: auto; } }
+        
+        /* Glow animations for AI aesthetics */
+        .neon-glow { box-shadow: 0 0 15px rgba(245, 158, 11, 0.2); }
+        .neon-text { text-shadow: 0 0 10px rgba(245, 158, 11, 0.5); }
     </style>
 </head>
-<body class="bg-gray-950 text-gray-100 font-sans pb-24 md:pb-0 select-none">
+<body class="bg-gray-950 text-gray-100 font-sans pb-24 md:pb-0 select-none overflow-hidden" id="bodyElement">
 
-    <header class="bg-gray-900 border-b border-gray-800 p-4 sticky top-0 z-50 flex items-center justify-between">
-        <h1 class="text-2xl font-extrabold tracking-wider text-transparent bg-clip-text bg-gradient-to-r from-yellow-400 to-orange-500 animate__animated animate__fadeInLeft">VISUALIXY</h1>
+    <div id="splashScreen" class="fixed inset-0 bg-black z-[9999] flex flex-col items-center justify-center transition-all duration-1000">
+        <div class="absolute w-72 h-72 bg-yellow-500/10 rounded-full blur-3xl animate-pulse"></div>
         
-        <div class="relative w-1/3 hidden md:block">
-            <input type="text" placeholder="Search audio series or novels..." class="w-full bg-gray-800 border border-gray-700 rounded-full px-4 py-1.5 pl-10 text-sm focus:outline-none focus:border-yellow-500 transition">
-            <i class="fa fa-search absolute left-3.5 top-2.5 text-gray-500 text-xs"></i>
+        <div class="relative w-32 h-32 mb-4 animate__animated animate__zoomIn">
+            <canvas id="logoCanvas" width="128" height="128" class="w-full h-full drop-shadow-[0_0_20px_rgba(245,158,11,0.6)]"></canvas>
         </div>
-
-        <div class="flex items-center space-x-3">
-            <button id="installApp" class="bg-gradient-to-r from-purple-600 to-indigo-600 px-3 py-1.5 rounded-full text-xs font-bold hover:scale-105 transition hidden sm:flex items-center gap-1">
-                <i class="fa fa-download"></i> Get App
-            </button>
-            <a href="auth.html" class="bg-yellow-500 text-gray-900 font-bold px-4 py-1.5 rounded-full text-xs hover:bg-yellow-400 transition shadow-md">Login</a>
-        </div>
-    </header>
-
-    <div class="p-4 md:hidden animate__animated animate__fadeIn">
-        <div class="relative">
-            <input type="text" placeholder="Search audio series or novels..." class="w-full bg-gray-900 border border-gray-800 rounded-xl px-4 py-2.5 pl-11 text-sm focus:outline-none focus:border-yellow-500">
-            <i class="fa fa-search absolute left-4 top-3.5 text-gray-500"></i>
-        </div>
+        <h2 class="text-2xl font-black tracking-widest text-transparent bg-clip-text bg-gradient-to-r from-yellow-400 to-orange-500 neon-text animate__animated animate__fadeInUp animate__delay-1s">VISUALIXY</h2>
+        <p class="text-[9px] uppercase tracking-[0.3em] text-gray-500 mt-2 animate__animated animate__fadeIn animate__delay-2s">Initializing AI Cyber Core...</p>
     </div>
 
-    <main class="max-w-6xl mx-auto px-4 mt-2">
+    <div id="appConsole" class="opacity-0 transition-opacity duration-1000 h-screen overflow-y-auto">
         
-        <div class="relative bg-gradient-to-r from-red-900 via-purple-900 to-indigo-900 rounded-2xl p-6 shadow-2xl h-44 flex items-center mb-8 overflow-hidden group border border-purple-800/30">
-            <div class="relative z-10 max-w-md animate__animated animate__fadeInUp">
-                <span class="bg-red-600 text-white text-[10px] uppercase font-extrabold px-2 py-0.5 rounded-md tracking-wider">Top Trending</span>
-                <h2 class="text-2xl md:text-3xl font-black mt-1 text-yellow-400">SHADOW SYSTEM KING</h2>
-                <p class="text-xs text-gray-300 mt-1 line-clamp-2">Ethan wakes up with an AI system that rules the dark underworld. Listen and read now!</p>
+        <header class="bg-gray-900/80 border-b border-gray-800/80 p-4 sticky top-0 z-50 backdrop-blur-md flex items-center justify-between">
+            <div class="flex items-center gap-3">
+                <canvas id="navLogoCanvas" width="32" height="32" class="w-8 h-8 drop-shadow-[0_0_8px_rgba(245,158,11,0.5)]"></canvas>
+                <h1 class="text-xl font-black tracking-wider text-transparent bg-clip-text bg-gradient-to-r from-yellow-400 to-orange-500 neon-text">VISUALIXY</h1>
             </div>
-            <div class="absolute right-4 bottom-0 w-36 h-40 bg-gray-700/20 rounded-t-xl overflow-hidden group-hover:scale-105 transition duration-500 shadow-xl hidden sm:block">
-                <img src="https://images.unsplash.com/photo-1543002588-bfa74002ed7e?w=400" class="w-full h-full object-cover">
-            </div>
-        </div>
-
-        <section class="mb-8">
-            <h3 class="text-sm font-bold uppercase tracking-wider text-gray-400 mb-3 border-l-2 border-yellow-500 pl-2">Browse Genres</h3>
-            <div class="flex space-x-3 overflow-x-auto pb-2 no-scrollbar">
-                <button class="bg-gray-900 border border-gray-800 px-5 py-2 rounded-full text-xs font-bold whitespace-nowrap active:scale-95 transition hover:bg-yellow-500 hover:text-gray-900">🔥 All</button>
-                <button class="bg-gray-900 border border-gray-800 px-5 py-2 rounded-full text-xs font-bold whitespace-nowrap active:scale-95 transition hover:bg-yellow-500 hover:text-gray-900">⚔️ Action Fantasy</button>
-                <button class="bg-gray-900 border border-gray-800 px-5 py-2 rounded-full text-xs font-bold whitespace-nowrap active:scale-95 transition hover:bg-yellow-500 hover:text-gray-900">💖 Romance</button>
-                <button class="bg-gray-900 border border-gray-800 px-5 py-2 rounded-full text-xs font-bold whitespace-nowrap active:scale-95 transition hover:bg-yellow-500 hover:text-gray-900">🎙️ Audio Series</button>
-            </div>
-        </section>
-
-        <section class="mb-12">
-            <h3 class="text-base font-black mb-4 flex items-center justify-between">
-                <span>⚡ Free To Listen & Read</span>
-                <span class="text-xs text-yellow-500 font-bold cursor-pointer hover:underline">See All</span>
-            </h3>
             
-            <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-4 md:gap-6">
-                <a href="novel.html" class="bg-gray-900 rounded-xl overflow-hidden border border-gray-800 hover:border-gray-700 transition duration-300 block relative group shadow-md">
-                    <div class="relative overflow-hidden aspect-[2/3]">
-                        <img src="https://images.unsplash.com/photo-1543002588-bfa74002ed7e?w=400" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
-                        <span class="absolute bottom-2 left-2 bg-black/80 backdrop-blur-sm text-[10px] text-yellow-400 font-bold px-2 py-0.5 rounded flex items-center gap-1">
-                            <i class="fa fa-headphones text-[9px]"></i> 4.8M
-                        </span>
-                    </div>
-                    <div class="p-3">
-                        <h4 class="font-bold text-xs md:text-sm truncate text-gray-200 group-hover:text-yellow-400 transition">Shadow System King</h4>
-                        <p class="text-[10px] text-gray-500 mt-0.5">Sci-Fi & Cultivation</p>
-                    </div>
-                </a>
-                <div class="bg-gray-900 rounded-xl overflow-hidden border border-gray-800 p-3 opacity-30 flex items-center justify-center text-xs font-bold">More Novels Coming...</div>
+            <div class="relative w-1/3 hidden md:block">
+                <input type="text" placeholder="Search universe data blocks..." class="w-full bg-gray-950 border border-gray-800 rounded-full px-4 py-1.5 pl-10 text-sm focus:outline-none focus:border-yellow-500 transition text-white">
+                <i class="fa fa-search absolute left-3.5 top-2.5 text-gray-600 text-xs"></i>
             </div>
-        </section>
-    </main>
 
-    <nav class="bottom-nav bg-gray-900 border-t md:border-t-0 md:border-b border-gray-800 backdrop-blur-md px-6 py-2 shadow-2xl flex justify-between md:justify-end items-center md:space-x-8">
-        <a href="index.html" class="flex flex-col items-center gap-1 text-yellow-500 md:flex-row md:gap-2">
-            <i class="fa fa-home text-lg md:text-sm"></i><span class="text-[10px] md:text-xs font-bold">Home</span>
-        </a>
-        <button id="appDownloadBtn" class="flex flex-col items-center gap-1 text-gray-400 hover:text-yellow-500 md:flex-row md:gap-2">
-            <i class="fa fa-mobile-button text-lg md:text-sm"></i><span class="text-[10px] md:text-xs font-bold">App</span>
-        </button>
-        <button onclick="toggleSettingsModal()" class="flex flex-col items-center gap-1 text-gray-400 hover:text-yellow-500 md:flex-row md:gap-2">
-            <i class="fa fa-gear text-lg md:text-sm"></i><span class="text-[10px] md:text-xs font-bold">Settings</span>
-        </button>
-        <a href="auth.html" class="flex flex-col items-center gap-1 text-gray-400 hover:text-yellow-500 md:flex-row md:gap-2">
-            <i class="fa fa-user text-lg md:text-sm"></i><span class="text-[10px] md:text-xs font-bold">Profile</span>
-        </a>
-    </nav>
-
-    <div id="settingsModal" class="fixed inset-0 bg-black/80 backdrop-blur-sm z-50 items-center justify-center hidden animate__animated animate__fadeIn">
-        <div class="bg-gray-900 border border-gray-800 rounded-2xl w-full max-w-sm p-6 mx-4 animate__animated animate__zoomIn">
-            <div class="flex justify-between items-center border-b border-gray-800 pb-3 mb-4">
-                <h3 class="text-md font-bold text-yellow-500"><i class="fa fa-gear"></i> Visualixy Settings</h3>
-                <button onclick="toggleSettingsModal()" class="text-gray-400 hover:text-white"><i class="fa fa-times"></i></button>
-            </div>
-            <div class="space-y-3 text-sm">
-                <a href="#" class="block bg-gray-800 p-3 rounded-xl hover:bg-gray-700 transition flex justify-between items-center">
-                    <span>Privacy Policy</span> <i class="fa fa-chevron-right text-xs text-gray-500"></i>
-                </a>
-                <a href="#" class="block bg-gray-800 p-3 rounded-xl hover:bg-gray-700 transition flex justify-between items-center">
-                    <span>Terms & Conditions</span> <i class="fa fa-chevron-right text-xs text-gray-500"></i>
-                </a>
-                <button onclick="alert('Logged Out Successfully!')" class="w-full text-left bg-red-950 text-red-400 border border-red-900/40 p-3 rounded-xl hover:bg-red-900 transition flex justify-between items-center font-bold">
-                    <span>Logout Account</span> <i class="fa fa-sign-out text-xs"></i>
+            <div class="flex items-center space-x-3">
+                <button id="installApp" class="bg-gradient-to-r from-yellow-500 to-orange-500 text-gray-900 px-4 py-1.5 rounded-full text-xs font-black uppercase tracking-wider hover:scale-105 transition shadow-lg hidden sm:block">
+                    <i class="fa fa-download"></i> Get App
                 </button>
             </div>
-        </div>
+        </header>
+
+        <main class="max-w-6xl mx-auto px-4 mt-4">
+
+            <section class="relative bg-gradient-to-br from-gray-900 to-purple-950 rounded-2xl p-6 shadow-2xl h-48 md:h-52 flex items-center mb-6 overflow-hidden border border-yellow-500/10 neon-glow">
+                <div class="absolute -right-10 -top-10 w-48 h-48 bg-purple-500/10 rounded-full blur-3xl animate-pulse"></div>
+                
+                <div id="sliderContent" class="relative z-10 max-w-lg transition-all duration-500 transform">
+                    </div>
+                
+                <div id="sliderDots" class="absolute bottom-3 left-6 flex space-x-1.5 z-20"></div>
+            </section>
+
+            <div class="bg-gray-900/40 border border-gray-800/40 p-2 rounded-xl text-center text-[10px] uppercase text-gray-500 tracking-widest mb-6">
+                ⚡ Sponsored Advertisement AdSense Slot ⚡
+            </div>
+
+            <section class="mb-6">
+                <h3 class="text-xs font-bold uppercase tracking-wider text-gray-400 mb-3 border-l-2 border-yellow-500 pl-2">Filter Catalog Matrix</h3>
+                <div class="flex space-x-2 overflow-x-auto pb-2 no-scrollbar" id="categoryRow">
+                    </div>
+            </section>
+
+            <section class="mb-24">
+                <h3 class="text-sm font-black mb-4 flex items-center justify-between tracking-wide">
+                    <span>🎬 Active Node Content Stream</span>
+                    <span class="text-xs text-yellow-500 font-bold hover:underline cursor-pointer">View Deck</span>
+                </h3>
+                
+                <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-4" id="contentGrid">
+                    </div>
+            </section>
+        </main>
+
+        <nav class="bottom-nav bg-gray-900/95 border-t border-gray-800 backdrop-blur-md px-6 py-2 shadow-2xl flex justify-between md:justify-end items-center md:space-x-8">
+            <a href="index.html" class="flex flex-col items-center gap-1 text-yellow-500 md:flex-row md:gap-2">
+                <i class="fa fa-terminal text-lg md:text-sm"></i><span class="text-[10px] md:text-xs font-bold">Terminal</span>
+            </a>
+            <button id="appDownloadBtn" class="flex flex-col items-center gap-1 text-gray-400 hover:text-yellow-500 md:flex-row md:gap-2">
+                <i class="fa fa-robot text-lg md:text-sm"></i><span class="text-[10px] md:text-xs font-bold">Sync App</span>
+            </button>
+            <button onclick="alert('System Core settings pipeline operational.')" class="flex flex-col items-center gap-1 text-gray-400 hover:text-yellow-500 md:flex-row md:gap-2">
+                <i class="fa fa-sliders text-lg md:text-sm"></i><span class="text-[10px] md:text-xs font-bold">Matrix</span>
+            </button>
+        </nav>
     </div>
 
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <script src="config.js"></script>
+
     <script>
-        function toggleSettingsModal() {
-            const modal = document.getElementById('settingsModal');
-            modal.classList.toggle('hidden');
-            modal.classList.toggle('flex');
+        // 1. CODING CANVAS GRAPHICS ANIMATED LOGO ENGINE (Realistic Cyber V Design)
+        function drawLogo(canvasId, scale = 1) {
+            const canvas = document.getElementById(canvasId);
+            if (!canvas) return;
+            const ctx = canvas.getContext('2d');
+            let time = 0;
+
+            function animateLoop() {
+                ctx.clearRect(0, 0, canvas.width, canvas.height);
+                const cx = canvas.width / 2;
+                const cy = canvas.height / 2;
+                
+                time += 0.05;
+                let pulse = Math.sin(time) * 3;
+
+                // Glowing neon trail stroke path lines
+                ctx.strokeStyle = "rgba(245, 158, 11, 0.8)";
+                ctx.lineWidth = 6 * scale;
+                ctx.lineCap = "round";
+                ctx.lineJoin = "round";
+                ctx.shadowColor = "#f59e0b";
+                ctx.shadowBlur = 15 + pulse;
+
+                ctx.beginPath();
+                // Futuristic Geometric Cyber Book-V Cross fusion drawing
+                ctx.moveTo(cx - 30 * scale, cy - 35 * scale);
+                ctx.lineTo(cx, cy + 30 * scale);
+                ctx.lineTo(cx + 30 * scale, cy - 35 * scale);
+                
+                // Book wing lines overlap effects
+                ctx.moveTo(cx - 40 * scale, cy - 15 * scale);
+                ctx.lineTo(cx - 15 * scale, cy + 20 * scale);
+                ctx.moveTo(cx + 40 * scale, cy - 15 * scale);
+                ctx.lineTo(cx + 15 * scale, cy + 20 * scale);
+                ctx.stroke();
+                
+                requestAnimationFrame(animateLoop);
+            }
+            animateLoop();
         }
 
-        // PWA Setup
-        let deferredPrompt;
-        window.addEventListener('beforeinstallprompt', (e) => {
-            e.preventDefault();
-            deferredPrompt = e;
-            document.getElementById('installApp').classList.remove('hidden');
+        // 2. SPLASH SHIELD DELAY TIME SEQUENCER MATRIX
+        window.addEventListener('DOMContentLoaded', () => {
+            drawLogo('logoCanvas', 1);
+            drawLogo('navLogoCanvas', 0.3);
+            
+            setTimeout(() => {
+                const splash = document.getElementById('splashScreen');
+                const consoleApp = document.getElementById('appConsole');
+                
+                splash.classList.add('opacity-0');
+                consoleApp.classList.remove('opacity-0');
+                document.getElementById('bodyElement').classList.remove('overflow-hidden');
+                
+                setTimeout(() => splash.remove(), 1000);
+                initializePlatformFlows();
+            }, 3000); // 3 Seconds Elite Splashing Animation Delay Gate
         });
 
-        document.getElementById('installApp').addEventListener('click', async () => {
-            if (deferredPrompt) {
-                deferredPrompt.prompt();
-                const { outcome } = await deferredPrompt.userChoice;
-                if (outcome === 'accepted') console.log('User installed the webapp');
-                deferredPrompt = null;
+        // 3. 12-PAGE AUTOMATED REFRESH BANNER DATA STACK
+        const sliderData = [
+            { tag: "Core App Info", title: "WELCOME TO VISUALIXY V2", desc: "Our global distributed matrix node translates core novels instantly using deep learning arrays into 10 target languages." },
+            { tag: "System Guide", title: "PWA INSTANT REFRESH ENGINE", desc: "Installed apps auto-update data blocks automatically whenever you connect to our central cloud nodes." },
+            { tag: "Manga Hub", title: "GRAPHIC MANGA DECKS NOW LIVE", desc: "Select and read ultra high definition manga panels mapped across global language standard data streams." },
+            { tag: "Audio Feature", title: "AI PREMIUM AUDIO NARRATORS", desc: "Put on your cyber headphones and turn text blocks into automated cinematic spatial voice experiences." },
+            { tag: "Data Slot 5", title: "SHADOW CULTIVATION ARCHIVE", desc: "Follow Ethan across deep multi-verse structures inside our top trending catalog blocks data stream." },
+            { tag: "Data Slot 6", title: "ADS-BASED FREEMIUM DEPLOYMENT", desc: "Enjoy completely unrestricted access to multiple streaming zones powered via clean native advertising models." },
+            { tag: "Data Slot 7", title: "ZERO SERVER BUFFER LATENCY", desc: "Our database cluster runs off global edge architectures right out of local regional clusters." },
+            { tag: "Data Slot 8", title: "NOVEL ARCHITECTURE SUITE", desc: "Create, compile, and push raw texts directly from the newly updated administration executive hq console." },
+            { tag: "Data Slot 9", title: "ANTI-STEAL ENCRYPTION CODES", desc: "Dynamic invisible invisible email watermarking secures creative author property across global boundaries." },
+            { tag: "Data Slot 10", title: "POSTGRES SECURE LAYERS", desc: "Supabase client connectivity provides real-time state synchronizations loop frameworks." },
+            { tag: "Data Slot 11", title: "DUAL VERSION GRAPHICS INDEX", desc: "Manga pages switch rendering states instantly matching local country standard requirements." },
+            { tag: "Data Slot 12", title: "VISUALIXY NETWORK ROADMAP", desc: "Join millions of digital media consumers browsing next-generation decentralized text blocks databases today!" }
+        ];
+
+        let currentSlide = 0;
+        function runSliderEngine() {
+            const container = document.getElementById('sliderContent');
+            const dotsContainer = document.getElementById('sliderDots');
+            
+            // Build indicator dots once
+            if(dotsContainer.innerHTML === "") {
+                sliderData.forEach((_, i) => {
+                    dotsContainer.innerHTML += `<div class="w-1.5 h-1.5 rounded-full bg-gray-600 slider-dot" id="dot-${i}"></div>`;
+                });
             }
-        });
-        document.getElementById('appDownloadBtn').addEventListener('click', () => {
-            document.getElementById('installApp').click();
-        });
+
+            function updateSlideView() {
+                const data = sliderData[currentSlide];
+                container.innerHTML = `
+                    <span class="bg-yellow-500 text-gray-950 text-[9px] uppercase font-black px-2.5 py-0.5 rounded-md tracking-widest animate__animated animate__fadeInDown">${data.tag}</span>
+                    <h2 class="text-xl md:text-2xl font-black mt-2 text-white tracking-wide animate__animated animate__fadeInUp">${data.title}</h2>
+                    <p class="text-xs text-gray-400 mt-1.5 leading-relaxed max-w-xl animate__animated animate__fadeInUp">${data.desc}</p>
+                `;
+                
+                document.querySelectorAll('.slider-dot').forEach((d, i) => {
+                    d.className = i === currentSlide ? "w-4 h-1.5 rounded-full bg-yellow-500 transition-all duration-300" : "w-1.5 h-1.5 rounded-full bg-gray-600 transition-all duration-300";
+                });
+
+                currentSlide = (currentSlide + 1) % sliderData.length;
+            }
+            
+            updateSlideView();
+            setInterval(updateSlideView, 4000); // Transitions slide every 4 seconds
+        }
+
+        // 4. CATEGORY MAPPING CONTROLLER WITH EXTENDED TAGS (Red Circle Area Update)
+        const categories = ["🔥 All Universe", "⚔️ Action Fantasy", "💖 Romance Core", "🎙️ Audio Series", "🎨 Manga Graphic", "🦾 System Cultivation", "👻 Horror Arc", "🧩 Sci-Fi Matrix"];
+        
+        function loadCategoryRowMatrix() {
+            const row = document.getElementById('categoryRow');
+            categories.forEach((cat, index) => {
+                const activeClass = index === 0 ? "bg-yellow-500 text-gray-900 font-black" : "bg-gray-900 text-gray-400 hover:text-white border border-gray-800/60";
+                row.innerHTML += `
+                    <button onclick="filterCatalogByTag(this, '${cat}')" class="cat-btn ${activeClass} px-5 py-2 rounded-full text-xs font-bold whitespace-nowrap tracking-wide active:scale-95 transition duration-300">
+                        ${cat}
+                    </button>
+                `;
+            });
+        }
+
+        // 5. AUTO FILTER SYSTEM ARCHITECTURE WITH BACKUP LOGIC
+        async function initializePlatformFlows() {
+            runSliderEngine();
+            loadCategoryRowMatrix();
+            filterCatalogByTag(null, "🔥 All Universe");
+        }
+
+        async function filterCatalogByTag(btnElement, targetTag) {
+            if(btnElement) {
+                document.querySelectorAll('.cat-btn').forEach(b => {
+                    b.className = "cat-btn bg-gray-900 text-gray-400 hover:text-white border border-gray-800/60 px-5 py-2 rounded-full text-xs font-bold whitespace-nowrap tracking-wide active:scale-95 transition duration-300";
+                });
+                btnElement.className = "cat-btn bg-yellow-500 text-gray-900 font-black px-5 py-2 rounded-full text-xs font-bold whitespace-nowrap tracking-wide active:scale-95 transition duration-300";
+            }
+
+            const grid = document.getElementById('contentGrid');
+            grid.innerHTML = '<div class="text-xs text-gray-500 p-2 tracking-widest animate-pulse">Scanning Cloud Data Nodes...</div>';
+
+            try {
+                // Strip emoji for database string sorting matching check
+                const pureTag = targetTag.replace(/[\uE000-\uF8FF]|\uD83C[\uDC00-\uDFFF]|\uD83D[\uDC00-\uDFFF]|[\u2011-\u26FF]|\uD83E[\uDC00-\uDFFF]/g, "").trim();
+                
+                let query = supabase.from('novels').select('*');
+                if(pureTag !== "All Universe") {
+                    query = query.ilike('genre', `%${pureTag}%`);
+                }
+                
+                const { data: novels, error } = await query;
+                if(error) throw error;
+
+                if(!novels || novels.length === 0) {
+                    // FALLBACK BLOCK INTERFACE: If target category is empty, render best trending alternatives automatically
+                    const { data: fallbackNovels } = await supabase.from('novels').select('*').limit(2);
+                    renderGridCards(fallbackNovels, true, targetTag);
+                } else {
+                    renderGridCards(novels, false);
+                }
+
+            } catch (err) {
+                grid.innerHTML = `<div class="text-xs text-red-500 p-2">Data pipeline sync issue: ${err.message}</div>`;
+            }
+        }
+
+        function renderGridCards(novelsArray, isFallbackActive, originalTag = "") {
+            const grid = document.getElementById('contentGrid');
+            grid.innerHTML = "";
+
+            if(isFallbackActive) {
+                grid.innerHTML += `
+                    <div class="col-span-2 sm:col-span-3 md:col-span-5 bg-orange-950/20 border border-orange-900/30 p-3 rounded-xl text-xs text-orange-400 mb-2">
+                        💡 No explicit items found under <strong>"${originalTag}"</strong>. System automated routing presents our top platform recommendations below!
+                    </div>
+                `;
+            }
+
+            if(!novelsArray || novelsArray.length === 0) {
+                grid.innerHTML += `<div class="bg-gray-900 rounded-xl border border-gray-800 p-4 text-xs font-bold text-gray-500">More Universe Blocks Compiling Soon...</div>`;
+                return;
+            }
+
+            novelsArray.forEach(novel => {
+                grid.innerHTML += `
+                    <a href="novel.html?id=${novel.id}" class="bg-gray-900 rounded-xl overflow-hidden border border-gray-800 hover:border-yellow-500/40 transition duration-500 block group shadow-md animate__animated animate__fadeIn">
+                        <div class="relative overflow-hidden aspect-[2/3]">
+                            <img src="${novel.cover_url}" class="w-full h-full object-cover group-hover:scale-105 transition duration-700">
+                            <span class="absolute bottom-2 left-2 bg-black/80 backdrop-blur-sm text-[9px] text-yellow-400 font-bold px-2 py-0.5 rounded flex items-center gap-1">
+                                <i class="fa fa-headphones text-[8px]"></i> Play Valid
+                            </span>
+                        </div>
+                        <div class="p-3">
+                            <h4 class="font-bold text-xs md:text-sm truncate text-gray-200 group-hover:text-yellow-400 transition">${novel.title}</h4>
+                            <p class="text-[10px] text-gray-500 mt-0.5 truncate">${novel.genre}</p>
+                        </div>
+                    </a>
+                `;
+            });
+        }
     </script>
 </body>
 </html>
