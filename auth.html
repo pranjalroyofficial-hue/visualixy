@@ -3,55 +3,16 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Gateway Login - VISUALIXY</title>
+    <title>Profile Hub - VISUALIXY</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
 </head>
-<body class="bg-gray-950 text-gray-200 font-sans h-screen flex items-center justify-center p-4">
-
-    <div class="bg-gray-900 border border-gray-800 rounded-3xl w-full max-w-sm p-6 shadow-2xl relative overflow-hidden animate__animated animate__zoomIn">
-        
-        <div id="premiumAlert" class="hidden bg-yellow-500/10 border border-yellow-500/30 rounded-2xl p-3 mb-6 text-center text-xs text-yellow-400">
-            🔒 <strong>Premium Locked Content!</strong> Please Login/Signup and subscribe for ₹49 / $2 to unlock all upcoming series instantly.
-        </div>
-
-        <div class="text-center mb-6">
-            <h2 class="text-2xl font-black tracking-widest text-transparent bg-clip-text bg-gradient-to-r from-yellow-400 to-orange-500">VISUALIXY</h2>
-            <p class="text-xs text-gray-400 mt-1">Unlock over 30+ Audio series and translated novels book</p>
-        </div>
-
-        <form onsubmit="handleAuth(event)" class="space-y-4">
-            <div>
-                <label class="block text-[10px] uppercase font-bold tracking-wider text-gray-500 mb-1">Email Address</label>
-                <input type="email" required placeholder="name@email.com" class="w-full bg-gray-950 border border-gray-800 rounded-xl px-4 py-2.5 text-xs focus:outline-none focus:border-yellow-500 text-white">
-            </div>
-            <div>
-                <label class="block text-[10px] uppercase font-bold tracking-wider text-gray-500 mb-1">Password</label>
-                <input type="password" required placeholder="••••••••" class="w-full bg-gray-950 border border-gray-800 rounded-xl px-4 py-2.5 text-xs focus:outline-none focus:border-yellow-500 text-white">
-            </div>
-
-            <button type="submit" class="w-full bg-gradient-to-r from-yellow-500 to-orange-500 text-gray-900 font-black py-3 rounded-xl text-xs tracking-wider uppercase shadow-lg active:scale-95 transition mt-2">
-                Continue to Platform
-            </button>
-        </form>
-
-        <div class="text-center mt-6 border-t border-gray-800 pt-4">
-            <p class="text-[10px] text-gray-500">By continuing, you agree to Visualixy terms, privacy codes, and automated token distributions systems.</p>
+<body class="bg-slate-950 text-slate-200 h-screen flex items-center justify-center p-4">
+    <div class="bg-slate-900 border border-slate-800 rounded-3xl w-full max-w-sm p-6 text-center shadow-xl">
+        <h2 class="text-xl font-black text-yellow-500 uppercase tracking-widest">User Sandbox Session</h2>
+        <p class="text-xs text-slate-400 mt-2">Your guest account tokens and preferred reading language states are stored inside this browser profile container node.</p>
+        <div class="mt-6">
+            <a href="index.html" class="bg-yellow-500 text-slate-950 font-black px-6 py-2.5 rounded-xl text-xs uppercase tracking-wider block">Return Dashboard</a>
         </div>
     </div>
-
-    <script>
-        // Check URL flags if user came from clicking a locked layer
-        const urlParams = new URLSearchParams(window.location.search);
-        if(urlParams.get('premium') === 'true') {
-            document.getElementById('premiumAlert').classList.remove('hidden');
-        }
-
-        function handleAuth(e) {
-            e.preventDefault();
-            alert('Authentication system ready! Token verified. Redirecting to home layout loop.');
-            window.location.href = "index.html";
-        }
-    </script>
 </body>
 </html>

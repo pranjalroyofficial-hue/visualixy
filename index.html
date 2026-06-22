@@ -3,299 +3,224 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>VISUALIXY - Ultimate Cyberpunk Audio Novels & Manga</title>
+    <title>VISUALIXY - Ultimate Cyber Fiction Hub</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="manifest" href="manifest.json">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
     <style>
-        ::-webkit-scrollbar { width: 4px; height: 4px; }
-        ::-webkit-scrollbar-thumb { background: #f59e0b; border-radius: 10px; }
+        ::-webkit-scrollbar { width: 5px; height: 5px; }
+        ::-webkit-scrollbar-thumb { background: #eab308; border-radius: 10px; }
         .no-scrollbar::-webkit-scrollbar { display: none; }
         .bottom-nav { position: fixed; bottom: 0; left: 0; right: 0; z-index: 100; }
-        @media (min-width: 768px) { .bottom-nav { position: sticky; top: 0; bottom: auto; } }
-        
-        /* Glow animations for AI aesthetics */
-        .neon-glow { box-shadow: 0 0 15px rgba(245, 158, 11, 0.2); }
-        .neon-text { text-shadow: 0 0 10px rgba(245, 158, 11, 0.5); }
+        .neon-glow { box-shadow: 0 0 20px rgba(234, 179, 8, 0.15); }
     </style>
 </head>
-<body class="bg-gray-950 text-gray-100 font-sans pb-24 md:pb-0 select-none overflow-hidden" id="bodyElement">
+<body class="bg-slate-950 text-slate-100 font-sans pb-24 select-none overflow-hidden" id="mainBody">
 
-    <div id="splashScreen" class="fixed inset-0 bg-black z-[9999] flex flex-col items-center justify-center transition-all duration-1000">
-        <div class="absolute w-72 h-72 bg-yellow-500/10 rounded-full blur-3xl animate-pulse"></div>
-        
-        <div class="relative w-32 h-32 mb-4 animate__animated animate__zoomIn">
-            <canvas id="logoCanvas" width="128" height="128" class="w-full h-full drop-shadow-[0_0_20px_rgba(245,158,11,0.6)]"></canvas>
+    <div id="legalGate" class="fixed inset-0 bg-black/95 backdrop-blur-md z-[10000] hidden items-center justify-center p-4">
+        <div class="bg-slate-900 border border-slate-800 p-6 rounded-3xl w-full max-w-sm text-center animate__animated animate__fadeInUp">
+            <h3 class="text-sm font-black text-yellow-500 tracking-wider uppercase">Compliance Protection Notice</h3>
+            <div class="text-[11px] text-slate-400 text-left my-4 space-y-2 leading-relaxed bg-slate-950 p-4 rounded-2xl max-h-48 overflow-y-auto font-mono border border-slate-800/60">
+                <p><strong>Copyright & License Notice:</strong> All light novels, manga structures, custom script blocks, translations, and audio assets published under the Visualixy ecosystem (visualixy.in) are the exclusive intellectual property of the Platform Creator, <strong>Pranjal Roy</strong>.</p>
+                <p>Unauthorized reproduction, database scraping, digital mirroring, or parsing of these modules without explicitly paying user license fee allocations is strictly prohibited and subject to legal prosecution under cyber intellectual property codes.</p>
+            </div>
+            <button onclick="acceptLegalTerms()" class="w-full bg-yellow-500 text-slate-950 font-black py-3 rounded-xl text-xs uppercase tracking-widest hover:bg-yellow-400 active:scale-95 transition">I Accept & Continue</button>
         </div>
-        <h2 class="text-2xl font-black tracking-widest text-transparent bg-clip-text bg-gradient-to-r from-yellow-400 to-orange-500 neon-text animate__animated animate__fadeInUp animate__delay-1s">VISUALIXY</h2>
-        <p class="text-[9px] uppercase tracking-[0.3em] text-gray-500 mt-2 animate__animated animate__fadeIn animate__delay-2s">Initializing AI Cyber Core...</p>
     </div>
 
-    <div id="appConsole" class="opacity-0 transition-opacity duration-1000 h-screen overflow-y-auto">
-        
-        <header class="bg-gray-900/80 border-b border-gray-800/80 p-4 sticky top-0 z-50 backdrop-blur-md flex items-center justify-between">
-            <div class="flex items-center gap-3">
-                <canvas id="navLogoCanvas" width="32" height="32" class="w-8 h-8 drop-shadow-[0_0_8px_rgba(245,158,11,0.5)]"></canvas>
-                <h1 class="text-xl font-black tracking-wider text-transparent bg-clip-text bg-gradient-to-r from-yellow-400 to-orange-500 neon-text">VISUALIXY</h1>
+    <div id="langPrefGate" class="fixed inset-0 bg-slate-950 z-[9995] hidden items-center justify-center p-4">
+        <div class="bg-slate-900 border border-slate-800 p-6 rounded-3xl w-full max-w-sm text-center shadow-2xl animate__animated animate__zoomIn">
+            <h3 class="text-sm font-black text-yellow-500 uppercase tracking-widest mb-2">Select Preferred Language</h3>
+            <p class="text-[10px] text-slate-400 mb-4">Your novels and platform voice narration will load in this preference permanently.</p>
+            <div class="grid grid-cols-2 gap-3 text-xs">
+                <button onclick="saveLangPreference('en')" class="bg-slate-950 border border-slate-800 p-4 rounded-2xl font-black text-slate-200 hover:border-yellow-500 hover:text-yellow-500 transition">English (Global)</button>
+                <button onclick="saveLangPreference('hi')" class="bg-slate-950 border border-slate-800 p-4 rounded-2xl font-black text-slate-200 hover:border-yellow-500 hover:text-yellow-500 transition">हिंदी (Hindi)</button>
             </div>
-            
-            <div class="relative w-1/3 hidden md:block">
-                <input type="text" placeholder="Search universe data blocks..." class="w-full bg-gray-950 border border-gray-800 rounded-full px-4 py-1.5 pl-10 text-sm focus:outline-none focus:border-yellow-500 transition text-white">
-                <i class="fa fa-search absolute left-3.5 top-2.5 text-gray-600 text-xs"></i>
-            </div>
+        </div>
+    </div>
 
-            <div class="flex items-center space-x-3">
-                <button id="installApp" class="bg-gradient-to-r from-yellow-500 to-orange-500 text-gray-900 px-4 py-1.5 rounded-full text-xs font-black uppercase tracking-wider hover:scale-105 transition shadow-lg hidden sm:block">
-                    <i class="fa fa-download"></i> Get App
-                </button>
+    <div id="splashScreen" class="fixed inset-0 bg-black z-[9990] flex flex-col items-center justify-center transition-all duration-700">
+        <div class="absolute w-64 h-64 bg-yellow-500/10 rounded-full blur-3xl animate-pulse"></div>
+        <div class="relative w-28 h-28 mb-4">
+            <canvas id="splashLogoCanvas" width="110" height="110" class="w-full h-full drop-shadow-[0_0_15px_rgba(234,179,8,0.5)]"></canvas>
+        </div>
+        <h2 class="text-2xl font-black tracking-widest text-transparent bg-clip-text bg-gradient-to-r from-yellow-400 to-orange-500">VISUALIXY</h2>
+        <div class="w-16 h-[2px] bg-gradient-to-r from-yellow-500 to-transparent mt-2 rounded animate-pulse"></div>
+    </div>
+
+    <div id="appShell" class="opacity-0 transition-opacity duration-700 h-screen overflow-y-auto">
+        <header class="bg-slate-900/80 border-b border-slate-900 p-4 sticky top-0 z-50 backdrop-blur-md flex items-center justify-between shadow-lg">
+            <div class="flex items-center gap-2">
+                <canvas id="navLogoCanvas" width="32" height="32" class="w-8 h-8 drop-shadow-[0_0_5px_rgba(234,179,8,0.4)]"></canvas>
+                <h1 class="text-xl font-black tracking-wider text-transparent bg-clip-text bg-gradient-to-r from-yellow-400 to-orange-500">VISUALIXY</h1>
+            </div>
+            <div class="flex items-center gap-3">
+                <span id="userIdDisplay" class="text-[9px] bg-slate-950 border border-slate-800 px-3 py-1 rounded-full font-mono text-slate-400">Syncing Token...</span>
+                <button id="installBtn" class="bg-gradient-to-r from-yellow-500 to-orange-500 text-slate-900 px-4 py-1.5 rounded-full text-xs font-black uppercase tracking-wider hover:scale-105 transition shadow-lg hidden sm:block">Get App</button>
             </div>
         </header>
 
-        <main class="max-w-6xl mx-auto px-4 mt-4">
-
-            <section class="relative bg-gradient-to-br from-gray-900 to-purple-950 rounded-2xl p-6 shadow-2xl h-48 md:h-52 flex items-center mb-6 overflow-hidden border border-yellow-500/10 neon-glow">
-                <div class="absolute -right-10 -top-10 w-48 h-48 bg-purple-500/10 rounded-full blur-3xl animate-pulse"></div>
-                
-                <div id="sliderContent" class="relative z-10 max-w-lg transition-all duration-500 transform">
-                    </div>
-                
-                <div id="sliderDots" class="absolute bottom-3 left-6 flex space-x-1.5 z-20"></div>
+        <main class="max-w-4xl mx-auto px-4 mt-6">
+            <section class="relative bg-gradient-to-br from-slate-900 to-slate-950 rounded-2xl p-6 h-40 flex items-center mb-6 overflow-hidden border border-slate-800 shadow-xl neon-glow">
+                <div class="relative z-10">
+                    <span class="bg-blue-600/20 text-blue-400 border border-blue-800/40 text-[9px] font-black px-2.5 py-0.5 rounded-md uppercase tracking-widest">Sponsored Poster Ad</span>
+                    <h3 id="adTitle" class="text-md md:text-lg font-black text-white mt-2 tracking-wide animate__animated animate__fadeIn">Synchronizing Campaigns...</h3>
+                </div>
             </section>
 
-            <div class="bg-gray-900/40 border border-gray-800/40 p-2 rounded-xl text-center text-[10px] uppercase text-gray-500 tracking-widest mb-6">
-                ⚡ Sponsored Advertisement AdSense Slot ⚡
-            </div>
-
             <section class="mb-6">
-                <h3 class="text-xs font-bold uppercase tracking-wider text-gray-400 mb-3 border-l-2 border-yellow-500 pl-2">Filter Catalog Matrix</h3>
-                <div class="flex space-x-2 overflow-x-auto pb-2 no-scrollbar" id="categoryRow">
-                    </div>
+                <h3 class="text-xs font-bold uppercase tracking-wider text-slate-500 mb-3 border-l-2 border-yellow-500 pl-2">Filter Catalogue Matrix</h3>
+                <div class="flex space-x-2 overflow-x-auto pb-2 no-scrollbar" id="categoryRow"></div>
             </section>
 
             <section class="mb-24">
-                <h3 class="text-sm font-black mb-4 flex items-center justify-between tracking-wide">
+                <h3 class="text-sm font-black mb-4 flex items-center justify-between tracking-wide text-slate-300">
                     <span>🎬 Active Node Content Stream</span>
-                    <span class="text-xs text-yellow-500 font-bold hover:underline cursor-pointer">View Deck</span>
+                    <span class="text-xs text-yellow-500 font-bold hover:underline cursor-pointer">View All</span>
                 </h3>
-                
-                <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-4" id="contentGrid">
-                    </div>
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-4" id="contentGrid"></div>
             </section>
         </main>
 
-        <nav class="bottom-nav bg-gray-900/95 border-t border-gray-800 backdrop-blur-md px-6 py-2 shadow-2xl flex justify-between md:justify-end items-center md:space-x-8">
-            <a href="index.html" class="flex flex-col items-center gap-1 text-yellow-500 md:flex-row md:gap-2">
-                <i class="fa fa-terminal text-lg md:text-sm"></i><span class="text-[10px] md:text-xs font-bold">Terminal</span>
+        <nav class="bottom-nav bg-slate-900/95 border-t border-slate-800 backdrop-blur-md px-6 py-2 shadow-2xl flex justify-between items-center max-w-4xl mx-auto md:rounded-t-2xl">
+            <a href="index.html" class="flex flex-col items-center gap-1 text-yellow-500">
+                <i class="fa fa-home text-lg"></i><span class="text-[9px] font-bold">Home</span>
             </a>
-            <button id="appDownloadBtn" class="flex flex-col items-center gap-1 text-gray-400 hover:text-yellow-500 md:flex-row md:gap-2">
-                <i class="fa fa-robot text-lg md:text-sm"></i><span class="text-[10px] md:text-xs font-bold">Sync App</span>
+            <a href="#" class="flex flex-col items-center gap-1 text-slate-500 hover:text-slate-300 transition">
+                <i class="fa fa-heart text-lg"></i><span class="text-[9px] font-bold">Favorite</span>
+            </a>
+            <button id="pwaDownloadBtn" class="flex flex-col items-center gap-1 text-slate-500 hover:text-slate-300 transition">
+                <i class="fa fa-circle-down text-lg"></i><span class="text-[9px] font-bold">Download App</span>
             </button>
-            <button onclick="alert('System Core settings pipeline operational.')" class="flex flex-col items-center gap-1 text-gray-400 hover:text-yellow-500 md:flex-row md:gap-2">
-                <i class="fa fa-sliders text-lg md:text-sm"></i><span class="text-[10px] md:text-xs font-bold">Matrix</span>
-            </button>
+            <a href="auth.html" class="flex flex-col items-center gap-1 text-slate-500 hover:text-slate-300 transition">
+                <i class="fa fa-terminal text-lg"></i><span class="text-[9px] font-bold">Terminal</span>
+            </a>
+            <a href="#" class="flex flex-col items-center gap-1 text-slate-500 hover:text-slate-300 transition">
+                <i class="fa fa-user-shield text-lg"></i><span class="text-[9px] font-bold">Profile</span>
+            </a>
         </nav>
     </div>
 
     <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
     <script src="config.js"></script>
-
     <script>
-        // 1. CODING CANVAS GRAPHICS ANIMATED LOGO ENGINE (Realistic Cyber V Design)
-        function drawLogo(canvasId, scale = 1) {
-            const canvas = document.getElementById(canvasId);
-            if (!canvas) return;
-            const ctx = canvas.getContext('2d');
-            let time = 0;
-
-            function animateLoop() {
+        function drawVectorLogo(canvasId, scaleFactor) {
+            const canvas = document.getElementById(canvasId); if (!canvas) return;
+            const ctx = canvas.getContext('2d'); let cycle = 0;
+            function renderingLoop() {
                 ctx.clearRect(0, 0, canvas.width, canvas.height);
-                const cx = canvas.width / 2;
-                const cy = canvas.height / 2;
-                
-                time += 0.05;
-                let pulse = Math.sin(time) * 3;
-
-                // Glowing neon trail stroke path lines
-                ctx.strokeStyle = "rgba(245, 158, 11, 0.8)";
-                ctx.lineWidth = 6 * scale;
-                ctx.lineCap = "round";
-                ctx.lineJoin = "round";
-                ctx.shadowColor = "#f59e0b";
-                ctx.shadowBlur = 15 + pulse;
-
+                const midX = canvas.width / 2; const midY = canvas.height / 2; cycle += 0.04;
+                ctx.strokeStyle = "rgba(234, 179, 8, 0.85)"; ctx.lineWidth = 5 * scaleFactor;
+                ctx.lineCap = "round"; ctx.lineJoin = "round"; ctx.shadowColor = "#eab308"; ctx.shadowBlur = 12 + Math.sin(cycle)*4;
                 ctx.beginPath();
-                // Futuristic Geometric Cyber Book-V Cross fusion drawing
-                ctx.moveTo(cx - 30 * scale, cy - 35 * scale);
-                ctx.lineTo(cx, cy + 30 * scale);
-                ctx.lineTo(cx + 30 * scale, cy - 35 * scale);
-                
-                // Book wing lines overlap effects
-                ctx.moveTo(cx - 40 * scale, cy - 15 * scale);
-                ctx.lineTo(cx - 15 * scale, cy + 20 * scale);
-                ctx.moveTo(cx + 40 * scale, cy - 15 * scale);
-                ctx.lineTo(cx + 15 * scale, cy + 20 * scale);
-                ctx.stroke();
-                
-                requestAnimationFrame(animateLoop);
-            }
-            animateLoop();
+                ctx.moveTo(midX - 25 * scaleFactor, midY - 30 * scaleFactor); ctx.lineTo(midX, midY + 25 * scaleFactor); ctx.lineTo(midX + 25 * scaleFactor, midY - 30 * scaleFactor);
+                ctx.moveTo(midX - 35 * scaleFactor, midY - 12 * scaleFactor); ctx.lineTo(midX - 12 * scaleFactor, midY + 18 * scaleFactor);
+                ctx.moveTo(midX + 35 * scaleFactor, midY - 12 * scaleFactor); ctx.lineTo(midX + 12 * scaleFactor, midY + 18 * scaleFactor);
+                ctx.stroke(); requestAnimationFrame(renderingLoop);
+            } renderingLoop();
         }
 
-        // 2. SPLASH SHIELD DELAY TIME SEQUENCER MATRIX
         window.addEventListener('DOMContentLoaded', () => {
-            drawLogo('logoCanvas', 1);
-            drawLogo('navLogoCanvas', 0.3);
-            
+            drawVectorLogo('splashLogoCanvas', 1); drawVectorLogo('navLogoCanvas', 0.3);
             setTimeout(() => {
-                const splash = document.getElementById('splashScreen');
-                const consoleApp = document.getElementById('appConsole');
-                
-                splash.classList.add('opacity-0');
-                consoleApp.classList.remove('opacity-0');
-                document.getElementById('bodyElement').classList.remove('overflow-hidden');
-                
-                setTimeout(() => splash.remove(), 1000);
-                initializePlatformFlows();
-            }, 3000); // 3 Seconds Elite Splashing Animation Delay Gate
+                document.getElementById('splashScreen').classList.add('opacity-0');
+                document.getElementById('appShell').classList.remove('opacity-0');
+                document.getElementById('mainBody').classList.remove('overflow-hidden');
+                setTimeout(() => document.getElementById('splashScreen').remove(), 700);
+                if(!localStorage.getItem('visualixy_legal_approved')) {
+                    document.getElementById('legalGate').classList.remove('hidden'); document.getElementById('legalGate').classList.add('flex');
+                } else { initializeGuestAccountEngine(); }
+            }, 2500);
         });
 
-        // 3. 12-PAGE AUTOMATED REFRESH BANNER DATA STACK
-        const sliderData = [
-            { tag: "Core App Info", title: "WELCOME TO VISUALIXY V2", desc: "Our global distributed matrix node translates core novels instantly using deep learning arrays into 10 target languages." },
-            { tag: "System Guide", title: "PWA INSTANT REFRESH ENGINE", desc: "Installed apps auto-update data blocks automatically whenever you connect to our central cloud nodes." },
-            { tag: "Manga Hub", title: "GRAPHIC MANGA DECKS NOW LIVE", desc: "Select and read ultra high definition manga panels mapped across global language standard data streams." },
-            { tag: "Audio Feature", title: "AI PREMIUM AUDIO NARRATORS", desc: "Put on your cyber headphones and turn text blocks into automated cinematic spatial voice experiences." },
-            { tag: "Data Slot 5", title: "SHADOW CULTIVATION ARCHIVE", desc: "Follow Ethan across deep multi-verse structures inside our top trending catalog blocks data stream." },
-            { tag: "Data Slot 6", title: "ADS-BASED FREEMIUM DEPLOYMENT", desc: "Enjoy completely unrestricted access to multiple streaming zones powered via clean native advertising models." },
-            { tag: "Data Slot 7", title: "ZERO SERVER BUFFER LATENCY", desc: "Our database cluster runs off global edge architectures right out of local regional clusters." },
-            { tag: "Data Slot 8", title: "NOVEL ARCHITECTURE SUITE", desc: "Create, compile, and push raw texts directly from the newly updated administration executive hq console." },
-            { tag: "Data Slot 9", title: "ANTI-STEAL ENCRYPTION CODES", desc: "Dynamic invisible invisible email watermarking secures creative author property across global boundaries." },
-            { tag: "Data Slot 10", title: "POSTGRES SECURE LAYERS", desc: "Supabase client connectivity provides real-time state synchronizations loop frameworks." },
-            { tag: "Data Slot 11", title: "DUAL VERSION GRAPHICS INDEX", desc: "Manga pages switch rendering states instantly matching local country standard requirements." },
-            { tag: "Data Slot 12", title: "VISUALIXY NETWORK ROADMAP", desc: "Join millions of digital media consumers browsing next-generation decentralized text blocks databases today!" }
-        ];
-
-        let currentSlide = 0;
-        function runSliderEngine() {
-            const container = document.getElementById('sliderContent');
-            const dotsContainer = document.getElementById('sliderDots');
-            
-            // Build indicator dots once
-            if(dotsContainer.innerHTML === "") {
-                sliderData.forEach((_, i) => {
-                    dotsContainer.innerHTML += `<div class="w-1.5 h-1.5 rounded-full bg-gray-600 slider-dot" id="dot-${i}"></div>`;
-                });
-            }
-
-            function updateSlideView() {
-                const data = sliderData[currentSlide];
-                container.innerHTML = `
-                    <span class="bg-yellow-500 text-gray-950 text-[9px] uppercase font-black px-2.5 py-0.5 rounded-md tracking-widest animate__animated animate__fadeInDown">${data.tag}</span>
-                    <h2 class="text-xl md:text-2xl font-black mt-2 text-white tracking-wide animate__animated animate__fadeInUp">${data.title}</h2>
-                    <p class="text-xs text-gray-400 mt-1.5 leading-relaxed max-w-xl animate__animated animate__fadeInUp">${data.desc}</p>
-                `;
-                
-                document.querySelectorAll('.slider-dot').forEach((d, i) => {
-                    d.className = i === currentSlide ? "w-4 h-1.5 rounded-full bg-yellow-500 transition-all duration-300" : "w-1.5 h-1.5 rounded-full bg-gray-600 transition-all duration-300";
-                });
-
-                currentSlide = (currentSlide + 1) % sliderData.length;
-            }
-            
-            updateSlideView();
-            setInterval(updateSlideView, 4000); // Transitions slide every 4 seconds
+        function acceptLegalTerms() {
+            localStorage.setItem('visualixy_legal_approved', 'true'); document.getElementById('legalGate').remove(); initializeGuestAccountEngine();
         }
 
-        // 4. CATEGORY MAPPING CONTROLLER WITH EXTENDED TAGS (Red Circle Area Update)
-        const categories = ["🔥 All Universe", "⚔️ Action Fantasy", "💖 Romance Core", "🎙️ Audio Series", "🎨 Manga Graphic", "🦾 System Cultivation", "👻 Horror Arc", "🧩 Sci-Fi Matrix"];
-        
-        function loadCategoryRowMatrix() {
-            const row = document.getElementById('categoryRow');
-            categories.forEach((cat, index) => {
-                const activeClass = index === 0 ? "bg-yellow-500 text-gray-900 font-black" : "bg-gray-900 text-gray-400 hover:text-white border border-gray-800/60";
-                row.innerHTML += `
-                    <button onclick="filterCatalogByTag(this, '${cat}')" class="cat-btn ${activeClass} px-5 py-2 rounded-full text-xs font-bold whitespace-nowrap tracking-wide active:scale-95 transition duration-300">
-                        ${cat}
-                    </button>
-                `;
+        async function initializeGuestAccountEngine() {
+            let uniqueGuestId = localStorage.getItem('visualixy_guest_id');
+            if(!uniqueGuestId) {
+                uniqueGuestId = 'v_guest_' + Math.random().toString(36).substring(2, 11);
+                localStorage.setItem('visualixy_guest_id', uniqueGuestId);
+                await supabase.from('platform_users').insert([{ guest_id: uniqueGuestId }]);
+                document.getElementById('langPrefGate').classList.remove('hidden'); document.getElementById('langPrefGate').classList.add('flex');
+            } else {
+                const { data } = await supabase.from('platform_users').select('preferred_lang').eq('guest_id', uniqueGuestId).single();
+                window.activeLanguageToken = data ? data.preferred_lang : 'en';
+                document.getElementById('userIdDisplay').innerText = `GUEST ID: ${uniqueGuestId} [${window.activeLanguageToken.toUpperCase()}]`;
+                launchAdAndDataPipelineModules();
+            }
+        }
+
+        function saveLangPreference(langCode) {
+            const guestId = localStorage.getItem('visualixy_guest_id');
+            supabase.from('platform_users').update({ preferred_lang: langCode }).eq('guest_id', guestId).then(() => {
+                window.activeLanguageToken = langCode; document.getElementById('langPrefGate').remove();
+                document.getElementById('userIdDisplay').innerText = `GUEST ID: ${guestId} [${langCode.toUpperCase()}]`;
+                launchAdAndDataPipelineModules();
             });
         }
 
-        // 5. AUTO FILTER SYSTEM ARCHITECTURE WITH BACKUP LOGIC
-        async function initializePlatformFlows() {
-            runSliderEngine();
-            loadCategoryRowMatrix();
-            filterCatalogByTag(null, "🔥 All Universe");
+        const programmaticAdCampaigns = [
+            "🔥 Stream Premium Light Novels completely free on ad configurations!",
+            "🎙️ Pocket FM Model Audio Series Engine running off spatial node networks.",
+            "🎮 Download Visualixy Android native core app package module now.",
+            "🎧 Use high fidelity earphones for virtualized AI story narrations."
+        ];
+        function launchAdAndDataPipelineModules() {
+            let rotationIdx = 0; setInterval(() => {
+                document.getElementById('adTitle').innerText = programmaticAdCampaigns[rotationIdx];
+                rotationIdx = (rotationIdx + 1) % programmaticAdCampaigns.length;
+            }, 5000); // 12 ads per minute loop window
+            buildCategoriesFilterRow(); loadStoriesCatalogStream("🔥 All Universe");
         }
 
-        async function filterCatalogByTag(btnElement, targetTag) {
-            if(btnElement) {
-                document.querySelectorAll('.cat-btn').forEach(b => {
-                    b.className = "cat-btn bg-gray-900 text-gray-400 hover:text-white border border-gray-800/60 px-5 py-2 rounded-full text-xs font-bold whitespace-nowrap tracking-wide active:scale-95 transition duration-300";
-                });
-                btnElement.className = "cat-btn bg-yellow-500 text-gray-900 font-black px-5 py-2 rounded-full text-xs font-bold whitespace-nowrap tracking-wide active:scale-95 transition duration-300";
-            }
+        const systemGenresList = ["🔥 All Universe", "⚔️ Action Fantasy", "💖 Romance Core", "🎙️ Audio Series", "🎨 Manga Graphic", "🦾 System Cultivation"];
+        function buildCategoriesFilterRow() {
+            const row = document.getElementById('categoryRow');
+            systemGenresList.forEach((genre, idx) => {
+                const stylingClass = idx === 0 ? "bg-yellow-500 text-slate-950 font-black shadow-lg shadow-yellow-500/10" : "bg-slate-900 text-slate-400 border border-slate-800/80 hover:text-white";
+                row.innerHTML += `<button onclick="handleGenreSelection(this, '${genre}')" class="genre-btn ${stylingClass} px-5 py-2 rounded-full text-xs font-bold whitespace-nowrap active:scale-95 transition duration-300">${genre}</button>`;
+            });
+        }
 
-            const grid = document.getElementById('contentGrid');
-            grid.innerHTML = '<div class="text-xs text-gray-500 p-2 tracking-widest animate-pulse">Scanning Cloud Data Nodes...</div>';
+        async function handleGenreSelection(btn, genreString) {
+            document.querySelectorAll('.genre-btn').forEach(b => b.className = "genre-btn bg-slate-900 text-slate-400 border border-slate-800/80 hover:text-white px-5 py-2 rounded-full text-xs font-bold whitespace-nowrap active:scale-95 transition duration-300");
+            btn.className = "genre-btn bg-yellow-500 text-slate-950 font-black shadow-lg shadow-yellow-500/10 px-5 py-2 rounded-full text-xs font-bold whitespace-nowrap active:scale-95 transition duration-300";
+            loadStoriesCatalogStream(genreString);
+        }
 
+        async function loadStoriesCatalogStream(genre) {
+            const grid = document.getElementById('contentGrid'); grid.innerHTML = '<div class="text-xs text-slate-500 tracking-widest p-2 animate-pulse">Syncing nodes...</div>';
             try {
-                // Strip emoji for database string sorting matching check
-                const pureTag = targetTag.replace(/[\uE000-\uF8FF]|\uD83C[\uDC00-\uDFFF]|\uD83D[\uDC00-\uDFFF]|[\u2011-\u26FF]|\uD83E[\uDC00-\uDFFF]/g, "").trim();
-                
+                const parsedGenre = genre.replace(/[\uE000-\uF8FF]|\uD83C[\uDC00-\uDFFF]|\uD83D[\uDC00-\uDFFF]|[\u2011-\u26FF]|\uD83E[\uDC00-\uDFFF]/g, "").trim();
                 let query = supabase.from('novels').select('*');
-                if(pureTag !== "All Universe") {
-                    query = query.ilike('genre', `%${pureTag}%`);
-                }
-                
-                const { data: novels, error } = await query;
-                if(error) throw error;
-
-                if(!novels || novels.length === 0) {
-                    // FALLBACK BLOCK INTERFACE: If target category is empty, render best trending alternatives automatically
-                    const { data: fallbackNovels } = await supabase.from('novels').select('*').limit(2);
-                    renderGridCards(fallbackNovels, true, targetTag);
-                } else {
-                    renderGridCards(novels, false);
-                }
-
-            } catch (err) {
-                grid.innerHTML = `<div class="text-xs text-red-500 p-2">Data pipeline sync issue: ${err.message}</div>`;
-            }
+                if(parsedGenre !== "All Universe") query = query.ilike('genre', `%${parsedGenre}%`);
+                const { data: novels } = await query;
+                populateGridCards(novels);
+            } catch (err) { grid.innerHTML = `<div class="text-xs text-red-500 p-2">Connection Halt.</div>`; }
         }
 
-        function renderGridCards(novelsArray, isFallbackActive, originalTag = "") {
-            const grid = document.getElementById('contentGrid');
-            grid.innerHTML = "";
-
-            if(isFallbackActive) {
+        function populateGridCards(arr) {
+            const grid = document.getElementById('contentGrid'); grid.innerHTML = "";
+            if(!arr || arr.length === 0) {
+                grid.innerHTML = `<div class="text-xs text-slate-600 p-2">No active items inside cloud node cluster.</div>`; return;
+            }
+            arr.forEach(novel => {
                 grid.innerHTML += `
-                    <div class="col-span-2 sm:col-span-3 md:col-span-5 bg-orange-950/20 border border-orange-900/30 p-3 rounded-xl text-xs text-orange-400 mb-2">
-                        💡 No explicit items found under <strong>"${originalTag}"</strong>. System automated routing presents our top platform recommendations below!
+                    <div class="bg-slate-900 border border-slate-800/80 rounded-2xl p-4 flex flex-col sm:flex-row gap-4 items-center justify-between shadow-xl">
+                        <div class="flex items-center gap-3 w-full sm:w-auto">
+                            <img src="${novel.cover_url}" class="w-12 h-16 object-cover rounded-xl border border-slate-800">
+                            <div>
+                                <h4 class="text-xs md:text-sm font-black text-slate-200">${novel.title}</h4>
+                                <p class="text-[10px] text-slate-500 mt-0.5">${novel.genre}</p>
+                            </div>
+                        </div>
+                        <div class="flex gap-2 w-full sm:w-auto mt-2 sm:mt-0">
+                            <a href="novel.html?id=${novel.id}" class="flex-1 text-center bg-yellow-500 text-slate-950 font-black px-4 py-2 rounded-xl text-[11px] uppercase tracking-wider transition">Open Feed</a>
+                        </div>
                     </div>
-                `;
-            }
-
-            if(!novelsArray || novelsArray.length === 0) {
-                grid.innerHTML += `<div class="bg-gray-900 rounded-xl border border-gray-800 p-4 text-xs font-bold text-gray-500">More Universe Blocks Compiling Soon...</div>`;
-                return;
-            }
-
-            novelsArray.forEach(novel => {
-                grid.innerHTML += `
-                    <a href="novel.html?id=${novel.id}" class="bg-gray-900 rounded-xl overflow-hidden border border-gray-800 hover:border-yellow-500/40 transition duration-500 block group shadow-md animate__animated animate__fadeIn">
-                        <div class="relative overflow-hidden aspect-[2/3]">
-                            <img src="${novel.cover_url}" class="w-full h-full object-cover group-hover:scale-105 transition duration-700">
-                            <span class="absolute bottom-2 left-2 bg-black/80 backdrop-blur-sm text-[9px] text-yellow-400 font-bold px-2 py-0.5 rounded flex items-center gap-1">
-                                <i class="fa fa-headphones text-[8px]"></i> Play Valid
-                            </span>
-                        </div>
-                        <div class="p-3">
-                            <h4 class="font-bold text-xs md:text-sm truncate text-gray-200 group-hover:text-yellow-400 transition">${novel.title}</h4>
-                            <p class="text-[10px] text-gray-500 mt-0.5 truncate">${novel.genre}</p>
-                        </div>
-                    </a>
                 `;
             });
         }

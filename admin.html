@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Visualixy HQ - Enterprise Studio</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body class="bg-slate-950 text-slate-100 font-sans p-4 md:p-8">
+
+    <div id="authGate" class="fixed inset-0 bg-slate-950 z-[9999] flex items-center justify-center p-4">
+        <div class="bg-slate-900 border border-slate-800 p-8 rounded-3xl w-full max-w-sm text-center">
+            <h2 class="text-2xl font-black text-transparent bg-clip-text bg-gradient-to-r from-yellow-400 to-orange-500">ADMIN CONTROL</h2>
+            <div class="space-y-4 mt-6 text-left">
+                <input type="email" id="authEmail" placeholder="visulixy@panel@gmail.com" class="w-full bg-slate-950 border border-slate-800 rounded-xl px-4 py-3 text-xs focus:outline-none focus:border-yellow-500 text-white">
+                <input type="password" id="authPass" placeholder="••••••••" class="w-full bg-slate-950 border border-slate-800 rounded-xl px-4 py-3 text-xs focus:outline-none focus:border-yellow-500 text-white">
+                <button onclick="verifyAdmin()" class="w-full bg-gradient-to-r from-yellow-500 to-orange-500 text-gray-900 font-black py-3 rounded-xl text-xs uppercase tracking-wider">Unlock Studio</button>
+            </div>
+        </div>
+    </div>
+
+    <div id="dashboard" class="hidden max-w-5xl mx-auto">
+        <header class="flex justify-between items-center border-b border-slate-800 pb-4 mb-8">
+            <div>
+                <h1 class="text-2xl font-black text-yellow-500">VISUALIXY HQ</h1>
+                <p class="text-xs text-slate-400">AI Free-Tier Draft Review & Deployment Portal</p>
+            </div>
+            <button onclick="triggerFreeAICreation()" class="bg-purple-600 hover:bg-purple-500 px-4 py-2 rounded-xl text-xs font-bold flex items-center gap-1.5 transition">
+                <i class="fa fa-robot"></i> Draft Next AI Novel (Free Tier)
+            </button>
+        </header>
+
+        <div class="space-y-6">
+            <h3 class="text-sm font-bold uppercase tracking-wider text-slate-400 border-l-2 border-yellow-500 pl-2">Pending Draft Reviews</h3>
+            <div id="pendingContainer" class="grid grid-cols-1 gap-4">
+                <div class="text-xs text-slate-500 italic">No drafts pending review. Trigger AI script writer node above.</div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <script src="config.js"></script>
+    <script>
+        function verifyAdmin() {
+            if(document.getElementById('authEmail').value === 'visulixy@panel@gmail.com' && document.getElementById('authPass').value === 'admin@panel@123') {
+                document.getElementById('authGate').classList.add('hidden');
+                document.getElementById('dashboard').classList.remove('hidden');
+                loadPendingDrafts();
+            } else { alert("Access Blocked! Galat details hain, bro."); }
+        }
+
+        async function triggerFreeAICreation() {
+            alert("🔮 AI is creating the storyline and cross-translating to all viral languages (Hindi included) within Free API bounds...");
+            const uniqueId = 'novel-' + Date.now();
+            const mockPrompt = "Stunning anime cover art, dark fantasy aesthetic, hero with neon gold energy lines aura, highly attractive professional gaming vector art character, deep studio background.";
+            
+            const draftPayload = {
+                id: uniqueId, title: "Revenge of the Cosmic Monarch", genre: "Action Fantasy",
+                synopsis: "Betrayed by his own clan, Ryan wakes up with an omnipotent AI cultivation path loop...",
+                avatar_prompt: mockPrompt,
+                text_original: "The void was quiet until the galactic system core fractured into infinity blocks...",
+                text_hindi: "शून्य तब तक शांत था जब हर आकाशगंगा का कोर अनंत ब्लॉकों में टूट नहीं गया..."
+            };
+            await supabase.from('pending_novels').insert([draftPayload]);
+            loadPendingDrafts();
+        }
+
+        async function loadPendingDrafts() {
+            const { data: drafts } = await supabase.from('pending_novels').select('*');
+            const container = document.getElementById('pendingContainer'); container.innerHTML = "";
+            if(!drafts || drafts.length === 0) {
+                container.innerHTML = `<div class="text-xs text-slate-500 italic">No drafts pending review. Trigger AI script writer node above.</div>`; return;
+            }
+            drafts.forEach(draft => {
+                container.innerHTML += `
+                    <div class="bg-slate-900 border border-slate-800 p-5 rounded-2xl space-y-4">
+                        <div>
+                            <h4 class="text-md font-black text-yellow-500">${draft.title} (${draft.genre})</h4>
+                            <p class="text-xs text-slate-400 mt-1">${draft.synopsis}</p>
+                        </div>
+                        <div class="bg-slate-950 p-3 rounded-xl border border-slate-800 text-xs">
+                            <span class="text-purple-400 font-bold flex items-center gap-1 mb-1"><i class="fa fa-wand-magic-sparkles"></i> AI Generated Avatar Prompt:</span>
+                            <p class="text-slate-300 italic select-all cursor-pointer font-mono p-2 bg-slate-900 rounded border border-slate-800/60" onclick="navigator.clipboard.writeText(this.innerText); alert('Prompt Copied!');">${draft.avatar_prompt}</p>
+                        </div>
+                        <div class="grid grid-cols-1 sm:grid-cols-3 gap-3 pt-2">
+                            <div>
+                                <label class="block text-[10px] uppercase font-bold text-slate-500 mb-1">Upload Poster URL</label>
+                                <input id="url-${draft.id}" type="url" placeholder="Paste generated photo asset URL" class="w-full bg-slate-950 border border-slate-800 rounded-xl p-2.5 text-xs text-white focus:outline-none">
+                            </div>
+                            <div class="flex items-end gap-2 sm:col-span-2">
+                                <button onclick="approveDraft('${draft.id}')" class="flex-1 bg-green-600 text-white font-bold py-2.5 rounded-xl text-xs uppercase tracking-wider transition">Approve & Publish</button>
+                                <button onclick="rejectDraft('${draft.id}')" class="bg-red-950 text-red-400 border border-red-900/40 font-bold py-2.5 px-4 rounded-xl text-xs uppercase tracking-wider transition">Reject</button>
+                            </div>
+                        </div>
+                    </div>
+                `;
+            });
+        }
+
+        async function approveDraft(id) {
+            const imgUrl = document.getElementById(`url-${id}`).value.trim();
+            if(!imgUrl) { alert("Pehle generated AI image ka URL link dalo!"); return; }
+            const { data: draft } = await supabase.from('pending_novels').select('*').eq('id', id).single();
+            
+            await supabase.from('novels').insert([{ id: draft.id, title: draft.title, genre: draft.genre, cover_url: imgUrl, synopsis: draft.synopsis }]);
+            await supabase.from('episodes').insert([{ novel_id: draft.id, episode_number: 1, season_number: 1, title: "Chapter 1: Genesis", status: "free", text_original: draft.text_original, text_hindi: draft.text_hindi }]);
+            await supabase.from('pending_novels').delete().eq('id', id);
+            alert("🚀 Success! Published live with dynamic language nodes mappings."); loadPendingDrafts();
+        }
+
+        async function rejectDraft(id) {
+            await supabase.from('pending_novels').delete().eq('id', id); alert("Draft Deleted."); loadPendingDrafts();
+        }
+    </script>
+</body>
+</html>

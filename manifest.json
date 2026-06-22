@@ -1,11 +1,16 @@
-// 1. Supabase credentials configuration matrix
-// Bro, '199l_URL' ko hata kar wahan General settings se mili URL dalna.
-// Aur '199l_KEY' ko hata kar wahan oopar waali Publishable Key paste kar dena.
-
-const supabaseUrl = 'https://amzrkvnthcheuyifspap.supabase.co'; 
-const supabaseKey = 'sb_publishable_ksXV7AZ3v_7q02QnGA4_9g_6x5lngVF';
-
-// 2. Initializing the Supabase Engine globally
-const supabase = window.supabase.createClient(supabaseUrl, supabaseKey);
-
-console.log("⚡ VISUALIXY Database Core Engine Initialized!");
+{
+  "name": "Visualixy Audio Novels",
+  "short_name": "Visualixy",
+  "start_url": "index.html",
+  "display": "standalone",
+  "background_color": "#020617",
+  "theme_color": "#0f172a",
+  "orientation": "portrait",
+  "icons": [
+    {
+      "src": "https://cdn-icons-png.flaticon.com/512/3504/3504190.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}
