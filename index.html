@@ -2,77 +2,130 @@
 <html lang="en">
 <head>
   <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
   <meta name="google-site-verification" content="jMp7icjOP34wszoRC-Gpy94eoqTmJZO2_NIcBWcvBmA" />
   <meta name="theme-color" content="#2563eb">
-  <meta name="description" id="meta-description" content="Visualixy - Client-side PDF & Image suite for Indian exam candidates. Zero server uploads, offline-capable, optimized for SSC/UPSC/Banking photos and signatures.">
-  <meta name="keywords" content="SSC photo resizer under 50kb, compress signature to 20kb online, PDF merge split compress India, offline PDF tools">
-  <meta property="og:title" id="og-title" content="Visualixy - Govt Exam PDF & Image Suite">
-  <meta property="og:description" id="og-desc" content="Client-side PDF & Image utilities for Indian students: photo resizer, signature compressor, merge/split PDF, convert images to PDF, offline background removal.">
+  <meta name="description" content="Visualixy is a client-side PDF and image optimization suite for SSC, UPSC and banking exam candidates. No uploads, offline processing, and Indian exam photo compressors under 50KB.">
+  <meta name="keywords" content="SSC photo resizer under 50kb, compress signature 20kb, PDF merge split compress, offline PDF tools India, exam photo resize">
+  <meta property="og:title" content="Visualixy - Govt Exam PDF & Image Suite">
+  <meta property="og:description" content="Visualixy lets Indian exam candidates resize photos, compress signatures, merge/split PDFs, convert images to PDF and remove backgrounds without uploading files.">
   <meta property="og:url" content="https://visualixy.in/">
   <meta property="og:type" content="website">
   <meta property="og:image" content="assets/icon-512.png">
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="Visualixy - Govt Exam PDF & Image Suite">
-  <meta name="twitter:description" content="Zero-server upload PDF & Image tools for SSC/UPSC/Banking exam prep. Compress photos under 50KB, crop signatures under 20KB, offline capable.">
-  <script src="https://quge5.com/88/tag.min.js" data-zone="267129" async data-cfasync="false"></script>
-  <title id="page-title">Visualixy - Govt Exam PDF & Image Suite</title>
+  <meta name="twitter:description" content="Offline, browser-based tools for exam photo compression and PDF processing. Zero server uploads and fast downloads.">
+  <title>Visualixy - Govt Exam PDF & Image Suite</title>
   <link rel="manifest" href="manifest.json">
   <link rel="icon" href="assets/icon-192.png" type="image/png">
   <link rel="apple-touch-icon" href="assets/icon-192.png">
-  <script type="application/ld+json" id="ld-schema">{"@context":"https://schema.org","@type":"WebApplication","name":"Visualixy - Govt Exam PDF & Image Suite","url":"https://visualixy.in/","applicationCategory":"DeveloperApplication","operatingSystem":"Windows, macOS, Linux, Android, iOS","description":"Client-side PDF & Image utilities optimized for Indian government exam candidates and cyber cafe operators.","offers":{"@type":"Offer","price":"0","priceCurrency":"INR"}}</script>
-  <script type="application/ld+json" id="ld-faq">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Is Visualixy offline?","acceptedAnswer":{"@type":"Answer","text":"Yes. Visualixy runs fully in the browser and does not upload your files to any server."}},{"@type":"Question","name":"Can I use Visualixy for SSC and UPSC photo compression?","acceptedAnswer":{"@type":"Answer","text":"Yes. Use the SSC/UPSC photo resizer to create compliant images under 50KB instantly."}}]}</script>
-
+  <link rel="sitemap" href="/sitemap.xml" type="application/xml">
+  <script src="https://quge5.com/88/tag.min.js" data-zone="267129" async data-cfasync="false"></script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebApplication",
+    "name": "Visualixy",
+    "url": "https://visualixy.in/",
+    "applicationCategory": "DeveloperApplication",
+    "operatingSystem": "Windows, macOS, Linux, Android, iOS",
+    "description": "Client-side PDF and image utilities optimized for Indian government exam candidates.",
+    "offers": { "@type": "Offer", "price": "0", "priceCurrency": "INR" }
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "Is Visualixy safe and offline?",
+        "acceptedAnswer": { "@type": "Answer", "text": "Yes. Visualixy processes files entirely in your browser and does not upload documents to any server." }
+      },
+      {
+        "@type": "Question",
+        "name": "Can I compress SSC and UPSC photos under 50KB?",
+        "acceptedAnswer": { "@type": "Answer", "text": "Yes. The SSC/UPSC Photo Resizer is designed to preserve aspect ratio and compress images to exam size limits." }
+      },
+      {
+        "@type": "Question",
+        "name": "Does Visualixy support PDF merge, split and encryption?",
+        "acceptedAnswer": { "@type": "Answer", "text": "Yes. Visualixy supports PDF merge, split, size reduction, lock/unlock, image conversion and extraction locally in the browser." }
+      }
+    ]
+  }
+  </script>
   <script src="https://cdn.tailwindcss.com"></script>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
   <script src="https://unpkg.com/pdf-lib/dist/pdf-lib.min.js"></script>
   <script src="https://unpkg.com/pdfjs-dist@3.9.179/build/pdf.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/compressorjs/1.1.1/compressor.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
-
   <style>
     :root { color-scheme: dark; }
-    html, body { min-height: 100%; margin: 0; padding: 0; font-family: Inter, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; background: radial-gradient(circle at top left, rgba(37, 99, 235, 0.18), transparent 40%), linear-gradient(180deg, #020617, #0f172a); color: #e2e8f0; }
+    html, body { min-height: 100%; margin: 0; padding: 0; font-family: Inter, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; background: radial-gradient(circle at top left, rgba(56, 189, 248, 0.2), transparent 35%), linear-gradient(180deg, #020617, #0f172a); color: #e2e8f0; }
     body { overflow-x: hidden; }
-    .glass { background: rgba(15, 23, 42, 0.88); border: 1px solid rgba(148, 163, 184, 0.14); backdrop-filter: blur(20px); box-shadow: 0 24px 70px rgba(15, 23, 42, 0.25); }
-    .button-glow { background: linear-gradient(90deg, #2563eb, #7c3aed); color: white; transition: transform .2s ease, box-shadow .2s ease; }
-    .button-glow:hover { transform: translateY(-2px); box-shadow: 0 22px 60px rgba(37, 99, 235, 0.32); }
-    .card-hover { transition: transform .2s ease, box-shadow .2s ease; }
-    .card-hover:hover { transform: translateY(-6px); box-shadow: 0 24px 60px rgba(15, 23, 42, 0.24); }
-    .step-pill { display: inline-flex; align-items: center; justify-content: center; width: 36px; height: 36px; border-radius: 999px; border: 1px solid rgba(148, 163, 184, 0.22); color: #cbd5e1; background: rgba(15, 23, 42, 0.75); cursor: default; }
-    .step-pill.active { background: rgba(124, 58, 237, 0.16); color: #fff; border-color: #7c3aed; }
-    .banner-slot, .ad-slot { min-height: 120px; border-radius: 28px; background: rgba(255, 255, 255, 0.05); border: 1px solid rgba(148, 163, 184, 0.16); display: flex; align-items: center; justify-content: center; color: #cbd5e1; overflow: hidden; }
-    .dropzone { border: 2px dashed rgba(148, 163, 184, 0.45); border-radius: 24px; padding: 1.5rem; min-height: 240px; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 0.75rem; text-align: center; color: #cbd5e1; background: rgba(148, 163, 184, 0.02); cursor: pointer; }
-    .dropzone.active { border-color: #7c3aed; background: rgba(124, 58, 237, 0.1); }
-    .preview-thumb { width: 100%; max-height: 180px; object-fit: contain; border-radius: 20px; border: 1px solid rgba(148, 163, 184, 0.16); }
+    * { box-sizing: border-box; }
+    .glass { background: rgba(15, 23, 42, 0.90); border: 1px solid rgba(148, 163, 184, 0.14); backdrop-filter: blur(24px); box-shadow: 0 25px 75px rgba(15, 23, 42, 0.28); }
+    .button-glow { background: linear-gradient(90deg, #2563eb, #8b5cf6); color: white; transition: transform .25s ease, box-shadow .25s ease; }
+    .button-glow:hover { transform: translateY(-2px); box-shadow: 0 26px 50px rgba(37, 99, 235, 0.26); }
+    .card-hover { transition: transform .3s ease, box-shadow .3s ease; }
+    .card-hover:hover { transform: translateY(-8px); box-shadow: 0 28px 80px rgba(56, 189, 248, 0.12); }
+    .step-pill { display: inline-flex; align-items: center; justify-content: center; width: 38px; height: 38px; border-radius: 999px; border: 1px solid rgba(148, 163, 184, 0.22); color: #cbd5e1; background: rgba(15, 23, 42, 0.75); transition: transform .25s ease; }
+    .step-pill.active { background: rgba(59, 130, 246, 0.18); color: #fff; border-color: #60a5fa; transform: scale(1.05); }
+    .banner-slot, .ad-slot { min-height: 132px; width: 100%; border-radius: 28px; background: rgba(255, 255, 255, 0.04); border: 1px solid rgba(148, 163, 184, 0.14); position: relative; overflow: hidden; }
+    .banner-slot::after, .ad-slot::after { content: ''; position: absolute; inset: 0; background: linear-gradient(135deg, rgba(255,255,255,0.05), transparent 50%); opacity: 0.8; pointer-events: none; }
+    .dropzone { border: 2px dashed rgba(148, 163, 184, 0.5); border-radius: 28px; padding: 1.75rem; min-height: 250px; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 1rem; text-align: center; color: #cbd5e1; background: rgba(148, 163, 184, 0.02); cursor: pointer; transition: border-color .25s ease, background .25s ease, transform .25s ease; }
+    .dropzone:hover { border-color: #60a5fa; background: rgba(96, 165, 250, 0.08); transform: translateY(-2px); }
+    .dropzone.active { border-color: #a855f7; background: rgba(168, 85, 247, 0.1); }
+    .preview-thumb { width: 100%; max-height: 200px; object-fit: contain; border-radius: 20px; border: 1px solid rgba(148, 163, 184, 0.16); background: #0f172a; }
     .hidden { display: none !important; }
-    .toast { position: fixed; left: 50%; bottom: 24px; transform: translateX(-50%); background: rgba(15, 23, 42, 0.95); color: white; padding: 14px 18px; border-radius: 999px; box-shadow: 0 18px 58px rgba(15, 23, 42, 0.35); z-index: 90; }
-    .modal-backdrop { background: rgba(2, 6, 23, 0.92); backdrop-filter: blur(14px); }
-    .progress-ring { width: 120px; height: 120px; }
+    .toast { position: fixed; left: 50%; bottom: 24px; transform: translateX(-50%); background: rgba(15, 23, 42, 0.98); color: white; padding: 14px 18px; border-radius: 999px; box-shadow: 0 18px 58px rgba(15, 23, 42, 0.35); z-index: 90; opacity: 0; transition: opacity .25s ease; }
+    .toast.visible { opacity: 1; }
+    .modal-backdrop { background: rgba(2, 6, 23, 0.92); backdrop-filter: blur(18px); }
+    .animate-fade-in { animation: fadeIn 0.45s ease forwards; }
+    .animate-slide-up { animation: slideUp 0.45s ease forwards; }
+    .menu-open .language-menu { opacity: 1; pointer-events: auto; transform: translateY(0); }
+    @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+    @keyframes slideUp { from { opacity: 0; transform: translateY(12px); } to { opacity: 1; transform: translateY(0); } }
+    .language-trigger { position: relative; }
+    .language-menu { position: absolute; right: 0; top: 110%; z-index: 50; min-width: 220px; border-radius: 24px; border: 1px solid rgba(148, 163, 184, 0.16); background: rgba(15, 23, 42, 0.96); box-shadow: 0 28px 80px rgba(15, 23, 42, 0.28); backdrop-filter: blur(20px); padding: 0.5rem; opacity: 0; pointer-events: none; transform: translateY(12px); transition: opacity .25s ease, transform .25s ease; }
+    .language-item { display: flex; align-items: center; gap: 0.75rem; width: 100%; padding: 0.9rem 1rem; border-radius: 18px; color: #e2e8f0; transition: background .2s ease, transform .2s ease; }
+    .language-item:hover { background: rgba(96, 165, 250, 0.12); transform: translateX(4px); }
+    .language-item span:first-child { font-size: 1.15rem; }
+    .progress-ring { width: 130px; height: 130px; margin: 0 auto; }
     .progress-ring circle { fill: transparent; stroke-width: 10; stroke-linecap: round; transform: rotate(-90deg); transform-origin: center; }
-    .progress-ring__circle { stroke: #7c3aed; stroke-dasharray: 340; stroke-dashoffset: 340; transition: stroke-dashoffset 0.3s ease; }
+    .progress-ring__circle { stroke: #60a5fa; stroke-dasharray: 339.292; stroke-dashoffset: 339.292; transition: stroke-dashoffset 1s linear; }
     .progress-ring__bg { stroke: rgba(148, 163, 184, 0.18); }
+    .skeleton { position: relative; overflow: hidden; background: rgba(148, 163, 184, 0.08); }
+    .skeleton::after { content: ''; position: absolute; inset: 0; background: linear-gradient(90deg, transparent, rgba(255,255,255,0.12), transparent); animation: shimmer 1.7s infinite; }
+    @keyframes shimmer { 0% { transform: translateX(-100%); } 100% { transform: translateX(100%); } }
+    button, input, select, textarea { font: inherit; }
   </style>
 </head>
 <body>
-  <header class="sticky top-0 z-40 backdrop-blur-xl bg-slate-950/85 border-b border-slate-800">
+  <header class="sticky top-0 z-50 backdrop-blur-xl bg-slate-950/90 border-b border-slate-800">
     <div class="max-w-7xl mx-auto px-5 py-4 flex flex-col gap-4 lg:flex-row lg:items-center lg:justify-between">
       <div class="flex items-center gap-4">
-        <div class="w-12 h-12 rounded-3xl bg-gradient-to-br from-blue-600 to-purple-600 flex items-center justify-center text-white shadow-xl"><i class="fa-solid fa-v"></i></div>
+        <div class="w-12 h-12 rounded-3xl bg-gradient-to-br from-sky-500 to-violet-600 flex items-center justify-center text-white shadow-xl"><i class="fa-solid fa-v"></i></div>
         <div>
-          <div class="text-xl font-semibold tracking-tight">Visualixy</div>
-          <div class="text-sm text-slate-400">Client-side PDF & Image utility suite</div>
+          <p class="text-base text-slate-400">Visualixy</p>
+          <h1 class="text-2xl font-semibold tracking-tight text-white">PDF & Image Utility Suite</h1>
         </div>
       </div>
-      <div class="flex flex-wrap gap-3 items-center">
-        <div class="badge"><i class="fa-solid fa-sack-dollar"></i> Monetag Active</div>
-        <select id="langSelect" class="border border-slate-700 bg-slate-950 text-slate-100 rounded-full px-3 py-2 text-sm">
-          <option value="en">EN</option>
-          <option value="hi">HI</option>
-          <option value="bn">BN</option>
-          <option value="as">AS</option>
-          <option value="ta">TA</option>
-        </select>
+      <div class="flex flex-wrap items-center gap-3">
+        <div class="badge inline-flex items-center gap-2 rounded-full bg-slate-800/80 px-3 py-2 text-sm text-slate-200"><i class="fa-solid fa-sack-dollar"></i> Monetag Active</div>
+        <div class="relative language-trigger" id="languageTrigger">
+          <button id="languageButton" class="rounded-full border border-slate-700 bg-slate-950/90 px-4 py-2 text-sm text-slate-100 inline-flex items-center gap-2 hover:border-sky-400 transition-all duration-300"><span id="languageLabel">English</span><i class="fa-solid fa-chevron-down text-slate-400"></i></button>
+          <div class="language-menu hidden" id="languageMenu">
+            <button class="language-item" data-lang="en"><span>🇬🇧</span><span>English</span></button>
+            <button class="language-item" data-lang="hi"><span>🇮🇳</span><span>हिन्दी</span></button>
+            <button class="language-item" data-lang="bn"><span>🇧🇩</span><span>বাংলা</span></button>
+            <button class="language-item" data-lang="as"><span>🇮🇳</span><span>অসমীয়া</span></button>
+            <button class="language-item" data-lang="ta"><span>🇹🇳</span><span>தமிழ்</span></button>
+          </div>
+        </div>
         <button id="installButton" class="button-glow rounded-full px-4 py-2 text-sm">Install App</button>
       </div>
     </div>
@@ -80,188 +133,192 @@
 
   <main class="max-w-7xl mx-auto px-5 py-10 space-y-8">
     <section class="grid gap-6 lg:grid-cols-[1.6fr_1fr]">
-      <div class="glass rounded-[32px] p-8">
-        <span class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-blue-500/15 text-blue-100 text-xs font-semibold">No uploads • Zero server transfer • Full privacy</span>
-        <h1 class="mt-6 text-4xl font-extrabold leading-tight text-white">Visualixy — High-converting exam utility suite</h1>
-        <p class="mt-4 max-w-2xl text-slate-300">Compress photos under 50KB, crop signatures under 20KB, merge and split PDFs, convert images, encrypt documents, extract pages and remove backgrounds completely client-side.</p>
+      <div class="glass rounded-[32px] p-8 animate-fade-in">
+        <span class="inline-flex items-center gap-2 rounded-full bg-sky-500/10 px-3 py-1 text-xs font-semibold uppercase tracking-[0.16em] text-sky-200">No upload • Offline • Exam-ready</span>
+        <h2 class="mt-6 text-4xl font-extrabold leading-tight text-white">Visualixy for SSC, UPSC & Banking Exam Photos</h2>
+        <p class="mt-4 max-w-2xl text-slate-300">A high-converting browser-first utility hub for image and PDF processing. Compress photos under 50KB, crop signatures under 20KB, merge and split PDFs, convert images to PDF, and remove backgrounds — all without server upload.</p>
         <div class="mt-6 flex flex-wrap gap-3">
           <button id="openTools" class="button-glow rounded-full px-5 py-3">Launch Tools</button>
-          <button id="openFaq" class="rounded-full border border-slate-700 px-5 py-3 text-slate-100">See FAQ</button>
+          <button id="openFaq" class="rounded-full border border-slate-700 px-5 py-3 text-slate-100 hover:border-sky-400 transition-all duration-300">View FAQ</button>
         </div>
       </div>
-      <div class="glass rounded-[32px] p-8 flex flex-col gap-5">
-        <div class="badge text-sm text-slate-100">High CPM Ad Slot</div>
-        <div id="topAd" class="ad-slot"></div>
-        <div id="sideAd" class="ad-slot"></div>
-      </div>
+      <aside class="glass rounded-[32px] p-8 space-y-5 animate-slide-up">
+        <div class="rounded-[28px] border border-slate-800 bg-slate-950/90 p-5 text-slate-300">
+          <p class="text-sm uppercase tracking-[0.18em] text-slate-500">Monetag High-Impact Ads</p>
+          <p class="mt-3 text-white text-lg font-semibold">Responsive banner inventory</p>
+        </div>
+        <div class="banner-slot skeleton" id="topAd"></div>
+        <div class="banner-slot skeleton" id="sideAd"></div>
+      </aside>
     </section>
 
     <section id="toolsGrid" class="grid gap-5 sm:grid-cols-2 xl:grid-cols-3"></section>
 
-    <div id="middleAd" class="banner-slot"></div>
+    <div class="banner-slot skeleton" id="middleAd"></div>
 
-    <section id="faq" class="glass rounded-[32px] p-8">
-      <h2 class="text-2xl font-semibold">Frequently Asked Questions</h2>
+    <section id="faq" class="glass rounded-[32px] p-8 animate-fade-in">
+      <h3 class="text-2xl font-semibold text-white">Frequently Asked Questions</h3>
       <div class="mt-6 space-y-4">
-        <details class="border border-slate-800 rounded-3xl p-4"><summary class="cursor-pointer font-semibold">How does Visualixy protect my privacy?</summary><p class="mt-3 text-slate-400">All file processing happens in your browser. Files never leave your device unless you explicitly download them.</p></details>
-        <details class="border border-slate-800 rounded-3xl p-4"><summary class="cursor-pointer font-semibold">Do I need an account?</summary><p class="mt-3 text-slate-400">No account is required. Use Visualixy instantly as a client-side PWA utility.</p></details>
+        <details class="border border-slate-800 rounded-3xl p-4 open:bg-slate-900/80"><summary class="cursor-pointer font-semibold text-white">Is Visualixy really offline?</summary><p class="mt-3 text-slate-400">Yes. All file operations happen inside your browser. Nothing leaves your device unless you choose to download it.</p></details>
+        <details class="border border-slate-800 rounded-3xl p-4 open:bg-slate-900/80"><summary class="cursor-pointer font-semibold text-white">What files can I process?</summary><p class="mt-3 text-slate-400">Images, PDFs, and exam documents are supported. The tool suite includes image resizers, PDF merge, split, compression, conversion and background removal.</p></details>
+        <details class="border border-slate-800 rounded-3xl p-4 open:bg-slate-900/80"><summary class="cursor-pointer font-semibold text-white">How many ads will I see?</summary><p class="mt-3 text-slate-400">Ad triggers are capped in session storage, so direct link popups appear only when processing content and at most once per session or once every three downloads.</p></details>
       </div>
     </section>
   </main>
 
-  <div id="workspaceModal" class="fixed inset-0 z-50 hidden items-center justify-center modal-backdrop px-4 py-10">
-    <div class="w-full max-w-5xl rounded-[36px] glass overflow-hidden shadow-2xl">
-      <div class="flex items-center justify-between gap-4 border-b border-slate-800 px-6 py-5">
+  <div id="workspaceModal" class="fixed inset-0 z-50 hidden items-center justify-center modal-backdrop px-4 py-8">
+    <div class="w-full max-w-5xl rounded-[36px] glass overflow-hidden shadow-2xl animate-fade-in">
+      <div class="flex flex-col gap-5 border-b border-slate-800 px-6 py-5 lg:flex-row lg:items-center lg:justify-between">
         <div>
-          <div class="text-sm uppercase tracking-[0.18em] text-slate-400">Tool workspace</div>
+          <p class="text-xs uppercase tracking-[0.24em] text-slate-500">Tool workflow</p>
           <h3 id="modalTitle" class="mt-2 text-3xl font-semibold text-white">Tool name</h3>
-          <p id="modalSubtitle" class="mt-2 text-slate-400">Complete the 3-step workflow to process your file.</p>
+          <p id="modalSubtitle" class="mt-2 text-slate-400">Follow the three-step workflow to process files.</p>
         </div>
-        <button id="modalClose" class="rounded-full border border-slate-700 px-4 py-2 text-slate-100">Close</button>
+        <button id="modalClose" class="rounded-full border border-slate-700 px-4 py-2 text-slate-100 hover:bg-slate-800 transition-all duration-300">Close</button>
       </div>
-      <div class="px-6 py-6 space-y-6">
-        <div class="flex flex-wrap gap-3">
-          <span class="step-pill active" data-step="1">1</span>
-          <span class="step-pill" data-step="2">2</span>
-          <span class="step-pill" data-step="3">3</span>
-        </div>
-        <div class="grid gap-6 lg:grid-cols-[1.2fr_0.8fr]">
-          <div class="space-y-6">
-            <section id="step1Panel" class="glass rounded-[28px] p-5">
-              <div class="flex items-center justify-between gap-4">
-                <div>
-                  <div class="text-sm uppercase tracking-[0.18em] text-slate-400">Step 1</div>
-                  <h4 class="mt-2 text-2xl font-semibold text-white">Upload / Drop File</h4>
-                </div>
-                <span class="badge">Aspect ratio safe</span>
+      <div class="grid gap-6 lg:grid-cols-[1.25fr_0.75fr] px-6 py-6">
+        <div class="space-y-6">
+          <div class="glass rounded-[28px] p-5">
+            <div class="flex items-center justify-between gap-4">
+              <div>
+                <p class="text-sm uppercase tracking-[0.18em] text-slate-400">Step 1</p>
+                <h4 class="mt-2 text-2xl font-semibold text-white">Upload / Drop File</h4>
               </div>
-              <div id="modalDropzone" class="dropzone">
-                <div class="max-w-md">
-                  <div class="text-xl font-semibold">Drop files here</div>
-                  <div class="mt-2 text-slate-400">Or click to browse. Supports images and PDFs.</div>
-                </div>
-              </div>
-              <input id="browseInput" type="file" class="hidden-file" multiple>
-              <div id="previewArea" class="grid gap-3"></div>
-            </section>
-            <section id="step2Panel" class="glass rounded-[28px] p-5 hidden">
-              <div class="flex items-center justify-between gap-4">
-                <div>
-                  <div class="text-sm uppercase tracking-[0.18em] text-slate-400">Step 2</div>
-                  <h4 class="mt-2 text-2xl font-semibold text-white">Adjust Target Controls</h4>
-                </div>
-                <span class="badge">File size + presets</span>
-              </div>
-              <div class="grid gap-4">
-                <div>
-                  <label class="text-sm text-slate-400">Target size (KB)</label>
-                  <div class="mt-3 flex items-center gap-4">
-                    <input id="targetSizeInput" type="range" min="10" max="200" value="50" class="w-full">
-                    <span id="targetSizeLabel" class="w-16 text-right text-white">50</span>
-                  </div>
-                </div>
-                <div>
-                  <label class="text-sm text-slate-400">Quality</label>
-                  <input id="qualityRange" type="range" min="0.2" max="1" step="0.05" value="0.9" class="mt-3 w-full">
-                </div>
-                <div>
-                  <label class="text-sm text-slate-400">Resolution preset</label>
-                  <div class="mt-3 flex flex-wrap gap-2">
-                    <button type="button" data-preset="high" class="rounded-full border border-slate-700 px-3 py-2 text-sm text-slate-100">High Quality</button>
-                    <button type="button" data-preset="balanced" class="rounded-full border border-slate-700 px-3 py-2 text-sm text-slate-100">Balanced</button>
-                    <button type="button" data-preset="small" class="rounded-full border border-slate-700 px-3 py-2 text-sm text-slate-100">Small File</button>
-                  </div>
-                </div>
-                <div class="rounded-3xl border border-slate-800 bg-slate-950/80 p-4 text-slate-300">
-                  <div class="font-semibold text-white">Current settings</div>
-                  <div class="mt-2 text-sm">Target: <span id="targetSummary">50 KB</span> · Quality: <span id="qualitySummary">0.90</span></div>
-                </div>
-              </div>
-            </section>
-            <section id="step3Panel" class="glass rounded-[28px] p-5 hidden">
-              <div class="flex items-center justify-between gap-4">
-                <div>
-                  <div class="text-sm uppercase tracking-[0.18em] text-slate-400">Step 3</div>
-                  <h4 class="mt-2 text-2xl font-semibold text-white">Process & Download</h4>
-                </div>
-                <span class="badge">Randomized ad trigger</span>
-              </div>
-              <div id="processInfo" class="mt-4 text-slate-300">Click Process to optimize locally, watch the countdown, then download instantly.</div>
-              <div class="mt-6 flex flex-wrap gap-3">
-                <button id="processButton" class="button-glow rounded-full px-6 py-3">Process & Download</button>
-                <button id="downloadButton" class="rounded-full border border-slate-700 px-6 py-3 text-slate-100 hidden">Download Result</button>
-              </div>
-              <div class="mt-6 grid gap-3">
-                <div class="banner-slot">Monetag ad unit</div>
-                <div id="workspaceAd" class="ad-slot"></div>
-              </div>
-            </section>
-          </div>
-          <div class="space-y-6">
-            <div class="glass rounded-[28px] p-5">
-              <div class="text-sm text-slate-400">Tool instructions</div>
-              <div id="toolInstructions" class="mt-3 text-slate-200">Select a tool and follow the 3-step workflow.</div>
+              <span class="badge rounded-full bg-slate-800/80 px-3 py-2 text-sm text-slate-200">object-contain safe</span>
             </div>
-            <div class="glass rounded-[28px] p-5">
-              <div class="font-semibold text-slate-100">Modal ad slot</div>
-              <div id="modalAd" class="banner-slot"></div>
+            <div id="modalDropzone" class="dropzone">
+              <div class="max-w-md">
+                <h4 class="text-xl font-semibold text-white" id="dropTitle">Drop files here</h4>
+                <p class="mt-2 text-slate-400" id="dropHint">Or click to browse supported images and PDFs.</p>
+              </div>
+            </div>
+            <input id="browseInput" type="file" class="hidden" multiple>
+            <div id="previewArea" class="grid gap-4 mt-4"></div>
+          </div>
+          <div id="step2Panel" class="glass rounded-[28px] p-5 hidden">
+            <div class="flex items-center justify-between gap-4">
+              <div>
+                <p class="text-sm uppercase tracking-[0.18em] text-slate-400">Step 2</p>
+                <h4 class="mt-2 text-2xl font-semibold text-white">Adjust Target Controls</h4>
+              </div>
+              <span class="badge rounded-full bg-slate-800/80 px-3 py-2 text-sm text-slate-200">size presets</span>
+            </div>
+            <div class="grid gap-5 mt-5">
+              <div>
+                <label class="text-sm text-slate-400">Target file size (KB)</label>
+                <div class="mt-3 flex items-center gap-4">
+                  <input id="targetSizeInput" type="range" min="10" max="200" value="50" class="w-full">
+                  <span id="targetSizeLabel" class="w-16 text-right text-white">50</span>
+                </div>
+              </div>
+              <div>
+                <label class="text-sm text-slate-400">Quality</label>
+                <input id="qualityRange" type="range" min="0.2" max="1" step="0.05" value="0.9" class="mt-3 w-full">
+              </div>
+              <div>
+                <label class="text-sm text-slate-400">Presets</label>
+                <div class="mt-3 flex flex-wrap gap-2">
+                  <button type="button" data-preset="high" class="rounded-full border border-slate-700 px-3 py-2 text-sm text-slate-100 hover:border-sky-400 transition-all duration-300">High Quality</button>
+                  <button type="button" data-preset="balanced" class="rounded-full border border-slate-700 px-3 py-2 text-sm text-slate-100 hover:border-sky-400 transition-all duration-300">Balanced</button>
+                  <button type="button" data-preset="small" class="rounded-full border border-slate-700 px-3 py-2 text-sm text-slate-100 hover:border-sky-400 transition-all duration-300">Small File</button>
+                </div>
+              </div>
+              <div class="rounded-3xl border border-slate-800 bg-slate-950/80 p-4 text-slate-300">
+                <p class="font-semibold text-white">Current settings</p>
+                <p class="mt-2 text-sm">Target: <span id="targetSummary">50 KB</span> · Quality: <span id="qualitySummary">0.90</span></p>
+              </div>
+            </div>
+          </div>
+          <div id="step3Panel" class="glass rounded-[28px] p-5 hidden">
+            <div class="flex items-center justify-between gap-4">
+              <div>
+                <p class="text-sm uppercase tracking-[0.18em] text-slate-400">Step 3</p>
+                <h4 class="mt-2 text-2xl font-semibold text-white">Process & Download</h4>
+              </div>
+              <span class="badge rounded-full bg-slate-800/80 px-3 py-2 text-sm text-slate-200">ad-safe trigger</span>
+            </div>
+            <p class="mt-4 text-slate-300">Click Process to optimize your file locally. A countdown modal will show before download begins.</p>
+            <div class="mt-6 flex flex-wrap gap-3">
+              <button id="processButton" class="button-glow rounded-full px-6 py-3">Process & Download</button>
+              <button id="downloadButton" class="rounded-full border border-slate-700 px-6 py-3 text-slate-100 hidden">Download Result</button>
+            </div>
+            <div class="mt-6 grid gap-3">
+              <div class="banner-slot skeleton"></div>
+              <div id="workspaceAd" class="ad-slot skeleton"></div>
             </div>
           </div>
         </div>
+        <aside class="space-y-6">
+          <div class="glass rounded-[28px] p-5">
+            <p class="text-sm text-slate-400">Instructions</p>
+            <p id="toolInstructions" class="mt-3 text-slate-200">Choose a tool and follow the 3-step workflow for exam-ready output.</p>
+          </div>
+          <div class="glass rounded-[28px] p-5">
+            <p class="text-sm text-slate-400">Modal ad slot</p>
+            <div id="modalAd" class="banner-slot skeleton mt-4"></div>
+          </div>
+        </aside>
       </div>
     </div>
   </div>
 
   <div id="countdownModal" class="fixed inset-0 z-50 hidden items-center justify-center modal-backdrop px-4 py-10">
-    <div class="w-full max-w-2xl rounded-[32px] glass p-8 text-center">
-      <div class="text-slate-100 text-xl font-semibold">Optimizing Document...</div>
+    <div class="w-full max-w-2xl rounded-[32px] glass p-8 text-center animate-slide-up">
+      <p class="text-slate-100 text-xl font-semibold">Optimizing Document...</p>
       <div class="mt-6 flex justify-center">
         <div class="progress-ring" aria-hidden="true">
-          <svg width="120" height="120">
-            <circle class="progress-ring__bg" cx="60" cy="60" r="54"></circle>
-            <circle id="progressCircle" class="progress-ring__circle" cx="60" cy="60" r="54"></circle>
+          <svg width="130" height="130">
+            <circle class="progress-ring__bg" cx="65" cy="65" r="54"></circle>
+            <circle id="progressCircle" class="progress-ring__circle" cx="65" cy="65" r="54"></circle>
           </svg>
         </div>
       </div>
-      <div id="countdownLabel" class="mt-6 text-slate-300 text-2xl font-semibold">5 seconds remaining</div>
-      <div class="mt-8 grid gap-4">
-        <div id="videoAdSlot" class="banner-slot"></div>
+      <p id="countdownLabel" class="mt-6 text-slate-300 text-2xl font-semibold">5 seconds remaining</p>
+      <div class="mt-8">
+        <div id="videoAdSlot" class="banner-slot skeleton"></div>
       </div>
     </div>
   </div>
 
-  <div id="toast" class="toast hidden"></div>
+  <div id="toast" class="toast"></div>
 
   <script>
     pdfjsLib.GlobalWorkerOptions.workerSrc = 'https://unpkg.com/pdfjs-dist@3.9.179/build/pdf.worker.min.js';
     const directAdUrl = 'https://omg10.com/4/11508752';
     const adZone = '267129';
-    const languageStrings = {
-      en: { install: 'Install App', launch: 'Launch Tools', faq: 'See FAQ', drop: 'Drop files here', browse: 'Or click to browse', instructions: 'Select a tool and follow the 3-step workflow.', process: 'Process & Download', download: 'Download Result' },
-      hi: { install: 'ऐप इंस्टॉल करें', launch: 'टूल्स लॉन्च करें', faq: 'FAQ देखें', drop: 'यहाँ फ़ाइलें ड्रॉप करें', browse: 'या ब्राउज़ करने के लिए क्लिक करें', instructions: 'एक टूल चुनें और 3-चरण कार्यप्रवाह का पालन करें।', process: 'प्रक्रिया करें और डाउनलोड करें', download: 'परिणाम डाउनलोड करें' },
-      bn: { install: 'অ্যাপ ইনস্টল করুন', launch: 'টুলস চালু করুন', faq: 'FAQ দেখুন', drop: 'ফাইল এখানে ড্রপ করুন', browse: 'অথবা ব্রাউজ করতে ক্লিক করুন', instructions: 'একটি টুল নির্বাচন করুন এবং 3-ধাপ ওয়ার্কফ্লো অনুসরণ করুন।', process: 'প্রসেস করুন ও ডাউনলোড করুন', download: 'ফলাফল ডাউনলোড করুন' },
-      as: { install: 'এপ ইনস্টল কৰক', launch: 'টুল খোলক', faq: 'FAQ চাওক', drop: 'ফাইলসমূহ ইয়াত ড্ৰপ কৰক', browse: 'অথবা ব্রাউজ কৰিবলৈ ক্লিক কৰক', instructions: 'এখন টুল বাছক আৰু 3-ধাপীয়া ওৰ্কফ্লো অনুসৰণ কৰক।', process: 'প্ৰক্ৰিয়া কৰক আৰু ডাউনলোড কৰক', download: 'ফলাফল ডাউনলোড কৰক' },
-      ta: { install: 'ஆப் நிறுவுக', launch: 'கருவிகளை திற', faq: 'அடிக்கடி கேட்கப்படும் கேள்விகள்', drop: 'கோப்புகளை இங்கே இழுக்கவும்', browse: 'அல்லது தேர்வு செய்ய கிளிக் செய்க', instructions: 'ஒரு கருவியைத் தேர்ந்தெடுத்து 3 படிநிலைகளைக் கடைபிடிக்கவும்.', process: 'தயாரித்து பதிவிறக்கவும்', download: 'முடிவை பதிவிறக்கவும்' }
+    const maxAdPerSession = 1;
+    const adActionThreshold = 3;
+    const languageData = {
+      en: { label: 'English', install: 'Install App', launch: 'Launch Tools', faq: 'View FAQ', drop: 'Drop files here', browse: 'Or click to browse supported files.', instructions: 'Choose a tool and follow the 3-step workflow for exam-ready output.', process: 'Process & Download', download: 'Download Result' },
+      hi: { label: 'हिन्दी', install: 'ऐप इंस्टॉल करें', launch: 'टूल्स लॉन्च करें', faq: 'FAQ देखें', drop: 'फ़ाइलें यहाँ ड्रॉप करें', browse: 'या ब्राउज़ करने के लिए क्लिक करें।', instructions: 'एक टूल चुनें और 3-चरण कार्यप्रवाह का पालन करें।', process: 'प्रक्रिया करें और डाउनलोड करें', download: 'परिणाम डाउनलोड करें' },
+      bn: { label: 'বাংলা', install: 'অ্যাপ ইনস্টল করুন', launch: 'টুলস চালু করুন', faq: 'FAQ দেখুন', drop: 'ফাইল এখানে ড্রপ করুন', browse: 'অথবা ব্রাউজ করতে ক্লিক করুন।', instructions: 'একটি টুল নির্বাচন করুন এবং 3-ধাপ ওয়ার্কফ্লো অনুসরণ করুন।', process: 'প্রসেস করুন ও ডাউনলোড করুন', download: 'ফলাফল ডাউনলোড করুন' },
+      as: { label: 'অসমীয়া', install: 'এপ ইনস্টল কৰক', launch: 'টুল খোলক', faq: 'FAQ চাওক', drop: 'ফাইলসমূহ ইয়াত ড্ৰপ কৰক', browse: 'অথবা ব্রাউজ কৰিবলৈ ক্লিক কৰক।', instructions: 'এখন টুল বাছক আৰু 3-ধাপীয়া ফ্লো অনুসৰণ কৰক।', process: 'প্ৰক্ৰিয়া কৰক আৰু ডাউনলোড কৰক', download: 'ফলাফল ডাউনলোড কৰক' },
+      ta: { label: 'தமிழ்', install: 'ஆப் நிறுவுக', launch: 'கருவிகளை திற', faq: 'FAQ பார்க்கவும்', drop: 'கோப்புகளை இங்கே இழுக்கவும்', browse: 'அல்லது தேர்வு செய்ய கிளிக் செய்யவும்.', instructions: 'ஒரு கருவியைத் தேர்ந்து 3 படிநிலைகளை பின்பற்றவும்.', process: 'ப்ராசஸ் & டவுன்லோட்', download: 'பதிவிறக்கம் முடிவு' }
     };
+
     const toolRoutes = {
-      photo: { title: 'SSC/UPSC Photo Resizer', subtitle: 'Scale photos under 50KB with object-contain preview.', instructions: 'Upload your exam photo, preserve aspect ratio, and compress to target size.', accept: 'image/*', multiple: false, icon: 'fa-camera' },
-      signature: { title: 'Signature Crop & Compressor', subtitle: 'Crop and compress signature photos below 20KB.', instructions: 'Upload a signature image, trim whitespace, and compress for strict limits.', accept: 'image/*', multiple: false, icon: 'fa-pen-nib' },
-      merge: { title: 'Merge PDFs', subtitle: 'Combine multiple PDFs using pdf-lib.', instructions: 'Drop multiple PDFs and merge them into one document.', accept: 'application/pdf', multiple: true, icon: 'fa-file-pdf' },
-      split: { title: 'Split PDF', subtitle: 'Extract specific pages from a PDF.', instructions: 'Upload a PDF and enter page ranges to split.', accept: 'application/pdf', multiple: false, icon: 'fa-cut' },
-      compress: { title: 'Smart PDF Size Reducer', subtitle: 'Resample PDF pages and reduce file size.', instructions: 'Upload a PDF and choose compression strength.', accept: 'application/pdf', multiple: false, icon: 'fa-compress' },
-      imgpdf: { title: 'Images to Single PDF', subtitle: 'Convert JPG/PNG files into one PDF.', instructions: 'Upload images and generate a single PDF file.', accept: 'image/*', multiple: true, icon: 'fa-images' },
-      password: { title: 'PDF Lock & Unlock', subtitle: 'Encrypt or decrypt PDFs locally with Web Crypto.', instructions: 'Upload a PDF and choose whether to lock or unlock it.', accept: 'application/pdf', multiple: false, icon: 'fa-lock' },
-      extract: { title: 'PDF to High-Res Images', subtitle: 'Render PDF pages as PNG images.', instructions: 'Upload a PDF and download each page as an image.', accept: 'application/pdf', multiple: false, icon: 'fa-image' },
-      bgrem: { title: 'Offline Background Remover', subtitle: 'Remove backgrounds using client-side canvas filtering.', instructions: 'Upload a photo and generate a transparent PNG.', accept: 'image/*', multiple: false, icon: 'fa-magic' }
+      photo: { title: 'SSC/UPSC Photo Resizer', description: 'Resize photos under 50KB with aspect ratio preservation.', instructions: 'Upload a photo, preserve aspect ratio with object-contain preview, then compress to your target size.', accept: 'image/*', multiple: false, icon: 'fa-camera' },
+      signature: { title: 'Signature Crop & Compressor', description: 'Crop and compress signatures under 20KB.', instructions: 'Upload a signature image and reduce file size while keeping quality.', accept: 'image/*', multiple: false, icon: 'fa-pen-nib' },
+      merge: { title: 'Merge PDFs', description: 'Combine multiple PDFs into a single document.', instructions: 'Drop multiple PDF files and merge them using pdf-lib.', accept: 'application/pdf', multiple: true, icon: 'fa-file-pdf' },
+      split: { title: 'Split PDF', description: 'Extract page ranges from a PDF.', instructions: 'Upload a PDF and specify page ranges to split.', accept: 'application/pdf', multiple: false, icon: 'fa-cut' },
+      compress: { title: 'Smart PDF Size Reducer', description: 'Resample PDF pages and lower file size locally.', instructions: 'Upload a PDF and compress it using client-side resampling.', accept: 'application/pdf', multiple: false, icon: 'fa-compress' },
+      imgpdf: { title: 'Images to Single PDF', description: 'Convert JPG/PNG into one PDF file.', instructions: 'Upload images and export them as a single PDF document.', accept: 'image/*', multiple: true, icon: 'fa-images' },
+      password: { title: 'PDF Lock & Unlock', description: 'Encrypt or decrypt PDFs with browser crypto.', instructions: 'Upload a PDF and choose encrypt or decrypt with a password.', accept: 'application/pdf', multiple: false, icon: 'fa-lock' },
+      extract: { title: 'PDF to High-Res Images', description: 'Render PDF pages as PNG/JPG images.', instructions: 'Upload a PDF and download each page as a high-resolution image.', accept: 'application/pdf', multiple: false, icon: 'fa-image' },
+      bgrem: { title: 'Offline Background Remover', description: 'Remove image backgrounds with canvas filtering.', instructions: 'Upload a photo and export a transparent PNG background removal version.', accept: 'image/*', multiple: false, icon: 'fa-magic' }
     };
 
     const toolFiles = {};
     let currentTool = 'photo';
     let currentStep = 1;
     let deferredPrompt = null;
+    let adAllowed = true;
 
-    const apiElements = {
-      langSelect: document.getElementById('langSelect'),
+    const elements = {
+      languageButton: document.getElementById('languageButton'),
+      languageLabel: document.getElementById('languageLabel'),
+      languageMenu: document.getElementById('languageMenu'),
+      languageTrigger: document.getElementById('languageTrigger'),
       installButton: document.getElementById('installButton'),
       openTools: document.getElementById('openTools'),
       openFaq: document.getElementById('openFaq'),
@@ -269,6 +326,8 @@
       browseInput: document.getElementById('browseInput'),
       modalDropzone: document.getElementById('modalDropzone'),
       previewArea: document.getElementById('previewArea'),
+      dropTitle: document.getElementById('dropTitle'),
+      dropHint: document.getElementById('dropHint'),
       targetSizeInput: document.getElementById('targetSizeInput'),
       targetSizeLabel: document.getElementById('targetSizeLabel'),
       qualityRange: document.getElementById('qualityRange'),
@@ -278,7 +337,6 @@
       downloadButton: document.getElementById('downloadButton'),
       modal: document.getElementById('workspaceModal'),
       modalClose: document.getElementById('modalClose'),
-      step1Panel: document.getElementById('step1Panel'),
       step2Panel: document.getElementById('step2Panel'),
       step3Panel: document.getElementById('step3Panel'),
       stepPills: Array.from(document.querySelectorAll('.step-pill')),
@@ -294,18 +352,40 @@
       countdownModal: document.getElementById('countdownModal'),
       countdownLabel: document.getElementById('countdownLabel'),
       progressCircle: document.getElementById('progressCircle'),
-      toast: document.getElementById('toast'),
-      pageTitle: document.getElementById('page-title')
+      toast: document.getElementById('toast')
     };
+
+    function getAdCounter() {
+      return Number(window.sessionStorage.getItem('ad_counter') || '0');
+    }
+
+    function incrementAdCounter() {
+      const value = getAdCounter() + 1;
+      window.sessionStorage.setItem('ad_counter', String(value));
+      return value;
+    }
+
+    function canTriggerAd() {
+      const count = getAdCounter();
+      const used = window.sessionStorage.getItem('ad_used') === 'true';
+      return !used && count > 0 && count % adActionThreshold === 0;
+    }
+
+    function recordAdUsed() {
+      window.sessionStorage.setItem('ad_used', 'true');
+    }
 
     function renderMonetagSlot(container) {
       if (!container) return;
-      container.innerHTML = '';
+      container.innerHTML = '<div class="absolute inset-0 bg-slate-950/70"></div>';
+      const wrapper = document.createElement('div');
+      wrapper.className = 'absolute inset-0';
       const ins = document.createElement('ins');
       ins.className = 'monetag-widget';
       ins.dataset.zone = adZone;
       ins.style.cssText = 'display:block;width:100%;height:100%;';
-      container.appendChild(ins);
+      wrapper.appendChild(ins);
+      container.appendChild(wrapper);
       const script = document.createElement('script');
       script.src = 'https://quge5.com/88/tag.min.js';
       script.async = true;
@@ -315,95 +395,72 @@
     }
 
     function showToast(message) {
-      apiElements.toast.textContent = message;
-      apiElements.toast.classList.remove('hidden');
-      setTimeout(() => apiElements.toast.classList.add('hidden'), 3200);
+      elements.toast.textContent = message;
+      elements.toast.classList.add('visible');
+      setTimeout(() => elements.toast.classList.remove('visible'), 3200);
     }
 
-    function setLanguage(code) {
-      const strings = languageStrings[code] || languageStrings.en;
-      apiElements.installButton.textContent = strings.install;
-      apiElements.openTools.textContent = strings.launch;
-      apiElements.openFaq.textContent = strings.faq;
-      apiElements.toolInstructions.textContent = strings.instructions;
-      apiElements.processButton.textContent = strings.process;
-      apiElements.downloadButton.textContent = strings.download;
-      apiElements.modalDropzone.innerHTML = `<div class="text-xl font-semibold">${strings.drop}</div><div class="mt-2 text-slate-400">${strings.browse}</div>`;
+    function toggleLanguageMenu() {
+      const open = elements.languageMenu.classList.toggle('hidden');
+      elements.languageMenu.style.opacity = open ? '0' : '1';
+      elements.languageMenu.style.pointerEvents = open ? 'none' : 'auto';
+      elements.languageMenu.style.transform = open ? 'translateY(12px)' : 'translateY(0)';
+    }
+
+    function setLanguage(lang) {
+      const strings = languageData[lang] || languageData.en;
+      elements.languageLabel.textContent = strings.label;
+      elements.installButton.textContent = strings.install;
+      elements.openTools.textContent = strings.launch;
+      elements.openFaq.textContent = strings.faq;
+      elements.dropTitle.textContent = strings.drop;
+      elements.dropHint.textContent = strings.browse;
+      elements.processButton.textContent = strings.process;
+      elements.downloadButton.textContent = strings.download;
+      elements.toolInstructions.textContent = strings.instructions;
     }
 
     function buildToolGrid() {
-      apiElements.toolsGrid.innerHTML = '';
+      elements.toolsGrid.innerHTML = '';
       Object.entries(toolRoutes).forEach(([toolKey, tool]) => {
         const card = document.createElement('article');
-        card.className = 'glass rounded-[28px] p-6 card-hover cursor-pointer';
+        card.className = 'glass rounded-[32px] p-6 card-hover cursor-pointer hover:-translate-y-1 hover:shadow-blue-500/10 transition-all duration-300';
         card.dataset.tool = toolKey;
         card.innerHTML = `
-          <div class="flex items-center justify-between gap-4">
+          <div class="flex items-start justify-between gap-4">
             <div>
-              <h2 class="text-lg font-semibold text-white">${tool.title}</h2>
-              <p class="mt-3 text-slate-400">${tool.subtitle}</p>
+              <p class="text-sm uppercase tracking-[0.2em] text-slate-400">${toolKey === 'photo' ? 'Photo' : tool.title}</p>
+              <h4 class="mt-3 text-xl font-semibold text-white">${tool.title}</h4>
+              <p class="mt-3 text-slate-400">${tool.description}</p>
             </div>
-            <div class="w-12 h-12 rounded-3xl bg-gradient-to-br from-blue-600 to-purple-600 flex items-center justify-center text-white text-xl"><i class="fa-solid ${tool.icon}"></i></div>
+            <div class="w-12 h-12 rounded-3xl bg-gradient-to-br from-sky-500 to-violet-600 flex items-center justify-center text-white text-lg"><i class="fa-solid ${tool.icon}"></i></div>
           </div>
         `;
         card.addEventListener('click', () => openTool(toolKey));
-        apiElements.toolsGrid.appendChild(card);
+        elements.toolsGrid.appendChild(card);
       });
     }
 
     function openTool(toolKey) {
       currentTool = toolKey;
       currentStep = 1;
-      updateToolModal();
-      renderStep();
-      apiElements.modal.classList.remove('hidden');
-      apiElements.modal.classList.add('flex');
+      updateModal();
+      elements.modal.classList.remove('hidden');
+      elements.modal.classList.add('flex');
       setBrowseAccept();
       renderPreview();
       location.hash = `#/${toolKey}`;
     }
 
     function closeModal() {
-      apiElements.modal.classList.add('hidden');
-      apiElements.modal.classList.remove('flex');
-    }
-
-    function updateMetadata(toolKey) {
-      const tool = toolRoutes[toolKey] || toolRoutes.photo;
-      apiElements.pageTitle.textContent = `${tool.title} - Visualixy`;
-      document.getElementById('og-title').content = `${tool.title} - Visualixy`;
-      document.getElementById('og-desc').content = tool.subtitle;
-      document.getElementById('meta-description').content = tool.subtitle;
-      document.getElementById('ld-schema').textContent = JSON.stringify({
-        '@context': 'https://schema.org',
-        '@type': 'WebApplication',
-        name: `${tool.title} - Visualixy`,
-        url: `https://visualixy.in/#/${toolKey}`,
-        applicationCategory: 'DeveloperApplication',
-        operatingSystem: 'Windows, macOS, Linux, Android, iOS',
-        description: tool.subtitle,
-        offers: { '@type': 'Offer', price: '0', priceCurrency: 'INR' }
-      });
-    }
-
-    function renderStep() {
-      apiElements.stepPills.forEach((pill, index) => {
-        pill.classList.toggle('active', index + 1 === currentStep);
-      });
-      apiElements.step1Panel.classList.toggle('hidden', currentStep !== 1);
-      apiElements.step2Panel.classList.toggle('hidden', currentStep !== 2);
-      apiElements.step3Panel.classList.toggle('hidden', currentStep !== 3);
-    }
-
-    function gotoStep(step) {
-      currentStep = step;
-      renderStep();
+      elements.modal.classList.add('hidden');
+      elements.modal.classList.remove('flex');
     }
 
     function setBrowseAccept() {
       const tool = toolRoutes[currentTool];
-      apiElements.browseInput.accept = tool.accept;
-      apiElements.browseInput.multiple = tool.multiple;
+      elements.browseInput.accept = tool.accept;
+      elements.browseInput.multiple = tool.multiple;
     }
 
     function addFiles(files) {
@@ -414,17 +471,13 @@
         return true;
       });
       if (!toolFiles[currentTool]) toolFiles[currentTool] = [];
-      if (tool.multiple) {
-        toolFiles[currentTool].push(...accepted);
-      } else {
-        toolFiles[currentTool] = accepted.slice(0, 1);
-      }
+      toolFiles[currentTool] = tool.multiple ? [...toolFiles[currentTool], ...accepted] : accepted.slice(0, 1);
       renderPreview();
-      if (accepted.length) gotoStep(2);
+      if (accepted.length) showStep(2);
     }
 
     function renderPreview() {
-      const area = apiElements.previewArea;
+      const area = elements.previewArea;
       area.innerHTML = '';
       const files = toolFiles[currentTool] || [];
       if (!files.length) {
@@ -434,19 +487,23 @@
       files.forEach((file, index) => {
         const block = document.createElement('div');
         block.className = 'glass rounded-[24px] p-4';
-        block.innerHTML = `
-          <div class="flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
-            <div>
-              <div class="font-semibold text-white">${file.name}</div>
-              <div class="text-slate-400 text-sm">${Math.round(file.size / 1024)} KB • ${file.type}</div>
-            </div>
-            <button class="rounded-full border border-slate-700 px-3 py-2 text-sm text-slate-100">Remove</button>
+        const row = document.createElement('div');
+        row.className = 'flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between';
+        row.innerHTML = `
+          <div>
+            <p class="font-semibold text-white">${file.name}</p>
+            <p class="text-slate-400 text-sm">${Math.round(file.size / 1024)} KB • ${file.type}</p>
           </div>
         `;
-        block.querySelector('button').addEventListener('click', () => {
+        const removeButton = document.createElement('button');
+        removeButton.className = 'rounded-full border border-slate-700 px-3 py-2 text-sm text-slate-100 hover:border-sky-400 transition-all duration-300';
+        removeButton.textContent = 'Remove';
+        removeButton.addEventListener('click', () => {
           toolFiles[currentTool].splice(index, 1);
           renderPreview();
         });
+        row.appendChild(removeButton);
+        block.appendChild(row);
         if (file.type.startsWith('image/')) {
           const img = document.createElement('img');
           img.className = 'mt-4 preview-thumb';
@@ -458,45 +515,57 @@
       });
     }
 
+    function showStep(step) {
+      currentStep = step;
+      elements.step2Panel.classList.toggle('hidden', step !== 2);
+      elements.step3Panel.classList.toggle('hidden', step !== 3);
+      elements.stepPills.forEach((pill, idx) => pill.classList.toggle('active', idx + 1 === step));
+    }
+
     function syncControls() {
-      const target = Number(apiElements.targetSizeInput.value);
-      const quality = Number(apiElements.qualityRange.value);
-      apiElements.targetSizeLabel.textContent = target;
-      apiElements.targetSummary.textContent = `${target} KB`;
-      apiElements.qualitySummary.textContent = quality.toFixed(2);
+      const target = Number(elements.targetSizeInput.value);
+      const quality = Number(elements.qualityRange.value);
+      elements.targetSizeLabel.textContent = String(target);
+      elements.targetSummary.textContent = `${target} KB`;
+      elements.qualitySummary.textContent = quality.toFixed(2);
     }
 
     function choosePreset(preset) {
-      if (preset === 'high') { apiElements.targetSizeInput.value = 120; apiElements.qualityRange.value = 0.92; }
-      if (preset === 'balanced') { apiElements.targetSizeInput.value = 60; apiElements.qualityRange.value = 0.8; }
-      if (preset === 'small') { apiElements.targetSizeInput.value = 32; apiElements.qualityRange.value = 0.65; }
+      if (preset === 'high') { elements.targetSizeInput.value = 120; elements.qualityRange.value = 0.92; }
+      if (preset === 'balanced') { elements.targetSizeInput.value = 60; elements.qualityRange.value = 0.8; }
+      if (preset === 'small') { elements.targetSizeInput.value = 32; elements.qualityRange.value = 0.65; }
       syncControls();
     }
 
+    function shouldTriggerAd() {
+      const counter = incrementAdCounter();
+      const used = window.sessionStorage.getItem('ad_used') === 'true';
+      return !used && counter <= maxAdPerSession * adActionThreshold && counter % adActionThreshold === 0;
+    }
+
     function maybeOpenAd() {
-      if (Math.random() < 0.5) {
+      if (shouldTriggerAd() && Math.random() < 0.5) {
         const tab = window.open(directAdUrl, '_blank');
         if (tab) tab.blur();
+        window.sessionStorage.setItem('ad_used', 'true');
       }
     }
 
     function showCountdown() {
-      apiElements.countdownModal.classList.remove('hidden');
-      apiElements.countdownModal.classList.add('flex');
+      elements.countdownModal.classList.remove('hidden');
       let seconds = 5;
       const circumference = 2 * Math.PI * 54;
-      apiElements.progressCircle.style.strokeDasharray = circumference;
-      apiElements.progressCircle.style.strokeDashoffset = circumference;
+      elements.progressCircle.style.strokeDasharray = `${circumference}`;
+      elements.progressCircle.style.strokeDashoffset = `${circumference}`;
       return new Promise(resolve => {
         const interval = setInterval(() => {
           seconds -= 1;
-          const offset = circumference * (1 - (5 - seconds) / 5);
-          apiElements.progressCircle.style.strokeDashoffset = circumference - offset;
-          apiElements.countdownLabel.textContent = `${seconds > 0 ? seconds : 0} seconds remaining`;
+          const progress = circumference * (1 - (seconds / 5));
+          elements.progressCircle.style.strokeDashoffset = `${circumference - progress}`;
+          elements.countdownLabel.textContent = `${seconds > 0 ? seconds : 0} seconds remaining`;
           if (seconds <= 0) {
             clearInterval(interval);
-            apiElements.countdownModal.classList.add('hidden');
-            apiElements.countdownModal.classList.remove('flex');
+            elements.countdownModal.classList.add('hidden');
             resolve();
           }
         }, 1000);
@@ -505,22 +574,22 @@
 
     function downloadBlob(blob, filename) {
       const url = URL.createObjectURL(blob);
-      const a = document.createElement('a');
-      a.href = url;
-      a.download = filename;
-      document.body.appendChild(a);
-      a.click();
-      a.remove();
+      const anchor = document.createElement('a');
+      anchor.href = url;
+      anchor.download = filename;
+      document.body.appendChild(anchor);
+      anchor.click();
+      anchor.remove();
       setTimeout(() => URL.revokeObjectURL(url), 60000);
     }
 
-    function downloadDataURL(dataURL, filename) {
-      const a = document.createElement('a');
-      a.href = dataURL;
-      a.download = filename;
-      document.body.appendChild(a);
-      a.click();
-      a.remove();
+    function imageToDataURL(img, format = 'image/jpeg', quality = 0.92) {
+      const canvas = document.createElement('canvas');
+      canvas.width = img.width;
+      canvas.height = img.height;
+      const ctx = canvas.getContext('2d');
+      ctx.drawImage(img, 0, 0);
+      return canvas.toDataURL(format, quality);
     }
 
     function fileToImage(file) {
@@ -535,72 +604,65 @@
 
     function cropTransparentArea(canvas) {
       const ctx = canvas.getContext('2d');
-      const imageData = ctx.getImageData(0, 0, canvas.width, canvas.height);
+      const image = ctx.getImageData(0, 0, canvas.width, canvas.height);
       let minX = canvas.width, minY = canvas.height, maxX = 0, maxY = 0;
       for (let y = 0; y < canvas.height; y++) {
         for (let x = 0; x < canvas.width; x++) {
-          const idx = (y * canvas.width + x) * 4;
-          const alpha = imageData.data[idx + 3];
-          if (alpha > 20) {
-            const r = imageData.data[idx], g = imageData.data[idx + 1], b = imageData.data[idx + 2];
-            if (!(r > 245 && g > 245 && b > 245)) {
-              minX = Math.min(minX, x);
-              minY = Math.min(minY, y);
-              maxX = Math.max(maxX, x);
-              maxY = Math.max(maxY, y);
-            }
+          const index = (y * canvas.width + x) * 4;
+          if (image.data[index + 3] > 12) {
+            minX = Math.min(minX, x);
+            minY = Math.min(minY, y);
+            maxX = Math.max(maxX, x);
+            maxY = Math.max(maxY, y);
           }
         }
       }
       if (maxX <= minX || maxY <= minY) return canvas;
-      const width = maxX - minX;
-      const height = maxY - minY;
       const cropped = document.createElement('canvas');
-      cropped.width = width;
-      cropped.height = height;
-      cropped.getContext('2d').putImageData(ctx.getImageData(minX, minY, width, height), 0, 0);
+      cropped.width = maxX - minX;
+      cropped.height = maxY - minY;
+      cropped.getContext('2d').putImageData(ctx.getImageData(minX, minY, cropped.width, cropped.height), 0, 0);
       return cropped;
     }
 
     async function processPhoto(file) {
-      const targetBytes = Number(apiElements.targetSizeInput.value) * 1024;
+      const targetBytes = Number(elements.targetSizeInput.value) * 1024;
       const img = await fileToImage(file);
       const canvas = document.createElement('canvas');
-      const width = Math.min(1200, img.width);
-      const scale = width / img.width;
-      canvas.width = width;
+      const maxWidth = 1200;
+      const scale = Math.min(1, maxWidth / img.width);
+      canvas.width = Math.round(img.width * scale);
       canvas.height = Math.round(img.height * scale);
       const ctx = canvas.getContext('2d');
       ctx.drawImage(img, 0, 0, canvas.width, canvas.height);
-      let quality = Number(apiElements.qualityRange.value);
+      let quality = Number(elements.qualityRange.value);
       let blob = await new Promise(resolve => canvas.toBlob(resolve, 'image/jpeg', quality));
-      while (blob.size > targetBytes && quality > 0.25) {
-        quality = Math.max(0.25, quality - 0.08);
+      while (blob.size > targetBytes && quality > 0.2) {
+        quality = Math.max(0.2, quality - 0.08);
         blob = await new Promise(resolve => canvas.toBlob(resolve, 'image/jpeg', quality));
       }
       if (blob.size > targetBytes) {
-        blob = await new Promise((resolve, reject) => new Compressor(blob, { quality: 0.7, success: resolve, error: reject }));
+        blob = await new Promise((resolve, reject) => new Compressor(blob, { quality: 0.65, success: resolve, error: reject }));
       }
       return { blob, filename: 'visualixy-photo.jpg' };
     }
 
     async function processSignature(file) {
-      const targetBytes = Number(apiElements.targetSizeInput.value) * 1024;
+      const targetBytes = Number(elements.targetSizeInput.value) * 1024;
       const img = await fileToImage(file);
       const canvas = document.createElement('canvas');
       canvas.width = img.width;
       canvas.height = img.height;
-      const ctx = canvas.getContext('2d');
-      ctx.drawImage(img, 0, 0);
+      canvas.getContext('2d').drawImage(img, 0, 0);
       const cropped = cropTransparentArea(canvas);
-      let quality = Number(apiElements.qualityRange.value);
+      let quality = Number(elements.qualityRange.value);
       let blob = await new Promise(resolve => cropped.toBlob(resolve, 'image/jpeg', quality));
-      while (blob.size > targetBytes && quality > 0.2) {
-        quality = Math.max(0.2, quality - 0.08);
+      while (blob.size > targetBytes && quality > 0.18) {
+        quality = Math.max(0.18, quality - 0.06);
         blob = await new Promise(resolve => cropped.toBlob(resolve, 'image/jpeg', quality));
       }
       if (blob.size > targetBytes) {
-        blob = await new Promise((resolve, reject) => new Compressor(blob, { quality: 0.6, success: resolve, error: reject }));
+        blob = await new Promise((resolve, reject) => new Compressor(blob, { quality: 0.55, success: resolve, error: reject }));
       }
       return { blob, filename: 'visualixy-signature.jpg' };
     }
@@ -611,8 +673,8 @@
         if (file.type !== 'application/pdf') continue;
         const bytes = await file.arrayBuffer();
         const source = await PDFLib.PDFDocument.load(bytes);
-        const pages = await pdfDoc.copyPages(source, source.getPageIndices());
-        pages.forEach(page => pdfDoc.addPage(page));
+        const copied = await pdfDoc.copyPages(source, source.getPageIndices());
+        copied.forEach(page => pdfDoc.addPage(page));
       }
       const output = await pdfDoc.save();
       return { blob: new Blob([output], { type: 'application/pdf' }), filename: 'visualixy-merged.pdf' };
@@ -620,10 +682,11 @@
 
     async function processSplit(file) {
       const rangeText = prompt('Enter page ranges (e.g. 1-3,5):', '1-3');
-      if (!rangeText) throw new Error('No pages selected');
+      if (!rangeText) throw new Error('Page ranges required');
       const bytes = await file.arrayBuffer();
       const source = await PDFLib.PDFDocument.load(bytes);
       const pages = parseRanges(rangeText, source.getPageCount());
+      if (!pages.length) throw new Error('Invalid page range');
       const pdfDoc = await PDFLib.PDFDocument.create();
       const copied = await pdfDoc.copyPages(source, pages);
       copied.forEach(page => pdfDoc.addPage(page));
@@ -632,19 +695,19 @@
     }
 
     function parseRanges(text, total) {
-      const pages = [];
+      const pages = new Set();
       text.split(',').map(part => part.trim()).forEach(segment => {
         if (segment.includes('-')) {
           const [start, end] = segment.split('-').map(Number);
           for (let i = start; i <= end; i++) {
-            if (i >= 1 && i <= total) pages.push(i - 1);
+            if (i >= 1 && i <= total) pages.add(i - 1);
           }
         } else {
-          const num = Number(segment);
-          if (num >= 1 && num <= total) pages.push(num - 1);
+          const value = Number(segment);
+          if (value >= 1 && value <= total) pages.add(value - 1);
         }
       });
-      return Array.from(new Set(pages)).sort((a, b) => a - b);
+      return Array.from(pages).sort((a, b) => a - b);
     }
 
     async function processCompress(file) {
@@ -652,16 +715,15 @@
       const pdf = await pdfjsLib.getDocument({ data }).promise;
       const { jsPDF } = window.jspdf;
       const doc = new jsPDF({ unit: 'pt' });
-      for (let index = 1; index <= pdf.numPages; index++) {
-        const page = await pdf.getPage(index);
+      for (let i = 1; i <= pdf.numPages; i++) {
+        const page = await pdf.getPage(i);
         const viewport = page.getViewport({ scale: 1.5 });
         const canvas = document.createElement('canvas');
         canvas.width = viewport.width;
         canvas.height = viewport.height;
-        const ctx = canvas.getContext('2d');
-        await page.render({ canvasContext: ctx, viewport }).promise;
-        const imageData = canvas.toDataURL('image/jpeg', Number(apiElements.qualityRange.value));
-        if (index > 1) doc.addPage();
+        await page.render({ canvasContext: canvas.getContext('2d'), viewport }).promise;
+        const imageData = canvas.toDataURL('image/jpeg', Number(elements.qualityRange.value));
+        if (i > 1) doc.addPage();
         doc.addImage(imageData, 'JPEG', 0, 0, doc.internal.pageSize.getWidth(), doc.internal.pageSize.getHeight());
       }
       return { blob: doc.output('blob'), filename: 'visualixy-compressed.pdf' };
@@ -670,36 +732,42 @@
     async function processImgPdf(files) {
       const { jsPDF } = window.jspdf;
       const doc = new jsPDF({ unit: 'pt' });
-      let count = 0;
+      let pageCount = 0;
       for (const file of files) {
         if (!file.type.startsWith('image/')) continue;
         const img = await fileToImage(file);
-        const width = doc.internal.pageSize.getWidth();
-        const height = (img.height / img.width) * width;
-        const dataURL = await imageToDataURL(img, 0.95);
-        if (count > 0) doc.addPage();
-        doc.addImage(dataURL, 'JPEG', 0, 0, width, height);
-        count += 1;
+        const pdfWidth = doc.internal.pageSize.getWidth();
+        const pdfHeight = (img.height / img.width) * pdfWidth;
+        const imageData = await imageToDataURL(img, 'image/jpeg', Number(elements.qualityRange.value));
+        if (pageCount > 0) doc.addPage();
+        doc.addImage(imageData, 'JPEG', 0, 0, pdfWidth, pdfHeight);
+        pageCount += 1;
       }
-      if (!count) throw new Error('No images selected');
+      if (pageCount === 0) throw new Error('No images selected');
       return { blob: doc.output('blob'), filename: 'visualixy-images.pdf' };
     }
 
+    async function deriveKey(password, salt) {
+      const encoder = new TextEncoder();
+      const baseKey = await crypto.subtle.importKey('raw', encoder.encode(password), 'PBKDF2', false, ['deriveKey']);
+      return crypto.subtle.deriveKey({ name: 'PBKDF2', salt, iterations: 120000, hash: 'SHA-256' }, baseKey, { name: 'AES-GCM', length: 256 }, false, ['encrypt', 'decrypt']);
+    }
+
     async function processPassword(file) {
-      const password = prompt('Enter password for encrypt/decrypt:');
+      const password = prompt('Enter password to encrypt or decrypt:');
       if (!password) throw new Error('Password required');
-      const encryptMode = confirm('Press OK to encrypt, Cancel to decrypt.');
+      const encryptMode = confirm('Press OK to encrypt the file, Cancel to decrypt.');
       const bytes = await file.arrayBuffer();
       if (encryptMode) {
         const salt = crypto.getRandomValues(new Uint8Array(16));
         const iv = crypto.getRandomValues(new Uint8Array(12));
         const key = await deriveKey(password, salt);
         const encrypted = await crypto.subtle.encrypt({ name: 'AES-GCM', iv }, key, bytes);
-        const combined = new Uint8Array(salt.byteLength + iv.byteLength + encrypted.byteLength);
+        const combined = new Uint8Array(salt.length + iv.length + encrypted.byteLength);
         combined.set(salt, 0);
-        combined.set(iv, salt.byteLength);
-        combined.set(new Uint8Array(encrypted), salt.byteLength + iv.byteLength);
-        return { blob: new Blob([combined], { type: 'application/octet-stream' }), filename: 'visualixy-lock.bin' };
+        combined.set(iv, salt.length);
+        combined.set(new Uint8Array(encrypted), salt.length + iv.length);
+        return { blob: new Blob([combined], { type: 'application/octet-stream' }), filename: 'visualixy-locked.bin' };
       } else {
         const data = new Uint8Array(bytes);
         const salt = data.slice(0, 16);
@@ -711,37 +779,38 @@
       }
     }
 
-    async function deriveKey(password, salt) {
-      const encoder = new TextEncoder();
-      const baseKey = await crypto.subtle.importKey('raw', encoder.encode(password), 'PBKDF2', false, ['deriveKey']);
-      return crypto.subtle.deriveKey({ name: 'PBKDF2', salt, iterations: 120000, hash: 'SHA-256' }, baseKey, { name: 'AES-GCM', length: 256 }, false, ['encrypt', 'decrypt']);
-    }
-
     async function processExtract(file) {
       const data = await file.arrayBuffer();
       const pdf = await pdfjsLib.getDocument({ data }).promise;
-      const preview = apiElements.previewArea;
-      preview.innerHTML = '';
-      for (let index = 1; index <= pdf.numPages; index++) {
-        const page = await pdf.getPage(index);
+      elements.previewArea.innerHTML = '';
+      for (let i = 1; i <= pdf.numPages; i++) {
+        const page = await pdf.getPage(i);
         const viewport = page.getViewport({ scale: 2 });
         const canvas = document.createElement('canvas');
         canvas.width = viewport.width;
         canvas.height = viewport.height;
-        const ctx = canvas.getContext('2d');
-        await page.render({ canvasContext: ctx, viewport }).promise;
+        await page.render({ canvasContext: canvas.getContext('2d'), viewport }).promise;
         const dataURL = canvas.toDataURL('image/png');
         const card = document.createElement('div');
         card.className = 'glass rounded-[24px] p-4';
         card.innerHTML = `
-          <div class="font-semibold text-white">Page ${index}</div>
-          <img class="mt-3 w-full rounded-3xl" src="${dataURL}" alt="Page ${index}">
-          <button class="mt-4 rounded-full border border-slate-700 px-4 py-2 text-slate-100">Download PNG</button>
+          <p class="font-semibold text-white">Page ${i}</p>
+          <img class="mt-3 w-full rounded-3xl" src="${dataURL}" alt="Page ${i}">
+          <button class="mt-4 rounded-full border border-slate-700 px-4 py-2 text-slate-100 hover:border-sky-400 transition-all duration-300">Download PNG</button>
         `;
-        card.querySelector('button').addEventListener('click', () => downloadDataURL(dataURL, `page-${index}.png`));
-        preview.appendChild(card);
+        card.querySelector('button').addEventListener('click', () => downloadBlob(dataURLtoBlob(dataURL), `page-${i}.png`));
+        elements.previewArea.appendChild(card);
       }
       return { blob: null, filename: '' };
+    }
+
+    function dataURLtoBlob(dataURL) {
+      const [header, base64] = dataURL.split(',');
+      const binary = atob(base64);
+      const array = new Uint8Array(binary.length);
+      for (let i = 0; i < binary.length; i++) array[i] = binary.charCodeAt(i);
+      const type = header.split(':')[1].split(';')[0];
+      return new Blob([array], { type });
     }
 
     async function processBgRem(file) {
@@ -752,34 +821,28 @@
       const ctx = canvas.getContext('2d');
       ctx.drawImage(img, 0, 0);
       const imageData = ctx.getImageData(0, 0, canvas.width, canvas.height);
-      const threshold = 50;
       for (let i = 0; i < imageData.data.length; i += 4) {
         const r = imageData.data[i];
-        const g = imageData.data[i + 1];
-        const b = imageData.data[i + 2];
-        const distance = Math.hypot(r - 240, g - 240, b - 240);
-        if (distance < threshold) imageData.data[i + 3] = 0;
+        const g = imageData.data[i+1];
+        const b = imageData.data[i+2];
+        const alpha = imageData.data[i+3];
+        const luminance = (r + g + b) / 3;
+        if (alpha > 0 && luminance > 240) {
+          imageData.data[i+3] = 0;
+        }
       }
       ctx.putImageData(imageData, 0, 0);
       const blob = await new Promise(resolve => canvas.toBlob(resolve, 'image/png'));
       return { blob, filename: 'visualixy-transparent.png' };
     }
 
-    async function imageToDataURL(img, quality = 0.95) {
-      const canvas = document.createElement('canvas');
-      canvas.width = img.width;
-      canvas.height = img.height;
-      canvas.getContext('2d').drawImage(img, 0, 0);
-      return canvas.toDataURL('image/jpeg', quality);
-    }
-
     async function handleProcess() {
       const files = toolFiles[currentTool] || [];
       if (!files.length) { showToast('Please select at least one file.'); return; }
-      apiElements.downloadButton.classList.add('hidden');
+      elements.downloadButton.classList.add('hidden');
       maybeOpenAd();
       await showCountdown();
-      let result;
+      let result = null;
       try {
         switch (currentTool) {
           case 'photo': result = await processPhoto(files[0]); break;
@@ -791,27 +854,26 @@
           case 'password': result = await processPassword(files[0]); break;
           case 'extract': result = await processExtract(files[0]); break;
           case 'bgrem': result = await processBgRem(files[0]); break;
-          default: throw new Error('Unknown tool');
+          default: throw new Error('Unsupported tool');
         }
         if (result && result.blob) {
-          apiElements.downloadButton.classList.remove('hidden');
-          apiElements.downloadButton.onclick = () => downloadBlob(result.blob, result.filename);
+          elements.downloadButton.classList.remove('hidden');
+          elements.downloadButton.onclick = () => downloadBlob(result.blob, result.filename);
           downloadBlob(result.blob, result.filename);
-          showToast('File created locally. Download should begin shortly.');
+          showToast('Your file is ready. Download should begin shortly.');
         }
       } catch (error) {
         console.error(error);
-        showToast('Processing failed. Please try again with a supported file.');
+        showToast('Processing failed. Try a supported file or adjust the settings.');
       }
     }
 
-    function updateToolModal() {
+    function updateModal() {
       const tool = toolRoutes[currentTool];
-      apiElements.modalTitle.textContent = tool.title;
-      apiElements.modalSubtitle.textContent = tool.instructions;
-      apiElements.toolInstructions.textContent = tool.instructions;
-      apiElements.targetSummary.textContent = `${apiElements.targetSizeInput.value} KB`;
-      apiElements.qualitySummary.textContent = Number(apiElements.qualityRange.value).toFixed(2);
+      document.getElementById('modalTitle').textContent = tool.title;
+      document.getElementById('modalSubtitle').textContent = tool.instructions;
+      elements.toolInstructions.textContent = tool.instructions;
+      syncControls();
       setBrowseAccept();
       renderPreview();
     }
@@ -819,38 +881,45 @@
     function init() {
       setLanguage('en');
       buildToolGrid();
-      renderMonetagSlot(apiElements.topAd);
-      renderMonetagSlot(apiElements.sideAd);
-      renderMonetagSlot(apiElements.middleAd);
-      renderMonetagSlot(apiElements.modalAd);
-      renderMonetagSlot(apiElements.workspaceAd);
-      renderMonetagSlot(apiElements.videoAdSlot);
+      renderMonetagSlot(elements.topAd);
+      renderMonetagSlot(elements.sideAd);
+      renderMonetagSlot(elements.middleAd);
+      renderMonetagSlot(elements.modalAd);
+      renderMonetagSlot(elements.workspaceAd);
+      renderMonetagSlot(elements.videoAdSlot);
       syncControls();
-      renderStep();
-      apiElements.langSelect.addEventListener('change', e => setLanguage(e.target.value));
-      apiElements.openTools.addEventListener('click', () => document.getElementById('toolsGrid').scrollIntoView({ behavior: 'smooth' }));
-      apiElements.openFaq.addEventListener('click', () => document.getElementById('faq').scrollIntoView({ behavior: 'smooth' }));
-      apiElements.browseInput.addEventListener('change', () => addFiles(Array.from(apiElements.browseInput.files)));
-      apiElements.modalDropzone.addEventListener('click', () => apiElements.browseInput.click());
-      ['dragenter', 'dragover'].forEach(evt => apiElements.modalDropzone.addEventListener(evt, e => { e.preventDefault(); apiElements.modalDropzone.classList.add('active'); }));
-      ['dragleave', 'drop'].forEach(evt => apiElements.modalDropzone.addEventListener(evt, e => { e.preventDefault(); apiElements.modalDropzone.classList.remove('active'); }));
-      apiElements.modalDropzone.addEventListener('drop', e => addFiles(Array.from(e.dataTransfer.files)));
-      apiElements.stepPills.forEach((pill, idx) => pill.addEventListener('click', () => gotoStep(idx + 1)));
-      apiElements.targetSizeInput.addEventListener('input', syncControls);
-      apiElements.qualityRange.addEventListener('input', syncControls);
-      document.querySelectorAll('[data-preset]').forEach(btn => btn.addEventListener('click', () => choosePreset(btn.dataset.preset)));
-      apiElements.processButton.addEventListener('click', handleProcess);
-      apiElements.modalClose.addEventListener('click', closeModal);
+      showStep(1);
+      elements.languageButton.addEventListener('click', toggleLanguageMenu);
+      document.querySelectorAll('.language-item').forEach(button => {
+        button.addEventListener('click', () => {
+          const lang = button.dataset.lang;
+          setLanguage(lang);
+          elements.languageMenu.classList.add('hidden');
+        });
+      });
+      elements.openTools.addEventListener('click', () => document.getElementById('toolsGrid').scrollIntoView({ behavior: 'smooth' }));
+      elements.openFaq.addEventListener('click', () => document.getElementById('faq').scrollIntoView({ behavior: 'smooth' }));
+      elements.browseInput.addEventListener('change', () => addFiles(Array.from(elements.browseInput.files)));
+      elements.modalDropzone.addEventListener('click', () => elements.browseInput.click());
+      ['dragenter', 'dragover'].forEach(event => elements.modalDropzone.addEventListener(event, e => { e.preventDefault(); elements.modalDropzone.classList.add('active'); }));
+      ['dragleave', 'drop'].forEach(event => elements.modalDropzone.addEventListener(event, e => { e.preventDefault(); elements.modalDropzone.classList.remove('active'); }));
+      elements.modalDropzone.addEventListener('drop', e => addFiles(Array.from(e.dataTransfer.files)));
+      elements.targetSizeInput.addEventListener('input', syncControls);
+      elements.qualityRange.addEventListener('input', syncControls);
+      document.querySelectorAll('[data-preset]').forEach(button => button.addEventListener('click', () => choosePreset(button.dataset.preset)));
+      elements.processButton.addEventListener('click', handleProcess);
+      elements.modalClose.addEventListener('click', closeModal);
+      elements.stepPills.forEach((pill, index) => pill.addEventListener('click', () => showStep(index + 1)));
       window.addEventListener('hashchange', () => {
-        const tool = location.hash.replace('#/', '');
-        if (toolRoutes[tool]) openTool(tool);
+        const hashTool = location.hash.replace('#/', '');
+        if (toolRoutes[hashTool]) openTool(hashTool);
       });
       if (location.hash) {
-        const tool = location.hash.replace('#/', '');
-        if (toolRoutes[tool]) openTool(tool);
+        const hashTool = location.hash.replace('#/', '');
+        if (toolRoutes[hashTool]) openTool(hashTool);
       }
-      window.addEventListener('beforeinstallprompt', e => { e.preventDefault(); deferredPrompt = e; apiElements.installButton.classList.remove('hidden'); });
-      apiElements.installButton.addEventListener('click', async () => { if (!deferredPrompt) return; deferredPrompt.prompt(); deferredPrompt = null; });
+      window.addEventListener('beforeinstallprompt', e => { e.preventDefault(); deferredPrompt = e; elements.installButton.classList.remove('hidden'); });
+      elements.installButton.addEventListener('click', async () => { if (!deferredPrompt) return; deferredPrompt.prompt(); deferredPrompt = null; });
       if ('serviceWorker' in navigator) {
         window.addEventListener('load', () => navigator.serviceWorker.register('/service-worker.js').catch(() => {}));
       }
