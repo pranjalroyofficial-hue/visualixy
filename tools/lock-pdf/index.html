@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lock PDF Online Free - Password Protect PDF Document | Visualixy</title>
+    
+    <!-- Meta & SEO Tags -->
+    <meta name="description" content="Add password protection to your PDF files online for free. Encrypt PDF documents locally with high security. Fast, private, and 100% browser-side processing.">
+    <meta name="keywords" content="lock pdf online, password protect pdf free, encrypt pdf file, secure pdf document, visualixy lock pdf">
+    <meta name="google-site-verification" content="jMp7icjOP34wszoRC-Gpy94eoqTmJZO2_NIcBWcvBmA" />
+    <meta name="clckd" content="ff0f7e314e486dc0f6161ff3c28e001e" />
+
+    <!-- External Libraries & Ads -->
+    <script src="https://unpkg.com/pdf-lib@1.17.1/dist/pdf-lib.min.js"></script>
+    <script src="../../assets/js/ads.js"></script>
+    <script src="https://pl30718422.effectivecpmnetwork.com/67/51/f3/6751f3240d244f4f2df902162d5031d9.js"></script>
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <style>
+        body { background-color: #0b0f19; color: #f3f4f6; font-family: system-ui, -apple-system, sans-serif; }
+        .glass-card { background: rgba(22, 31, 50, 0.75); backdrop-filter: blur(16px); border: 1px solid rgba(255, 255, 255, 0.08); }
+        .glass-card-hover:hover { border-color: #3b82f6; box-shadow: 0 8px 25px -5px rgba(59, 130, 246, 0.2); }
+    </style>
+</head>
+<body class="min-h-screen flex flex-col justify-between">
+
+    <!-- Header -->
+    <header class="border-b border-gray-800 bg-[#0f172a]/90 sticky top-0 z-50 backdrop-blur-md">
+        <div class="max-w-6xl mx-auto px-4 py-3 flex items-center justify-between gap-4">
+            <a href="../../" class="flex items-center gap-2">
+                <div class="w-9 h-9 rounded-xl bg-gradient-to-tr from-blue-600 to-indigo-500 flex items-center justify-center font-bold text-xl text-white shadow-lg">V</div>
+                <span class="font-bold text-xl tracking-wide bg-gradient-to-r from-white to-gray-300 bg-clip-text text-transparent">Visualixy</span>
+            </a>
+            <a href="../../" class="text-xs text-blue-400 hover:underline flex items-center gap-1">
+                <span>←</span> Back to All Tools
+            </a>
+        </div>
+    </header>
+
+    <!-- Top Header Adsterra 728x90 Banner -->
+    <div class="max-w-6xl mx-auto px-4 mt-4 text-center overflow-hidden">
+        <script>atOptions = {'key':'0cf435f486e59418568243ee21ba9dea','format':'iframe','height':90,'width':728,'params':{}};</script>
+        <script src="https://www.highperformanceformat.com/0cf435f486e59418568243ee21ba9dea/invoke.js"></script>
+    </div>
+
+    <!-- Main Workspace -->
+    <main class="max-w-4xl mx-auto px-4 py-6 flex-1 w-full">
+        <div class="text-center mb-6">
+            <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-blue-500/10 border border-blue-500/20 text-xs text-blue-400 mb-3">
+                <span>🔒 Client-Side Encryption</span> • <span>🛡️ 100% Secure & Private</span>
+            </div>
+            <h1 class="text-2xl sm:text-4xl font-extrabold text-white tracking-tight mb-2">Password Protect PDF File</h1>
+            <p class="text-xs sm:text-sm text-gray-400 max-w-xl mx-auto">Encrypt your PDF document with a custom password to prevent unauthorized access.</p>
+        </div>
+
+        <!-- Dropzone -->
+        <div id="dropzone" class="glass-card glass-card-hover p-8 rounded-2xl border-2 border-dashed border-blue-500/40 text-center cursor-pointer transition mb-6" onclick="document.getElementById('pdfInput').click()">
+            <input type="file" id="pdfInput" accept="application/pdf" class="hidden" onchange="loadPdfForLock(this.files[0])">
+            <div class="w-14 h-14 mx-auto mb-3 rounded-2xl bg-blue-600/10 text-blue-400 flex items-center justify-center text-3xl">
+                🔒
+            </div>
+            <h3 class="text-sm sm:text-base font-semibold text-gray-100 mb-1">Click or Drag PDF Document Here</h3>
+            <p class="text-xs text-gray-400">Select PDF document to encrypt</p>
+        </div>
+
+        <!-- Editor Workspace (Hidden initially) -->
+        <div id="editor" class="hidden space-y-6">
+            <div class="glass-card p-6 rounded-2xl border border-gray-800 space-y-5">
+                <div class="flex items-center justify-between border-b border-gray-800 pb-3">
+                    <div>
+                        <h3 id="pdfNameText" class="text-sm font-bold text-gray-200 truncate max-w-xs sm:max-w-md">document.pdf</h3>
+                        <p class="text-xs text-blue-400 font-medium">Ready for Encryption</p>
+                    </div>
+                    <button onclick="resetLocker()" class="text-xs bg-red-600/20 text-red-400 px-3 py-1.5 rounded-lg border border-red-500/30">
+                        Change File
+                    </button>
+                </div>
+
+                <!-- Password Setup Form -->
+                <div class="space-y-4">
+                    <div>
+                        <label class="text-xs font-medium text-gray-300 block mb-1">Set Password for PDF</label>
+                        <input type="password" id="pdfPasswordInput" placeholder="Enter new password" class="w-full bg-gray-900 border border-gray-700 text-xs text-gray-200 rounded-xl px-4 py-3 focus:border-blue-500 focus:outline-none">
+                    </div>
+
+                    <div>
+                        <label class="text-xs font-medium text-gray-300 block mb-1">Confirm Password</label>
+                        <input type="password" id="pdfPasswordConfirm" placeholder="Re-enter password" class="w-full bg-gray-900 border border-gray-700 text-xs text-gray-200 rounded-xl px-4 py-3 focus:border-blue-500 focus:outline-none">
+                    </div>
+
+                    <!-- Lock Action Button -->
+                    <button onclick="lockPdfAction()" class="w-full bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-500 hover:to-indigo-500 text-white font-bold py-3.5 px-4 rounded-xl shadow-lg transition text-sm flex items-center justify-center gap-2">
+                        <span>🔒</span> Lock & Save Protected PDF
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Adsterra 300x250 Banner Slot -->
+        <div class="my-8 glass-card p-4 rounded-2xl flex items-center justify-center overflow-hidden">
+            <script>atOptions = {'key':'ff2ed036da6ab41cbe4fbfbeba0d55fe','format':'iframe','height':250,'width':300,'params':{}};</script>
+            <script src="https://www.highperformanceformat.com/ff2ed036da6ab41cbe4fbfbeba0d55fe/invoke.js"></script>
+        </div>
+
+        <!-- Native Banner Ad Container -->
+        <div class="mt-8">
+            <script async="async" data-cfasync="false" src="https://pl30718421.effectivecpmnetwork.com/5a97a7a8933aa123ce85e87134bf64fa/invoke.js"></script>
+            <div id="container-5a97a7a8933aa123ce85e87134bf64fa"></div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="border-t border-gray-800 py-4 text-center text-xs text-gray-500 mt-8">
+        <p>© 2026 Visualixy. All rights reserved. Online PDF Password Locker.</p>
+    </footer>
+
+    <!-- JS Logic -->
+    <script>
+        let rawPdfBytes = null;
+        let originalFileName = "locked_document.pdf";
+
+        async function loadPdfForLock(file) {
+            if (!file) return;
+            originalFileName = file.name;
+            rawPdfBytes = await file.arrayBuffer();
+
+            document.getElementById('dropzone').classList.add('hidden');
+            document.getElementById('editor').classList.remove('hidden');
+            document.getElementById('pdfNameText').innerText = file.name;
+        }
+
+        function resetLocker() {
+            rawPdfBytes = null;
+            document.getElementById('dropzone').classList.remove('hidden');
+            document.getElementById('editor').classList.add('hidden');
+        }
+
+        async function lockPdfAction() {
+            if (!rawPdfBytes) return;
+
+            const pwd = document.getElementById('pdfPasswordInput').value;
+            const pwdConfirm = document.getElementById('pdfPasswordConfirm').value;
+
+            if (!pwd) return alert('Please enter a password!');
+            if (pwd !== pwdConfirm) return alert('Passwords do not match!');
+
+            try {
+                const pdfDoc = await PDFLib.PDFDocument.load(rawPdfBytes);
+                
+                // Encrypt using user password
+                pdfDoc.encrypt({
+                    userPassword: pwd,
+                    ownerPassword: pwd,
+                    permissions: {
+                        printing: 'highResolution',
+                        modifying: false,
+                        copying: false,
+                        annotating: false,
+                    },
+                });
+
+                const lockedBytes = await pdfDoc.save();
+                const blob = new Blob([lockedBytes], { type: 'application/pdf' });
+                const url = URL.createObjectURL(blob);
+
+                const a = document.createElement('a');
+                a.href = url;
+                a.download = "protected_" + originalFileName;
+                document.body.appendChild(a);
+                a.click();
+                document.body.removeChild(a);
+
+                if (window.triggerPopunder) window.triggerPopunder();
+            } catch (err) {
+                alert('Error locking PDF. Please try again.');
+            }
+        }
+    </script>
+</body>
+</html>

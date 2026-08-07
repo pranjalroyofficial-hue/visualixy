@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SSC Photo Resizer Online - Compress Photo Under 50KB Free | Visualixy</title>
+    
+    <!-- Meta & SEO Tags -->
+    <meta name="description" content="Resize and compress passport photos for SSC, UPSC, IBPS, RRB & Govt exam forms. Lock dimensions (3.5cm x 4.5cm) and file size under 50KB or 20KB instantly.">
+    <meta name="keywords" content="ssc photo resizer, photo compressor under 50kb, ssc cgl photo resizer, online photo resizer 3.5 x 4.5 cm, passport photo resizer govt exam">
+    <meta name="google-site-verification" content="jMp7icjOP34wszoRC-Gpy94eoqTmJZO2_NIcBWcvBmA" />
+    <meta name="clckd" content="ff0f7e314e486dc0f6161ff3c28e001e" />
+
+    <!-- External Libraries & Ads -->
+    <script src="../../assets/js/ads.js"></script>
+    <script src="https://pl30718422.effectivecpmnetwork.com/67/51/f3/6751f3240d244f4f2df902162d5031d9.js"></script>
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <style>
+        body { background-color: #0b0f19; color: #f3f4f6; font-family: system-ui, -apple-system, sans-serif; }
+        .glass-card { background: rgba(22, 31, 50, 0.75); backdrop-filter: blur(16px); border: 1px solid rgba(255, 255, 255, 0.08); }
+        .glass-card-hover:hover { border-color: #3b82f6; box-shadow: 0 8px 25px -5px rgba(59, 130, 246, 0.2); }
+    </style>
+</head>
+<body class="min-h-screen flex flex-col justify-between">
+
+    <!-- Header -->
+    <header class="border-b border-gray-800 bg-[#0f172a]/90 sticky top-0 z-50 backdrop-blur-md">
+        <div class="max-w-6xl mx-auto px-4 py-3 flex items-center justify-between gap-4">
+            <a href="../../" class="flex items-center gap-2">
+                <div class="w-9 h-9 rounded-xl bg-gradient-to-tr from-blue-600 to-indigo-500 flex items-center justify-center font-bold text-xl text-white shadow-lg">V</div>
+                <span class="font-bold text-xl tracking-wide bg-gradient-to-r from-white to-gray-300 bg-clip-text text-transparent">Visualixy</span>
+            </a>
+            <a href="../../" class="text-xs text-blue-400 hover:underline flex items-center gap-1">
+                <span>←</span> Back to All Tools
+            </a>
+        </div>
+    </header>
+
+    <!-- Top Header Adsterra 728x90 Banner -->
+    <div class="max-w-6xl mx-auto px-4 mt-4 text-center overflow-hidden">
+        <script>atOptions = {'key':'0cf435f486e59418568243ee21ba9dea','format':'iframe','height':90,'width':728,'params':{}};</script>
+        <script src="https://www.highperformanceformat.com/0cf435f486e59418568243ee21ba9dea/invoke.js"></script>
+    </div>
+
+    <!-- Main Workspace -->
+    <main class="max-w-4xl mx-auto px-4 py-6 flex-1 w-full">
+        <div class="text-center mb-6">
+            <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-blue-500/10 border border-blue-500/20 text-xs text-blue-400 mb-3">
+                <span>🎯 Target Size Lock (20KB - 50KB)</span> • <span>🇮🇳 Govt Exam Ready</span>
+            </div>
+            <h1 class="text-2xl sm:text-4xl font-extrabold text-white tracking-tight mb-2">SSC & Govt Exam Photo Resizer</h1>
+            <p class="text-xs sm:text-sm text-gray-400 max-w-xl mx-auto">Upload your passport photo and compress it precisely under 50KB with standard exam dimensions (3.5 cm x 4.5 cm / 350 x 450 px).</p>
+        </div>
+
+        <!-- Dropzone -->
+        <div id="dropzone" class="glass-card glass-card-hover p-8 rounded-2xl border-2 border-dashed border-blue-500/40 text-center cursor-pointer transition mb-6" onclick="document.getElementById('photoInput').click()">
+            <input type="file" id="photoInput" accept="image/jpeg, image/jpg, image/png" class="hidden" onchange="loadPhoto(this.files[0])">
+            <div class="w-14 h-14 mx-auto mb-3 rounded-2xl bg-blue-600/10 text-blue-400 flex items-center justify-center text-3xl">
+                🖼️
+            </div>
+            <h3 class="text-sm sm:text-base font-semibold text-gray-100 mb-1">Click or Drag Passport Photo Here</h3>
+            <p class="text-xs text-gray-400">Supports JPG, JPEG, and PNG format</p>
+        </div>
+
+        <!-- Editor Workspace (Hidden initially) -->
+        <div id="editor" class="hidden space-y-6">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                
+                <!-- Preview Canvas Box -->
+                <div class="glass-card p-4 rounded-2xl flex flex-col items-center justify-center min-h-[280px] border border-gray-800">
+                    <div class="text-xs text-gray-400 mb-2 font-medium">Live Canvas Preview</div>
+                    <div class="border-2 border-dashed border-blue-500/50 p-1 rounded-lg bg-black/40">
+                        <canvas id="previewCanvas" class="max-h-[220px] w-auto rounded object-contain"></canvas>
+                    </div>
+                    <div id="fileInfoBadge" class="mt-3 text-xs font-bold text-blue-400 bg-blue-500/10 px-3 py-1 rounded-full border border-blue-500/20">
+                        Estimated Size: -- KB
+                    </div>
+                </div>
+
+                <!-- Controls Panel -->
+                <div class="glass-card p-5 rounded-2xl space-y-4 border border-gray-800">
+                    <h3 class="text-sm font-bold text-gray-200 border-b border-gray-800 pb-2 flex items-center gap-2">
+                        <span>⚙️</span> Presets & Custom Adjustments
+                    </h3>
+
+                    <!-- Exam Presets -->
+                    <div>
+                        <label class="text-xs font-medium text-gray-300 block mb-1">Exam Preset Template</label>
+                        <select id="examPreset" onchange="applyPreset()" class="w-full bg-gray-900 border border-gray-700 text-xs text-gray-200 rounded-xl px-3 py-2.5 focus:border-blue-500 focus:outline-none">
+                            <option value="ssc">SSC CGL / CHSL / GD (3.5 x 4.5 cm | Max 50KB)</option>
+                            <option value="upsc">UPSC Civil Services (350 x 350 px | Max 300KB)</option>
+                            <option value="ibps">IBPS Bank PO / Clerk (200 x 230 px | Max 50KB)</option>
+                            <option value="custom">Custom Dimensions & Size</option>
+                        </select>
+                    </div>
+
+                    <!-- Custom Width & Height -->
+                    <div class="grid grid-cols-2 gap-3">
+                        <div>
+                            <label class="text-xs font-medium text-gray-400 block mb-1">Width (px)</label>
+                            <input type="number" id="imgWidth" value="350" oninput="processPhoto()" class="w-full bg-gray-900 border border-gray-700 text-xs text-gray-200 rounded-lg px-3 py-2">
+                        </div>
+                        <div>
+                            <label class="text-xs font-medium text-gray-400 block mb-1">Height (px)</label>
+                            <input type="number" id="imgHeight" value="450" oninput="processPhoto()" class="w-full bg-gray-900 border border-gray-700 text-xs text-gray-200 rounded-lg px-3 py-2">
+                        </div>
+                    </div>
+
+                    <!-- Target File Size (KB) Slider -->
+                    <div>
+                        <div class="flex justify-between items-center mb-1">
+                            <label class="text-xs font-medium text-gray-300">Target Max Size Limit</label>
+                            <span id="targetKbText" class="text-xs font-bold text-blue-400">45 KB</span>
+                        </div>
+                        <input type="range" id="targetKbSlider" min="10" max="100" value="45" oninput="updateTargetKb(this.value)" class="w-full accent-blue-500 cursor-pointer">
+                    </div>
+
+                    <!-- Process & Download Button -->
+                    <button onclick="downloadResizedPhoto()" class="w-full bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-500 hover:to-indigo-500 text-white font-bold py-3 px-4 rounded-xl shadow-lg transition text-sm flex items-center justify-center gap-2">
+                        <span>📥</span> Download Exam Photo (<span id="downloadSizeBtn">45KB</span>)
+                    </button>
+                </div>
+
+            </div>
+        </div>
+
+        <!-- Adsterra 300x250 Banner Slot -->
+        <div class="my-8 glass-card p-4 rounded-2xl flex items-center justify-center overflow-hidden">
+            <script>atOptions = {'key':'ff2ed036da6ab41cbe4fbfbeba0d55fe','format':'iframe','height':250,'width':300,'params':{}};</script>
+            <script src="https://www.highperformanceformat.com/ff2ed036da6ab41cbe4fbfbeba0d55fe/invoke.js"></script>
+        </div>
+
+        <!-- SEO Content -->
+        <section class="glass-card p-6 rounded-2xl space-y-4 border border-gray-800 text-xs sm:text-sm text-gray-400">
+            <h2 class="text-base font-bold text-gray-200">How to Resize Photo for SSC CGL, CHSL, and Govt Exams</h2>
+            <p>Most Indian government recruitment portals require passport-size photographs strictly between <strong>20KB to 50KB</strong> with exact dimensions of <strong>3.5 cm x 4.5 cm</strong>. Visualixy processes your image directly in your browser without uploading it to external servers, protecting your privacy.</p>
+        </section>
+
+        <!-- Native Banner Ad Container -->
+        <div class="mt-8">
+            <script async="async" data-cfasync="false" src="https://pl30718421.effectivecpmnetwork.com/5a97a7a8933aa123ce85e87134bf64fa/invoke.js"></script>
+            <div id="container-5a97a7a8933aa123ce85e87134bf64fa"></div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="border-t border-gray-800 py-4 text-center text-xs text-gray-500 mt-8">
+        <p>© 2026 Visualixy. All rights reserved. SSC Photo & Signature Utility.</p>
+    </footer>
+
+    <!-- JS Logic -->
+    <script>
+        let rawImage = null;
+        let finalBlob = null;
+
+        function loadPhoto(file) {
+            if (!file) return;
+            const reader = new FileReader();
+            reader.onload = function(e) {
+                rawImage = new Image();
+                rawImage.onload = function() {
+                    document.getElementById('dropzone').classList.add('hidden');
+                    document.getElementById('editor').classList.remove('hidden');
+                    processPhoto();
+                };
+                rawImage.src = e.target.result;
+            };
+            reader.readAsDataURL(file);
+        }
+
+        function applyPreset() {
+            const preset = document.getElementById('examPreset').value;
+            const wInput = document.getElementById('imgWidth');
+            const hInput = document.getElementById('imgHeight');
+            const slider = document.getElementById('targetKbSlider');
+
+            if (preset === 'ssc') {
+                wInput.value = 350;
+                hInput.value = 450;
+                slider.value = 45;
+            } else if (preset === 'upsc') {
+                wInput.value = 350;
+                hInput.value = 350;
+                slider.value = 90;
+            } else if (preset === 'ibps') {
+                wInput.value = 200;
+                hInput.value = 230;
+                slider.value = 45;
+            }
+            updateTargetKb(slider.value);
+            processPhoto();
+        }
+
+        function updateTargetKb(val) {
+            document.getElementById('targetKbText').innerText = val + ' KB';
+            document.getElementById('downloadSizeBtn').innerText = '<' + val + 'KB';
+            processPhoto();
+        }
+
+        function processPhoto() {
+            if (!rawImage) return;
+
+            const canvas = document.getElementById('previewCanvas');
+            const ctx = canvas.getContext('2d');
+            const targetW = parseInt(document.getElementById('imgWidth').value) || 350;
+            const targetH = parseInt(document.getElementById('imgHeight').value) || 450;
+            const targetKb = parseInt(document.getElementById('targetKbSlider').value) || 45;
+
+            canvas.width = targetW;
+            canvas.height = targetH;
+            ctx.drawImage(rawImage, 0, 0, targetW, targetH);
+
+            // Iterative Compression to lock target KB
+            let quality = 0.95;
+            function compressLoop() {
+                canvas.toBlob(function(blob) {
+                    let sizeKb = blob.size / 1024;
+                    if (sizeKb > targetKb && quality > 0.1) {
+                        quality -= 0.05;
+                        compressLoop();
+                    } else {
+                        finalBlob = blob;
+                        document.getElementById('fileInfoBadge').innerText = `Current Size: ${sizeKb.toFixed(1)} KB | ${targetW}x${targetH} px`;
+                    }
+                }, 'image/jpeg', quality);
+            }
+            compressLoop();
+        }
+
+        function downloadResizedPhoto() {
+            if (!finalBlob) return;
+            const url = URL.createObjectURL(finalBlob);
+            const a = document.createElement('a');
+            a.href = url;
+            a.download = "ssc_exam_photo_visualixy.jpg";
+            document.body.appendChild(a);
+            a.click();
+            document.body.removeChild(a);
+
+            if (window.triggerPopunder) window.triggerPopunder();
+        }
+    </script>
+</body>
+</html>
