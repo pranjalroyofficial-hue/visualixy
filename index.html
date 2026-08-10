@@ -2,12 +2,12 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <title>Visualixy - Free Online Smart Document & Image Utilities</title>
     
-    <!-- SEO, GEO & Verification Tags -->
-    <meta name="description" content="Visualixy offers 13+ free online tools. Resize SSC photos, crop Aadhaar PVC cards, convert JPG to PDF, extract text from OCR, merge/compress PDFs, and clean background free.">
-    <meta name="keywords" content="visualixy, free online pdf tools, ssc photo resizer, jpg to pdf, aadhaar pvc card crop, ocr text extractor, pdf compressor, remove bg, unlock pdf">
+    <!-- Meta, SEO & Search Console Tags -->
+    <meta name="description" content="Visualixy offers 16+ free online utilities. Resize SSC photos, crop ID cards, convert JPG to PDF, extract OCR text, merge/compress PDFs, and clean photo backgrounds instantly.">
+    <meta name="keywords" content="visualixy, free online pdf tools, ssc photo resizer, jpg to pdf, id card crop, ocr text extractor, pdf compressor, remove bg, unlock pdf">
     <meta name="author" content="Visualixy">
     <link rel="canonical" href="https://visualixy.in/" />
 
@@ -15,14 +15,14 @@
     <meta name="google-site-verification" content="jMp7icjOP34wszoRC-Gpy94eoqTmJZO2_NIcBWcvBmA" />
     <meta name="clckd" content="ff0f7e314e486dc0f6161ff3c28e001e" />
 
-    <!-- OpenGraph & Social Cards (GEO Optimization) -->
+    <!-- OpenGraph Social Cards -->
     <meta property="og:type" content="website" />
-    <meta property="og:title" content="Visualixy - 13+ Free Smart Document & Image Utilities" />
-    <meta property="og:description" content="Instant browser-based PDF & Image tools. 100% free, fast, and secure." />
+    <meta property="og:title" content="Visualixy - 16+ Smart Online Utilities" />
+    <meta property="og:description" content="Fast, 100% private, browser-based PDF & Image editing tools." />
     <meta property="og:url" content="https://visualixy.in/" />
     <meta property="og:site_name" content="Visualixy" />
 
-    <!-- JSON-LD Schema.org Structured Data -->
+    <!-- Schema.org JSON-LD -->
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
@@ -37,7 +37,7 @@
     }
     </script>
 
-    <!-- External Ads & Local Ad Manager -->
+    <!-- External Ads Scripts -->
     <script src="https://pl30718422.effectivecpmnetwork.com/67/51/f3/6751f3240d244f4f2df902162d5031d9.js"></script>
     <script src="https://quge5.com/88/tag.min.js" data-zone="267129" async data-cfasync="false"></script>
     <script src="assets/js/ads.js"></script>
@@ -45,191 +45,235 @@
     <!-- Tailwind CSS Engine -->
     <script src="https://cdn.tailwindcss.com"></script>
     <style>
-        body { background-color: #0b0f19; color: #f3f4f6; font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; }
-        .glass-card { background: rgba(22, 31, 50, 0.75); backdrop-filter: blur(14px); border: 1px solid rgba(255, 255, 255, 0.08); transition: all 0.25s ease-in-out; }
-        .glass-card:hover { border-color: #3b82f6; transform: translateY(-3px); box-shadow: 0 10px 25px -5px rgba(59, 130, 246, 0.25); }
-        .logo-glow { filter: drop-shadow(0 0 10px rgba(59, 130, 246, 0.6)); }
+        body { background-color: #080c15; color: #f3f4f6; font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; }
+        .glass-card { background: rgba(17, 24, 39, 0.7); backdrop-filter: blur(16px); border: 1px solid rgba(255, 255, 255, 0.08); transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1); }
+        .glass-card:hover { border-color: #3b82f6; transform: translateY(-3px); box-shadow: 0 12px 30px -5px rgba(59, 130, 246, 0.3); }
+        .logo-glow { filter: drop-shadow(0 0 12px rgba(59, 130, 246, 0.7)); }
+        .app-badge-glow { animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite; }
+        @keyframes pulse { 0%, 100% { opacity: 1; } 50% { opacity: 0.6; } }
     </style>
 </head>
-<body class="min-h-screen flex flex-col justify-between">
+<body class="min-h-screen flex flex-col justify-between antialiased">
 
-    <!-- Header & Navigation -->
-    <header class="border-b border-gray-800 bg-[#0f172a]/90 sticky top-0 z-50 backdrop-blur-md">
-        <div class="max-w-7xl mx-auto px-4 py-3 flex items-center justify-between gap-4">
+    <!-- Header Navigation -->
+    <header class="border-b border-gray-800/80 bg-[#0f172a]/95 sticky top-0 z-50 backdrop-blur-md">
+        <div class="max-w-7xl mx-auto px-3 sm:px-6 py-2.5 sm:py-3 flex items-center justify-between gap-3">
             
-            <!-- Code SVG Animated Logo -->
-            <a href="./" class="flex items-center gap-2.5 group">
-                <div class="w-10 h-10 rounded-xl bg-gradient-to-tr from-blue-600 via-indigo-600 to-purple-500 flex items-center justify-center shadow-lg logo-glow">
-                    <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+            <!-- Brand Logo -->
+            <a href="./" class="flex items-center gap-2 sm:gap-3 group">
+                <div class="w-9 h-9 sm:w-10 sm:h-10 rounded-xl bg-gradient-to-tr from-blue-600 via-indigo-600 to-purple-500 flex items-center justify-center shadow-lg logo-glow">
+                    <svg class="w-5 h-5 sm:w-6 sm:h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M13 10V3L4 14h7v7l9-11h-7z"></path>
                     </svg>
                 </div>
                 <div class="flex flex-col">
-                    <span class="font-extrabold text-xl tracking-wider bg-gradient-to-r from-white via-gray-200 to-blue-400 bg-clip-text text-transparent">Visualixy</span>
-                    <span class="text-[9px] text-blue-400 tracking-widest font-semibold uppercase -mt-1">Smart Utilities</span>
+                    <span class="font-extrabold text-lg sm:text-xl tracking-wider bg-gradient-to-r from-white via-gray-200 to-blue-400 bg-clip-text text-transparent">Visualixy</span>
+                    <span class="text-[8px] sm:text-[9px] text-blue-400 tracking-widest font-semibold uppercase -mt-1">Smart Utilities</span>
                 </div>
             </a>
             
-            <!-- Desktop Smart Search Bar -->
-            <div class="flex-1 max-w-md hidden sm:block">
+            <!-- Desktop Search Bar -->
+            <div class="flex-1 max-w-md hidden md:block">
                 <div class="relative">
-                    <input type="text" id="searchBarDesktop" onkeyup="filterToolsAdvanced('searchBarDesktop')" placeholder="Search tools (e.g. JPG to PDF, SSC Resizer, Aadhaar, OCR)..." class="w-full bg-gray-900 border border-gray-700 rounded-xl pl-10 pr-4 py-2 text-xs text-gray-200 focus:outline-none focus:border-blue-500 transition">
-                    <span class="absolute left-3 top-2.5 text-gray-500 text-sm">🔍</span>
+                    <input type="text" id="searchBarDesktop" onkeyup="filterTools('searchBarDesktop')" placeholder="Search 16+ tools (e.g. Scan to PDF, SSC Resizer, JPG to PDF)..." class="w-full bg-gray-900/90 border border-gray-700/80 rounded-xl pl-9 pr-4 py-2 text-xs text-gray-200 focus:outline-none focus:border-blue-500 focus:ring-1 focus:ring-blue-500 transition">
+                    <span class="absolute left-3 top-2.5 text-gray-500 text-xs">🔍</span>
                 </div>
             </div>
 
-            <!-- Language Switcher -->
-            <select class="bg-gray-900 border border-gray-700 text-xs text-gray-300 rounded-xl px-2.5 py-2 focus:outline-none">
-                <option value="en">English</option>
-                <option value="hi">हिन्दी</option>
-                <option value="bn">বাংলা</option>
-                <option value="as">অসমীয়া</option>
-                <option value="ta">தமிழ்</option>
-            </select>
+            <!-- APK Direct Download Button -->
+            <button onclick="openApkModal()" class="bg-gradient-to-r from-emerald-600 via-teal-600 to-cyan-600 hover:from-emerald-500 hover:to-cyan-500 text-white font-bold text-xs px-3 sm:px-4 py-2 rounded-xl shadow-lg flex items-center gap-1.5 transition active:scale-95">
+                <span>📱</span> <span class="hidden sm:inline">Get Official</span> APK
+            </button>
         </div>
     </header>
 
-    <!-- Top Banner Slot (728x90) -->
-    <div class="max-w-7xl mx-auto px-4 mt-4 text-center overflow-hidden">
+    <!-- Top Header Adsterra 728x90 Banner -->
+    <div class="max-w-7xl mx-auto px-2 sm:px-4 mt-3 text-center overflow-hidden">
         <script>atOptions = {'key':'0cf435f486e59418568243ee21ba9dea','format':'iframe','height':90,'width':728,'params':{}};</script>
         <script src="https://www.highperformanceformat.com/0cf435f486e59418568243ee21ba9dea/invoke.js"></script>
     </div>
 
-    <!-- Main Content Area -->
-    <main class="max-w-7xl mx-auto px-4 py-6 flex-1 w-full">
+    <!-- Main Workspace Container -->
+    <main class="max-w-7xl mx-auto px-3 sm:px-6 py-4 sm:py-6 flex-1 w-full">
         
         <!-- Mobile Search Bar -->
-        <div class="mb-6 sm:hidden">
+        <div class="mb-4 md:hidden">
             <div class="relative">
-                <input type="text" id="searchBarMobile" onkeyup="filterToolsAdvanced('searchBarMobile')" placeholder="Search 13+ tools (e.g. photo, pdf, crop, ocr)..." class="w-full bg-gray-900 border border-gray-700 rounded-xl pl-10 pr-4 py-2.5 text-xs text-gray-200 focus:outline-none focus:border-blue-500">
-                <span class="absolute left-3 top-2.5 text-gray-500 text-sm">🔍</span>
+                <input type="text" id="searchBarMobile" onkeyup="filterTools('searchBarMobile')" placeholder="Search tools..." class="w-full bg-gray-900 border border-gray-700/80 rounded-xl pl-9 pr-4 py-2.5 text-xs text-gray-200 focus:outline-none focus:border-blue-500">
+                <span class="absolute left-3 top-2.5 text-gray-500 text-xs">🔍</span>
             </div>
         </div>
 
         <div class="flex items-center justify-between mb-4">
-            <h2 class="text-base sm:text-lg font-bold text-gray-200 flex items-center gap-2">
-                <span class="w-2.5 h-2.5 rounded-full bg-blue-500 animate-pulse"></span> All Smart Utilities (13 Tools)
+            <h2 class="text-sm sm:text-lg font-bold text-gray-200 flex items-center gap-2">
+                <span class="w-2.5 h-2.5 rounded-full bg-blue-500 app-badge-glow"></span> Modern Web & App Suite
             </h2>
-            <span id="activeToolsCount" class="text-xs text-gray-400 bg-gray-900 px-3 py-1 rounded-full border border-gray-800">Showing 13 Tools</span>
+            <span id="activeToolsCount" class="text-[10px] sm:text-xs text-gray-400 bg-gray-900/80 px-3 py-1 rounded-full border border-gray-800">Showing 16 Tools</span>
         </div>
 
-        <!-- Dynamic Grid: Mobile 2-Column / Desktop 4-Column Layout -->
-        <div id="toolsGrid" class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-3 sm:gap-4">
+        <!-- Responsive App Grid -->
+        <div id="toolsGrid" class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-2.5 sm:gap-4">
             
+            <!-- APP EXCLUSIVE HIGHLIGHT CARD: Live Scan to PDF -->
+            <div onclick="openApkModal()" data-keywords="scan to pdf, camera scanner, doc scanner, app exclusive, apk scan, live edge detection" class="tool-card glass-card p-3.5 sm:p-4 rounded-2xl flex flex-col items-center text-center cursor-pointer border-2 border-emerald-500/60 bg-gradient-to-b from-emerald-950/30 via-gray-900/90 to-gray-900/90 relative overflow-hidden group">
+                <span class="absolute top-2 right-2 bg-gradient-to-r from-emerald-500 to-teal-400 text-black text-[8px] font-black px-2 py-0.5 rounded-full uppercase tracking-wider shadow-md">APP ONLY</span>
+                <div class="w-11 h-11 sm:w-12 sm:h-12 rounded-xl bg-emerald-500/20 text-emerald-400 flex items-center justify-center text-2xl font-bold mb-2.5 group-hover:scale-110 transition shadow-inner">📸</div>
+                <h3 class="font-bold text-xs sm:text-sm text-white">Scan to PDF (Live Cam)</h3>
+                <p class="text-[9px] sm:text-xs text-emerald-400 mt-1 font-medium">Auto Edge Scan & Filters (Download APK)</p>
+            </div>
+
             <!-- Tool 1: JPG to PDF -->
-            <a href="./tools/jpg-to-pdf/" data-keywords="jpg to pdf, jpeg, png, image to pdf, photo convert, document maker" class="tool-card glass-card p-4 rounded-2xl flex flex-col items-center text-center">
-                <div class="w-12 h-12 rounded-xl bg-red-500/10 text-red-400 flex items-center justify-center text-2xl font-bold mb-3">📄</div>
+            <a href="./tools/jpg-to-pdf/" data-keywords="jpg to pdf, jpeg, png, image to pdf, photo convert, document maker" class="tool-card glass-card p-3.5 sm:p-4 rounded-2xl flex flex-col items-center text-center">
+                <div class="w-11 h-11 sm:w-12 sm:h-12 rounded-xl bg-red-500/10 text-red-400 flex items-center justify-center text-2xl font-bold mb-2.5">📄</div>
                 <h3 class="font-bold text-xs sm:text-sm text-gray-100">JPG to PDF</h3>
-                <p class="text-[10px] sm:text-xs text-gray-400 mt-1">Convert multiple images to PDF</p>
+                <p class="text-[9px] sm:text-xs text-gray-400 mt-1">Convert multiple images to PDF</p>
             </a>
 
             <!-- Tool 2: SSC Photo Resizer -->
-            <a href="./tools/ssc-photo-resizer/" data-keywords="ssc photo resizer, 50kb, govt exam, passport size, cgl, chsl, gd photo" class="tool-card glass-card p-4 rounded-2xl flex flex-col items-center text-center">
-                <div class="w-12 h-12 rounded-xl bg-blue-500/10 text-blue-400 flex items-center justify-center text-2xl font-bold mb-3">🖼️</div>
+            <a href="./tools/ssc-photo-resizer/" data-keywords="ssc photo resizer, 50kb, govt exam, passport size, cgl, chsl, gd photo" class="tool-card glass-card p-3.5 sm:p-4 rounded-2xl flex flex-col items-center text-center">
+                <div class="w-11 h-11 sm:w-12 sm:h-12 rounded-xl bg-blue-500/10 text-blue-400 flex items-center justify-center text-2xl font-bold mb-2.5">🖼️</div>
                 <h3 class="font-bold text-xs sm:text-sm text-gray-100">SSC Photo Resizer</h3>
-                <p class="text-[10px] sm:text-xs text-gray-400 mt-1">Resize under 50KB for Govt Exam</p>
+                <p class="text-[9px] sm:text-xs text-gray-400 mt-1">Resize under 50KB for Govt Exam</p>
             </a>
 
             <!-- Tool 3: Signature Crop -->
-            <a href="./tools/signature-crop/" data-keywords="signature crop, 20kb, sign resizer, ssc signature, ibps sign, 10kb" class="tool-card glass-card p-4 rounded-2xl flex flex-col items-center text-center">
-                <div class="w-12 h-12 rounded-xl bg-indigo-500/10 text-indigo-400 flex items-center justify-center text-2xl font-bold mb-3">✍️</div>
+            <a href="./tools/signature-crop/" data-keywords="signature crop, 20kb, sign resizer, ssc signature, ibps sign, 10kb" class="tool-card glass-card p-3.5 sm:p-4 rounded-2xl flex flex-col items-center text-center">
+                <div class="w-11 h-11 sm:w-12 sm:h-12 rounded-xl bg-indigo-500/10 text-indigo-400 flex items-center justify-center text-2xl font-bold mb-2.5">✍️</div>
                 <h3 class="font-bold text-xs sm:text-sm text-gray-100">Signature Crop</h3>
-                <p class="text-[10px] sm:text-xs text-gray-400 mt-1">Crop & compress under 20KB</p>
+                <p class="text-[9px] sm:text-xs text-gray-400 mt-1">Crop & compress under 20KB</p>
             </a>
 
             <!-- Tool 4: Compress PDF -->
-            <a href="./tools/compress-pdf/" data-keywords="compress pdf, reduce pdf size, shrink pdf, 100kb, 200kb, 500kb" class="tool-card glass-card p-4 rounded-2xl flex flex-col items-center text-center">
-                <div class="w-12 h-12 rounded-xl bg-green-500/10 text-green-400 flex items-center justify-center text-2xl font-bold mb-3">⚡</div>
+            <a href="./tools/compress-pdf/" data-keywords="compress pdf, reduce pdf size, shrink pdf, 100kb, 200kb, 500kb" class="tool-card glass-card p-3.5 sm:p-4 rounded-2xl flex flex-col items-center text-center">
+                <div class="w-11 h-11 sm:w-12 sm:h-12 rounded-xl bg-green-500/10 text-green-400 flex items-center justify-center text-2xl font-bold mb-2.5">⚡</div>
                 <h3 class="font-bold text-xs sm:text-sm text-gray-100">Compress PDF</h3>
-                <p class="text-[10px] sm:text-xs text-gray-400 mt-1">Reduce PDF file size locally</p>
+                <p class="text-[9px] sm:text-xs text-gray-400 mt-1">Reduce PDF file size locally</p>
             </a>
 
             <!-- In-Grid Adsterra 300x250 Slot -->
-            <div class="col-span-2 glass-card p-2 rounded-2xl flex items-center justify-center overflow-hidden min-h-[250px]">
+            <div class="col-span-2 glass-card p-2 rounded-2xl flex items-center justify-center overflow-hidden min-h-[220px]">
                 <script>atOptions = {'key':'ff2ed036da6ab41cbe4fbfbeba0d55fe','format':'iframe','height':250,'width':300,'params':{}};</script>
                 <script src="https://www.highperformanceformat.com/ff2ed036da6ab41cbe4fbfbeba0d55fe/invoke.js"></script>
             </div>
 
-            <!-- Tool 5: Merge PDF -->
-            <a href="./tools/merge-pdf/" data-keywords="merge pdf, combine pdf, join pdf, multi pdf joiner" class="tool-card glass-card p-4 rounded-2xl flex flex-col items-center text-center">
-                <div class="w-12 h-12 rounded-xl bg-purple-500/10 text-purple-400 flex items-center justify-center text-2xl font-bold mb-3">🧩</div>
+            <!-- Tool 5: Passport Photo Maker -->
+            <a href="./tools/passport-photo-maker/" data-keywords="passport photo maker, 4x6 print sheet, a4 sheet, background changer, ssc passport" class="tool-card glass-card p-3.5 sm:p-4 rounded-2xl flex flex-col items-center text-center">
+                <div class="w-11 h-11 sm:w-12 sm:h-12 rounded-xl bg-sky-500/10 text-sky-400 flex items-center justify-center text-2xl font-bold mb-2.5">📸</div>
+                <h3 class="font-bold text-xs sm:text-sm text-gray-100">Passport Photo Maker</h3>
+                <p class="text-[9px] sm:text-xs text-gray-400 mt-1">Auto BG & 4x6/A4 Sheet Creator</p>
+            </a>
+
+            <!-- Tool 6: QR Code Generator -->
+            <a href="./tools/qr-generator/" data-keywords="qr code generator, url qr, file link qr, wifi qr, whatsapp qr" class="tool-card glass-card p-3.5 sm:p-4 rounded-2xl flex flex-col items-center text-center">
+                <div class="w-11 h-11 sm:w-12 sm:h-12 rounded-xl bg-violet-500/10 text-violet-400 flex items-center justify-center text-2xl font-bold mb-2.5">📱</div>
+                <h3 class="font-bold text-xs sm:text-sm text-gray-100">QR Code Generator</h3>
+                <p class="text-[9px] sm:text-xs text-gray-400 mt-1">Custom All-in-One QR Code Maker</p>
+            </a>
+
+            <!-- Tool 7: Merge PDF -->
+            <a href="./tools/merge-pdf/" data-keywords="merge pdf, combine pdf, join pdf, multi pdf joiner" class="tool-card glass-card p-3.5 sm:p-4 rounded-2xl flex flex-col items-center text-center">
+                <div class="w-11 h-11 sm:w-12 sm:h-12 rounded-xl bg-purple-500/10 text-purple-400 flex items-center justify-center text-2xl font-bold mb-2.5">🧩</div>
                 <h3 class="font-bold text-xs sm:text-sm text-gray-100">Merge PDF</h3>
-                <p class="text-[10px] sm:text-xs text-gray-400 mt-1">Combine multiple PDF documents</p>
+                <p class="text-[9px] sm:text-xs text-gray-400 mt-1">Combine multiple PDF documents</p>
             </a>
 
-            <!-- Tool 6: Split PDF -->
-            <a href="./tools/split-pdf/" data-keywords="split pdf, extract pages, separate pdf, page cutter" class="tool-card glass-card p-4 rounded-2xl flex flex-col items-center text-center">
-                <div class="w-12 h-12 rounded-xl bg-yellow-500/10 text-yellow-400 flex items-center justify-center text-2xl font-bold mb-3">✂️</div>
+            <!-- Tool 8: Split PDF -->
+            <a href="./tools/split-pdf/" data-keywords="split pdf, extract pages, separate pdf, page cutter" class="tool-card glass-card p-3.5 sm:p-4 rounded-2xl flex flex-col items-center text-center">
+                <div class="w-11 h-11 sm:w-12 sm:h-12 rounded-xl bg-yellow-500/10 text-yellow-400 flex items-center justify-center text-2xl font-bold mb-2.5">✂️</div>
                 <h3 class="font-bold text-xs sm:text-sm text-gray-100">Split PDF</h3>
-                <p class="text-[10px] sm:text-xs text-gray-400 mt-1">Extract selected PDF pages</p>
+                <p class="text-[9px] sm:text-xs text-gray-400 mt-1">Extract selected PDF pages</p>
             </a>
 
-            <!-- Tool 7: PDF to JPG -->
-            <a href="./tools/pdf-to-jpg/" data-keywords="pdf to jpg, convert pdf to image, pdf to png, extract images from pdf" class="tool-card glass-card p-4 rounded-2xl flex flex-col items-center text-center">
-                <div class="w-12 h-12 rounded-xl bg-cyan-500/10 text-cyan-400 flex items-center justify-center text-2xl font-bold mb-3">🖼️</div>
+            <!-- Tool 9: PDF to JPG -->
+            <a href="./tools/pdf-to-jpg/" data-keywords="pdf to jpg, convert pdf to image, pdf to png, extract images from pdf" class="tool-card glass-card p-3.5 sm:p-4 rounded-2xl flex flex-col items-center text-center">
+                <div class="w-11 h-11 sm:w-12 sm:h-12 rounded-xl bg-cyan-500/10 text-cyan-400 flex items-center justify-center text-2xl font-bold mb-2.5">🖼️</div>
                 <h3 class="font-bold text-xs sm:text-sm text-gray-100">PDF to JPG</h3>
-                <p class="text-[10px] sm:text-xs text-gray-400 mt-1">Convert PDF pages to JPG images</p>
+                <p class="text-[9px] sm:text-xs text-gray-400 mt-1">Convert PDF pages to JPG images</p>
             </a>
 
-            <!-- Tool 8: Text to PDF -->
-            <a href="./tools/text-to-pdf/" data-keywords="text to pdf, txt to pdf, type pdf, colorful text document, essay pdf" class="tool-card glass-card p-4 rounded-2xl flex flex-col items-center text-center">
-                <div class="w-12 h-12 rounded-xl bg-emerald-500/10 text-emerald-400 flex items-center justify-center text-2xl font-bold mb-3">📝</div>
+            <!-- Tool 10: Text to PDF -->
+            <a href="./tools/text-to-pdf/" data-keywords="text to pdf, txt to pdf, type pdf, colorful text document, essay pdf" class="tool-card glass-card p-3.5 sm:p-4 rounded-2xl flex flex-col items-center text-center">
+                <div class="w-11 h-11 sm:w-12 sm:h-12 rounded-xl bg-emerald-500/10 text-emerald-400 flex items-center justify-center text-2xl font-bold mb-2.5">📝</div>
                 <h3 class="font-bold text-xs sm:text-sm text-gray-100">Text to PDF</h3>
-                <p class="text-[10px] sm:text-xs text-gray-400 mt-1">Create rich formatted PDF docs</p>
+                <p class="text-[9px] sm:text-xs text-gray-400 mt-1">Create formatted PDF documents</p>
             </a>
 
-            <!-- Tool 9: Unlock PDF -->
-            <a href="./tools/unlock-pdf/" data-keywords="unlock pdf, remove password, aadhaar password remover, bank statement unlocker" class="tool-card glass-card p-4 rounded-2xl flex flex-col items-center text-center">
-                <div class="w-12 h-12 rounded-xl bg-rose-500/10 text-rose-400 flex items-center justify-center text-2xl font-bold mb-3">🔓</div>
+            <!-- Tool 11: Unlock PDF -->
+            <a href="./tools/unlock-pdf/" data-keywords="unlock pdf, remove password, bank statement unlocker, pdf password remover" class="tool-card glass-card p-3.5 sm:p-4 rounded-2xl flex flex-col items-center text-center">
+                <div class="w-11 h-11 sm:w-12 sm:h-12 rounded-xl bg-rose-500/10 text-rose-400 flex items-center justify-center text-2xl font-bold mb-2.5">🔓</div>
                 <h3 class="font-bold text-xs sm:text-sm text-gray-100">Unlock PDF</h3>
-                <p class="text-[10px] sm:text-xs text-gray-400 mt-1">Remove PDF password restriction</p>
+                <p class="text-[9px] sm:text-xs text-gray-400 mt-1">Remove PDF password protection</p>
             </a>
 
-            <!-- Tool 10: Lock PDF -->
-            <a href="./tools/lock-pdf/" data-keywords="lock pdf, protect pdf, add password, encrypt pdf file" class="tool-card glass-card p-4 rounded-2xl flex flex-col items-center text-center">
-                <div class="w-12 h-12 rounded-xl bg-blue-500/10 text-blue-400 flex items-center justify-center text-2xl font-bold mb-3">🔒</div>
+            <!-- Tool 12: Lock PDF -->
+            <a href="./tools/lock-pdf/" data-keywords="lock pdf, protect pdf, add password, encrypt pdf file" class="tool-card glass-card p-3.5 sm:p-4 rounded-2xl flex flex-col items-center text-center">
+                <div class="w-11 h-11 sm:w-12 sm:h-12 rounded-xl bg-blue-500/10 text-blue-400 flex items-center justify-center text-2xl font-bold mb-2.5">🔒</div>
                 <h3 class="font-bold text-xs sm:text-sm text-gray-100">Lock PDF</h3>
-                <p class="text-[10px] sm:text-xs text-gray-400 mt-1">Password protect your PDF files</p>
+                <p class="text-[9px] sm:text-xs text-gray-400 mt-1">Password protect your PDF files</p>
             </a>
 
-            <!-- Tool 11: Aadhaar / ID Card Crop -->
-            <a href="./tools/id-card-crop/" data-keywords="id card crop, aadhaar pvc card, pan card resizer, a4 to pvc print" class="tool-card glass-card p-4 rounded-2xl flex flex-col items-center text-center">
-                <div class="w-12 h-12 rounded-xl bg-sky-500/10 text-sky-400 flex items-center justify-center text-2xl font-bold mb-3">🪪</div>
-                <h3 class="font-bold text-xs sm:text-sm text-gray-100">Aadhaar / ID Card Crop</h3>
-                <p class="text-[10px] sm:text-xs text-gray-400 mt-1">Crop e-Aadhaar to PVC Card Size</p>
+            <!-- Tool 13: ID Card Crop -->
+            <a href="./tools/id-card-crop/" data-keywords="id card crop, pvc card resizer, pan card crop, voter id crop" class="tool-card glass-card p-3.5 sm:p-4 rounded-2xl flex flex-col items-center text-center">
+                <div class="w-11 h-11 sm:w-12 sm:h-12 rounded-xl bg-sky-500/10 text-sky-400 flex items-center justify-center text-2xl font-bold mb-2.5">🪪</div>
+                <h3 class="font-bold text-xs sm:text-sm text-gray-100">ID Card Crop</h3>
+                <p class="text-[9px] sm:text-xs text-gray-400 mt-1">Crop ID Cards to PVC Print Size</p>
             </a>
 
-            <!-- Tool 12: OCR Image to Text -->
-            <a href="./tools/ocr-text-extractor/" data-keywords="ocr, image to text, photo se text nikale, hindi ocr, scan text copy" class="tool-card glass-card p-4 rounded-2xl flex flex-col items-center text-center">
-                <div class="w-12 h-12 rounded-xl bg-teal-500/10 text-teal-400 flex items-center justify-center text-2xl font-bold mb-3">🔍</div>
+            <!-- Tool 14: OCR Image to Text -->
+            <a href="./tools/ocr-text-extractor/" data-keywords="ocr, image to text, photo se text nikale, hindi ocr, scan text copy" class="tool-card glass-card p-3.5 sm:p-4 rounded-2xl flex flex-col items-center text-center">
+                <div class="w-11 h-11 sm:w-12 sm:h-12 rounded-xl bg-teal-500/10 text-teal-400 flex items-center justify-center text-2xl font-bold mb-2.5">🔍</div>
                 <h3 class="font-bold text-xs sm:text-sm text-gray-100">OCR Image to Text</h3>
-                <p class="text-[10px] sm:text-xs text-gray-400 mt-1">Extract text from scanned images</p>
+                <p class="text-[9px] sm:text-xs text-gray-400 mt-1">Extract text from scanned photos</p>
             </a>
 
-            <!-- Tool 13: Remove BG -->
-            <a href="./tools/remove-bg/" data-keywords="remove bg, clean background, white background photo, passport bg cleaner, signature bg clean" class="tool-card glass-card p-4 rounded-2xl flex flex-col items-center text-center">
-                <div class="w-12 h-12 rounded-xl bg-emerald-500/10 text-emerald-400 flex items-center justify-center text-2xl font-bold mb-3">🎨</div>
+            <!-- Tool 15: Remove BG -->
+            <a href="./tools/remove-bg/" data-keywords="remove bg, clean background, white background photo, passport bg cleaner, signature bg clean" class="tool-card glass-card p-3.5 sm:p-4 rounded-2xl flex flex-col items-center text-center">
+                <div class="w-11 h-11 sm:w-12 sm:h-12 rounded-xl bg-emerald-500/10 text-emerald-400 flex items-center justify-center text-2xl font-bold mb-2.5">🎨</div>
                 <h3 class="font-bold text-xs sm:text-sm text-gray-100">Remove BG</h3>
-                <p class="text-[10px] sm:text-xs text-gray-400 mt-1">Clean background for photos & sign</p>
+                <p class="text-[9px] sm:text-xs text-gray-400 mt-1">Clean photo & sign background</p>
             </a>
 
         </div>
 
-        <!-- Native Ad Banner Container -->
-        <div class="mt-8">
+        <!-- Native Ad Container -->
+        <div class="mt-6 sm:mt-8">
             <script async="async" data-cfasync="false" src="https://pl30718421.effectivecpmnetwork.com/5a97a7a8933aa123ce85e87134bf64fa/invoke.js"></script>
             <div id="container-5a97a7a8933aa123ce85e87134bf64fa"></div>
         </div>
     </main>
 
+    <!-- App APK Download Modal -->
+    <div id="apkModal" class="hidden fixed inset-0 bg-black/85 backdrop-blur-md z-50 flex items-center justify-center p-4">
+        <div class="glass-card p-6 sm:p-8 rounded-3xl max-w-sm sm:max-w-md w-full border border-emerald-500/50 text-center space-y-4 relative">
+            <button onclick="closeApkModal()" class="absolute top-4 right-4 text-gray-400 hover:text-white text-lg">✕</button>
+
+            <div class="w-16 h-16 mx-auto rounded-2xl bg-emerald-500/20 text-emerald-400 flex items-center justify-center text-3xl shadow-lg border border-emerald-500/30">
+                📱
+            </div>
+
+            <h3 class="text-lg sm:text-xl font-bold text-white">Live Camera Scan is App Exclusive!</h3>
+            <p class="text-xs text-gray-300 leading-relaxed">
+                Continuous auto-edge detection, Magic color document filters, and multi-page batch scanner require Native Camera Hardware access. Download the official **Visualixy Android APK**.
+            </p>
+
+            <div class="pt-2">
+                <a href="./downloads/visualixy_smart_scanner.apk" download class="w-full bg-gradient-to-r from-emerald-600 via-teal-600 to-cyan-600 hover:from-emerald-500 hover:to-cyan-500 text-white font-bold py-3.5 px-4 rounded-2xl shadow-xl transition text-xs sm:text-sm flex items-center justify-center gap-2">
+                    <span>⚡</span> Download Visualixy Android APK (Direct)
+                </a>
+            </div>
+
+            <p class="text-[10px] text-gray-500">100% Private • RAM Local Processing • No Signup</p>
+        </div>
+    </div>
+
     <!-- Footer -->
-    <footer class="border-t border-gray-800 bg-[#0b0f19] py-6 text-center text-xs text-gray-500 mt-8">
-        <p>© 2026 Visualixy. All rights reserved. Fast, Free & Private Browser Utilities.</p>
+    <footer class="border-t border-gray-800/80 bg-[#080c15] py-4 text-center text-xs text-gray-500 mt-6">
+        <p>© 2026 Visualixy. All rights reserved. Fast & Private Web Utilities.</p>
     </footer>
 
-    <!-- Smart Advance Search Engine Logic -->
+    <!-- Search & Modal JS -->
     <script>
-        function filterToolsAdvanced(elementId) {
+        function filterTools(elementId) {
             let input = document.getElementById(elementId).value.toLowerCase().trim();
             let cards = document.querySelectorAll('.tool-card');
             let visibleCount = 0;
@@ -248,6 +292,15 @@
             });
 
             document.getElementById('activeToolsCount').innerText = `Showing ${visibleCount} Tools`;
+        }
+
+        function openApkModal() {
+            document.getElementById('apkModal').classList.remove('hidden');
+            if (window.triggerPopunder) window.triggerPopunder();
+        }
+
+        function closeApkModal() {
+            document.getElementById('apkModal').classList.add('hidden');
         }
     </script>
 </body>
