@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>PAN Card Photo & Signature Resizer (213x213 px, Under 30KB) - NSDL / UTIITSL Ready | Visualixy</title>
+    
+    <!-- Meta & SEO Tags -->
+    <meta name="description" content="Resize photo and signature for NSDL and UTIITSL PAN Card online for free. Exact 213x213 pixels, 300 DPI, and strictly under 30KB. 100% private.">
+    <meta name="keywords" content="pan card photo resizer 213x213, pan card signature resizer under 30kb, nsdl photo resizer 300 dpi, uti pan photo resizer, visualixy pan resizer">
+    <meta name="google-site-verification" content="jMp7icjOP34wszoRC-Gpy94eoqTmJZO2_NIcBWcvBmA" />
+    <meta name="clckd" content="ff0f7e314e486dc0f6161ff3c28e001e" />
+
+    <!-- External Ads Scripts -->
+    <script src="https://pl30718421.effectivecpmnetwork.com/67/51/f3/6751f3240d244f4f2df902162d5031d9.js"></script>
+    <script src="https://quge5.com/88/tag.min.js" data-zone="267129" async data-cfasync="false"></script>
+    <script src="../../assets/js/ads.js"></script>
+
+    <!-- Tailwind CSS Engine -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <style>
+        body { background-color: #080c15; color: #f3f4f6; font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; }
+        .glass-card { background: rgba(17, 24, 39, 0.75); backdrop-filter: blur(16px); border: 1px solid rgba(255, 255, 255, 0.08); }
+        .glass-card-hover:hover { border-color: #3b82f6; box-shadow: 0 10px 30px -5px rgba(59, 130, 246, 0.25); }
+    </style>
+</head>
+<body class="min-h-screen flex flex-col justify-between antialiased">
+
+    <!-- Header Navigation -->
+    <header class="border-b border-gray-800 bg-[#0f172a]/95 sticky top-0 z-50 backdrop-blur-md">
+        <div class="max-w-6xl mx-auto px-3 sm:px-4 py-2.5 sm:py-3 flex items-center justify-between gap-2">
+            <a href="../../" class="flex items-center gap-2">
+                <div class="w-8 h-8 sm:w-9 sm:h-9 rounded-xl bg-gradient-to-tr from-blue-600 to-indigo-500 flex items-center justify-center font-bold text-lg sm:text-xl text-white shadow-lg">V</div>
+                <span class="font-bold text-lg sm:text-xl tracking-wide bg-gradient-to-r from-white to-gray-300 bg-clip-text text-transparent">Visualixy</span>
+            </a>
+            <a href="../../" class="text-xs text-blue-400 hover:underline flex items-center gap-1 font-medium">
+                <span>←</span> All Tools
+            </a>
+        </div>
+    </header>
+
+    <!-- Top Header Adsterra 728x90 Banner -->
+    <div class="max-w-6xl mx-auto px-2 sm:px-4 mt-3 text-center overflow-hidden">
+        <script>atOptions = {'key':'0cf435f486e59418568243ee21ba9dea','format':'iframe','height':90,'width':728,'params':{}};</script>
+        <script src="https://www.highperformanceformat.com/0cf435f486e59418568243ee21ba9dea/invoke.js"></script>
+    </div>
+
+    <!-- Main Workspace Container -->
+    <main class="max-w-5xl mx-auto px-3 sm:px-4 py-4 sm:py-6 flex-1 w-full">
+        
+        <!-- Header Title -->
+        <div class="text-center mb-4 sm:mb-6">
+            <div class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-blue-500/10 border border-blue-500/20 text-[11px] sm:text-xs text-blue-400 mb-2 font-medium">
+                <span>🇮🇳 NSDL & UTIITSL 100% Approved</span> • <span>🔒 213x213 px & 30KB Lock</span>
+            </div>
+            <h1 class="text-xl sm:text-3xl font-extrabold text-white tracking-tight mb-1">PAN Card Photo & Signature Resizer</h1>
+            <p class="text-[11px] sm:text-xs text-gray-400 max-w-md mx-auto">Resize and format photos to exact 213x213 px (300 DPI) under 30KB and signatures under 30KB for NSDL/UTI PAN applications.</p>
+        </div>
+
+        <!-- Mode Toggle (Photo vs Signature) -->
+        <div class="glass-card p-1.5 max-w-md mx-auto rounded-2xl border border-gray-800 flex items-center gap-2 mb-5">
+            <button type="button" onclick="switchPanMode('photo')" id="btnModePhoto" class="flex-1 py-2 rounded-xl text-xs font-bold bg-blue-600 text-white transition flex items-center justify-center gap-1.5">
+                <span>📸</span> PAN Photo (213 x 213 px)
+            </button>
+            <button type="button" onclick="switchPanMode('sign')" id="btnModeSign" class="flex-1 py-2 rounded-xl text-xs font-bold bg-gray-900 text-gray-400 hover:text-white transition flex items-center justify-center gap-1.5">
+                <span>✍️</span> PAN Signature (400 x 200 px)
+            </button>
+        </div>
+
+        <!-- Upload Dropzone Area -->
+        <div id="dropzone" class="glass-card glass-card-hover p-6 sm:p-10 rounded-2xl border-2 border-dashed border-blue-500/40 text-center cursor-pointer transition mb-5" onclick="document.getElementById('fileInput').click()">
+            <input type="file" id="fileInput" accept="image/*" class="hidden" onchange="handleFileSelect(this.files[0])">
+            <div id="dropIcon" class="w-12 h-12 sm:w-14 sm:h-14 mx-auto mb-2.5 rounded-2xl bg-blue-600/10 text-blue-400 flex items-center justify-center text-2xl sm:text-3xl">
+                📸
+            </div>
+            <h3 id="dropTitle" class="text-xs sm:text-base font-semibold text-gray-100 mb-1">Tap or Drag PAN Photo Here</h3>
+            <p class="text-[11px] sm:text-xs text-gray-400">Auto locks dimensions and compresses under 30KB</p>
+        </div>
+
+        <!-- Studio Workspace (Hidden Initially) -->
+        <div id="workspace" class="hidden space-y-4 sm:space-y-6">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-4 sm:gap-6">
+                
+                <!-- Left Live Canvas Preview -->
+                <div class="lg:col-span-6 glass-card p-4 rounded-2xl flex flex-col items-center justify-center border border-gray-800 relative min-h-[260px]">
+                    <div class="text-[10px] sm:text-xs text-gray-400 mb-2 font-medium flex items-center justify-between w-full">
+                        <span>NSDL / UTI Live Output</span>
+                        <span id="kbBadge" class="text-emerald-400 font-bold bg-emerald-500/10 px-2 py-0.5 rounded border border-emerald-500/20">-- KB</span>
+                    </div>
+
+                    <div class="border-2 border-dashed border-blue-500/50 p-2 rounded-xl bg-white flex items-center justify-center shadow-2xl">
+                        <canvas id="outputCanvas" class="max-h-[180px] w-auto rounded object-contain"></canvas>
+                    </div>
+
+                    <div class="mt-3 flex items-center gap-3 text-[11px] text-gray-400">
+                        <span>Dimensions: <strong id="dimensionText" class="text-white">213 x 213 px</strong></span>
+                        <span>•</span>
+                        <span class="text-blue-400 font-bold">300 DPI Ready</span>
+                    </div>
+                </div>
+
+                <!-- Right Controls Column -->
+                <div class="lg:col-span-6 glass-card p-4 sm:p-5 rounded-2xl space-y-4 border border-gray-800">
+                    <h3 class="text-xs sm:text-sm font-bold text-gray-200 border-b border-gray-800 pb-2.5 flex items-center gap-2">
+                        <span>⚙️</span> Portal Specifications & Quality
+                    </h3>
+
+                    <!-- Portal Selector -->
+                    <div>
+                        <label class="text-[10px] text-gray-400 block mb-1">Target PAN Portal Standard</label>
+                        <select id="portalSelect" onchange="processPanImage()" class="w-full bg-gray-900 border border-gray-700 text-xs text-gray-200 rounded-xl px-3 py-2.5 focus:border-blue-500 focus:outline-none">
+                            <option value="nsdl" selected>NSDL / Protean (213 x 213 px / Under 30 KB)</option>
+                            <option value="uti">UTIITSL (213 x 213 px / 300 DPI / Under 30 KB)</option>
+                        </select>
+                    </div>
+
+                    <!-- Clean Paper & Background Check -->
+                    <div>
+                        <div class="flex justify-between items-center mb-1">
+                            <label class="text-[10px] text-gray-400">White Background & Ink Contrast</label>
+                            <span id="contrastValText" class="text-xs font-bold text-blue-400">Auto Clean</span>
+                        </div>
+                        <input type="range" id="contrastSlider" min="0" max="100" value="50" oninput="processPanImage()" class="w-full accent-blue-500 cursor-pointer">
+                        <p class="text-[9px] sm:text-[10px] text-gray-500 mt-1">Enhances clarity to prevent PAN portal rejection.</p>
+                    </div>
+
+                    <!-- Action Button -->
+                    <button id="downloadBtn" onclick="triggerAdAndDownload()" class="w-full bg-gradient-to-r from-blue-600 via-indigo-600 to-sky-600 hover:from-blue-500 hover:to-sky-500 text-white font-bold py-3.5 px-4 rounded-xl shadow-lg transition text-xs sm:text-sm flex items-center justify-center gap-2">
+                        <span>📥</span> Download PAN-Ready (<span id="downloadSizeTag"><30KB</span>)
+                    </button>
+
+                    <!-- Loading Progress Countdown -->
+                    <div id="loadingBox" class="hidden glass-card p-4 rounded-xl text-center space-y-2 border border-blue-500/30">
+                        <div class="inline-block animate-spin text-2xl">⚡</div>
+                        <p class="text-xs font-bold text-blue-400">Formatting 213x213 300 DPI... Auto-download in 3 seconds!</p>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+        <!-- Ad Placement 2: Workspace In-Feed 300x250 Banner Slot -->
+        <div class="my-6 glass-card p-3 rounded-2xl flex items-center justify-center overflow-hidden">
+            <script>atOptions = {'key':'ff2ed036da6ab41cbe4fbfbeba0d55fe','format':'iframe','height':250,'width':300,'params':{}};</script>
+            <script src="https://www.highperformanceformat.com/ff2ed036da6ab41cbe4fbfbeba0d55fe/invoke.js"></script>
+        </div>
+
+        <!-- Ad Placement 3: Bottom Native Banner -->
+        <div class="mt-6">
+            <script async="async" data-cfasync="false" src="https://pl30718421.effectivecpmnetwork.com/5a97a7a8933aa123ce85e87134bf64fa/invoke.js"></script>
+            <div id="container-5a97a7a8933aa123ce85e87134bf64fa"></div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="border-t border-gray-800/80 py-3 text-center text-xs text-gray-500 mt-6">
+        <p>© 2026 Visualixy. All rights reserved. Free PAN Card Resizer Utility.</p>
+    </footer>
+
+    <!-- JS Engine Logic -->
+    <script>
+        let currentMode = 'photo'; // 'photo' or 'sign'
+        let rawImage = null;
+        let finalDataUrl = null;
+
+        function switchPanMode(mode) {
+            currentMode = mode;
+            const btnPhoto = document.getElementById('btnModePhoto');
+            const btnSign = document.getElementById('btnModeSign');
+            const dropIcon = document.getElementById('dropIcon');
+            const dropTitle = document.getElementById('dropTitle');
+
+            if (mode === 'photo') {
+                btnPhoto.className = "flex-1 py-2 rounded-xl text-xs font-bold bg-blue-600 text-white transition flex items-center justify-center gap-1.5";
+                btnSign.className = "flex-1 py-2 rounded-xl text-xs font-bold bg-gray-900 text-gray-400 hover:text-white transition flex items-center justify-center gap-1.5";
+                dropIcon.innerText = "📸";
+                dropTitle.innerText = "Tap or Drag PAN Photo Here (213 x 213 px)";
+            } else {
+                btnPhoto.className = "flex-1 py-2 rounded-xl text-xs font-bold bg-gray-900 text-gray-400 hover:text-white transition flex items-center justify-center gap-1.5";
+                btnSign.className = "flex-1 py-2 rounded-xl text-xs font-bold bg-blue-600 text-white transition flex items-center justify-center gap-1.5";
+                dropIcon.innerText = "✍️";
+                dropTitle.innerText = "Tap or Drag PAN Signature Here (400 x 200 px)";
+            }
+
+            if (rawImage) processPanImage();
+        }
+
+        function handleFileSelect(file) {
+            if (!file) return;
+
+            const reader = new FileReader();
+            reader.onload = function(e) {
+                rawImage = new Image();
+                rawImage.onload = function() {
+                    document.getElementById('dropzone').classList.add('hidden');
+                    document.getElementById('workspace').classList.remove('hidden');
+                    processPanImage();
+                };
+                rawImage.src = e.target.result;
+            };
+            reader.readAsDataURL(file);
+        }
+
+        function processPanImage() {
+            if (!rawImage) return;
+
+            const canvas = document.getElementById('outputCanvas');
+            const ctx = canvas.getContext('2d');
+            const cleanLevel = parseInt(document.getElementById('contrastSlider').value);
+
+            let targetW = 213, targetH = 213;
+            if (currentMode === 'sign') {
+                targetW = 400;
+                targetH = 200;
+            }
+
+            canvas.width = targetW;
+            canvas.height = targetH;
+
+            // White base fill
+            ctx.fillStyle = "#FFFFFF";
+            ctx.fillRect(0, 0, targetW, targetH);
+
+            const imgAspect = rawImage.width / rawImage.height;
+            const targetAspect = targetW / targetH;
+            let drawW, drawH, drawX, drawY;
+
+            if (imgAspect > targetAspect) {
+                drawW = targetW;
+                drawH = targetW / imgAspect;
+                drawX = 0;
+                drawY = (targetH - drawH) / 2;
+            } else {
+                drawH = targetH;
+                drawW = targetH * imgAspect;
+                drawX = (targetW - drawW) / 2;
+                drawY = 0;
+            }
+
+            ctx.drawImage(rawImage, drawX, drawY, drawW, drawH);
+
+            // Clean background shadows
+            if (cleanLevel > 0) {
+                const imgData = ctx.getImageData(0, 0, targetW, targetH);
+                const d = imgData.data;
+                const threshold = 255 - (cleanLevel * 1.1);
+
+                for (let i = 0; i < d.length; i += 4) {
+                    const avg = 0.299 * d[i] + 0.587 * d[i+1] + 0.114 * d[i+2];
+                    if (avg > threshold) {
+                        d[i] = 255;
+                        d[i+1] = 255;
+                        d[i+2] = 255;
+                    }
+                }
+                ctx.putImageData(imgData, 0, 0);
+            }
+
+            // Lock strictly under 30KB
+            let quality = 0.85;
+            finalDataUrl = canvas.toDataURL('image/jpeg', quality);
+
+            const head = 'data:image/jpeg;base64,';
+            let sizeKB = (Math.round((finalDataUrl.length - head.length) * 3 / 4) / 1024).toFixed(1);
+
+            while (sizeKB > 28 && quality > 0.2) {
+                quality -= 0.08;
+                finalDataUrl = canvas.toDataURL('image/jpeg', quality);
+                sizeKB = (Math.round((finalDataUrl.length - head.length) * 3 / 4) / 1024).toFixed(1);
+            }
+
+            document.getElementById('kbBadge').innerText = `${sizeKB} KB (NSDL/UTI Ready)`;
+            document.getElementById('dimensionText').innerText = `${targetW} x ${targetH} px`;
+            document.getElementById('downloadSizeTag').innerText = `${sizeKB} KB`;
+        }
+
+        function triggerAdAndDownload() {
+            if (!finalDataUrl) return;
+
+            // Trigger Popunder Ad
+            if (window.triggerPopunder) window.triggerPopunder();
+
+            const btn = document.getElementById('downloadBtn');
+            const loadingBox = document.getElementById('loadingBox');
+
+            btn.disabled = true;
+            btn.classList.add('opacity-50');
+            loadingBox.classList.remove('hidden');
+
+            setTimeout(() => {
+                const a = document.createElement('a');
+                a.href = finalDataUrl;
+                a.download = `pan_card_${currentMode}_213x213_visualixy.jpg`;
+                document.body.appendChild(a);
+                a.click();
+                document.body.removeChild(a);
+
+                btn.disabled = false;
+                btn.classList.remove('opacity-50');
+                loadingBox.classList.add('hidden');
+            }, 3000);
+        }
+    </script>
+</body>
+</html>

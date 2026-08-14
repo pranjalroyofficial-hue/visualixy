@@ -3,106 +3,191 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>Text to PDF Converter Online Free - Create PDF from Text | Visualixy</title>
+    <title>Text & Bio-Data to PDF Online Free - Job Letter & Notes Maker | Visualixy</title>
     
     <!-- Meta & SEO Tags -->
-    <meta name="description" content="Convert plain text to PDF document online for free. Custom font sizes, page margins, text formatting, and instant PDF download. 100% private.">
-    <meta name="keywords" content="text to pdf online, convert txt to pdf, type pdf document, create pdf from text, visualixy text to pdf">
+    <meta name="description" content="Create printable A4 PDF documents from plain text online for free. Write job application letters, Indian marriage bio-data, and college notes with custom formatting. 100% private.">
+    <meta name="keywords" content="text to pdf online, job application letter to pdf, indian bio data maker pdf, convert text to printable a4 pdf, visualixy text to pdf">
     <meta name="google-site-verification" content="jMp7icjOP34wszoRC-Gpy94eoqTmJZO2_NIcBWcvBmA" />
     <meta name="clckd" content="ff0f7e314e486dc0f6161ff3c28e001e" />
 
-    <!-- External Ad Scripts -->
+    <!-- External Ads Scripts -->
     <script src="https://pl30718421.effectivecpmnetwork.com/67/51/f3/6751f3240d244f4f2df902162d5031d9.js"></script>
     <script src="https://quge5.com/88/tag.min.js" data-zone="267129" async data-cfasync="false"></script>
     <script src="../../assets/js/ads.js"></script>
 
-    <!-- JS PDF Library & Tailwind CSS -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+    <!-- html2pdf Engine & Tailwind CSS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
     <script src="https://cdn.tailwindcss.com"></script>
 
     <style>
-        body { background-color: #0b0f19; color: #f3f4f6; font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; }
-        .glass-card { background: rgba(22, 31, 50, 0.75); backdrop-filter: blur(16px); border: 1px solid rgba(255, 255, 255, 0.08); }
-        .glass-card-hover:hover { border-color: #3b82f6; box-shadow: 0 8px 25px -5px rgba(59, 130, 246, 0.2); }
+        body { background-color: #080c15; color: #f3f4f6; font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; }
+        .glass-card { background: rgba(17, 24, 39, 0.75); backdrop-filter: blur(16px); border: 1px solid rgba(255, 255, 255, 0.08); }
+        .glass-card-hover:hover { border-color: #10b981; box-shadow: 0 10px 30px -5px rgba(16, 185, 129, 0.25); }
+        
+        /* A4 Page Simulation Styling */
+        .a4-sheet {
+            background: #ffffff;
+            color: #111827;
+            width: 100%;
+            min-height: 520px;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.5);
+            box-sizing: border-box;
+        }
+        .font-serif-doc { font-family: "Times New Roman", Times, Georgia, serif; }
+        .font-sans-doc { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; }
+        .font-mono-doc { font-family: "Courier New", Courier, monospace; }
     </style>
 </head>
 <body class="min-h-screen flex flex-col justify-between antialiased">
 
     <!-- Header Navigation -->
-    <header class="border-b border-gray-800 bg-[#0f172a]/90 sticky top-0 z-50 backdrop-blur-md">
+    <header class="border-b border-gray-800 bg-[#0f172a]/95 sticky top-0 z-50 backdrop-blur-md">
         <div class="max-w-6xl mx-auto px-3 sm:px-4 py-2.5 sm:py-3 flex items-center justify-between gap-2">
             <a href="../../" class="flex items-center gap-2">
                 <div class="w-8 h-8 sm:w-9 sm:h-9 rounded-xl bg-gradient-to-tr from-blue-600 to-indigo-500 flex items-center justify-center font-bold text-lg sm:text-xl text-white shadow-lg">V</div>
                 <span class="font-bold text-lg sm:text-xl tracking-wide bg-gradient-to-r from-white to-gray-300 bg-clip-text text-transparent">Visualixy</span>
             </a>
-            <a href="../../" class="text-xs text-blue-400 hover:underline flex items-center gap-1 font-medium">
+            <a href="../../" class="text-xs text-emerald-400 hover:underline flex items-center gap-1 font-medium">
                 <span>←</span> All Tools
             </a>
         </div>
     </header>
 
-    <!-- Ad Placement 1: Top Header 728x90 Banner -->
+    <!-- Top Header Adsterra 728x90 Banner -->
     <div class="max-w-6xl mx-auto px-2 sm:px-4 mt-3 text-center overflow-hidden">
         <script>atOptions = {'key':'0cf435f486e59418568243ee21ba9dea','format':'iframe','height':90,'width':728,'params':{}};</script>
         <script src="https://www.highperformanceformat.com/0cf435f486e59418568243ee21ba9dea/invoke.js"></script>
     </div>
 
-    <!-- Main App Workspace Container -->
-    <main class="max-w-4xl mx-auto px-3 sm:px-4 py-4 sm:py-6 flex-1 w-full">
+    <!-- Main Workspace Container -->
+    <main class="max-w-6xl mx-auto px-3 sm:px-4 py-4 sm:py-6 flex-1 w-full">
+        
+        <!-- Header Title -->
         <div class="text-center mb-4 sm:mb-6">
             <div class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-emerald-500/10 border border-emerald-500/20 text-[11px] sm:text-xs text-emerald-400 mb-2 font-medium">
-                <span>📝 Instant Text to PDF Generator</span> • <span>🔒 100% Client-Side Privacy</span>
+                <span>📝 Printable Document Studio</span> • <span>🔒 100% Client-Side Privacy</span>
             </div>
-            <h1 class="text-xl sm:text-3xl font-extrabold text-white tracking-tight mb-1">Convert Text to PDF Online</h1>
-            <p class="text-[11px] sm:text-xs text-gray-400 max-w-md mx-auto">Write or paste your content, set formatting, font size, and download formatted PDF document instantly.</p>
+            <h1 class="text-xl sm:text-3xl font-extrabold text-white tracking-tight mb-1">Smart Text & Bio-Data to PDF</h1>
+            <p class="text-[11px] sm:text-xs text-gray-400 max-w-md mx-auto">Create formatted letters, job applications, bio-data, and notes with standard A4 printable PDF export.</p>
         </div>
 
-        <!-- Editor & Workspace Panel -->
-        <div class="space-y-4 sm:space-y-6">
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-4 sm:gap-6">
             
-            <!-- Customization Controls Bar -->
-            <div class="glass-card p-3 sm:p-4 rounded-2xl border border-gray-800 grid grid-cols-2 sm:grid-cols-3 gap-3">
-                <div>
-                    <label class="text-[10px] text-gray-400 block mb-0.5">Font Size</label>
-                    <select id="fontSizeSelect" class="w-full bg-gray-900 border border-gray-700 text-xs text-gray-200 rounded-xl px-2.5 py-2 focus:outline-none focus:border-emerald-500">
-                        <option value="12">Small (12 pt)</option>
-                        <option value="14" selected>Normal (14 pt)</option>
-                        <option value="18">Large (18 pt)</option>
-                        <option value="22">Extra Large (22 pt)</option>
-                    </select>
+            <!-- Left Editor & Controls Column -->
+            <div class="lg:col-span-6 space-y-4">
+                
+                <div class="glass-card p-4 sm:p-5 rounded-2xl space-y-3.5 border border-gray-800">
+                    <h3 class="text-xs sm:text-sm font-bold text-gray-200 border-b border-gray-800 pb-2.5 flex items-center justify-between">
+                        <span class="flex items-center gap-2"><span>⚙️</span> Document Templates & Content</span>
+                        <span class="text-[10px] text-emerald-400 font-normal">A4 Format</span>
+                    </h3>
+
+                    <!-- Template Quick Presets -->
+                    <div>
+                        <label class="text-[10px] text-gray-400 block mb-1">Select Ready Document Preset</label>
+                        <select id="templateSelect" onchange="loadPresetTemplate()" class="w-full bg-gray-900 border border-gray-700 text-xs text-gray-200 rounded-xl px-3 py-2.5 focus:border-emerald-500 focus:outline-none">
+                            <option value="job_letter" selected>📄 Formal Job / Leave Application Letter</option>
+                            <option value="bio_data">📋 Indian Bio-Data (Job / Matrimonial)</option>
+                            <option value="college_notes">📚 College Assignment & Notes Format</option>
+                            <option value="blank">✏️ Blank Custom Text Document</option>
+                        </select>
+                    </div>
+
+                    <!-- Document Title Header -->
+                    <div>
+                        <label class="text-[10px] text-gray-400 block mb-1">Document Header Title</label>
+                        <input type="text" id="docTitleInput" placeholder="APPLICATION FOR LEAVE / BIO-DATA" value="APPLICATION FOR LEAVE" oninput="renderDocumentPreview()" class="w-full bg-gray-900 border border-gray-700 text-xs text-gray-200 rounded-xl px-3 py-2 focus:border-emerald-500 focus:outline-none uppercase font-bold">
+                    </div>
+
+                    <!-- Document Body Textarea -->
+                    <div>
+                        <label class="text-[10px] text-gray-400 block mb-1">Main Document Content</label>
+                        <textarea id="docContentInput" rows="10" oninput="renderDocumentPreview()" placeholder="Type or paste your document text here..." class="w-full bg-gray-900 border border-gray-700 text-xs text-gray-200 rounded-xl p-3 focus:border-emerald-500 focus:outline-none leading-relaxed custom-scrollbar"></textarea>
+                    </div>
+
+                    <!-- Styling Controls Grid -->
+                    <div class="grid grid-cols-3 gap-2 pt-1 border-t border-gray-800">
+                        <div>
+                            <label class="text-[9px] text-gray-500 block mb-1">Font Family</label>
+                            <select id="fontStyleSelect" onchange="renderDocumentPreview()" class="w-full bg-gray-900 border border-gray-700 text-[10px] text-gray-200 rounded-lg px-2 py-1.5 focus:outline-none">
+                                <option value="serif" selected>Serif (Formal Times)</option>
+                                <option value="sans">Sans-Serif (Modern)</option>
+                                <option value="mono">Monospace (Typewriter)</option>
+                            </select>
+                        </div>
+                        <div>
+                            <label class="text-[9px] text-gray-500 block mb-1">Font Size</label>
+                            <select id="fontSizeSelect" onchange="renderDocumentPreview()" class="w-full bg-gray-900 border border-gray-700 text-[10px] text-gray-200 rounded-lg px-2 py-1.5 focus:outline-none">
+                                <option value="small">Compact (12px)</option>
+                                <option value="medium" selected>Standard (14px)</option>
+                                <option value="large">Large (16px)</option>
+                            </select>
+                        </div>
+                        <div>
+                            <label class="text-[9px] text-gray-500 block mb-1">Header Theme</label>
+                            <select id="headerThemeSelect" onchange="renderDocumentPreview()" class="w-full bg-gray-900 border border-gray-700 text-[10px] text-gray-200 rounded-lg px-2 py-1.5 focus:outline-none">
+                                <option value="blue" selected>Official Blue</option>
+                                <option value="dark">Classic Black</option>
+                                <option value="emerald">Clean Green</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <!-- Action Download Button -->
+                    <button id="downloadBtn" onclick="triggerAdAndExportPdf()" class="w-full bg-gradient-to-r from-emerald-600 via-teal-600 to-blue-600 hover:from-emerald-500 hover:to-blue-500 text-white font-bold py-3.5 px-4 rounded-xl shadow-lg transition text-xs sm:text-sm flex items-center justify-center gap-2">
+                        <span>📥</span> Generate & Download Printable A4 PDF
+                    </button>
+
+                    <!-- Loading Progress Modal -->
+                    <div id="loadingBox" class="hidden glass-card p-4 rounded-xl text-center space-y-2 border border-emerald-500/30">
+                        <div class="inline-block animate-spin text-2xl">⚡</div>
+                        <p class="text-xs font-bold text-emerald-400">Compiling A4 PDF Document... Auto-download in 3 seconds!</p>
+                    </div>
+
                 </div>
 
-                <div>
-                    <label class="text-[10px] text-gray-400 block mb-0.5">Page Alignment</label>
-                    <select id="alignSelect" class="w-full bg-gray-900 border border-gray-700 text-xs text-gray-200 rounded-xl px-2.5 py-2 focus:outline-none focus:border-emerald-500">
-                        <option value="left" selected>Left Align</option>
-                        <option value="center">Center Align</option>
-                        <option value="right">Right Align</option>
-                    </select>
+            </div>
+
+            <!-- Right Live A4 Sheet Preview Column -->
+            <div class="lg:col-span-6 space-y-4">
+                
+                <div class="glass-card p-3 sm:p-4 rounded-2xl border border-gray-800 flex flex-col items-center">
+                    <div class="text-[10px] sm:text-xs text-gray-400 mb-2 font-medium flex items-center justify-between w-full">
+                        <span>Live A4 Paper Sheet Preview</span>
+                        <span class="text-emerald-400 font-bold">● Print Margin Checked</span>
+                    </div>
+
+                    <!-- A4 Visualizer Target -->
+                    <div class="w-full max-h-[580px] overflow-y-auto rounded-xl border border-gray-700 bg-gray-950 p-2 sm:p-3 custom-scrollbar">
+                        <div id="a4RenderContainer" class="a4-sheet p-6 sm:p-8 rounded-lg font-serif-doc text-xs leading-relaxed space-y-3">
+                            
+                            <!-- Header Title Bar -->
+                            <div id="previewHeaderBar" class="border-b-2 border-blue-600 pb-2 mb-3 text-center">
+                                <h2 id="previewDocTitle" class="text-sm sm:text-base font-extrabold text-blue-900 tracking-wide uppercase">APPLICATION FOR LEAVE</h2>
+                                <div class="text-[9px] text-gray-500 mt-0.5">Date: <span id="previewDateTag">14-08-2026</span></div>
+                            </div>
+
+                            <!-- Content Body -->
+                            <div id="previewBodyText" class="whitespace-pre-line text-gray-800"></div>
+
+                            <!-- Signature Footer Area -->
+                            <div class="pt-8 flex justify-between items-end border-t border-gray-200 mt-6 text-[10px] text-gray-600">
+                                <div>
+                                    <p>Place: ______________</p>
+                                    <p class="mt-1">Date: ______________</p>
+                                </div>
+                                <div class="text-right">
+                                    <p class="border-t border-gray-400 pt-1 w-28 text-center font-bold text-gray-800">Signature</p>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
                 </div>
 
-                <div class="col-span-2 sm:col-span-1">
-                    <label class="text-[10px] text-gray-400 block mb-0.5">PDF Document Title</label>
-                    <input type="text" id="pdfTitleInput" placeholder="My Notes Document" class="w-full bg-gray-900 border border-gray-700 text-xs text-gray-200 rounded-xl px-3 py-2 focus:outline-none focus:border-emerald-500">
-                </div>
             </div>
 
-            <!-- Text Input Area -->
-            <div class="glass-card p-3 sm:p-4 rounded-2xl border border-gray-800">
-                <label class="text-[10px] text-gray-400 block mb-1">Enter / Paste Text Content</label>
-                <textarea id="textContent" rows="10" placeholder="Type or paste your text here to convert into PDF..." class="w-full bg-gray-900 border border-gray-700 text-xs sm:text-sm text-gray-200 rounded-xl p-3 sm:p-4 focus:outline-none focus:border-emerald-500 leading-relaxed"></textarea>
-            </div>
-
-            <!-- Action Button -->
-            <button id="downloadBtn" onclick="triggerAdAndConvert()" class="w-full bg-gradient-to-r from-emerald-600 to-teal-600 hover:from-emerald-500 hover:to-teal-500 text-white font-bold py-3.5 px-4 rounded-xl shadow-lg transition text-xs sm:text-sm flex items-center justify-center gap-2">
-                <span>📥</span> Generate & Download PDF
-            </button>
-
-            <!-- Loading Progress Modal -->
-            <div id="loadingBox" class="hidden glass-card p-4 rounded-2xl text-center space-y-2 border border-emerald-500/30">
-                <div class="inline-block animate-spin text-2xl">⚡</div>
-                <p class="text-xs font-bold text-emerald-400">Generating PDF Document... Auto-download in 3 seconds!</p>
-            </div>
         </div>
 
         <!-- Ad Placement 2: Workspace In-Feed 300x250 Banner Slot -->
@@ -119,15 +204,88 @@
     </main>
 
     <!-- Footer -->
-    <footer class="border-t border-gray-800 py-3 text-center text-xs text-gray-500 mt-6">
-        <p>© 2026 Visualixy. All rights reserved. Free Text to PDF Generator.</p>
+    <footer class="border-t border-gray-800/80 py-3 text-center text-xs text-gray-500 mt-6">
+        <p>© 2026 Visualixy. All rights reserved. Free Online Text to PDF Studio.</p>
     </footer>
 
-    <!-- JS Logic -->
+    <!-- JS Engine Logic -->
     <script>
-        function triggerAdAndConvert() {
-            const text = document.getElementById('textContent').value.trim();
-            if (!text) return alert('Please enter some text before converting to PDF!');
+        const PRESETS = {
+            job_letter: {
+                title: "APPLICATION FOR CASUAL LEAVE",
+                content: "To,\nThe Branch Manager / Principal,\nOrganization / Institute Name,\nCity, State.\n\nSubject: Application for 2 Days Leave\n\nRespected Sir/Madam,\n\nI am writing to formally request leave of absence from [Start Date] to [End Date] due to urgent personal work at home.\n\nI will ensure that all my pending tasks and responsibilities are completed before my departure or handed over properly.\n\nKindly grant me leave for the mentioned days. I shall be highly obliged.\n\nThanking you,\n\nYours faithfully,\n[Your Full Name]\nContact: [Mobile Number]"
+            },
+            bio_data: {
+                title: "PERSONAL CURRICULUM VITAE / BIO-DATA",
+                content: "PERSONAL INFORMATION:\n• Full Name: [Candidate Name]\n• Father's Name: [Father's Name]\n• Date of Birth: [DD-MM-YYYY]\n• Gender / Marital Status: Male / Unmarried\n• Nationality / Religion: Indian / Hindu\n• Languages Known: English, Hindi, Assamese\n\nEDUCATIONAL QUALIFICATION:\n1. Bachelor Degree (BBA / Graduate) - Gauhati University\n2. Higher Secondary (12th Pass) - AHSEC Board\n3. High School (10th Pass) - SEBA Board\n4. 1-Year Diploma in Computer Application (ADCA)\n\nSKILLS & STRENGTHS:\n• Web Development, Document Processing, Office Management\n• Fast Typing & Strong Communication Skills\n\nPERMANENT ADDRESS:\nVillage / Town, District, State - PIN Code."
+            },
+            college_notes: {
+                title: "COLLEGE ASSIGNMENT & TOPIC SUMMARY",
+                content: "Topic Name: Principles of Modern Management & Computer Applications\nPrepared By: [Your Name] | Roll No: [Roll Number]\nDepartment: Bachelor of Business Administration (BBA)\n\n1. INTRODUCTION:\nManagement is an art of getting things done through and with people in formally organized groups.\n\n2. KEY OBJECTIVES:\n• Planning, Organizing, Staffing, Directing, and Controlling.\n• Effective Resource Allocation and Financial Budgeting.\n\n3. CONCLUSION:\nEffective organizational communication leads to sustainable business growth and team productivity."
+            },
+            blank: {
+                title: "DOCUMENT TITLE",
+                content: "Start typing your custom notes, essay, or letter content here..."
+            }
+        };
+
+        window.addEventListener('DOMContentLoaded', () => {
+            const today = new Date().toLocaleDateString('en-GB');
+            document.getElementById('previewDateTag').innerText = today;
+            loadPresetTemplate();
+        });
+
+        function loadPresetTemplate() {
+            const type = document.getElementById('templateSelect').value;
+            const data = PRESETS[type] || PRESETS.blank;
+
+            document.getElementById('docTitleInput').value = data.title;
+            document.getElementById('docContentInput').value = data.content;
+            renderDocumentPreview();
+        }
+
+        function renderDocumentPreview() {
+            const title = document.getElementById('docTitleInput').value.trim() || 'DOCUMENT TITLE';
+            const content = document.getElementById('docContentInput').value;
+            const fontStyle = document.getElementById('fontStyleSelect').value;
+            const fontSize = document.getElementById('fontSizeSelect').value;
+            const headerTheme = document.getElementById('headerThemeSelect').value;
+
+            const container = document.getElementById('a4RenderContainer');
+            const titleElem = document.getElementById('previewDocTitle');
+            const headerBar = document.getElementById('previewHeaderBar');
+            const bodyElem = document.getElementById('previewBodyText');
+
+            // Apply font family
+            container.className = `a4-sheet p-6 sm:p-8 rounded-lg text-xs leading-relaxed space-y-3 font-${fontStyle}-doc`;
+
+            // Apply font size
+            if (fontSize === 'small') {
+                bodyElem.className = "whitespace-pre-line text-gray-800 text-[11px] leading-normal";
+            } else if (fontSize === 'large') {
+                bodyElem.className = "whitespace-pre-line text-gray-800 text-sm leading-relaxed";
+            } else {
+                bodyElem.className = "whitespace-pre-line text-gray-800 text-xs leading-relaxed";
+            }
+
+            // Apply Header Theme Color
+            if (headerTheme === 'blue') {
+                headerBar.className = "border-b-2 border-blue-600 pb-2 mb-3 text-center";
+                titleElem.className = "text-sm sm:text-base font-extrabold text-blue-900 tracking-wide uppercase";
+            } else if (headerTheme === 'emerald') {
+                headerBar.className = "border-b-2 border-emerald-600 pb-2 mb-3 text-center";
+                titleElem.className = "text-sm sm:text-base font-extrabold text-emerald-900 tracking-wide uppercase";
+            } else {
+                headerBar.className = "border-b-2 border-gray-900 pb-2 mb-3 text-center";
+                titleElem.className = "text-sm sm:text-base font-extrabold text-black tracking-wide uppercase";
+            }
+
+            titleElem.innerText = title;
+            bodyElem.innerText = content;
+        }
+
+        function triggerAdAndExportPdf() {
+            const title = document.getElementById('docTitleInput').value.trim() || 'document';
 
             // Trigger Popunder Ad
             if (window.triggerPopunder) window.triggerPopunder();
@@ -139,56 +297,24 @@
             btn.classList.add('opacity-50');
             loadingBox.classList.remove('hidden');
 
-            // 3-second delay for monetization & smooth file download
             setTimeout(() => {
-                generateTextPdf();
-                btn.disabled = false;
-                btn.classList.remove('opacity-50');
-                loadingBox.classList.add('hidden');
+                const element = document.getElementById('a4RenderContainer');
+                const cleanFileName = title.toLowerCase().replace(/[^a-z0-9]/gi, '_');
+
+                const opt = {
+                    margin:       10,
+                    filename:     `${cleanFileName}_visualixy.pdf`,
+                    image:        { type: 'jpeg', quality: 0.98 },
+                    html2canvas:  { scale: 2, useCORS: true },
+                    jsPDF:        { unit: 'mm', format: 'a4', orientation: 'portrait' }
+                };
+
+                html2pdf().set(opt).from(element).save().then(() => {
+                    btn.disabled = false;
+                    btn.classList.remove('opacity-50');
+                    loadingBox.classList.add('hidden');
+                });
             }, 3000);
-        }
-
-        function generateTextPdf() {
-            const { jsPDF } = window.jspdf;
-            const text = document.getElementById('textContent').value;
-            const fontSize = parseInt(document.getElementById('fontSizeSelect').value) || 14;
-            const align = document.getElementById('alignSelect').value;
-            const title = document.getElementById('pdfTitleInput').value.trim() || "Text_Document";
-
-            const pdf = new jsPDF({
-                orientation: 'portrait',
-                unit: 'pt',
-                format: 'a4'
-            });
-
-            const margin = 40;
-            const pageWidth = pdf.internal.pageSize.getWidth();
-            const pageHeight = pdf.internal.pageSize.getHeight();
-            const maxLineWidth = pageWidth - (margin * 2);
-
-            pdf.setFontSize(fontSize);
-
-            // Split long text automatically into wrapped lines fitting A4 width
-            const splitLines = pdf.splitTextToSize(text, maxLineWidth);
-            
-            let cursorY = margin;
-            const lineHeight = fontSize * 1.4;
-
-            splitLines.forEach(line => {
-                if (cursorY + lineHeight > pageHeight - margin) {
-                    pdf.addPage();
-                    cursorY = margin;
-                }
-
-                let xPos = margin;
-                if (align === 'center') xPos = pageWidth / 2;
-                if (align === 'right') xPos = pageWidth - margin;
-
-                pdf.text(line, xPos, cursorY, { align: align });
-                cursorY += lineHeight;
-            });
-
-            pdf.save(`${title.toLowerCase().replace(/\s+/g, '_')}_visualixy.pdf`);
         }
     </script>
 </body>

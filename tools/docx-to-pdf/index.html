@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Word to PDF Converter Online Free - Convert DOCX to PDF | Visualixy</title>
+    
+    <!-- Meta & SEO Tags -->
+    <meta name="description" content="Convert Word DOCX files to high-quality PDF documents online for free. Fast, accurate, 100% private in-browser document conversion.">
+    <meta name="keywords" content="word to pdf converter, docx to pdf online, free word doc to pdf, convert word document to pdf, visualixy">
+    <meta name="google-site-verification" content="jMp7icjOP34wszoRC-Gpy94eoqTmJZO2_NIcBWcvBmA" />
+    <meta name="clckd" content="ff0f7e314e486dc0f6161ff3c28e001e" />
+
+    <!-- External Ads Scripts -->
+    <script src="https://pl30718421.effectivecpmnetwork.com/67/51/f3/6751f3240d244f4f2df902162d5031d9.js"></script>
+    <script src="https://quge5.com/88/tag.min.js" data-zone="267129" async data-cfasync="false"></script>
+    <script src="../../assets/js/ads.js"></script>
+
+    <!-- Mammoth & jsPDF Engines + Tailwind CSS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mammoth/1.4.21/mammoth.browser.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <style>
+        body { background-color: #080c15; color: #f3f4f6; font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; }
+        .glass-card { background: rgba(17, 24, 39, 0.75); backdrop-filter: blur(16px); border: 1px solid rgba(255, 255, 255, 0.08); }
+        .glass-card-hover:hover { border-color: #2563eb; box-shadow: 0 10px 30px -5px rgba(37, 99, 235, 0.25); }
+        .docx-preview-content { font-family: "Times New Roman", Times, serif; color: #111827; }
+        .docx-preview-content p { margin-bottom: 0.75rem; line-height: 1.6; }
+        .docx-preview-content h1, .docx-preview-content h2, .docx-preview-content h3 { font-weight: bold; margin-top: 1rem; margin-bottom: 0.5rem; }
+    </style>
+</head>
+<body class="min-h-screen flex flex-col justify-between antialiased">
+
+    <!-- Header Navigation -->
+    <header class="border-b border-gray-800 bg-[#0f172a]/95 sticky top-0 z-50 backdrop-blur-md">
+        <div class="max-w-6xl mx-auto px-3 sm:px-4 py-2.5 sm:py-3 flex items-center justify-between gap-2">
+            <a href="../../" class="flex items-center gap-2">
+                <div class="w-8 h-8 sm:w-9 sm:h-9 rounded-xl bg-gradient-to-tr from-blue-600 to-indigo-500 flex items-center justify-center font-bold text-lg sm:text-xl text-white shadow-lg">V</div>
+                <span class="font-bold text-lg sm:text-xl tracking-wide bg-gradient-to-r from-white to-gray-300 bg-clip-text text-transparent">Visualixy</span>
+            </a>
+            <a href="../../" class="text-xs text-blue-400 hover:underline flex items-center gap-1 font-medium">
+                <span>←</span> All Tools
+            </a>
+        </div>
+    </header>
+
+    <!-- Top Header Adsterra 728x90 Banner -->
+    <div class="max-w-6xl mx-auto px-2 sm:px-4 mt-3 text-center overflow-hidden">
+        <script>atOptions = {'key':'0cf435f486e59418568243ee21ba9dea','format':'iframe','height':90,'width':728,'params':{}};</script>
+        <script src="https://www.highperformanceformat.com/0cf435f486e59418568243ee21ba9dea/invoke.js"></script>
+    </div>
+
+    <!-- Main Workspace Container -->
+    <main class="max-w-5xl mx-auto px-3 sm:px-4 py-4 sm:py-6 flex-1 w-full">
+        
+        <!-- Header Title -->
+        <div class="text-center mb-4 sm:mb-6">
+            <div class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-blue-500/10 border border-blue-500/20 text-[11px] sm:text-xs text-blue-400 mb-2 font-medium">
+                <span>📄 High-Accuracy Word Converter</span> • <span>🔒 100% Client-Side Privacy</span>
+            </div>
+            <h1 class="text-xl sm:text-3xl font-extrabold text-white tracking-tight mb-1">Convert Word (DOCX) to PDF</h1>
+            <p class="text-[11px] sm:text-xs text-gray-400 max-w-md mx-auto">Convert Microsoft Word documents (.docx) into clean, printable PDF documents instantly.</p>
+        </div>
+
+        <!-- Upload Dropzone Area -->
+        <div id="dropzone" class="glass-card glass-card-hover p-6 sm:p-10 rounded-2xl border-2 border-dashed border-blue-500/40 text-center cursor-pointer transition mb-5" onclick="document.getElementById('docxInput').click()">
+            <input type="file" id="docxInput" accept=".docx" class="hidden" onchange="handleDocxUpload(this.files[0])">
+            <div class="w-12 h-12 sm:w-14 sm:h-14 mx-auto mb-2.5 rounded-2xl bg-blue-600/10 text-blue-400 flex items-center justify-center text-2xl sm:text-3xl">
+                📄
+            </div>
+            <h3 class="text-xs sm:text-base font-semibold text-gray-100 mb-1">Tap or Drag Word (.DOCX) File Here</h3>
+            <p class="text-[11px] sm:text-xs text-gray-400">Standard DOCX file format supported</p>
+        </div>
+
+        <!-- Studio Workspace (Hidden Initially) -->
+        <div id="docxWorkspace" class="hidden space-y-4 sm:space-y-6">
+            
+            <!-- Controls Bar -->
+            <div class="glass-card p-3 sm:p-4 rounded-2xl border border-gray-800 flex items-center justify-between gap-3">
+                <div class="truncate max-w-[65%] sm:max-w-[75%]">
+                    <h3 id="docxFileName" class="text-xs sm:text-sm font-bold text-gray-200 truncate">document.docx</h3>
+                    <p id="docxFileSize" class="text-[10px] text-blue-400 font-medium mt-0.5">-- KB</p>
+                </div>
+                <button onclick="resetDocx()" class="text-xs bg-red-600/20 text-red-400 hover:bg-red-600/30 px-3 py-1.5 rounded-xl border border-red-500/30 transition font-medium">
+                    Change File
+                </button>
+            </div>
+
+            <!-- Rendered Document Preview (Formatted as A4 Sheet) -->
+            <div class="glass-card p-4 sm:p-6 rounded-2xl border border-gray-800 max-h-[400px] overflow-y-auto bg-[#0b0f19]">
+                <div class="text-[10px] text-gray-400 mb-2 font-medium">Document Preview:</div>
+                <div id="docxRenderContainer" class="docx-preview-content bg-white p-6 sm:p-10 rounded-xl shadow-2xl min-h-[300px] text-xs sm:text-sm"></div>
+            </div>
+
+            <!-- Action Button -->
+            <button id="downloadBtn" onclick="triggerAdAndConvertDocx()" class="w-full bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-500 hover:to-indigo-500 text-white font-bold py-3.5 px-4 rounded-xl shadow-lg transition text-xs sm:text-sm flex items-center justify-center gap-2">
+                <span>📥</span> Convert & Download PDF Document
+            </button>
+
+            <!-- Loading Progress Modal -->
+            <div id="loadingBox" class="hidden glass-card p-4 rounded-xl text-center space-y-2 border border-blue-500/30">
+                <div class="inline-block animate-spin text-2xl">⚡</div>
+                <p class="text-xs font-bold text-blue-400">Compiling High-Quality PDF... Auto-download in 3 seconds!</p>
+            </div>
+
+        </div>
+
+        <!-- Ad Placement 2: Workspace In-Feed 300x250 Banner Slot -->
+        <div class="my-6 glass-card p-3 rounded-2xl flex items-center justify-center overflow-hidden">
+            <script>atOptions = {'key':'ff2ed036da6ab41cbe4fbfbeba0d55fe','format':'iframe','height':250,'width':300,'params':{}};</script>
+            <script src="https://www.highperformanceformat.com/ff2ed036da6ab41cbe4fbfbeba0d55fe/invoke.js"></script>
+        </div>
+
+        <!-- Ad Placement 3: Bottom Native Banner -->
+        <div class="mt-6">
+            <script async="async" data-cfasync="false" src="https://pl30718421.effectivecpmnetwork.com/5a97a7a8933aa123ce85e87134bf64fa/invoke.js"></script>
+            <div id="container-5a97a7a8933aa123ce85e87134bf64fa"></div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="border-t border-gray-800/80 py-3 text-center text-xs text-gray-500 mt-6">
+        <p>© 2026 Visualixy. All rights reserved. Free Word to PDF Converter.</p>
+    </footer>
+
+    <!-- JS Engine Logic -->
+    <script>
+        let currentFileName = 'document';
+
+        function handleDocxUpload(file) {
+            if (!file) return;
+
+            currentFileName = file.name.replace(/\.[^/.]+$/, "") || 'document';
+            document.getElementById('docxFileName').innerText = file.name;
+            document.getElementById('docxFileSize').innerText = (file.size / 1024).toFixed(1) + ' KB';
+
+            const reader = new FileReader();
+            reader.onload = function(e) {
+                const arrayBuffer = e.target.result;
+                mammoth.convertToHtml({ arrayBuffer: arrayBuffer })
+                    .then(function(result) {
+                        document.getElementById('dropzone').classList.add('hidden');
+                        document.getElementById('docxWorkspace').classList.remove('hidden');
+                        document.getElementById('docxRenderContainer').innerHTML = result.value || '<p>No readable content found.</p>';
+                    })
+                    .catch(function(err) {
+                        alert('Could not parse DOCX file. Please make sure it is a valid .docx file.');
+                    });
+            };
+            reader.readAsArrayBuffer(file);
+        }
+
+        function resetDocx() {
+            document.getElementById('docxInput').value = '';
+            document.getElementById('dropzone').classList.remove('hidden');
+            document.getElementById('docxWorkspace').classList.add('hidden');
+            document.getElementById('docxRenderContainer').innerHTML = '';
+        }
+
+        function triggerAdAndConvertDocx() {
+            // Trigger Popunder Ad
+            if (window.triggerPopunder) window.triggerPopunder();
+
+            const btn = document.getElementById('downloadBtn');
+            const loadingBox = document.getElementById('loadingBox');
+
+            btn.disabled = true;
+            btn.classList.add('opacity-50');
+            loadingBox.classList.remove('hidden');
+
+            setTimeout(() => {
+                const element = document.getElementById('docxRenderContainer');
+                const opt = {
+                    margin:       10,
+                    filename:     `${currentFileName}_visualixy.pdf`,
+                    image:        { type: 'jpeg', quality: 0.98 },
+                    html2canvas:  { scale: 2, useCORS: true },
+                    jsPDF:        { unit: 'mm', format: 'a4', orientation: 'portrait' }
+                };
+
+                html2pdf().set(opt).from(element).save().then(() => {
+                    btn.disabled = false;
+                    btn.classList.remove('opacity-50');
+                    loadingBox.classList.add('hidden');
+                });
+            }, 3000);
+        }
+    </script>
+</body>
+</html>

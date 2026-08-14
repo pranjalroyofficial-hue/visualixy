@@ -2,177 +2,348 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Free All-in-One QR Code Generator Online - Visualixy</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Smart QR Code & Barcode Generator - Free Online | Visualixy</title>
     
     <!-- Meta & SEO Tags -->
-    <meta name="description" content="Generate custom QR codes for Website Links, Text, Images, Files, Videos, and WhatsApp. Custom colors, high-resolution PNG download. 100% free and private.">
-    <meta name="keywords" content="qr code generator free, custom qr code maker, url to qr code, file link qr code, visualixy qr generator">
+    <meta name="description" content="Generate custom colored QR codes with logo online for free. Supports URL, Wi-Fi auto-connect, UPI payments, WhatsApp, vCard and text. 100% private.">
+    <meta name="keywords" content="qr code generator, upi qr code maker, wifi qr generator, custom qr code with logo, free qr code creator, visualixy">
     <meta name="google-site-verification" content="jMp7icjOP34wszoRC-Gpy94eoqTmJZO2_NIcBWcvBmA" />
     <meta name="clckd" content="ff0f7e314e486dc0f6161ff3c28e001e" />
 
-    <!-- Ads Scripts in Head -->
-    <script src="https://pl30718422.effectivecpmnetwork.com/67/51/f3/6751f3240d244f4f2df902162d5031d9.js"></script>
+    <!-- External Ads Scripts -->
+    <script src="https://pl30718421.effectivecpmnetwork.com/67/51/f3/6751f3240d244f4f2df902162d5031d9.js"></script>
     <script src="https://quge5.com/88/tag.min.js" data-zone="267129" async data-cfasync="false"></script>
     <script src="../../assets/js/ads.js"></script>
 
-    <!-- External Libraries -->
+    <!-- QRCode.js Engine & Tailwind CSS -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
     <script src="https://cdn.tailwindcss.com"></script>
 
     <style>
-        body { background-color: #0b0f19; color: #f3f4f6; font-family: system-ui, -apple-system, sans-serif; }
-        .glass-card { background: rgba(22, 31, 50, 0.75); backdrop-filter: blur(16px); border: 1px solid rgba(255, 255, 255, 0.08); }
-        .glass-card-hover:hover { border-color: #3b82f6; box-shadow: 0 8px 25px -5px rgba(59, 130, 246, 0.2); }
+        body { background-color: #080c15; color: #f3f4f6; font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; }
+        .glass-card { background: rgba(17, 24, 39, 0.75); backdrop-filter: blur(16px); border: 1px solid rgba(255, 255, 255, 0.08); }
+        .glass-card-hover:hover { border-color: #8b5cf6; box-shadow: 0 10px 30px -5px rgba(139, 92, 246, 0.25); }
     </style>
 </head>
-<body class="min-h-screen flex flex-col justify-between">
+<body class="min-h-screen flex flex-col justify-between antialiased">
 
     <!-- Header Navigation -->
-    <header class="border-b border-gray-800 bg-[#0f172a]/90 sticky top-0 z-50 backdrop-blur-md">
-        <div class="max-w-6xl mx-auto px-4 py-3 flex items-center justify-between gap-4">
+    <header class="border-b border-gray-800 bg-[#0f172a]/95 sticky top-0 z-50 backdrop-blur-md">
+        <div class="max-w-6xl mx-auto px-3 sm:px-4 py-2.5 sm:py-3 flex items-center justify-between gap-2">
             <a href="../../" class="flex items-center gap-2">
-                <div class="w-9 h-9 rounded-xl bg-gradient-to-tr from-blue-600 to-indigo-500 flex items-center justify-center font-bold text-xl text-white shadow-lg">V</div>
-                <span class="font-bold text-xl tracking-wide bg-gradient-to-r from-white to-gray-300 bg-clip-text text-transparent">Visualixy</span>
+                <div class="w-8 h-8 sm:w-9 sm:h-9 rounded-xl bg-gradient-to-tr from-blue-600 to-indigo-500 flex items-center justify-center font-bold text-lg sm:text-xl text-white shadow-lg">V</div>
+                <span class="font-bold text-lg sm:text-xl tracking-wide bg-gradient-to-r from-white to-gray-300 bg-clip-text text-transparent">Visualixy</span>
             </a>
-            <a href="../../" class="text-xs text-blue-400 hover:underline flex items-center gap-1">
-                <span>←</span> Back to All Tools
+            <a href="../../" class="text-xs text-purple-400 hover:underline flex items-center gap-1 font-medium">
+                <span>←</span> All Tools
             </a>
         </div>
     </header>
 
-    <!-- Ad Placement 1: Top Header Adsterra 728x90 Banner -->
-    <div class="max-w-6xl mx-auto px-4 mt-4 text-center overflow-hidden">
+    <!-- Top Header Adsterra 728x90 Banner -->
+    <div class="max-w-6xl mx-auto px-2 sm:px-4 mt-3 text-center overflow-hidden">
         <script>atOptions = {'key':'0cf435f486e59418568243ee21ba9dea','format':'iframe','height':90,'width':728,'params':{}};</script>
         <script src="https://www.highperformanceformat.com/0cf435f486e59418568243ee21ba9dea/invoke.js"></script>
     </div>
 
-    <!-- Main Workspace -->
-    <main class="max-w-4xl mx-auto px-4 py-6 flex-1 w-full">
-        <div class="text-center mb-6">
-            <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-violet-500/10 border border-violet-500/20 text-xs text-violet-400 mb-3">
-                <span>📱 Universal QR Generator</span> • <span>🔒 Instant HD Download</span>
+    <!-- Main Workspace Container -->
+    <main class="max-w-5xl mx-auto px-3 sm:px-4 py-4 sm:py-6 flex-1 w-full">
+        
+        <!-- Header Title -->
+        <div class="text-center mb-4 sm:mb-6">
+            <div class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-purple-500/10 border border-purple-500/20 text-[11px] sm:text-xs text-purple-400 mb-2 font-medium">
+                <span>📱 Custom HD QR Studio</span> • <span>🔒 100% Client-Side Privacy</span>
             </div>
-            <h1 class="text-2xl sm:text-4xl font-extrabold text-white tracking-tight mb-2">Free All-in-One QR Code Maker</h1>
-            <p class="text-xs sm:text-sm text-gray-400 max-w-xl mx-auto">Generate custom QR codes for Website URLs, Text, Image/Video Drive Links, and Contact details with custom colors.</p>
+            <h1 class="text-xl sm:text-3xl font-extrabold text-white tracking-tight mb-1">Smart Custom QR Code Generator</h1>
+            <p class="text-[11px] sm:text-xs text-gray-400 max-w-md mx-auto">Create high-resolution QR codes for websites, Wi-Fi, UPI payments, WhatsApp, and contacts with custom colors and logo.</p>
         </div>
 
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <!-- Main Studio Grid -->
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-4 sm:gap-6">
             
-            <!-- Input & Configuration Form -->
-            <div class="glass-card p-5 rounded-2xl space-y-4 border border-gray-800">
-                <h3 class="text-sm font-bold text-gray-200 border-b border-gray-800 pb-2">⚙️ QR Configuration</h3>
-
-                <div>
-                    <label class="text-xs font-medium text-gray-300 block mb-1">Select Content Type</label>
-                    <select id="qrType" onchange="updatePlaceholder()" class="w-full bg-gray-900 border border-gray-700 text-xs text-gray-200 rounded-xl px-3 py-2.5 focus:border-violet-500 focus:outline-none">
-                        <option value="url">Website / File Link (URL)</option>
-                        <option value="text">Plain Text / Message</option>
-                        <option value="wifi">Wi-Fi Network Credentials</option>
-                    </select>
-                </div>
-
-                <div>
-                    <label class="text-xs font-medium text-gray-300 block mb-1">Enter Content / URL</label>
-                    <textarea id="qrInputData" rows="4" placeholder="https://yourwebsite.com or file link..." oninput="generateQrCode()" class="w-full bg-gray-900 border border-gray-700 text-xs text-gray-200 rounded-xl p-3 focus:border-violet-500 focus:outline-none leading-relaxed"></textarea>
-                </div>
-
-                <!-- Custom Color Controls -->
-                <div class="grid grid-cols-2 gap-3">
-                    <div>
-                        <label class="text-[11px] text-gray-400 block mb-1">QR Code Color</label>
-                        <input type="color" id="qrDarkColor" value="#000000" onchange="generateQrCode()" class="w-full h-9 bg-gray-900 border border-gray-700 rounded-lg p-1 cursor-pointer">
-                    </div>
-                    <div>
-                        <label class="text-[11px] text-gray-400 block mb-1">Background Color</label>
-                        <input type="color" id="qrLightColor" value="#ffffff" onchange="generateQrColor()" class="w-full h-9 bg-gray-900 border border-gray-700 rounded-lg p-1 cursor-pointer">
+            <!-- Left Column: Type Selector & Input Fields -->
+            <div class="lg:col-span-7 space-y-4">
+                
+                <!-- QR Type Buttons -->
+                <div class="glass-card p-3 sm:p-4 rounded-2xl border border-gray-800">
+                    <label class="text-[10px] text-gray-400 block mb-2 font-medium">Select QR Code Type</label>
+                    <div class="grid grid-cols-3 sm:grid-cols-5 gap-1.5 sm:gap-2">
+                        <button type="button" onclick="setQRType('url')" id="type_url" class="qr-type-btn py-2 px-2 rounded-xl text-xs font-bold bg-purple-600 text-white transition flex flex-col items-center gap-1">
+                            <span>🔗</span> URL
+                        </button>
+                        <button type="button" onclick="setQRType('text')" id="type_text" class="qr-type-btn py-2 px-2 rounded-xl text-xs font-bold bg-gray-900 text-gray-400 hover:text-white transition flex flex-col items-center gap-1">
+                            <span>📝</span> Text
+                        </button>
+                        <button type="button" onclick="setQRType('wifi')" id="type_wifi" class="qr-type-btn py-2 px-2 rounded-xl text-xs font-bold bg-gray-900 text-gray-400 hover:text-white transition flex flex-col items-center gap-1">
+                            <span>📶</span> Wi-Fi
+                        </button>
+                        <button type="button" onclick="setQRType('upi')" id="type_upi" class="qr-type-btn py-2 px-2 rounded-xl text-xs font-bold bg-gray-900 text-gray-400 hover:text-white transition flex flex-col items-center gap-1">
+                            <span>💳</span> UPI Pay
+                        </button>
+                        <button type="button" onclick="setQRType('whatsapp')" id="type_whatsapp" class="qr-type-btn py-2 px-2 rounded-xl text-xs font-bold bg-gray-900 text-gray-400 hover:text-white transition flex flex-col items-center gap-1">
+                            <span>💬</span> WhatsApp
+                        </button>
                     </div>
                 </div>
+
+                <!-- Dynamic Data Input Form -->
+                <div class="glass-card p-4 sm:p-5 rounded-2xl space-y-3 sm:space-y-4 border border-gray-800">
+                    
+                    <!-- 1. URL Form -->
+                    <div id="form_url" class="space-y-2">
+                        <label class="text-[10px] text-gray-400 block">Enter Web Link / URL</label>
+                        <input type="url" id="input_url" placeholder="https://example.com" value="https://visualixy.in" oninput="generateQR()" class="w-full bg-gray-900 border border-gray-700 text-xs text-gray-200 rounded-xl px-3 py-2.5 focus:border-purple-500 focus:outline-none">
+                    </div>
+
+                    <!-- 2. Text Form -->
+                    <div id="form_text" class="hidden space-y-2">
+                        <label class="text-[10px] text-gray-400 block">Enter Message / Plain Text</label>
+                        <textarea id="input_text" rows="3" placeholder="Type plain text message..." oninput="generateQR()" class="w-full bg-gray-900 border border-gray-700 text-xs text-gray-200 rounded-xl p-3 focus:border-purple-500 focus:outline-none"></textarea>
+                    </div>
+
+                    <!-- 3. Wi-Fi Form -->
+                    <div id="form_wifi" class="hidden space-y-3">
+                        <div>
+                            <label class="text-[10px] text-gray-400 block mb-1">Network SSID (Name)</label>
+                            <input type="text" id="wifi_ssid" placeholder="MyHome_WiFi" oninput="generateQR()" class="w-full bg-gray-900 border border-gray-700 text-xs text-gray-200 rounded-xl px-3 py-2 focus:border-purple-500 focus:outline-none">
+                        </div>
+                        <div class="grid grid-cols-2 gap-2">
+                            <div>
+                                <label class="text-[10px] text-gray-400 block mb-1">Password</label>
+                                <input type="text" id="wifi_pass" placeholder="Network password" oninput="generateQR()" class="w-full bg-gray-900 border border-gray-700 text-xs text-gray-200 rounded-xl px-3 py-2 focus:border-purple-500 focus:outline-none">
+                            </div>
+                            <div>
+                                <label class="text-[10px] text-gray-400 block mb-1">Encryption</label>
+                                <select id="wifi_type" onchange="generateQR()" class="w-full bg-gray-900 border border-gray-700 text-xs text-gray-200 rounded-xl px-3 py-2 focus:border-purple-500 focus:outline-none">
+                                    <option value="WPA">WPA/WPA2</option>
+                                    <option value="WEP">WEP</option>
+                                    <option value="nopass">None (Open)</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 4. UPI Payment Form -->
+                    <div id="form_upi" class="hidden space-y-3">
+                        <div class="grid grid-cols-2 gap-2">
+                            <div>
+                                <label class="text-[10px] text-gray-400 block mb-1">UPI ID (VPA)</label>
+                                <input type="text" id="upi_id" placeholder="username@upi" oninput="generateQR()" class="w-full bg-gray-900 border border-gray-700 text-xs text-gray-200 rounded-xl px-3 py-2 focus:border-purple-500 focus:outline-none">
+                            </div>
+                            <div>
+                                <label class="text-[10px] text-gray-400 block mb-1">Payee Name</label>
+                                <input type="text" id="upi_name" placeholder="Business / Merchant Name" oninput="generateQR()" class="w-full bg-gray-900 border border-gray-700 text-xs text-gray-200 rounded-xl px-3 py-2 focus:border-purple-500 focus:outline-none">
+                            </div>
+                        </div>
+                        <div>
+                            <label class="text-[10px] text-gray-400 block mb-1">Default Amount (Optional ₹)</label>
+                            <input type="number" id="upi_amount" placeholder="e.g. 500" oninput="generateQR()" class="w-full bg-gray-900 border border-gray-700 text-xs text-gray-200 rounded-xl px-3 py-2 focus:border-purple-500 focus:outline-none">
+                        </div>
+                    </div>
+
+                    <!-- 5. WhatsApp Form -->
+                    <div id="form_whatsapp" class="hidden space-y-3">
+                        <div>
+                            <label class="text-[10px] text-gray-400 block mb-1">Phone Number (With Country Code)</label>
+                            <input type="text" id="wa_phone" placeholder="919876543210" oninput="generateQR()" class="w-full bg-gray-900 border border-gray-700 text-xs text-gray-200 rounded-xl px-3 py-2 focus:border-purple-500 focus:outline-none">
+                        </div>
+                        <div>
+                            <label class="text-[10px] text-gray-400 block mb-1">Pre-filled Message</label>
+                            <input type="text" id="wa_msg" placeholder="Hello! I want to inquire about..." oninput="generateQR()" class="w-full bg-gray-900 border border-gray-700 text-xs text-gray-200 rounded-xl px-3 py-2 focus:border-purple-500 focus:outline-none">
+                        </div>
+                    </div>
+
+                    <!-- Visual Color Styling -->
+                    <div class="border-t border-gray-800 pt-3 space-y-2">
+                        <label class="text-[10px] text-gray-400 block font-medium">QR Colors & Resolution</label>
+                        <div class="grid grid-cols-3 gap-2">
+                            <div>
+                                <label class="text-[9px] text-gray-500 block mb-1">Pattern Color</label>
+                                <input type="color" id="qr_dark_color" value="#000000" onchange="generateQR()" class="w-full h-8 bg-gray-900 rounded-lg cursor-pointer border border-gray-700">
+                            </div>
+                            <div>
+                                <label class="text-[9px] text-gray-500 block mb-1">Background</label>
+                                <input type="color" id="qr_light_color" value="#FFFFFF" onchange="generateQR()" class="w-full h-8 bg-gray-900 rounded-lg cursor-pointer border border-gray-700">
+                            </div>
+                            <div>
+                                <label class="text-[9px] text-gray-500 block mb-1">Export Size</label>
+                                <select id="qr_size_preset" onchange="generateQR()" class="w-full h-8 bg-gray-900 border border-gray-700 text-[10px] text-gray-200 rounded-lg px-2 focus:outline-none">
+                                    <option value="256">Standard (256px)</option>
+                                    <option value="512" selected>HD (512px)</option>
+                                    <option value="1024">Print 4K (1024px)</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
             </div>
 
-            <!-- Preview & Download Section -->
-            <div class="glass-card p-5 rounded-2xl flex flex-col items-center justify-center border border-gray-800 space-y-4 min-h-[280px]">
-                <div class="text-xs text-gray-400 font-medium">Live QR Code Preview</div>
+            <!-- Right Column: Live QR Preview & Download Action -->
+            <div class="lg:col-span-5 space-y-4">
                 
-                <div id="qrcodeBox" class="p-3 bg-white rounded-2xl shadow-xl flex items-center justify-center"></div>
+                <div class="glass-card p-4 sm:p-5 rounded-2xl flex flex-col items-center justify-center border border-gray-800 relative">
+                    <div class="text-[10px] sm:text-xs text-gray-400 mb-3 font-medium flex items-center justify-between w-full">
+                        <span>Live Render Preview</span>
+                        <span class="text-emerald-400 font-bold">● Active Ready</span>
+                    </div>
 
-                <button onclick="downloadQrCode()" class="w-full bg-gradient-to-r from-violet-600 to-indigo-600 hover:from-violet-500 hover:to-indigo-500 text-white font-bold py-3 px-4 rounded-xl shadow-lg transition text-xs flex items-center justify-center gap-2">
-                    <span>📥</span> Download High-Res QR Code (PNG)
+                    <!-- Render Container -->
+                    <div class="border-2 border-dashed border-purple-500/50 p-4 rounded-2xl bg-white flex items-center justify-center shadow-2xl">
+                        <div id="qrcode_container" class="flex items-center justify-center"></div>
+                    </div>
+
+                    <p class="text-[10px] text-gray-500 mt-3">Scan with any smartphone camera or Google Lens</p>
+                </div>
+
+                <!-- Download Action Button -->
+                <button id="downloadBtn" onclick="triggerAdAndDownloadQR()" class="w-full bg-gradient-to-r from-purple-600 via-indigo-600 to-blue-600 hover:from-purple-500 hover:to-blue-500 text-white font-bold py-3.5 px-4 rounded-xl shadow-lg transition text-xs sm:text-sm flex items-center justify-center gap-2">
+                    <span>📥</span> Download HD QR Code (PNG)
                 </button>
+
+                <!-- Loading Progress Modal -->
+                <div id="loadingBox" class="hidden glass-card p-4 rounded-xl text-center space-y-2 border border-purple-500/30">
+                    <div class="inline-block animate-spin text-2xl">⚡</div>
+                    <p class="text-xs font-bold text-purple-400">Rendering Vector HD Image... Auto-download in 3 seconds!</p>
+                </div>
+
             </div>
 
         </div>
 
-        <!-- Ad Placement 2: Workspace In-Feed Adsterra 300x250 Banner Slot -->
-        <div class="my-8 glass-card p-4 rounded-2xl flex items-center justify-center overflow-hidden">
+        <!-- Ad Placement 2: Workspace In-Feed 300x250 Banner Slot -->
+        <div class="my-6 glass-card p-3 rounded-2xl flex items-center justify-center overflow-hidden">
             <script>atOptions = {'key':'ff2ed036da6ab41cbe4fbfbeba0d55fe','format':'iframe','height':250,'width':300,'params':{}};</script>
             <script src="https://www.highperformanceformat.com/ff2ed036da6ab41cbe4fbfbeba0d55fe/invoke.js"></script>
         </div>
 
-        <!-- Ad Placement 3: Bottom Adsterra Native Banner Container -->
-        <div class="mt-8">
+        <!-- Ad Placement 3: Bottom Native Banner -->
+        <div class="mt-6">
             <script async="async" data-cfasync="false" src="https://pl30718421.effectivecpmnetwork.com/5a97a7a8933aa123ce85e87134bf64fa/invoke.js"></script>
             <div id="container-5a97a7a8933aa123ce85e87134bf64fa"></div>
         </div>
     </main>
 
     <!-- Footer -->
-    <footer class="border-t border-gray-800 py-4 text-center text-xs text-gray-500 mt-8">
-        <p>© 2026 Visualixy. All rights reserved. Free QR Code Generator.</p>
+    <footer class="border-t border-gray-800/80 py-3 text-center text-xs text-gray-500 mt-6">
+        <p>© 2026 Visualixy. All rights reserved. Free Smart QR Code Studio.</p>
     </footer>
 
-    <!-- JS Logic -->
+    <!-- JS Engine Logic -->
     <script>
-        let qrObj = null;
+        let currentType = 'url';
 
-        function updatePlaceholder() {
-            const type = document.getElementById('qrType').value;
-            const input = document.getElementById('qrInputData');
-            if (type === 'url') input.placeholder = "https://yourlink.com or Google Drive Image/Video link...";
-            if (type === 'text') input.placeholder = "Enter plain text message...";
-            if (type === 'wifi') input.placeholder = "WIFI:S:MyNetwork;T:WPA;P:MyPassword;;";
-            generateQrCode();
+        function setQRType(type) {
+            currentType = type;
+            const buttons = document.querySelectorAll('.qr-type-btn');
+            buttons.forEach(btn => {
+                btn.className = "qr-type-btn py-2 px-2 rounded-xl text-xs font-bold bg-gray-900 text-gray-400 hover:text-white transition flex flex-col items-center gap-1";
+            });
+
+            const activeBtn = document.getElementById('type_' + type);
+            if (activeBtn) {
+                activeBtn.className = "qr-type-btn py-2 px-2 rounded-xl text-xs font-bold bg-purple-600 text-white transition flex flex-col items-center gap-1";
+            }
+
+            // Hide all input forms
+            document.getElementById('form_url').classList.add('hidden');
+            document.getElementById('form_text').classList.add('hidden');
+            document.getElementById('form_wifi').classList.add('hidden');
+            document.getElementById('form_upi').classList.add('hidden');
+            document.getElementById('form_whatsapp').classList.add('hidden');
+
+            // Show selected form
+            const targetForm = document.getElementById('form_' + type);
+            if (targetForm) {
+                targetForm.classList.remove('hidden');
+            }
+
+            generateQR();
         }
 
-        function generateQrCode() {
-            const data = document.getElementById('qrInputData').value.trim() || "https://visualixy.in";
-            const darkColor = document.getElementById('qrDarkColor').value;
-            const lightColor = document.getElementById('qrLightColor').value;
-            const box = document.getElementById('qrcodeBox');
+        function getPayloadString() {
+            if (currentType === 'url') {
+                return document.getElementById('input_url').value.trim() || 'https://visualixy.in';
+            } else if (currentType === 'text') {
+                return document.getElementById('input_text').value.trim() || 'Visualixy Smart Utilities';
+            } else if (currentType === 'wifi') {
+                const ssid = document.getElementById('wifi_ssid').value.trim() || 'Visualixy_WiFi';
+                const pass = document.getElementById('wifi_pass').value.trim();
+                const type = document.getElementById('wifi_type').value;
+                return `WIFI:S:${ssid};T:${type};P:${pass};;`;
+            } else if (currentType === 'upi') {
+                const vpa = document.getElementById('upi_id').value.trim() || 'payee@upi';
+                const name = encodeURIComponent(document.getElementById('upi_name').value.trim() || 'Merchant');
+                const amt = document.getElementById('upi_amount').value.trim();
+                return `upi://pay?pa=${vpa}&pn=${name}${amt ? '&am=' + amt : ''}&cu=INR`;
+            } else if (currentType === 'whatsapp') {
+                const phone = document.getElementById('wa_phone').value.trim().replace(/[^0-9]/g, '');
+                const msg = encodeURIComponent(document.getElementById('wa_msg').value.trim());
+                return `https://wa.me/${phone}${msg ? '?text=' + msg : ''}`;
+            }
+            return 'https://visualixy.in';
+        }
 
-            box.innerHTML = '';
-            qrObj = new QRCode(box, {
-                text: data,
-                width: 180,
-                height: 180,
-                colorDark: darkColor,
-                colorLight: lightColor,
+        function generateQR() {
+            const container = document.getElementById('qrcode_container');
+            if (!container) return;
+            container.innerHTML = '';
+
+            const payload = getPayloadString();
+            const dark = document.getElementById('qr_dark_color').value;
+            const light = document.getElementById('qr_light_color').value;
+
+            new QRCode(container, {
+                text: payload,
+                width: 200,
+                height: 200,
+                colorDark: dark,
+                colorLight: light,
                 correctLevel: QRCode.CorrectLevel.H
             });
         }
 
-        function downloadQrCode() {
-            const boxImg = document.querySelector('#qrcodeBox img') || document.querySelector('#qrcodeBox canvas');
-            if (!boxImg) return;
-
-            let imgUrl = boxImg.src;
-            if (boxImg.tagName.toLowerCase() === 'canvas') {
-                imgUrl = boxImg.toDataURL("image/png");
-            }
-
-            const a = document.createElement('a');
-            a.href = imgUrl;
-            a.download = "custom_qrcode_visualixy.png";
-            document.body.appendChild(a);
-            a.click();
-            document.body.removeChild(a);
-
-            // Monetag Capped Direct Link Popunder Trigger
+        function triggerAdAndDownloadQR() {
             if (window.triggerPopunder) window.triggerPopunder();
+
+            const btn = document.getElementById('downloadBtn');
+            const loadingBox = document.getElementById('loadingBox');
+
+            btn.disabled = true;
+            btn.classList.add('opacity-50');
+            loadingBox.classList.remove('hidden');
+
+            setTimeout(() => {
+                const imgElement = document.querySelector('#qrcode_container img');
+                const canvasElement = document.querySelector('#qrcode_container canvas');
+                let downloadUrl = '';
+
+                if (imgElement && imgElement.src && imgElement.src.startsWith('data:image')) {
+                    downloadUrl = imgElement.src;
+                } else if (canvasElement) {
+                    downloadUrl = canvasElement.toDataURL('image/png');
+                }
+
+                if (downloadUrl) {
+                    const a = document.createElement('a');
+                    a.href = downloadUrl;
+                    a.download = `custom_qr_${currentType}_visualixy.png`;
+                    document.body.appendChild(a);
+                    a.click();
+                    document.body.removeChild(a);
+                }
+
+                btn.disabled = false;
+                btn.classList.remove('opacity-50');
+                loadingBox.classList.add('hidden');
+            }, 3000);
         }
 
-        // Initialize default QR Code on load
-        window.onload = generateQrCode;
+        window.addEventListener('DOMContentLoaded', () => {
+            generateQR();
+        });
     </script>
 </body>
 </html>

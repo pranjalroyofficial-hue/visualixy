@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Doc Scanner & Multi-Image to PDF - Magic Clean Filter | Visualixy</title>
+    
+    <!-- Meta & SEO Tags -->
+    <meta name="description" content="Convert multiple document photos to clean scanned PDF online for free. Auto remove shadow, apply Magic Color / B&W Xerox filter, and compress under 100KB-200KB for Indian Govt forms.">
+    <meta name="keywords" content="doc scanner online, photo to scanned pdf, magic color pdf scanner, combine marksheet to pdf, convert photos to pdf under 200kb, visualixy">
+    <meta name="google-site-verification" content="jMp7icjOP34wszoRC-Gpy94eoqTmJZO2_NIcBWcvBmA" />
+    <meta name="clckd" content="ff0f7e314e486dc0f6161ff3c28e001e" />
+
+    <!-- External Ads Scripts -->
+    <script src="https://pl30718421.effectivecpmnetwork.com/67/51/f3/6751f3240d244f4f2df902162d5031d9.js"></script>
+    <script src="https://quge5.com/88/tag.min.js" data-zone="267129" async data-cfasync="false"></script>
+    <script src="../../assets/js/ads.js"></script>
+
+    <!-- PDF-Lib Library & Tailwind CSS -->
+    <script src="https://unpkg.com/pdf-lib@1.17.1/dist/pdf-lib.min.js"></script>
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <style>
+        body { background-color: #080c15; color: #f3f4f6; font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; }
+        .glass-card { background: rgba(17, 24, 39, 0.75); backdrop-filter: blur(16px); border: 1px solid rgba(255, 255, 255, 0.08); }
+        .glass-card-hover:hover { border-color: #0ea5e9; box-shadow: 0 10px 30px -5px rgba(14, 165, 233, 0.25); }
+    </style>
+</head>
+<body class="min-h-screen flex flex-col justify-between antialiased">
+
+    <!-- Header Navigation -->
+    <header class="border-b border-gray-800 bg-[#0f172a]/95 sticky top-0 z-50 backdrop-blur-md">
+        <div class="max-w-6xl mx-auto px-3 sm:px-4 py-2.5 sm:py-3 flex items-center justify-between gap-2">
+            <a href="../../" class="flex items-center gap-2">
+                <div class="w-8 h-8 sm:w-9 sm:h-9 rounded-xl bg-gradient-to-tr from-blue-600 to-indigo-500 flex items-center justify-center font-bold text-lg sm:text-xl text-white shadow-lg">V</div>
+                <span class="font-bold text-lg sm:text-xl tracking-wide bg-gradient-to-r from-white to-gray-300 bg-clip-text text-transparent">Visualixy</span>
+            </a>
+            <a href="../../" class="text-xs text-sky-400 hover:underline flex items-center gap-1 font-medium">
+                <span>←</span> All Tools
+            </a>
+        </div>
+    </header>
+
+    <!-- Top Header Adsterra 728x90 Banner -->
+    <div class="max-w-6xl mx-auto px-2 sm:px-4 mt-3 text-center overflow-hidden">
+        <script>atOptions = {'key':'0cf435f486e59418568243ee21ba9dea','format':'iframe','height':90,'width':728,'params':{}};</script>
+        <script src="https://www.highperformanceformat.com/0cf435f486e59418568243ee21ba9dea/invoke.js"></script>
+    </div>
+
+    <!-- Main Workspace Container -->
+    <main class="max-w-5xl mx-auto px-3 sm:px-4 py-4 sm:py-6 flex-1 w-full">
+        
+        <!-- Header Title -->
+        <div class="text-center mb-4 sm:mb-6">
+            <div class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-sky-500/10 border border-sky-500/20 text-[11px] sm:text-xs text-sky-400 mb-2 font-medium">
+                <span>📑 CamScanner Alternative</span> • <span>🔒 100% Client-Side Private</span>
+            </div>
+            <h1 class="text-xl sm:text-3xl font-extrabold text-white tracking-tight mb-1">Doc Scanner & Multi-Photo to PDF</h1>
+            <p class="text-[11px] sm:text-xs text-gray-400 max-w-md mx-auto">Remove shadows from phone photos, apply Magic Scan filters, reorder pages, and bind into a single compressed PDF.</p>
+        </div>
+
+        <!-- Upload Dropzone Area -->
+        <div id="dropzone" class="glass-card glass-card-hover p-6 sm:p-10 rounded-2xl border-2 border-dashed border-sky-500/40 text-center cursor-pointer transition mb-5" onclick="document.getElementById('docInput').click()">
+            <input type="file" id="docInput" multiple accept="image/*" class="hidden" onchange="handleDocumentUpload(this.files)">
+            <div class="w-12 h-12 sm:w-14 sm:h-14 mx-auto mb-2.5 rounded-2xl bg-sky-600/10 text-sky-400 flex items-center justify-center text-2xl sm:text-3xl">
+                📸
+            </div>
+            <h3 class="text-xs sm:text-base font-semibold text-gray-100 mb-1">Tap or Drag Marksheets / Document Photos</h3>
+            <p class="text-[11px] sm:text-xs text-gray-400">Select multiple pages (JPG, PNG, WEBP)</p>
+        </div>
+
+        <!-- Studio Workspace (Hidden Initially) -->
+        <div id="docWorkspace" class="hidden space-y-4 sm:space-y-6">
+            
+            <!-- Controls Bar -->
+            <div class="glass-card p-3 sm:p-4 rounded-2xl border border-gray-800 flex flex-wrap items-center justify-between gap-3">
+                <div>
+                    <span id="pageCountTag" class="text-xs font-bold text-sky-400">0 Pages Loaded</span>
+                    <p class="text-[10px] text-gray-400">Reorder or adjust scan filters below</p>
+                </div>
+
+                <div class="flex items-center gap-2">
+                    <button type="button" onclick="document.getElementById('docInput').click()" class="text-xs bg-gray-800 hover:bg-gray-700 text-gray-200 border border-gray-700 px-3 py-1.5 rounded-xl font-bold transition">
+                        + Add More Pages
+                    </button>
+                    <button type="button" onclick="clearAllPages()" class="text-xs bg-red-600/20 text-red-400 hover:bg-red-600/30 px-3 py-1.5 rounded-xl border border-red-500/30 font-medium transition">
+                        Clear All
+                    </button>
+                </div>
+            </div>
+
+            <!-- Global Scanner Filters & Size Compression Settings -->
+            <div class="glass-card p-4 rounded-2xl border border-gray-800 grid grid-cols-1 sm:grid-cols-2 gap-3">
+                <div>
+                    <label class="text-[10px] text-gray-400 block mb-1">Document Scan Filter</label>
+                    <select id="globalScanFilter" onchange="applyFilterToAll()" class="w-full bg-gray-900 border border-gray-700 text-xs text-gray-200 rounded-xl px-3 py-2 focus:border-sky-500 focus:outline-none">
+                        <option value="magic" selected>✨ Magic Color (Brighten & Remove Yellow Shadow)</option>
+                        <option value="bw">📄 Xerox Black & White (High Contrast Document)</option>
+                        <option value="grey">🌑 Grayscale (Official Govt Record Standard)</option>
+                        <option value="original">🖼️ Original Photo (No Filter)</option>
+                    </select>
+                </div>
+
+                <div>
+                    <label class="text-[10px] text-gray-400 block mb-1">Govt Exam Target File Size</label>
+                    <select id="targetPdfSize" class="w-full bg-gray-900 border border-gray-700 text-xs text-gray-200 rounded-xl px-3 py-2 focus:border-sky-500 focus:outline-none">
+                        <option value="normal" selected>Standard HD Quality (Best for Print)</option>
+                        <option value="200kb">Compress Under 200 KB (SSC / UPSC Application)</option>
+                        <option value="100kb">Compress Under 100 KB (Strict Portal Lock)</option>
+                    </select>
+                </div>
+            </div>
+
+            <!-- Page Cards Preview Grid -->
+            <div id="pagesGrid" class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-3 sm:gap-4"></div>
+
+            <!-- Action Button -->
+            <button id="downloadBtn" onclick="triggerAdAndBuildPdf()" class="w-full bg-gradient-to-r from-sky-600 via-blue-600 to-indigo-600 hover:from-sky-500 hover:to-indigo-500 text-white font-bold py-3.5 px-4 rounded-xl shadow-lg transition text-xs sm:text-sm flex items-center justify-center gap-2">
+                <span>📥</span> Generate & Download Scanned PDF
+            </button>
+
+            <!-- Loading Progress Modal -->
+            <div id="loadingBox" class="hidden glass-card p-4 rounded-xl text-center space-y-2 border border-sky-500/30">
+                <div class="inline-block animate-spin text-2xl">⚡</div>
+                <p class="text-xs font-bold text-sky-400">Binding Scanned Pages into PDF... Auto-download in 3 seconds!</p>
+            </div>
+
+        </div>
+
+        <!-- Ad Placement 2: Workspace In-Feed 300x250 Banner Slot -->
+        <div class="my-6 glass-card p-3 rounded-2xl flex items-center justify-center overflow-hidden">
+            <script>atOptions = {'key':'ff2ed036da6ab41cbe4fbfbeba0d55fe','format':'iframe','height':250,'width':300,'params':{}};</script>
+            <script src="https://www.highperformanceformat.com/ff2ed036da6ab41cbe4fbfbeba0d55fe/invoke.js"></script>
+        </div>
+
+        <!-- Ad Placement 3: Bottom Native Banner -->
+        <div class="mt-6">
+            <script async="async" data-cfasync="false" src="https://pl30718421.effectivecpmnetwork.com/5a97a7a8933aa123ce85e87134bf64fa/invoke.js"></script>
+            <div id="container-5a97a7a8933aa123ce85e87134bf64fa"></div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="border-t border-gray-800/80 py-3 text-center text-xs text-gray-500 mt-6">
+        <p>© 2026 Visualixy. All rights reserved. Free Online Document Scanner & PDF Binder.</p>
+    </footer>
+
+    <!-- JS Engine Logic -->
+    <script>
+        let docPages = []; // stores { originalImg, filter }
+
+        function handleDocumentUpload(files) {
+            if (!files || files.length === 0) return;
+
+            const globalFilter = document.getElementById('globalScanFilter').value;
+            let loadedCount = 0;
+
+            Array.from(files).forEach(file => {
+                const reader = new FileReader();
+                reader.onload = function(e) {
+                    const img = new Image();
+                    img.onload = function() {
+                        docPages.push({ originalImg: img, filter: globalFilter });
+                        loadedCount++;
+                        if (loadedCount === files.length) {
+                            document.getElementById('dropzone').classList.add('hidden');
+                            document.getElementById('docWorkspace').classList.remove('hidden');
+                            renderPagesGrid();
+                        }
+                    };
+                    img.src = e.target.result;
+                };
+                reader.readAsDataURL(file);
+            });
+        }
+
+        function renderPagesGrid() {
+            const grid = document.getElementById('pagesGrid');
+            grid.innerHTML = '';
+            document.getElementById('pageCountTag').innerText = `${docPages.length} Pages Ready`;
+
+            if (docPages.length === 0) {
+                document.getElementById('dropzone').classList.remove('hidden');
+                document.getElementById('docWorkspace').classList.add('hidden');
+                return;
+            }
+
+            docPages.forEach((page, index) => {
+                const canvas = document.createElement('canvas');
+                processFilteredCanvas(page.originalImg, page.filter, canvas, 200);
+
+                const card = document.createElement('div');
+                card.className = 'glass-card p-2.5 rounded-xl border border-gray-800 flex flex-col items-center justify-between text-center relative group';
+                card.innerHTML = `
+                    <div class="overflow-hidden w-full flex items-center justify-center p-1.5 rounded-lg bg-black/40 min-h-[140px]">
+                        <img src="${canvas.toDataURL()}" class="max-h-[120px] w-auto rounded object-contain shadow-md">
+                    </div>
+                    <div class="w-full flex items-center justify-between mt-2 pt-2 border-t border-gray-800/80 text-[10px]">
+                        <span class="text-sky-400 font-bold">Page ${index + 1}</span>
+                        <div class="flex items-center gap-1">
+                            <button type="button" onclick="movePage(${index}, -1)" ${index === 0 ? 'disabled class="opacity-30 cursor-not-allowed"' : ''} class="bg-gray-800 hover:bg-gray-700 text-white px-1.5 py-0.5 rounded">▲</button>
+                            <button type="button" onclick="movePage(${index}, 1)" ${index === docPages.length - 1 ? 'disabled class="opacity-30 cursor-not-allowed"' : ''} class="bg-gray-800 hover:bg-gray-700 text-white px-1.5 py-0.5 rounded">▼</button>
+                            <button type="button" onclick="removePage(${index})" class="text-red-400 hover:text-red-300 font-bold px-1">✕</button>
+                        </div>
+                    </div>
+                `;
+                grid.appendChild(card);
+            });
+        }
+
+        function processFilteredCanvas(img, filter, canvas, maxDimension = 1600) {
+            const ctx = canvas.getContext('2d');
+            let w = img.naturalWidth;
+            let h = img.naturalHeight;
+
+            if (maxDimension && (w > maxDimension || h > maxDimension)) {
+                if (w > h) {
+                    h = Math.round((h * maxDimension) / w);
+                    w = maxDimension;
+                } else {
+                    w = Math.round((w * maxDimension) / h);
+                    h = maxDimension;
+                }
+            }
+
+            canvas.width = w;
+            canvas.height = h;
+
+            // Fill base white
+            ctx.fillStyle = '#FFFFFF';
+            ctx.fillRect(0, 0, w, h);
+            ctx.drawImage(img, 0, 0, w, h);
+
+            if (filter === 'original') return;
+
+            const imgData = ctx.getImageData(0, 0, w, h);
+            const d = imgData.data;
+
+            for (let i = 0; i < d.length; i += 4) {
+                const r = d[i], g = d[i+1], b = d[i+2];
+                const gray = 0.299 * r + 0.587 * g + 0.114 * b;
+
+                if (filter === 'magic') {
+                    // Brighten paper & increase contrast
+                    const bright = gray > 140 ? 255 : (gray < 80 ? gray * 0.7 : gray);
+                    d[i] = Math.min(255, (r * 0.8) + (bright * 0.4));
+                    d[i+1] = Math.min(255, (g * 0.8) + (bright * 0.4));
+                    d[i+2] = Math.min(255, (b * 0.8) + (bright * 0.4));
+                } else if (filter === 'bw') {
+                    // High contrast black & white xerox style
+                    const bw = gray > 135 ? 255 : 0;
+                    d[i] = bw;
+                    d[i+1] = bw;
+                    d[i+2] = bw;
+                } else if (filter === 'grey') {
+                    d[i] = gray;
+                    d[i+1] = gray;
+                    d[i+2] = gray;
+                }
+            }
+            ctx.putImageData(imgData, 0, 0);
+        }
+
+        function applyFilterToAll() {
+            const filter = document.getElementById('globalScanFilter').value;
+            docPages.forEach(p => p.filter = filter);
+            renderPagesGrid();
+        }
+
+        function movePage(index, dir) {
+            const newIdx = index + dir;
+            if (newIdx < 0 || newIdx >= docPages.length) return;
+            const temp = docPages[index];
+            docPages[index] = docPages[newIdx];
+            docPages[newIdx] = temp;
+            renderPagesGrid();
+        }
+
+        function removePage(index) {
+            docPages.splice(index, 1);
+            renderPagesGrid();
+        }
+
+        function clearAllPages() {
+            docPages = [];
+            renderPagesGrid();
+        }
+
+        function triggerAdAndBuildPdf() {
+            if (docPages.length === 0) return alert('Please upload at least 1 document photo!');
+
+            // Trigger Popunder Ad
+            if (window.triggerPopunder) window.triggerPopunder();
+
+            const btn = document.getElementById('downloadBtn');
+            const loadingBox = document.getElementById('loadingBox');
+
+            btn.disabled = true;
+            btn.classList.add('opacity-50');
+            loadingBox.classList.remove('hidden');
+
+            setTimeout(async () => {
+                await generateScannedPDF();
+
+                btn.disabled = false;
+                btn.classList.remove('opacity-50');
+                loadingBox.classList.add('hidden');
+            }, 3000);
+        }
+
+        async function generateScannedPDF() {
+            const sizeOption = document.getElementById('targetPdfSize').value;
+            let maxDim = 1600;
+            let quality = 0.85;
+
+            if (sizeOption === '200kb') { maxDim = 1200; quality = 0.55; }
+            else if (sizeOption === '100kb') { maxDim = 900; quality = 0.38; }
+
+            const pdfDoc = await PDFLib.PDFDocument.create();
+
+            for (const page of docPages) {
+                const canvas = document.createElement('canvas');
+                processFilteredCanvas(page.originalImg, page.filter, canvas, maxDim);
+
+                const imgDataUrl = canvas.toDataURL('image/jpeg', quality);
+                const imgBytes = await fetch(imgDataUrl).then(res => res.arrayBuffer());
+                const embeddedImg = await pdfDoc.embedJpg(imgBytes);
+
+                // Standard A4 Size (595.28 x 841.89 points)
+                const pdfPage = pdfDoc.addPage([595.28, 841.89]);
+                const { width, height } = pdfPage.getSize();
+
+                const imgAspect = canvas.width / canvas.height;
+                const pageAspect = width / height;
+                let drawW, drawH, drawX, drawY;
+
+                if (imgAspect > pageAspect) {
+                    drawW = width - 40;
+                    drawH = drawW / imgAspect;
+                    drawX = 20;
+                    drawY = (height - drawH) / 2;
+                } else {
+                    drawH = height - 40;
+                    drawW = drawH * imgAspect;
+                    drawX = (width - drawW) / 2;
+                    drawY = 20;
+                }
+
+                pdfPage.drawImage(embeddedImg, {
+                    x: drawX,
+                    y: drawY,
+                    width: drawW,
+                    height: drawH
+                });
+            }
+
+            const pdfBytes = await pdfDoc.save();
+            const blob = new Blob([pdfBytes], { type: 'application/pdf' });
+            const url = URL.createObjectURL(blob);
+
+            const a = document.createElement('a');
+            a.href = url;
+            a.download = `scanned_document_visualixy.pdf`;
+            document.body.appendChild(a);
+            a.click();
+            document.body.removeChild(a);
+        }
+    </script>
+</body>
+</html>
