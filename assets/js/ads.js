@@ -1,84 +1,56 @@
 /**
- * Visualixy Master High-CPM Video & Direct Ad Engine
- * Handles Video Interstitial Modal, Adsterra Direct Link & Instant Download Delivery
+ * Visualixy Clean Ad Processing Engine
+ * Zero Popup Redirects • Clean In-Modal Banner • Fast User Experience
  */
 
 (function () {
-    // 1. Inject Video Modal HTML & Styles on Load
     const modalHTML = `
-    <div id="vxyVideoModal" class="fixed inset-0 z-[99999] hidden flex items-center justify-center bg-slate-900/85 backdrop-blur-md p-4 transition-all duration-300">
-        <div class="bg-white border border-slate-200 rounded-3xl p-6 sm:p-8 max-w-md w-full shadow-2xl text-center relative animate-bounce-short">
+    <div id="vxyCleanModal" class="fixed inset-0 z-[99999] hidden flex items-center justify-center bg-slate-900/80 backdrop-blur-sm p-4 transition-all duration-200">
+        <div class="bg-white border border-slate-200 rounded-3xl p-5 sm:p-6 max-w-sm w-full shadow-2xl text-center relative animate-scale-up">
             
-            <!-- Badge -->
-            <div class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-blue-50 text-blue-600 text-[11px] font-black uppercase tracking-wider mb-4 border border-blue-200">
+            <!-- Header Tag -->
+            <div class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-blue-50 text-blue-600 text-[11px] font-black uppercase tracking-wider mb-3 border border-blue-200">
                 <span class="w-2 h-2 rounded-full bg-blue-600 animate-ping"></span>
-                <span>Processing Document</span>
+                <span id="vxyStatusText">Processing File...</span>
             </div>
 
-            <!-- Video / Animation Container -->
-            <div class="w-full bg-slate-950 rounded-2xl overflow-hidden shadow-inner mb-4 relative aspect-video flex flex-col items-center justify-center text-white p-4">
-                <div class="text-4xl mb-2 animate-pulse">🎬</div>
-                <p id="vxyAdTitle" class="text-xs font-bold text-slate-300">Sponsored Video Stream Loading...</p>
-                
-                <!-- Progress Line -->
-                <div class="absolute bottom-0 left-0 h-1.5 bg-blue-500 w-full transition-all duration-1000" id="vxyProgressBar"></div>
+            <!-- In-Modal Clean Adsterra Banner (300x250) -->
+            <div class="w-full bg-slate-50 border border-slate-200 rounded-2xl overflow-hidden mb-3 p-1 flex flex-col items-center justify-center min-h-[250px]">
+                <span class="text-[9px] uppercase font-bold text-slate-400 block mb-1">Sponsored</span>
+                <div class="overflow-hidden flex items-center justify-center w-full">
+                    <iframe src="//www.highperformanceformat.com/watch?key=ff2ed036da6ab41cbe4fbfbeba0d55fe" width="300" height="250" frameborder="0" scrolling="no" class="rounded-xl"></iframe>
+                </div>
             </div>
 
-            <!-- Status & Countdown -->
-            <h3 class="text-base font-black text-slate-900 mb-1" id="vxyStatusText">Rendering HD Output...</h3>
-            <p class="text-xs text-slate-500 mb-5">Your secure file will download automatically in <b id="vxyTimer" class="text-blue-600 font-black text-sm">3</b>s</p>
+            <!-- Countdown Bar -->
+            <div class="space-y-1">
+                <div class="w-full bg-slate-100 rounded-full h-1.5 overflow-hidden">
+                    <div id="vxyProgressBar" class="bg-blue-600 h-1.5 w-0 transition-all duration-1000"></div>
+                </div>
+                <p class="text-[11px] font-bold text-slate-500 pt-1">
+                    Your file will download in <span id="vxyTimer" class="text-blue-600 font-black text-xs">3</span>s
+                </p>
+            </div>
 
-            <!-- Adsterra Video Offer Direct Trigger -->
-            <button id="vxyDirectAdBtn" class="w-full py-3 rounded-xl bg-blue-600 hover:bg-blue-700 text-white font-bold text-xs shadow-md transition flex items-center justify-center gap-2">
-                <span>⚡ Fast Server Download (HD)</span>
-            </button>
-            
-            <p class="text-[10px] text-slate-400 mt-3">100% Client-Side Privacy Guaranteed by Visualixy</p>
         </div>
     </div>
     `;
 
     document.addEventListener("DOMContentLoaded", function () {
-        if (!document.getElementById("vxyVideoModal")) {
+        if (!document.getElementById("vxyCleanModal")) {
             document.body.insertAdjacentHTML("beforeend", modalHTML);
         }
     });
 
-    // 2. Global Execution Function for Tools
     window.triggerToolProcessAndDownload = function (buttonElement, processText, downloadCallback) {
-        const modal = document.getElementById("vxyVideoModal");
+        const modal = document.getElementById("vxyCleanModal");
         const timerElem = document.getElementById("vxyTimer");
         const statusElem = document.getElementById("vxyStatusText");
         const progressElem = document.getElementById("vxyProgressBar");
-        const directBtn = document.getElementById("vxyDirectAdBtn");
 
-        if (statusElem) statusElem.innerText = processText || "Optimizing Document...";
-
-        // Open Video Modal Overlay
+        if (statusElem) statusElem.innerText = processText || "Rendering Output...";
         if (modal) modal.classList.remove("hidden");
 
-        // Direct Link Ad URL (Adsterra Direct Link Key)
-        const adDirectLink = "https://www.highperformanceformat.com/0cf435f486e59418568243ee21ba9dea";
-
-        // Click on popup offer opens ad tab
-        if (directBtn) {
-            directBtn.onclick = function () {
-                window.open(adDirectLink, "_blank");
-            };
-        }
-
-        // Automatic popunder trigger in background
-        try {
-            const adWindow = window.open(adDirectLink, "_blank");
-            if (adWindow) {
-                adWindow.blur();
-                window.focus();
-            }
-        } catch (e) {
-            console.log("Direct link auto-trigger bypassed");
-        }
-
-        // 3-Second Countdown & Progress Bar
         let timeLeft = 3;
         if (timerElem) timerElem.innerText = timeLeft;
         if (progressElem) progressElem.style.width = "0%";
@@ -90,11 +62,8 @@
 
             if (timeLeft <= 0) {
                 clearInterval(interval);
-                
-                // Hide modal
                 if (modal) modal.classList.add("hidden");
-
-                // Execute File Download
+                
                 if (typeof downloadCallback === "function") {
                     downloadCallback();
                 }
