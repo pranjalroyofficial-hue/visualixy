@@ -3,314 +3,231 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>CGPA to Percentage Calculator Online - CBSE, UGC & University Grade Slip | Visualixy</title>
+    <title>CGPA to Percentage Converter Free - CBSE & University Formula - Visualixy</title>
+    <meta name="description" content="Convert CGPA / SGPA to percentage with official CBSE, VTU, AKTU, and University grading formulas. Download verified conversion certificate slip.">
     
-    <!-- Meta & SEO Tags -->
-    <meta name="description" content="Convert CGPA and SGPA to Percentage (%) for CBSE, UGC, and State Universities online for free. Calculate multi-semester GPA and download official conversion slip. 100% private.">
-    <meta name="keywords" content="cgpa to percentage calculator, cbse cgpa to percentage 9.5, sgpa to percentage calculator, convert 10 point cgpa to percentage, visualixy cgpa converter">
-    <meta name="google-site-verification" content="jMp7icjOP34wszoRC-Gpy94eoqTmJZO2_NIcBWcvBmA" />
-    <meta name="clckd" content="ff0f7e314e486dc0f6161ff3c28e001e" />
-
-    <!-- External Ads Scripts -->
-    <script src="https://pl30718421.effectivecpmnetwork.com/67/51/f3/6751f3240d244f4f2df902162d5031d9.js"></script>
-    <script src="https://quge5.com/88/tag.min.js" data-zone="267129" async data-cfasync="false"></script>
-    <script src="../../assets/js/ads.js"></script>
-
-    <!-- html2canvas Library & Tailwind CSS -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+    <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
 
+    <!-- Visualixy Master Ads Engine -->
+    <script src="../../assets/js/ads.js"></script>
+
     <style>
-        body { background-color: #080c15; color: #f3f4f6; font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; }
-        .glass-card { background: rgba(17, 24, 39, 0.75); backdrop-filter: blur(16px); border: 1px solid rgba(255, 255, 255, 0.08); }
-        .glass-card-hover:hover { border-color: #6366f1; box-shadow: 0 10px 30px -5px rgba(99, 102, 241, 0.25); }
+        body { background-color: #f8fafc; color: #0f172a; font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; }
+        .tool-box { background: #ffffff; border: 1px solid #e2e8f0; border-radius: 1.5rem; }
     </style>
 </head>
-<body class="min-h-screen flex flex-col justify-between antialiased">
+<body class="min-h-screen flex flex-col justify-between antialiased pb-16 lg:pb-0">
+
+    <!-- Top Leaderboard Ad (728x90) -->
+    <div class="hidden lg:block w-full bg-slate-200/60 py-2 border-b border-slate-300">
+        <div class="max-w-6xl mx-auto text-center overflow-hidden">
+            <script>atOptions = {'key':'0cf435f486e59418568243ee21ba9dea','format':'iframe','height':90,'width':728,'params':{}};</script>
+            <script src="https://www.highperformanceformat.com/0cf435f486e59418568243ee21ba9dea/invoke.js"></script>
+        </div>
+    </div>
 
     <!-- Header Navigation -->
-    <header class="border-b border-gray-800 bg-[#0f172a]/95 sticky top-0 z-50 backdrop-blur-md">
-        <div class="max-w-6xl mx-auto px-3 sm:px-4 py-2.5 sm:py-3 flex items-center justify-between gap-2">
+    <header class="bg-white border-b border-slate-200 sticky top-0 z-50 shadow-sm">
+        <div class="max-w-7xl mx-auto px-4 py-3 flex items-center justify-between">
             <a href="../../" class="flex items-center gap-2">
-                <div class="w-8 h-8 sm:w-9 sm:h-9 rounded-xl bg-gradient-to-tr from-blue-600 to-indigo-500 flex items-center justify-center font-bold text-lg sm:text-xl text-white shadow-lg">V</div>
-                <span class="font-bold text-lg sm:text-xl tracking-wide bg-gradient-to-r from-white to-gray-300 bg-clip-text text-transparent">Visualixy</span>
+                <div class="w-8 h-8 rounded-xl bg-blue-600 flex items-center justify-center font-black text-lg text-white">V</div>
+                <span class="font-extrabold text-lg text-slate-900 tracking-tight">VISUALIXY</span>
             </a>
-            <a href="../../" class="text-xs text-indigo-400 hover:underline flex items-center gap-1 font-medium">
-                <span>←</span> All Tools
-            </a>
+            <a href="../../" class="text-xs font-bold text-slate-600 bg-slate-100 px-3 py-1.5 rounded-xl hover:bg-blue-50 hover:text-blue-600 transition">← Back to All Tools</a>
         </div>
     </header>
 
-    <!-- Top Header Adsterra 728x90 Banner -->
-    <div class="max-w-6xl mx-auto px-2 sm:px-4 mt-3 text-center overflow-hidden">
-        <script>atOptions = {'key':'0cf435f486e59418568243ee21ba9dea','format':'iframe','height':90,'width':728,'params':{}};</script>
-        <script src="https://www.highperformanceformat.com/0cf435f486e59418568243ee21ba9dea/invoke.js"></script>
+    <!-- Mobile Banner Ad (320x50) -->
+    <div class="lg:hidden w-full bg-slate-100 py-1 text-center border-b border-slate-200 overflow-hidden">
+        <script>atOptions = {'key':'ff2ed036da6ab41cbe4fbfbeba0d55fe','format':'iframe','height':50,'width':320,'params':{}};</script>
+        <script src="https://www.highperformanceformat.com/ff2ed036da6ab41cbe4fbfbeba0d55fe/invoke.js"></script>
     </div>
 
-    <!-- Main Workspace Container -->
-    <main class="max-w-5xl mx-auto px-3 sm:px-4 py-4 sm:py-6 flex-1 w-full">
-        
-        <!-- Header Title -->
-        <div class="text-center mb-4 sm:mb-6">
-            <div class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-indigo-500/10 border border-indigo-500/20 text-[11px] sm:text-xs text-indigo-400 mb-2 font-medium">
-                <span>🎓 Official Board & University Standards</span> • <span>🔒 100% Client-Side Privacy</span>
-            </div>
-            <h1 class="text-xl sm:text-3xl font-extrabold text-white tracking-tight mb-1">CGPA to Percentage Calculator</h1>
-            <p class="text-[11px] sm:text-xs text-gray-400 max-w-md mx-auto">Convert CBSE 10th/12th, UGC, and College CGPA/SGPA to exact percentage and download an official verification slip.</p>
-        </div>
+    <!-- Main Workspace -->
+    <main class="max-w-7xl mx-auto px-4 py-6 flex-1 w-full flex flex-col lg:flex-row gap-6">
 
-        <div class="grid grid-cols-1 lg:grid-cols-12 gap-4 sm:gap-6">
-            
-            <!-- Left Controls Column -->
-            <div class="lg:col-span-6 space-y-4">
-                <div class="glass-card p-4 sm:p-5 rounded-2xl space-y-3.5 border border-gray-800">
-                    <h3 class="text-xs sm:text-sm font-bold text-gray-200 border-b border-gray-800 pb-2.5 flex items-center gap-2">
-                        <span>⚙️</span> Formula & Grade Parameters
-                    </h3>
+        <!-- Center Tool Panel -->
+        <div class="flex-1 min-w-0">
+            <div class="tool-box p-5 sm:p-8 shadow-sm">
+                
+                <!-- Tool Title Header -->
+                <div class="text-center max-w-lg mx-auto mb-6">
+                    <div class="inline-flex p-3 rounded-2xl bg-indigo-50 text-indigo-600 text-2xl mb-2">🎓</div>
+                    <h1 class="text-xl sm:text-2xl font-black text-slate-900">CGPA to Percentage Converter</h1>
+                    <p class="text-xs text-slate-500 mt-1">Official CBSE (x 9.5) & University Grading Conversion Engine.</p>
+                </div>
 
-                    <!-- Board / University Formula Selector -->
+                <!-- Input Grid -->
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 bg-slate-50 p-4 sm:p-6 rounded-2xl border border-slate-200 mb-6">
                     <div>
-                        <label class="text-[10px] text-gray-400 block mb-1">Select Conversion Standard</label>
-                        <select id="formulaSelect" onchange="calculatePercentage()" class="w-full bg-gray-900 border border-gray-700 text-xs text-gray-200 rounded-xl px-3 py-2.5 focus:border-indigo-500 focus:outline-none font-medium">
-                            <option value="cbse" selected>CBSE Standard (CGPA × 9.5)</option>
-                            <option value="ugc_10">UGC / Standard 10-Point Scale (CGPA × 10)</option>
-                            <option value="ugc_aicte">AICTE Standard ((CGPA - 0.75) × 10)</option>
-                            <option value="mumbai">Mumbai University Engineering (7.1 + CGPA × 7.2)</option>
+                        <label class="block text-xs font-bold text-slate-700 mb-1">Enter CGPA / SGPA (out of 10) *</label>
+                        <input type="number" step="0.01" min="0" max="10" id="cgpaInput" oninput="calculatePercentage()" placeholder="e.g. 8.4" class="w-full bg-white border border-slate-300 text-xs rounded-xl px-3 py-2.5 font-bold focus:outline-none focus:border-indigo-500">
+                    </div>
+                    <div>
+                        <label class="block text-xs font-bold text-slate-700 mb-1">Conversion Formula / Board *</label>
+                        <select id="boardFormula" onchange="calculatePercentage()" class="w-full bg-white border border-slate-300 text-xs rounded-xl px-3 py-2.5 font-bold focus:outline-none">
+                            <option value="cbse" selected>CBSE / Standard (CGPA × 9.5)</option>
+                            <option value="10x">Engineering / 10 Multiplier (CGPA × 10)</option>
                             <option value="vtu">VTU Karnataka ((CGPA - 0.75) × 10)</option>
+                            <option value="mumbai">Mumbai University (7.1 × CGPA + 11)</option>
                         </select>
                     </div>
+                </div>
 
-                    <!-- Direct CGPA Input -->
-                    <div>
-                        <label class="text-[10px] text-gray-400 block mb-1">Enter Obtained CGPA (out of 10) <span class="text-indigo-400">*</span></label>
-                        <input type="number" id="cgpaInput" step="0.01" min="0" max="10" placeholder="e.g. 8.40" value="8.40" oninput="calculatePercentage()" class="w-full bg-gray-900 border border-gray-700 text-base text-indigo-400 rounded-xl px-3 py-2 focus:border-indigo-500 focus:outline-none font-black">
-                    </div>
-
-                    <!-- Candidate Name & Roll No (for Slip) -->
-                    <div class="grid grid-cols-2 gap-2">
-                        <div>
-                            <label class="text-[9px] text-gray-400 block mb-1">Candidate Name (Optional)</label>
-                            <input type="text" id="candidateName" placeholder="Rahul Sharma" value="Rahul Sharma" oninput="calculatePercentage()" class="w-full bg-gray-900 border border-gray-700 text-xs text-gray-200 rounded-xl px-2.5 py-1.5 focus:border-indigo-500 focus:outline-none">
+                <!-- Result Box -->
+                <div id="resultBox" class="hidden space-y-6">
+                    
+                    <!-- Main Percentage Card -->
+                    <div class="bg-indigo-50/70 border border-indigo-200 p-6 rounded-2xl text-center">
+                        <span class="text-xs font-black uppercase tracking-wider text-slate-500 block mb-1">Equivalent Percentage</span>
+                        <div class="text-4xl sm:text-5xl font-black text-indigo-700">
+                            <span id="percentageVal">0.00</span><span class="text-2xl sm:text-3xl">%</span>
                         </div>
-                        <div>
-                            <label class="text-[9px] text-gray-400 block mb-1">Course / Board Name</label>
-                            <input type="text" id="courseName" placeholder="BBA / CBSE Class 10" value="BBA Degree" oninput="calculatePercentage()" class="w-full bg-gray-900 border border-gray-700 text-xs text-gray-200 rounded-xl px-2.5 py-1.5 focus:border-indigo-500 focus:outline-none">
+                        <p id="formulaApplied" class="text-xs font-bold text-slate-600 mt-2">Formula: CGPA × 9.5</p>
+                    </div>
+
+                    <!-- Performance Evaluation Card -->
+                    <div class="bg-white p-4 rounded-2xl border border-slate-200 shadow-sm space-y-2 text-xs">
+                        <div class="flex justify-between border-b border-slate-100 pb-2">
+                            <span class="text-slate-500">Academic Division:</span>
+                            <b id="gradeDivision" class="text-slate-800">First Class with Distinction</b>
+                        </div>
+                        <div class="flex justify-between">
+                            <span class="text-slate-500">Scale Basis:</span>
+                            <b class="text-slate-800">10.0 Point Scale</b>
                         </div>
                     </div>
 
-                    <!-- Quick Multi-Semester SGPA Averager Drawer (Optional) -->
-                    <div class="border-t border-gray-800 pt-2.5">
-                        <details class="text-xs text-gray-400 cursor-pointer">
-                            <summary class="font-bold text-indigo-400 hover:underline">Calculate from Semesters (SGPA Averager)</summary>
-                            <div class="grid grid-cols-4 gap-1.5 pt-2">
-                                <input type="number" step="0.01" placeholder="Sem 1" id="sem1" oninput="averageSgpa()" class="bg-gray-900 border border-gray-700 text-[10px] text-white rounded p-1 text-center">
-                                <input type="number" step="0.01" placeholder="Sem 2" id="sem2" oninput="averageSgpa()" class="bg-gray-900 border border-gray-700 text-[10px] text-white rounded p-1 text-center">
-                                <input type="number" step="0.01" placeholder="Sem 3" id="sem3" oninput="averageSgpa()" class="bg-gray-900 border border-gray-700 text-[10px] text-white rounded p-1 text-center">
-                                <input type="number" step="0.01" placeholder="Sem 4" id="sem4" oninput="averageSgpa()" class="bg-gray-900 border border-gray-700 text-[10px] text-white rounded p-1 text-center">
-                                <input type="number" step="0.01" placeholder="Sem 5" id="sem5" oninput="averageSgpa()" class="bg-gray-900 border border-gray-700 text-[10px] text-white rounded p-1 text-center">
-                                <input type="number" step="0.01" placeholder="Sem 6" id="sem6" oninput="averageSgpa()" class="bg-gray-900 border border-gray-700 text-[10px] text-white rounded p-1 text-center">
-                                <input type="number" step="0.01" placeholder="Sem 7" id="sem7" oninput="averageSgpa()" class="bg-gray-900 border border-gray-700 text-[10px] text-white rounded p-1 text-center">
-                                <input type="number" step="0.01" placeholder="Sem 8" id="sem8" oninput="averageSgpa()" class="bg-gray-900 border border-gray-700 text-[10px] text-white rounded p-1 text-center">
-                            </div>
-                        </details>
-                    </div>
-
-                    <!-- Action Download Slip Button -->
-                    <button id="downloadSlipBtn" onclick="triggerAdAndDownloadSlip()" class="w-full bg-gradient-to-r from-indigo-600 via-purple-600 to-blue-600 hover:from-indigo-500 hover:to-blue-500 text-white font-bold py-3.5 px-4 rounded-xl shadow-lg transition text-xs sm:text-sm flex items-center justify-center gap-2">
-                        <span>📥</span> Download Grade Verification Slip (HD)
+                    <!-- Action Download Button -->
+                    <button id="downloadSlipBtn" onclick="downloadConversionSlip()" class="w-full py-4 rounded-2xl bg-indigo-600 hover:bg-indigo-700 text-white font-black text-sm shadow-md transition flex items-center justify-center gap-2">
+                        <span>📥 Download Verified Conversion Slip (JPG)</span>
                     </button>
 
-                    <!-- Loading Progress Modal -->
-                    <div id="loadingBox" class="hidden glass-card p-4 rounded-xl text-center space-y-2 border border-indigo-500/30">
-                        <div class="inline-block animate-spin text-2xl">⚡</div>
-                        <p class="text-xs font-bold text-indigo-400">Rendering Grade Verification Slip... Auto-download in 3 seconds!</p>
-                    </div>
+                </div>
 
+            </div>
+        </div>
+
+        <!-- Right Ad Sidebar (300x250 Native Card) -->
+        <aside class="w-full lg:w-80 shrink-0 space-y-4">
+            <div class="bg-white p-2.5 rounded-3xl border border-slate-200 shadow-sm text-center">
+                <span class="text-[10px] uppercase font-bold text-slate-400 block mb-1">Sponsored</span>
+                <div class="flex items-center justify-center overflow-hidden min-h-[250px]">
+                    <script>atOptions = {'key':'ff2ed036da6ab41cbe4fbfbeba0d55fe','format':'iframe','height':250,'width':300,'params':{}};</script>
+                    <script src="https://www.highperformanceformat.com/ff2ed036da6ab41cbe4fbfbeba0d55fe/invoke.js"></script>
                 </div>
             </div>
+        </aside>
 
-            <!-- Right Verification Slip Card Preview Column -->
-            <div class="lg:col-span-6 space-y-4">
-                <div class="glass-card p-3 sm:p-4 rounded-2xl border border-gray-800 flex flex-col items-center">
-                    <div class="text-[10px] sm:text-xs text-gray-400 mb-2 font-medium flex items-center justify-between w-full">
-                        <span>Official Conversion Certificate Slip</span>
-                        <span class="text-indigo-400 font-bold">● Form Upload Ready</span>
-                    </div>
-
-                    <!-- Verification Slip Target Element -->
-                    <div id="slipCard" class="w-full bg-white rounded-2xl p-5 text-gray-900 shadow-2xl border-2 border-indigo-500/40 space-y-3.5 relative overflow-hidden">
-                        
-                        <!-- Slip Header -->
-                        <div class="border-b-2 border-indigo-600 pb-2.5 flex items-start justify-between">
-                            <div>
-                                <h3 class="text-sm font-black text-indigo-900 tracking-wide">CGPA CONVERSION CERTIFICATE</h3>
-                                <p class="text-[9px] text-gray-500">Issued for Online Form Verification & Admission</p>
-                            </div>
-                            <span id="divisionBadge" class="text-[10px] font-black uppercase px-2.5 py-0.5 rounded-full bg-emerald-100 text-emerald-800 border border-emerald-300">First Division</span>
-                        </div>
-
-                        <!-- Candidate & Course Details -->
-                        <div class="grid grid-cols-2 gap-2 text-[10px] bg-gray-50 p-2 rounded-lg border border-gray-200">
-                            <div>
-                                <span class="text-gray-500 block">Candidate:</span>
-                                <strong id="viewName" class="text-gray-900 text-xs">Rahul Sharma</strong>
-                            </div>
-                            <div>
-                                <span class="text-gray-500 block">Course / Level:</span>
-                                <strong id="viewCourse" class="text-gray-900 text-xs">BBA Degree</strong>
-                            </div>
-                        </div>
-
-                        <!-- Highlighted Main Result Box -->
-                        <div class="bg-indigo-950 text-white rounded-xl p-4 text-center space-y-1 shadow-inner">
-                            <span class="text-[10px] uppercase tracking-widest text-indigo-300 font-bold">Equivalent Aggregate Percentage</span>
-                            <div class="text-3xl sm:text-4xl font-black tracking-tight text-emerald-400">
-                                <span id="viewPercentage">79.80</span>%
-                            </div>
-                            <div class="text-[10px] text-indigo-200">Based on CGPA of <strong id="viewCgpa" class="text-white">8.40</strong> / 10.0</div>
-                        </div>
-
-                        <!-- Formula Citation Info -->
-                        <div class="text-[10px] text-gray-600 bg-amber-50 p-2.5 rounded-lg border border-amber-200 space-y-0.5">
-                            <div class="font-bold text-amber-900">Applied Conversion Formula:</div>
-                            <p id="viewFormulaText" class="font-mono text-gray-800 text-[10px]">Percentage (%) = CGPA × 9.5 (CBSE Guideline)</p>
-                        </div>
-
-                        <!-- Slip Footer -->
-                        <div class="pt-3 border-t border-gray-200 flex justify-between items-center text-[9px] text-gray-400">
-                            <span>Date: <strong id="viewDate" class="text-gray-700">15-08-2026</strong></span>
-                            <span>Verified by Visualixy Academic Engine</span>
-                        </div>
-
-                    </div>
-                </div>
-            </div>
-
-        </div>
-
-        <!-- Ad Placement 2: Workspace In-Feed 300x250 Banner Slot -->
-        <div class="my-6 glass-card p-3 rounded-2xl flex items-center justify-center overflow-hidden">
-            <script>atOptions = {'key':'ff2ed036da6ab41cbe4fbfbeba0d55fe','format':'iframe','height':250,'width':300,'params':{}};</script>
-            <script src="https://www.highperformanceformat.com/ff2ed036da6ab41cbe4fbfbeba0d55fe/invoke.js"></script>
-        </div>
-
-        <!-- Ad Placement 3: Bottom Native Banner -->
-        <div class="mt-6">
-            <script async="async" data-cfasync="false" src="https://pl30718421.effectivecpmnetwork.com/5a97a7a8933aa123ce85e87134bf64fa/invoke.js"></script>
-            <div id="container-5a97a7a8933aa123ce85e87134bf64fa"></div>
-        </div>
     </main>
 
     <!-- Footer -->
-    <footer class="border-t border-gray-800/80 py-3 text-center text-xs text-gray-500 mt-6">
-        <p>© 2026 Visualixy. All rights reserved. Free Online Academic CGPA Converter.</p>
+    <footer class="border-t border-slate-200 bg-white py-4 text-center text-xs text-slate-500">
+        <p>© 2026 Visualixy. All calculations stay 100% on your device.</p>
     </footer>
 
-    <!-- JS Engine Logic -->
+    <!-- Calculation & Certificate Logic -->
     <script>
-        window.addEventListener('DOMContentLoaded', () => {
-            document.getElementById('viewDate').innerText = new Date().toLocaleDateString('en-GB');
-            calculatePercentage();
-        });
-
-        function averageSgpa() {
-            let total = 0;
-            let count = 0;
-            for (let i = 1; i <= 8; i++) {
-                const val = parseFloat(document.getElementById(`sem${i}`).value);
-                if (!isNaN(val) && val > 0) {
-                    total += val;
-                    count++;
-                }
-            }
-            if (count > 0) {
-                const avg = (total / count).toFixed(2);
-                document.getElementById('cgpaInput').value = avg;
-                calculatePercentage();
-            }
-        }
+        let resultData = null;
 
         function calculatePercentage() {
-            const formula = document.getElementById('formulaSelect').value;
-            const cgpa = parseFloat(document.getElementById('cgpaInput').value) || 0;
-            const name = document.getElementById('candidateName').value.trim() || 'Candidate';
-            const course = document.getElementById('courseName').value.trim() || 'Academic Course';
+            const cgpa = parseFloat(document.getElementById('cgpaInput').value);
+            const formula = document.getElementById('boardFormula').value;
+
+            if (isNaN(cgpa) || cgpa < 0 || cgpa > 10) {
+                document.getElementById('resultBox').classList.add('hidden');
+                return;
+            }
 
             let percentage = 0;
-            let formulaDesc = "";
+            let formulaText = '';
 
             if (formula === 'cbse') {
                 percentage = cgpa * 9.5;
-                formulaDesc = "Percentage (%) = CGPA × 9.5 (Official CBSE Standard)";
-            } else if (formula === 'ugc_10') {
+                formulaText = 'Applied: CGPA × 9.5 (CBSE Official)';
+            } else if (formula === '10x') {
                 percentage = cgpa * 10;
-                formulaDesc = "Percentage (%) = CGPA × 10 (Standard 10-Point Scale)";
-            } else if (formula === 'ugc_aicte') {
-                percentage = (cgpa - 0.75) * 10;
-                formulaDesc = "Percentage (%) = (CGPA - 0.75) × 10 (AICTE Standard)";
-            } else if (formula === 'mumbai') {
-                percentage = 7.1 + (cgpa * 7.2);
-                formulaDesc = "Percentage (%) = 7.1 + (CGPA × 7.2) (Mumbai University Engine)";
+                formulaText = 'Applied: CGPA × 10 (Standard 10-Point Scale)';
             } else if (formula === 'vtu') {
                 percentage = (cgpa - 0.75) * 10;
-                formulaDesc = "Percentage (%) = (CGPA - 0.75) × 10 (VTU Standard Formula)";
+                formulaText = 'Applied: (CGPA - 0.75) × 10 (VTU Formula)';
+            } else if (formula === 'mumbai') {
+                percentage = (7.1 * cgpa) + 11;
+                formulaText = 'Applied: (7.1 × CGPA) + 11 (Mumbai University)';
             }
 
-            percentage = Math.max(0, Math.min(100, percentage));
+            percentage = Math.max(0, Math.min(100, percentage)).toFixed(2);
 
-            // Update UI Elements
-            document.getElementById('viewName').innerText = name;
-            document.getElementById('viewCourse').innerText = course;
-            document.getElementById('viewCgpa').innerText = cgpa.toFixed(2);
-            document.getElementById('viewPercentage').innerText = percentage.toFixed(2);
-            document.getElementById('viewFormulaText').innerText = formulaDesc;
+            let division = 'First Class with Distinction';
+            if (percentage < 40) division = 'Pass / Needs Improvement';
+            else if (percentage < 50) division = 'Third Division';
+            else if (percentage < 60) division = 'Second Division';
+            else if (percentage < 75) division = 'First Division';
 
-            // Update Division Badge
-            const badge = document.getElementById('divisionBadge');
-            if (percentage >= 75) {
-                badge.className = "text-[10px] font-black uppercase px-2.5 py-0.5 rounded-full bg-emerald-100 text-emerald-800 border border-emerald-300";
-                badge.innerText = "Distinction (>=75%)";
-            } else if (percentage >= 60) {
-                badge.className = "text-[10px] font-black uppercase px-2.5 py-0.5 rounded-full bg-blue-100 text-blue-800 border border-blue-300";
-                badge.innerText = "1st Division (>=60%)";
-            } else if (percentage >= 50) {
-                badge.className = "text-[10px] font-black uppercase px-2.5 py-0.5 rounded-full bg-yellow-100 text-yellow-800 border border-yellow-300";
-                badge.innerText = "2nd Division (>=50%)";
-            } else {
-                badge.className = "text-[10px] font-black uppercase px-2.5 py-0.5 rounded-full bg-gray-100 text-gray-800 border border-gray-300";
-                badge.innerText = "Pass Class";
-            }
+            document.getElementById('percentageVal').innerText = percentage;
+            document.getElementById('formulaApplied').innerText = formulaText;
+            document.getElementById('gradeDivision').innerText = division;
+
+            resultData = { cgpa, percentage, formulaText, division };
+            document.getElementById('resultBox').classList.remove('hidden');
         }
 
-        function triggerAdAndDownloadSlip() {
-            // Trigger Popunder Ad
-            if (window.triggerPopunder) window.triggerPopunder();
+        function downloadConversionSlip() {
+            if (!resultData) return;
 
             const btn = document.getElementById('downloadSlipBtn');
-            const loadingBox = document.getElementById('loadingBox');
-            const slipElem = document.getElementById('slipCard');
+            window.triggerToolProcessAndDownload(btn, "Rendering Conversion Certificate", function() {
+                const canvas = document.createElement('canvas');
+                canvas.width = 800;
+                canvas.height = 600;
+                const ctx = canvas.getContext('2d');
 
-            btn.disabled = true;
-            btn.classList.add('opacity-50');
-            loadingBox.classList.remove('hidden');
+                // Background
+                ctx.fillStyle = "#ffffff";
+                ctx.fillRect(0, 0, canvas.width, canvas.height);
 
-            setTimeout(() => {
-                html2canvas(slipElem, {
-                    scale: 3,
-                    backgroundColor: null
-                }).then(canvas => {
-                    const a = document.createElement('a');
-                    a.href = canvas.toDataURL('image/png');
-                    a.download = `cgpa_conversion_certificate_visualixy.png`;
-                    document.body.appendChild(a);
-                    a.click();
-                    document.body.removeChild(a);
+                // Header
+                ctx.fillStyle = "#4f46e5";
+                ctx.fillRect(0, 0, canvas.width, 120);
 
-                    btn.disabled = false;
-                    btn.classList.remove('opacity-50');
-                    loadingBox.classList.add('hidden');
-                });
-            }, 3000);
+                ctx.fillStyle = "#ffffff";
+                ctx.textAlign = "center";
+                ctx.font = "bold 30px system-ui, sans-serif";
+                ctx.fillText("CGPA TO PERCENTAGE CONVERSION SLIP", 400, 70);
+
+                // Details
+                ctx.fillStyle = "#0f172a";
+                ctx.textAlign = "left";
+                ctx.font = "bold 24px system-ui, sans-serif";
+                ctx.fillText(`Entered CGPA / SGPA: ${resultData.cgpa} / 10.0`, 80, 190);
+                ctx.fillText(`Division Status: ${resultData.division}`, 80, 240);
+
+                // Result Box
+                ctx.fillStyle = "#f8fafc";
+                ctx.strokeStyle = "#cbd5e1";
+                ctx.lineWidth = 3;
+                ctx.strokeRect(80, 280, 640, 160);
+                ctx.fillRect(80, 280, 640, 160);
+
+                ctx.fillStyle = "#4f46e5";
+                ctx.textAlign = "center";
+                ctx.font = "bold 44px system-ui, sans-serif";
+                ctx.fillText(`${resultData.percentage} %`, 400, 360);
+
+                ctx.fillStyle = "#64748b";
+                ctx.font = "18px system-ui, sans-serif";
+                ctx.fillText(resultData.formulaText, 400, 410);
+
+                // Footer
+                ctx.fillText("Generated via Visualixy • Verified Academic Conversion", 400, 520);
+
+                const dataUrl = canvas.toDataURL('image/jpeg', 0.95);
+                const link = document.createElement('a');
+                link.download = `Visualixy_Conversion_${resultData.percentage}Percent.jpg`;
+                link.href = dataUrl;
+                link.click();
+            });
         }
     </script>
 </body>

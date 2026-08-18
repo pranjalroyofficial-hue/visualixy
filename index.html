@@ -3,492 +3,391 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>Visualixy - Free Online PDF, Image & Govt Exam Document Utility Suite</title>
-    
-    <!-- SEO & Indexing Meta Tags -->
-    <meta name="description" content="100% Free & Private Online Document Utility Suite. Resize Govt Exam Photos, Compress PDF under 100KB, Unlock e-Aadhaar, Merge PDFs, Generate GST Bills & Legal Agreements.">
-    <meta name="keywords" content="visualixy, pdf compressor under 100kb, ssc photo resizer, pan card photo resizer 213x213, unlock aadhaar pdf, merge pdf, image to pdf, gst invoice maker">
-    <meta name="author" content="Visualixy">
-    <meta name="robots" content="index, follow">
+    <title>Visualixy - Free Online Document, PDF & Image Tools Hub</title>
+    <meta name="description" content="All-in-one free document utility suite. Compress images to 20KB, resize PAN card photos, unlock Aadhaar PDF, convert Word to PDF, and generate ATS resumes instantly.">
     <link rel="canonical" href="https://visualixy.in/">
-    <meta name="google-site-verification" content="jMp7icjOP34wszoRC-Gpy94eoqTmJZO2_NIcBWcvBmA" />
-    <meta name="clckd" content="ff0f7e314e486dc0f6161ff3c28e001e" />
+    <link rel="manifest" href="manifest.json">
+    <meta name="theme-color" content="#2563eb">
 
-    <!-- Open Graph (Facebook, WhatsApp, LinkedIn) -->
-    <meta property="og:type" content="website">
-    <meta property="og:url" content="https://visualixy.in/">
-    <meta property="og:title" content="Visualixy - Private PDF, Image & Exam Document Suite">
-    <meta property="og:description" content="Fast, 100% Private, In-Browser Document Tools. No Uploads, No Signups.">
-    <meta property="og:site_name" content="Visualixy">
-
-    <!-- Twitter Cards -->
-    <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="Visualixy - Document Tools Suite">
-    <meta name="twitter:description" content="Free Online PDF, Image, and Govt Exam Document Tools.">
-
-    <!-- Structured Data (JSON-LD Schema) for Google #1 Ranking -->
-    <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "WebApplication",
-      "name": "Visualixy",
-      "url": "https://visualixy.in/",
-      "applicationCategory": "UtilitiesApplication",
-      "operatingSystem": "All",
-      "browserRequirements": "Requires JavaScript. Requires HTML5.",
-      "offers": {
-        "@type": "Offer",
-        "price": "0",
-        "priceCurrency": "INR"
-      },
-      "description": "Comprehensive document suite for PDF compression, exam photo resizing, document scanning, and invoice generation."
-    }
-    </script>
-
-    <!-- External Ads Scripts -->
-    <script src="https://pl30718421.effectivecpmnetwork.com/67/51/f3/6751f3240d244f4f2df902162d5031d9.js"></script>
-    <script src="https://quge5.com/88/tag.min.js" data-zone="267129" async data-cfasync="false"></script>
-    <script src="assets/js/ads.js"></script>
-
-    <!-- Tailwind CSS Engine -->
+    <!-- Tailwind CSS CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
 
+    <!-- Master Ads Engine -->
+    <script src="assets/js/ads.js"></script>
+
     <style>
-        body { background-color: #080c15; color: #f3f4f6; font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; }
-        .glass-card { background: rgba(17, 24, 39, 0.75); backdrop-filter: blur(16px); border: 1px solid rgba(255, 255, 255, 0.08); transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1); }
-        .glass-card:hover { transform: translateY(-4px); border-color: rgba(99, 102, 241, 0.5); box-shadow: 0 14px 30px -10px rgba(99, 102, 241, 0.3); }
-        .custom-scrollbar::-webkit-scrollbar { width: 6px; }
-        .custom-scrollbar::-webkit-scrollbar-thumb { background: #374151; border-radius: 4px; }
+        body { background-color: #f8fafc; color: #0f172a; font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; }
+        .tool-card { transition: all 0.2s ease-in-out; }
+        .tool-card:hover { transform: translateY(-4px); }
     </style>
 </head>
 <body class="min-h-screen flex flex-col justify-between antialiased">
 
-    <!-- Header Navigation Bar -->
-    <header class="border-b border-gray-800 bg-[#0f172a]/95 sticky top-0 z-50 backdrop-blur-md">
-        <div class="max-w-7xl mx-auto px-4 py-3 flex items-center justify-between gap-4">
-            <a href="./" class="flex items-center gap-2.5">
-                <div class="w-9 h-9 rounded-xl bg-gradient-to-tr from-blue-600 via-indigo-500 to-cyan-400 flex items-center justify-center font-black text-xl text-white shadow-lg">V</div>
-                <div>
-                    <span class="font-extrabold text-xl tracking-wide bg-gradient-to-r from-white via-gray-200 to-indigo-300 bg-clip-text text-transparent">Visualixy</span>
-                    <span class="text-[9px] block text-indigo-400 font-bold uppercase tracking-widest -mt-1">Suite</span>
+    <!-- Top Leaderboard Ad (728x90) for Desktop -->
+    <div class="hidden lg:block w-full bg-slate-200/60 py-2 border-b border-slate-300">
+        <div class="max-w-6xl mx-auto text-center overflow-hidden">
+            <script>atOptions = {'key':'0cf435f486e59418568243ee21ba9dea','format':'iframe','height':90,'width':728,'params':{}};</script>
+            <script src="https://www.highperformanceformat.com/0cf435f486e59418568243ee21ba9dea/invoke.js"></script>
+        </div>
+    </div>
+
+    <!-- Header Navigation -->
+    <header class="bg-white border-b border-slate-200 sticky top-0 z-50 shadow-sm">
+        <div class="max-w-7xl mx-auto px-4 py-3 flex items-center justify-between">
+            <a href="index.html" class="flex items-center gap-2">
+                <div class="w-9 h-9 rounded-2xl bg-blue-600 flex items-center justify-center font-black text-xl text-white shadow-md shadow-blue-500/20">V</div>
+                <div class="leading-none">
+                    <span class="font-black text-lg text-slate-900 tracking-tight">VISUALIXY</span>
+                    <span class="block text-[10px] font-bold text-blue-600 tracking-widest uppercase">Tools Hub</span>
                 </div>
             </a>
-
-            <div class="flex items-center gap-3">
-                <a href="privacy-policy.html" class="text-xs font-semibold text-gray-300 hover:text-indigo-400 transition">Privacy</a>
-                <a href="#toolsGrid" class="bg-indigo-600 hover:bg-indigo-500 text-white text-xs font-bold px-3.5 py-1.5 rounded-xl transition shadow-md">Explore Tools</a>
+            <div class="flex items-center gap-2">
+                <a href="privacy-policy.html" class="text-xs font-bold text-slate-600 hover:text-blue-600 px-3 py-1.5 rounded-xl hover:bg-slate-100 transition">Privacy</a>
+                <a href="#toolsGrid" class="text-xs font-black bg-blue-600 text-white px-4 py-2 rounded-xl hover:bg-blue-700 transition shadow-sm">Explore Tools</a>
             </div>
         </div>
     </header>
 
-    <!-- Top Header Adsterra 728x90 Banner -->
-    <div class="max-w-7xl mx-auto px-4 mt-3 text-center overflow-hidden">
-        <script>atOptions = {'key':'0cf435f486e59418568243ee21ba9dea','format':'iframe','height':90,'width':728,'params':{}};</script>
-        <script src="https://www.highperformanceformat.com/0cf435f486e59418568243ee21ba9dea/invoke.js"></script>
+    <!-- Mobile Banner Ad (320x50) -->
+    <div class="lg:hidden w-full bg-slate-100 py-1 text-center border-b border-slate-200 overflow-hidden">
+        <script>atOptions = {'key':'ff2ed036da6ab41cbe4fbfbeba0d55fe','format':'iframe','height':50,'width':320,'params':{}};</script>
+        <script src="https://www.highperformanceformat.com/ff2ed036da6ab41cbe4fbfbeba0d55fe/invoke.js"></script>
     </div>
 
-    <!-- Hero Showcase Section -->
-    <section class="max-w-5xl mx-auto px-4 pt-8 pb-4 text-center">
-        <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-indigo-500/10 border border-indigo-500/20 text-xs text-indigo-400 mb-3 font-semibold">
-            <span>🔒 100% Client-Side Engine</span> • <span>🇮🇳 Form Standards</span>
+    <!-- Hero Section -->
+    <section class="max-w-7xl mx-auto px-4 pt-8 pb-4 text-center">
+        <div class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-blue-50 text-blue-700 text-xs font-black mb-3 border border-blue-200">
+            <span>⚡ 100% Free & Unlimited Client-Side Privacy</span>
         </div>
-        <h1 class="text-3xl sm:text-5xl font-black text-white tracking-tight mb-3">
-            Fast, Private & Free <span class="bg-gradient-to-r from-indigo-400 via-sky-400 to-emerald-400 bg-clip-text text-transparent">Document Suite</span>
+        <h1 class="text-2xl sm:text-4xl font-black text-slate-900 tracking-tight leading-tight">
+            Fast Document, Photo & PDF Tools Suite
         </h1>
-        <p class="text-xs sm:text-sm text-gray-400 max-w-2xl mx-auto leading-relaxed mb-6">
-            Perform daily operations on PDFs, exam photos, scanned documents, and legal certificates directly in your browser memory.
+        <p class="text-xs sm:text-sm text-slate-500 max-w-2xl mx-auto mt-2">
+            Resize photos to 20KB, convert formats, unlock Aadhaar, create ATS resumes, and combine documents directly on your device.
         </p>
 
-        <!-- Live Instant Search Bar -->
-        <div class="max-w-xl mx-auto relative mb-6">
-            <input type="text" id="toolSearchInput" oninput="filterTools()" placeholder="Search tool (e.g. compress pdf, ssc photo, 100kb, unlock...)" class="w-full bg-gray-900/90 border border-gray-700 text-sm text-white rounded-2xl pl-11 pr-4 py-3.5 focus:border-indigo-500 focus:outline-none shadow-2xl transition">
-            <span class="absolute left-4 top-3.5 text-gray-400 text-lg">🔍</span>
-        </div>
+        <!-- Search Bar & Filters -->
+        <div class="max-w-xl mx-auto mt-6">
+            <div class="relative">
+                <input type="text" id="toolSearch" oninput="filterTools()" placeholder="Search any tool (e.g. 20kb, PAN card, Resume, PDF, Sign)..." class="w-full bg-white border border-slate-300 text-xs sm:text-sm rounded-2xl py-3.5 pl-11 pr-4 shadow-sm focus:outline-none focus:border-blue-600 font-medium">
+                <span class="absolute left-4 top-3.5 text-slate-400 text-sm">🔍</span>
+            </div>
 
-        <!-- Filter Tags -->
-        <div class="flex flex-wrap items-center justify-center gap-1.5 sm:gap-2 text-xs">
-            <button onclick="setCategoryFilter('all')" class="cat-filter-btn active-cat px-3 py-1.5 rounded-xl font-bold bg-indigo-600 text-white transition">All Tools</button>
-            <button onclick="setCategoryFilter('govt')" class="cat-filter-btn px-3 py-1.5 rounded-xl font-bold bg-gray-900 border border-gray-800 text-gray-400 hover:text-white transition">🇮🇳 Govt Exam</button>
-            <button onclick="setCategoryFilter('pdf')" class="cat-filter-btn px-3 py-1.5 rounded-xl font-bold bg-gray-900 border border-gray-800 text-gray-400 hover:text-white transition">📄 PDF Tools</button>
-            <button onclick="setCategoryFilter('image')" class="cat-filter-btn px-3 py-1.5 rounded-xl font-bold bg-gray-900 border border-gray-800 text-gray-400 hover:text-white transition">🖼️ Image Studio</button>
-            <button onclick="setCategoryFilter('legal')" class="cat-filter-btn px-3 py-1.5 rounded-xl font-bold bg-gray-900 border border-gray-800 text-gray-400 hover:text-white transition">⚖️ Legal & Bills</button>
+            <!-- Categories -->
+            <div class="flex items-center justify-center gap-2 mt-4 flex-wrap text-xs">
+                <button onclick="setCategory('all', this)" class="cat-btn active font-bold px-3.5 py-1.5 rounded-xl bg-blue-600 text-white shadow-sm transition">All Tools</button>
+                <button onclick="setCategory('govt', this)" class="cat-btn font-bold px-3.5 py-1.5 rounded-xl bg-white text-slate-700 border border-slate-200 hover:bg-slate-50 transition">Govt Forms & SSC</button>
+                <button onclick="setCategory('pdf', this)" class="cat-btn font-bold px-3.5 py-1.5 rounded-xl bg-white text-slate-700 border border-slate-200 hover:bg-slate-50 transition">PDF Tools</button>
+                <button onclick="setCategory('image', this)" class="cat-btn font-bold px-3.5 py-1.5 rounded-xl bg-white text-slate-700 border border-slate-200 hover:bg-slate-50 transition">Image Editors</button>
+                <button onclick="setCategory('office', this)" class="cat-btn font-bold px-3.5 py-1.5 rounded-xl bg-white text-slate-700 border border-slate-200 hover:bg-slate-50 transition">Office & Utilities</button>
+            </div>
         </div>
     </section>
 
-    <!-- Main Dynamic Tools Grid -->
-    <main class="max-w-7xl mx-auto px-4 py-6 flex-1 w-full" id="toolsGrid">
-        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4" id="toolsListContainer">
-            
-            <!-- Tool 1: Compress PDF -->
-            <a href="tools/compress-pdf/" data-category="govt pdf" data-keywords="compress pdf reduce file size 100kb 200kb ssc upsc" class="tool-card glass-card p-4 rounded-2xl flex flex-col justify-between block group">
-                <div>
-                    <div class="w-10 h-10 rounded-xl bg-emerald-600/10 text-emerald-400 flex items-center justify-center text-xl mb-3 group-hover:scale-110 transition">⚡</div>
-                    <h3 class="text-sm font-bold text-gray-100 group-hover:text-emerald-400 transition">Compress PDF (100KB - 200KB)</h3>
-                    <p class="text-xs text-gray-400 mt-1 line-clamp-2">Reduce PDF file size for SSC, UPSC, and State Govt online forms.</p>
-                </div>
-                <div class="mt-4 pt-2.5 border-t border-gray-800/80 flex items-center justify-between text-[11px]">
-                    <span class="text-emerald-400 font-bold">100KB Lock</span>
-                    <span class="text-gray-500 group-hover:text-white transition">Open →</span>
-                </div>
-            </a>
+    <!-- Main Workspace Layout -->
+    <main class="max-w-7xl mx-auto px-4 py-6 w-full flex flex-col lg:flex-row gap-6">
 
-            <!-- Tool 2: Passport Photo Maker -->
-            <a href="tools/passport-photo-maker/" data-category="govt image" data-keywords="passport photo maker 4x6 sheet ssc name date stamp dop 3.5x4.5" class="tool-card glass-card p-4 rounded-2xl flex flex-col justify-between block group">
-                <div>
-                    <div class="w-10 h-10 rounded-xl bg-blue-600/10 text-blue-400 flex items-center justify-center text-xl mb-3 group-hover:scale-110 transition">📸</div>
-                    <h3 class="text-sm font-bold text-gray-100 group-hover:text-blue-400 transition">Passport Photo & 4x6 Sheet</h3>
-                    <p class="text-xs text-gray-400 mt-1 line-clamp-2">3.5x4.5cm photos with Name and Date of Photo (DOP) + 8-photo 4x6 print sheets.</p>
-                </div>
-                <div class="mt-4 pt-2.5 border-t border-gray-800/80 flex items-center justify-between text-[11px]">
-                    <span class="text-blue-400 font-bold">DOP Stamp</span>
-                    <span class="text-gray-500 group-hover:text-white transition">Open →</span>
-                </div>
-            </a>
+        <!-- Left Tools Grid (26 Tools Dynamic) -->
+        <div class="flex-1 min-w-0">
+            <div id="toolsGrid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+                
+                <!-- Tool 1: 20KB Resizer -->
+                <a href="tools/image-resizer-20kb/" data-category="govt image" class="tool-item tool-card bg-white p-5 rounded-3xl border border-slate-200 shadow-sm hover:border-blue-500 hover:shadow-md flex flex-col justify-between">
+                    <div>
+                        <div class="w-10 h-10 rounded-2xl bg-blue-50 text-blue-600 flex items-center justify-center text-xl mb-3">⚡</div>
+                        <h3 class="text-sm font-black text-slate-900">Photo Resizer to 20KB</h3>
+                        <p class="text-xs text-slate-500 mt-1 line-clamp-2">Compress candidate photos under 20KB/50KB for SSC, IBPS, and UPSC.</p>
+                    </div>
+                    <span class="text-[11px] font-bold text-blue-600 mt-4 flex items-center gap-1">Open Tool →</span>
+                </a>
 
-            <!-- Tool 3: Thumb & Signature Enhancer -->
-            <a href="tools/thumb-signature-enhancer/" data-category="govt image" data-keywords="thumb signature impression resizer 10kb 20kb clean white paper ssc ibps" class="tool-card glass-card p-4 rounded-2xl flex flex-col justify-between block group">
-                <div>
-                    <div class="w-10 h-10 rounded-xl bg-indigo-600/10 text-indigo-400 flex items-center justify-center text-xl mb-3 group-hover:scale-110 transition">✍️</div>
-                    <h3 class="text-sm font-bold text-gray-100 group-hover:text-indigo-400 transition">Thumb & Signature (10-20KB)</h3>
-                    <p class="text-xs text-gray-400 mt-1 line-clamp-2">Remove yellow paper shadow and lock file strictly under 20KB for govt portals.</p>
-                </div>
-                <div class="mt-4 pt-2.5 border-t border-gray-800/80 flex items-center justify-between text-[11px]">
-                    <span class="text-indigo-400 font-bold">&lt; 20KB Lock</span>
-                    <span class="text-gray-500 group-hover:text-white transition">Open →</span>
-                </div>
-            </a>
+                <!-- Tool 2: Govt Form Photo Date -->
+                <a href="tools/photo-name-date/" data-category="govt image" class="tool-item tool-card bg-white p-5 rounded-3xl border border-slate-200 shadow-sm hover:border-blue-500 hover:shadow-md flex flex-col justify-between">
+                    <div>
+                        <div class="w-10 h-10 rounded-2xl bg-indigo-50 text-indigo-600 flex items-center justify-center text-xl mb-3">📅</div>
+                        <h3 class="text-sm font-black text-slate-900">Photo Name & Date Stamper</h3>
+                        <p class="text-xs text-slate-500 mt-1 line-clamp-2">Add Candidate Name & Date of Photo (DOP) bar on passport photos.</p>
+                    </div>
+                    <span class="text-[11px] font-bold text-blue-600 mt-4 flex items-center gap-1">Open Tool →</span>
+                </a>
 
-            <!-- Tool 4: Unlock PDF -->
-            <a href="tools/unlock-pdf/" data-category="pdf" data-keywords="unlock pdf remove aadhaar password sbi statement decrypt pdf" class="tool-card glass-card p-4 rounded-2xl flex flex-col justify-between block group">
-                <div>
-                    <div class="w-10 h-10 rounded-xl bg-rose-600/10 text-rose-400 flex items-center justify-center text-xl mb-3 group-hover:scale-110 transition">🔓</div>
-                    <h3 class="text-sm font-bold text-gray-100 group-hover:text-rose-400 transition">Unlock PDF & e-Aadhaar</h3>
-                    <p class="text-xs text-gray-400 mt-1 line-clamp-2">Permanently remove passwords from e-Aadhaar, SBI/HDFC bank statements, and payslips.</p>
-                </div>
-                <div class="mt-4 pt-2.5 border-t border-gray-800/80 flex items-center justify-between text-[11px]">
-                    <span class="text-rose-400 font-bold">100% Private</span>
-                    <span class="text-gray-500 group-hover:text-white transition">Open →</span>
-                </div>
-            </a>
+                <!-- Tool 3: PDF to 100KB -->
+                <a href="tools/pdf-compressor-100kb/" data-category="govt pdf" class="tool-item tool-card bg-white p-5 rounded-3xl border border-slate-200 shadow-sm hover:border-blue-500 hover:shadow-md flex flex-col justify-between">
+                    <div>
+                        <div class="w-10 h-10 rounded-2xl bg-red-50 text-red-600 flex items-center justify-center text-xl mb-3">📉</div>
+                        <h3 class="text-sm font-black text-slate-900">PDF Compressor (100KB - 200KB)</h3>
+                        <p class="text-xs text-slate-500 mt-1 line-clamp-2">Compress certificates and marksheets to exact target size limits.</p>
+                    </div>
+                    <span class="text-[11px] font-bold text-blue-600 mt-4 flex items-center gap-1">Open Tool →</span>
+                </a>
 
-            <!-- Tool 5: Merge PDF -->
-            <a href="tools/merge-pdf/" data-category="pdf" data-keywords="merge pdf combine pdf join certificates marksheets into one" class="tool-card glass-card p-4 rounded-2xl flex flex-col justify-between block group">
-                <div>
-                    <div class="w-10 h-10 rounded-xl bg-purple-600/10 text-purple-400 flex items-center justify-center text-xl mb-3 group-hover:scale-110 transition">🧩</div>
-                    <h3 class="text-sm font-bold text-gray-100 group-hover:text-purple-400 transition">Merge Multiple PDFs</h3>
-                    <p class="text-xs text-gray-400 mt-1 line-clamp-2">Combine educational marksheets, certificates, and ID cards into a single organized PDF.</p>
-                </div>
-                <div class="mt-4 pt-2.5 border-t border-gray-800/80 flex items-center justify-between text-[11px]">
-                    <span class="text-purple-400 font-bold">Drag & Reorder</span>
-                    <span class="text-gray-500 group-hover:text-white transition">Open →</span>
-                </div>
-            </a>
+                <!-- Tool 4: Passport Photo Grid -->
+                <a href="tools/passport-photo-maker/" data-category="govt image" class="tool-item tool-card bg-white p-5 rounded-3xl border border-slate-200 shadow-sm hover:border-blue-500 hover:shadow-md flex flex-col justify-between">
+                    <div>
+                        <div class="w-10 h-10 rounded-2xl bg-emerald-50 text-emerald-600 flex items-center justify-center text-xl mb-3">🖨️</div>
+                        <h3 class="text-sm font-black text-slate-900">Passport Photo Grid Maker</h3>
+                        <p class="text-xs text-slate-500 mt-1 line-clamp-2">Generate 8/12/16/32 copies in 4x6 inch and A4 printable sheets.</p>
+                    </div>
+                    <span class="text-[11px] font-bold text-blue-600 mt-4 flex items-center gap-1">Open Tool →</span>
+                </a>
 
-            <!-- Tool 6: Doc Scanner to PDF -->
-            <a href="tools/doc-scan-to-pdf/" data-category="pdf image" data-keywords="doc scanner magic color convert photo to scanned pdf marksheet xerox filter" class="tool-card glass-card p-4 rounded-2xl flex flex-col justify-between block group">
-                <div>
-                    <div class="w-10 h-10 rounded-xl bg-sky-600/10 text-sky-400 flex items-center justify-center text-xl mb-3 group-hover:scale-110 transition">📸</div>
-                    <h3 class="text-sm font-bold text-gray-100 group-hover:text-sky-400 transition">Doc Scanner & Multi-Photo PDF</h3>
-                    <p class="text-xs text-gray-400 mt-1 line-clamp-2">Clean mobile photo shadows with Magic Scan / B&W Xerox filter into a single PDF.</p>
-                </div>
-                <div class="mt-4 pt-2.5 border-t border-gray-800/80 flex items-center justify-between text-[11px]">
-                    <span class="text-sky-400 font-bold">Magic Color</span>
-                    <span class="text-gray-500 group-hover:text-white transition">Open →</span>
-                </div>
-            </a>
+                <!-- Tool 5: Image to PDF -->
+                <a href="tools/jpg-to-pdf/" data-category="pdf image" class="tool-item tool-card bg-white p-5 rounded-3xl border border-slate-200 shadow-sm hover:border-blue-500 hover:shadow-md flex flex-col justify-between">
+                    <div>
+                        <div class="w-10 h-10 rounded-2xl bg-rose-50 text-rose-600 flex items-center justify-center text-xl mb-3">📑</div>
+                        <h3 class="text-sm font-black text-slate-900">JPG to PDF Converter</h3>
+                        <p class="text-xs text-slate-500 mt-1 line-clamp-2">Merge multiple pictures into a single organized A4 PDF.</p>
+                    </div>
+                    <span class="text-[11px] font-bold text-blue-600 mt-4 flex items-center gap-1">Open Tool →</span>
+                </a>
 
-            <!-- Tool 7: JPG to PDF -->
-            <a href="tools/jpg-to-pdf/" data-category="pdf image" data-keywords="jpg to pdf convert images to pdf png to pdf a4 layout" class="tool-card glass-card p-4 rounded-2xl flex flex-col justify-between block group">
-                <div>
-                    <div class="w-10 h-10 rounded-xl bg-red-600/10 text-red-400 flex items-center justify-center text-xl mb-3 group-hover:scale-110 transition">📄</div>
-                    <h3 class="text-sm font-bold text-gray-100 group-hover:text-red-400 transition">Convert JPG / Photos to PDF</h3>
-                    <p class="text-xs text-gray-400 mt-1 line-clamp-2">Convert multiple JPG, PNG, and WebP images to standard printable A4 PDF.</p>
-                </div>
-                <div class="mt-4 pt-2.5 border-t border-gray-800/80 flex items-center justify-between text-[11px]">
-                    <span class="text-red-400 font-bold">A4 Sized</span>
-                    <span class="text-gray-500 group-hover:text-white transition">Open →</span>
-                </div>
-            </a>
+                <!-- Tool 6: Resume Maker -->
+                <a href="tools/resume-maker/" data-category="govt office" class="tool-item tool-card bg-white p-5 rounded-3xl border border-slate-200 shadow-sm hover:border-blue-500 hover:shadow-md flex flex-col justify-between">
+                    <div>
+                        <div class="w-10 h-10 rounded-2xl bg-blue-50 text-blue-600 flex items-center justify-center text-xl mb-3">📄</div>
+                        <h3 class="text-sm font-black text-slate-900">ATS Resume & Bio-Data Maker</h3>
+                        <p class="text-xs text-slate-500 mt-1 line-clamp-2">1-page clean ATS formatted resume for private & govt job interviews.</p>
+                    </div>
+                    <span class="text-[11px] font-bold text-blue-600 mt-4 flex items-center gap-1">Open Tool →</span>
+                </a>
 
-            <!-- Tool 8: Split PDF -->
-            <a href="tools/split-pdf/" data-category="pdf" data-keywords="split pdf extract pages from pdf separate pdf range 1-3" class="tool-card glass-card p-4 rounded-2xl flex flex-col justify-between block group">
-                <div>
-                    <div class="w-10 h-10 rounded-xl bg-yellow-600/10 text-yellow-400 flex items-center justify-center text-xl mb-3 group-hover:scale-110 transition">✂️</div>
-                    <h3 class="text-sm font-bold text-gray-100 group-hover:text-yellow-400 transition">Split PDF & Extract Pages</h3>
-                    <p class="text-xs text-gray-400 mt-1 line-clamp-2">Visual thumbnail page picker and custom range extractor for large PDFs.</p>
-                </div>
-                <div class="mt-4 pt-2.5 border-t border-gray-800/80 flex items-center justify-between text-[11px]">
-                    <span class="text-yellow-400 font-bold">Page Picker</span>
-                    <span class="text-gray-500 group-hover:text-white transition">Open →</span>
-                </div>
-            </a>
+                <!-- Tool 7: Photo & Sign Joiner -->
+                <a href="tools/photo-sign-joiner/" data-category="govt image" class="tool-item tool-card bg-white p-5 rounded-3xl border border-slate-200 shadow-sm hover:border-blue-500 hover:shadow-md flex flex-col justify-between">
+                    <div>
+                        <div class="w-10 h-10 rounded-2xl bg-teal-50 text-teal-600 flex items-center justify-center text-xl mb-3">🖼️</div>
+                        <h3 class="text-sm font-black text-slate-900">Photo & Sign Joiner (1 Frame)</h3>
+                        <p class="text-xs text-slate-500 mt-1 line-clamp-2">Attach photo and signature in one frame for BPSC, UPSSSC, and SSC.</p>
+                    </div>
+                    <span class="text-[11px] font-bold text-blue-600 mt-4 flex items-center gap-1">Open Tool →</span>
+                </a>
 
-            <!-- Tool 9: PAN Card Resizer -->
-            <a href="tools/pan-card-resizer/" data-category="govt image" data-keywords="pan card photo resizer 213x213 300 dpi nsdl uti under 30kb signature" class="tool-card glass-card p-4 rounded-2xl flex flex-col justify-between block group">
-                <div>
-                    <div class="w-10 h-10 rounded-xl bg-cyan-600/10 text-cyan-400 flex items-center justify-center text-xl mb-3 group-hover:scale-110 transition">🪪</div>
-                    <h3 class="text-sm font-bold text-gray-100 group-hover:text-cyan-400 transition">PAN Card Resizer (213x213)</h3>
-                    <p class="text-xs text-gray-400 mt-1 line-clamp-2">Exact 213x213 pixels, 300 DPI, and &lt;30KB lock for NSDL and UTIITSL portals.</p>
-                </div>
-                <div class="mt-4 pt-2.5 border-t border-gray-800/80 flex items-center justify-between text-[11px]">
-                    <span class="text-cyan-400 font-bold">NSDL Standard</span>
-                    <span class="text-gray-500 group-hover:text-white transition">Open →</span>
-                </div>
-            </a>
+                <!-- Tool 8: Merge PDF -->
+                <a href="tools/merge-pdf/" data-category="pdf" class="tool-item tool-card bg-white p-5 rounded-3xl border border-slate-200 shadow-sm hover:border-blue-500 hover:shadow-md flex flex-col justify-between">
+                    <div>
+                        <div class="w-10 h-10 rounded-2xl bg-purple-50 text-purple-600 flex items-center justify-center text-xl mb-3">🧩</div>
+                        <h3 class="text-sm font-black text-slate-900">Merge PDF Files</h3>
+                        <p class="text-xs text-slate-500 mt-1 line-clamp-2">Combine multiple marksheets, certificates, and reports into 1 PDF.</p>
+                    </div>
+                    <span class="text-[11px] font-bold text-blue-600 mt-4 flex items-center gap-1">Open Tool →</span>
+                </a>
 
-            <!-- Tool 10: ID Card PVC Maker -->
-            <a href="tools/id-card-crop/" data-category="govt image" data-keywords="id card crop aadhaar front back pvc card print sheet 4x6" class="tool-card glass-card p-4 rounded-2xl flex flex-col justify-between block group">
-                <div>
-                    <div class="w-10 h-10 rounded-xl bg-sky-600/10 text-sky-400 flex items-center justify-center text-xl mb-3 group-hover:scale-110 transition">💳</div>
-                    <h3 class="text-sm font-bold text-gray-100 group-hover:text-sky-400 transition">ID Card Dual-Side PVC Maker</h3>
-                    <p class="text-xs text-gray-400 mt-1 line-clamp-2">Crop Front & Back of Aadhaar / Voter ID and generate standard PVC print sheets.</p>
-                </div>
-                <div class="mt-4 pt-2.5 border-t border-gray-800/80 flex items-center justify-between text-[11px]">
-                    <span class="text-sky-400 font-bold">CR-80 PVC</span>
-                    <span class="text-gray-500 group-hover:text-white transition">Open →</span>
-                </div>
-            </a>
+                <!-- Tool 9: Unlock PDF -->
+                <a href="tools/unlock-pdf/" data-category="pdf govt" class="tool-item tool-card bg-white p-5 rounded-3xl border border-slate-200 shadow-sm hover:border-blue-500 hover:shadow-md flex flex-col justify-between">
+                    <div>
+                        <div class="w-10 h-10 rounded-2xl bg-rose-50 text-rose-600 flex items-center justify-center text-xl mb-3">🔓</div>
+                        <h3 class="text-sm font-black text-slate-900">Unlock PDF & e-Aadhaar</h3>
+                        <p class="text-xs text-slate-500 mt-1 line-clamp-2">Remove password protection from e-Aadhaar and bank statements.</p>
+                    </div>
+                    <span class="text-[11px] font-bold text-blue-600 mt-4 flex items-center gap-1">Open Tool →</span>
+                </a>
 
-            <!-- Tool 11: OCR Image to Text -->
-            <a href="tools/ocr-text-extractor/" data-category="image legal" data-keywords="ocr image to text extract text from photo hindi english word export" class="tool-card glass-card p-4 rounded-2xl flex flex-col justify-between block group">
-                <div>
-                    <div class="w-10 h-10 rounded-xl bg-teal-600/10 text-teal-400 flex items-center justify-center text-xl mb-3 group-hover:scale-110 transition">🔍</div>
-                    <h3 class="text-sm font-bold text-gray-100 group-hover:text-teal-400 transition">OCR Image to Text & Word</h3>
-                    <p class="text-xs text-gray-400 mt-1 line-clamp-2">Extract editable text from scanned notes, books, and receipts in English & Hindi.</p>
-                </div>
-                <div class="mt-4 pt-2.5 border-t border-gray-800/80 flex items-center justify-between text-[11px]">
-                    <span class="text-teal-400 font-bold">Hindi + Eng</span>
-                    <span class="text-gray-500 group-hover:text-white transition">Open →</span>
-                </div>
-            </a>
+                <!-- Tool 10: Signature Enhancer -->
+                <a href="tools/thumb-signature-enhancer/" data-category="govt image" class="tool-item tool-card bg-white p-5 rounded-3xl border border-slate-200 shadow-sm hover:border-blue-500 hover:shadow-md flex flex-col justify-between">
+                    <div>
+                        <div class="w-10 h-10 rounded-2xl bg-indigo-50 text-indigo-600 flex items-center justify-center text-xl mb-3">✍️</div>
+                        <h3 class="text-sm font-black text-slate-900">Signature & Thumb Enhancer</h3>
+                        <p class="text-xs text-slate-500 mt-1 line-clamp-2">Clean dark shadows, make paper pure white, lock to 10KB - 20KB.</p>
+                    </div>
+                    <span class="text-[11px] font-bold text-blue-600 mt-4 flex items-center gap-1">Open Tool →</span>
+                </a>
 
-            <!-- Tool 12: GST Invoice Maker -->
-            <a href="tools/gst-invoice-maker/" data-category="legal" data-keywords="gst invoice maker cash bill generator cyber cafe billing receipt a4" class="tool-card glass-card p-4 rounded-2xl flex flex-col justify-between block group">
-                <div>
-                    <div class="w-10 h-10 rounded-xl bg-emerald-600/10 text-emerald-400 flex items-center justify-center text-xl mb-3 group-hover:scale-110 transition">🧾</div>
-                    <h3 class="text-sm font-bold text-gray-100 group-hover:text-emerald-400 transition">GST Invoice & Cash Bill Maker</h3>
-                    <p class="text-xs text-gray-400 mt-1 line-clamp-2">Generate professional GST invoices and shop cash receipts with auto tax calculations.</p>
-                </div>
-                <div class="mt-4 pt-2.5 border-t border-gray-800/80 flex items-center justify-between text-[11px]">
-                    <span class="text-emerald-400 font-bold">Auto Tax CGST/SGST</span>
-                    <span class="text-gray-500 group-hover:text-white transition">Open →</span>
-                </div>
-            </a>
+                <!-- Tool 11: PAN Card Resizer -->
+                <a href="tools/pan-card-resizer/" data-category="govt image" class="tool-item tool-card bg-white p-5 rounded-3xl border border-slate-200 shadow-sm hover:border-blue-500 hover:shadow-md flex flex-col justify-between">
+                    <div>
+                        <div class="w-10 h-10 rounded-2xl bg-cyan-50 text-cyan-600 flex items-center justify-center text-xl mb-3">🪪</div>
+                        <h3 class="text-sm font-black text-slate-900">PAN Card Photo & Sign Resizer</h3>
+                        <p class="text-xs text-slate-500 mt-1 line-clamp-2">Exact 213x213 px @ 300 DPI for NSDL & UTIITSL portal forms.</p>
+                    </div>
+                    <span class="text-[11px] font-bold text-blue-600 mt-4 flex items-center gap-1">Open Tool →</span>
+                </a>
 
-            <!-- Tool 13: Rent Agreement & Affidavit -->
-            <a href="tools/rent-agreement-maker/" data-category="legal" data-keywords="rent agreement maker legal affidavit stamp paper clearance 11 month agreement" class="tool-card glass-card p-4 rounded-2xl flex flex-col justify-between block group">
-                <div>
-                    <div class="w-10 h-10 rounded-xl bg-amber-600/10 text-amber-400 flex items-center justify-center text-xl mb-3 group-hover:scale-110 transition">⚖️</div>
-                    <h3 class="text-sm font-bold text-gray-100 group-hover:text-amber-400 transition">Rent Agreement & Affidavit Maker</h3>
-                    <p class="text-xs text-gray-400 mt-1 line-clamp-2">Standard 11-month lease, student gap affidavits with ₹50/₹100 stamp margin.</p>
-                </div>
-                <div class="mt-4 pt-2.5 border-t border-gray-800/80 flex items-center justify-between text-[11px]">
-                    <span class="text-amber-400 font-bold">Stamp Paper Space</span>
-                    <span class="text-gray-500 group-hover:text-white transition">Open →</span>
-                </div>
-            </a>
+                <!-- Tool 12: Split PDF -->
+                <a href="tools/split-pdf/" data-category="pdf" class="tool-item tool-card bg-white p-5 rounded-3xl border border-slate-200 shadow-sm hover:border-blue-500 hover:shadow-md flex flex-col justify-between">
+                    <div>
+                        <div class="w-10 h-10 rounded-2xl bg-yellow-50 text-yellow-600 flex items-center justify-center text-xl mb-3">✂️</div>
+                        <h3 class="text-sm font-black text-slate-900">Split PDF & Extract Pages</h3>
+                        <p class="text-xs text-slate-500 mt-1 line-clamp-2">Visual page selector to extract single or multiple pages from PDF.</p>
+                    </div>
+                    <span class="text-[11px] font-bold text-blue-600 mt-4 flex items-center gap-1">Open Tool →</span>
+                </a>
 
-            <!-- Tool 14: UPI QR & Standee -->
-            <a href="tools/upi-qr-generator/" data-category="legal image" data-keywords="upi qr code generator phonepe gpay paytm standee printable qr with logo" class="tool-card glass-card p-4 rounded-2xl flex flex-col justify-between block group">
-                <div>
-                    <div class="w-10 h-10 rounded-xl bg-emerald-600/10 text-emerald-400 flex items-center justify-center text-xl mb-3 group-hover:scale-110 transition">📱</div>
-                    <h3 class="text-sm font-bold text-gray-100 group-hover:text-emerald-400 transition">UPI Payment QR & Standee</h3>
-                    <p class="text-xs text-gray-400 mt-1 line-clamp-2">Generate custom printable payment standees for PhonePe, GPay, and Paytm.</p>
-                </div>
-                <div class="mt-4 pt-2.5 border-t border-gray-800/80 flex items-center justify-between text-[11px]">
-                    <span class="text-emerald-400 font-bold">Standee Maker</span>
-                    <span class="text-gray-500 group-hover:text-white transition">Open →</span>
-                </div>
-            </a>
+                <!-- Tool 13: OCR Text Extractor -->
+                <a href="tools/ocr-text-extractor/" data-category="office image" class="tool-item tool-card bg-white p-5 rounded-3xl border border-slate-200 shadow-sm hover:border-blue-500 hover:shadow-md flex flex-col justify-between">
+                    <div>
+                        <div class="w-10 h-10 rounded-2xl bg-teal-50 text-teal-600 flex items-center justify-center text-xl mb-3">🔍</div>
+                        <h3 class="text-sm font-black text-slate-900">OCR Image to Text Extractor</h3>
+                        <p class="text-xs text-slate-500 mt-1 line-clamp-2">Extract editable text from scanned pages in Hindi & English.</p>
+                    </div>
+                    <span class="text-[11px] font-bold text-blue-600 mt-4 flex items-center gap-1">Open Tool →</span>
+                </a>
 
-            <!-- Tool 15: Age Calculator -->
-            <a href="tools/age-calculator/" data-category="govt" data-keywords="age calculator ssc exam eligibility cutoff dob to age date verification" class="tool-card glass-card p-4 rounded-2xl flex flex-col justify-between block group">
-                <div>
-                    <div class="w-10 h-10 rounded-xl bg-teal-600/10 text-teal-400 flex items-center justify-center text-xl mb-3 group-hover:scale-110 transition">📅</div>
-                    <h3 class="text-sm font-bold text-gray-100 group-hover:text-teal-400 transition">Age Calculator & Exam Cutoff</h3>
-                    <p class="text-xs text-gray-400 mt-1 line-clamp-2">Calculate exact age in Years, Months, and Days with category relaxation for SSC/Police.</p>
-                </div>
-                <div class="mt-4 pt-2.5 border-t border-gray-800/80 flex items-center justify-between text-[11px]">
-                    <span class="text-teal-400 font-bold">Eligibility Slip</span>
-                    <span class="text-gray-500 group-hover:text-white transition">Open →</span>
-                </div>
-            </a>
+                <!-- Tool 14: DOCX to PDF -->
+                <a href="tools/docx-to-pdf/" data-category="pdf office" class="tool-item tool-card bg-white p-5 rounded-3xl border border-slate-200 shadow-sm hover:border-blue-500 hover:shadow-md flex flex-col justify-between">
+                    <div>
+                        <div class="w-10 h-10 rounded-2xl bg-blue-50 text-blue-600 flex items-center justify-center text-xl mb-3">📄</div>
+                        <h3 class="text-sm font-black text-slate-900">Word (DOCX) to PDF</h3>
+                        <p class="text-xs text-slate-500 mt-1 line-clamp-2">Convert Word documents into structured printable A4 PDF.</p>
+                    </div>
+                    <span class="text-[11px] font-bold text-blue-600 mt-4 flex items-center gap-1">Open Tool →</span>
+                </a>
 
-            <!-- Tool 16: CGPA to Percentage -->
-            <a href="tools/cgpa-to-percentage/" data-category="govt" data-keywords="cgpa to percentage calculator cbse 9.5 ugc formula grade verification slip" class="tool-card glass-card p-4 rounded-2xl flex flex-col justify-between block group">
-                <div>
-                    <div class="w-10 h-10 rounded-xl bg-indigo-600/10 text-indigo-400 flex items-center justify-center text-xl mb-3 group-hover:scale-110 transition">🎓</div>
-                    <h3 class="text-sm font-bold text-gray-100 group-hover:text-indigo-400 transition">CGPA to Percentage Calculator</h3>
-                    <p class="text-xs text-gray-400 mt-1 line-clamp-2">Convert CBSE, UGC, and University CGPA/SGPA to Percentage with downloadable verification slip.</p>
-                </div>
-                <div class="mt-4 pt-2.5 border-t border-gray-800/80 flex items-center justify-between text-[11px]">
-                    <span class="text-indigo-400 font-bold">CBSE / UGC Formats</span>
-                    <span class="text-gray-500 group-hover:text-white transition">Open →</span>
-                </div>
-            </a>
+                <!-- Tool 15: Rent Agreement Maker -->
+                <a href="tools/rent-agreement-maker/" data-category="office govt" class="tool-item tool-card bg-white p-5 rounded-3xl border border-slate-200 shadow-sm hover:border-blue-500 hover:shadow-md flex flex-col justify-between">
+                    <div>
+                        <div class="w-10 h-10 rounded-2xl bg-amber-50 text-amber-600 flex items-center justify-center text-xl mb-3">📜</div>
+                        <h3 class="text-sm font-black text-slate-900">Rent Agreement & Affidavit</h3>
+                        <p class="text-xs text-slate-500 mt-1 line-clamp-2">11-month rent agreement & affidavit formats with stamp paper margin.</p>
+                    </div>
+                    <span class="text-[11px] font-bold text-blue-600 mt-4 flex items-center gap-1">Open Tool →</span>
+                </a>
 
-            <!-- Tool 17: Watermark Tool -->
-            <a href="tools/watermark-tool/" data-category="image legal" data-keywords="watermark tool add self attested stamp prevent misuse certificate security" class="tool-card glass-card p-4 rounded-2xl flex flex-col justify-between block group">
-                <div>
-                    <div class="w-10 h-10 rounded-xl bg-rose-600/10 text-rose-400 flex items-center justify-center text-xl mb-3 group-hover:scale-110 transition">🛡️</div>
-                    <h3 class="text-sm font-bold text-gray-100 group-hover:text-rose-400 transition">Watermark & Stamp Studio</h3>
-                    <p class="text-xs text-gray-400 mt-1 line-clamp-2">Add 'Self Attested' stamps or security watermarks to protect IDs from misuse.</p>
-                </div>
-                <div class="mt-4 pt-2.5 border-t border-gray-800/80 flex items-center justify-between text-[11px]">
-                    <span class="text-rose-400 font-bold">Self-Attestation</span>
-                    <span class="text-gray-500 group-hover:text-white transition">Open →</span>
-                </div>
-            </a>
+                <!-- Tool 16: Rotate PDF -->
+                <a href="tools/rotate-pdf/" data-category="pdf" class="tool-item tool-card bg-white p-5 rounded-3xl border border-slate-200 shadow-sm hover:border-blue-500 hover:shadow-md flex flex-col justify-between">
+                    <div>
+                        <div class="w-10 h-10 rounded-2xl bg-orange-50 text-orange-600 flex items-center justify-center text-xl mb-3">🔄</div>
+                        <h3 class="text-sm font-black text-slate-900">Rotate PDF Pages</h3>
+                        <p class="text-xs text-slate-500 mt-1 line-clamp-2">Permanently rotate upside down or sideways PDF pages by 90/180°.</p>
+                    </div>
+                    <span class="text-[11px] font-bold text-blue-600 mt-4 flex items-center gap-1">Open Tool →</span>
+                </a>
 
-            <!-- Tool 18: Rotate PDF -->
-            <a href="tools/rotate-pdf/" data-category="pdf" data-keywords="rotate pdf fix sideways upside down pdf pages turn pdf" class="tool-card glass-card p-4 rounded-2xl flex flex-col justify-between block group">
-                <div>
-                    <div class="w-10 h-10 rounded-xl bg-pink-600/10 text-pink-400 flex items-center justify-center text-xl mb-3 group-hover:scale-110 transition">🔄</div>
-                    <h3 class="text-sm font-bold text-gray-100 group-hover:text-pink-400 transition">Rotate PDF Pages</h3>
-                    <p class="text-xs text-gray-400 mt-1 line-clamp-2">Permanently fix inverted or sideways PDF pages with individual visual thumbnail controls.</p>
-                </div>
-                <div class="mt-4 pt-2.5 border-t border-gray-800/80 flex items-center justify-between text-[11px]">
-                    <span class="text-pink-400 font-bold">Single/All Pages</span>
-                    <span class="text-gray-500 group-hover:text-white transition">Open →</span>
-                </div>
-            </a>
+                <!-- Tool 17: Watermark Tool -->
+                <a href="tools/watermark-tool/" data-category="pdf office" class="tool-item tool-card bg-white p-5 rounded-3xl border border-slate-200 shadow-sm hover:border-blue-500 hover:shadow-md flex flex-col justify-between">
+                    <div>
+                        <div class="w-10 h-10 rounded-2xl bg-indigo-50 text-indigo-600 flex items-center justify-center text-xl mb-3">🛡️</div>
+                        <h3 class="text-sm font-black text-slate-900">PDF Watermark & Stamp Tool</h3>
+                        <p class="text-xs text-slate-500 mt-1 line-clamp-2">Add CONFIDENTIAL or custom security watermark to PDF pages.</p>
+                    </div>
+                    <span class="text-[11px] font-bold text-blue-600 mt-4 flex items-center gap-1">Open Tool →</span>
+                </a>
 
-            <!-- Tool 19: Word (DOCX) to PDF -->
-            <a href="tools/docx-to-pdf/" data-category="pdf" data-keywords="docx to pdf convert word document to pdf print a4 format" class="tool-card glass-card p-4 rounded-2xl flex flex-col justify-between block group">
-                <div>
-                    <div class="w-10 h-10 rounded-xl bg-blue-600/10 text-blue-400 flex items-center justify-center text-xl mb-3 group-hover:scale-110 transition">📄</div>
-                    <h3 class="text-sm font-bold text-gray-100 group-hover:text-blue-400 transition">Convert Word (DOCX) to PDF</h3>
-                    <p class="text-xs text-gray-400 mt-1 line-clamp-2">Convert Microsoft Word (.docx) documents into clean, printable A4 PDF files.</p>
-                </div>
-                <div class="mt-4 pt-2.5 border-t border-gray-800/80 flex items-center justify-between text-[11px]">
-                    <span class="text-blue-400 font-bold">Fast Parsing</span>
-                    <span class="text-gray-500 group-hover:text-white transition">Open →</span>
-                </div>
-            </a>
+                <!-- Tool 18: Text to PDF -->
+                <a href="tools/text-to-pdf/" data-category="pdf office" class="tool-item tool-card bg-white p-5 rounded-3xl border border-slate-200 shadow-sm hover:border-blue-500 hover:shadow-md flex flex-col justify-between">
+                    <div>
+                        <div class="w-10 h-10 rounded-2xl bg-emerald-50 text-emerald-600 flex items-center justify-center text-xl mb-3">📝</div>
+                        <h3 class="text-sm font-black text-slate-900">Text to PDF Converter</h3>
+                        <p class="text-xs text-slate-500 mt-1 line-clamp-2">Turn raw text notes and application letters into styled A4 PDF.</p>
+                    </div>
+                    <span class="text-[11px] font-bold text-blue-600 mt-4 flex items-center gap-1">Open Tool →</span>
+                </a>
 
-            <!-- Tool 20: Text to PDF -->
-            <a href="tools/text-to-pdf/" data-category="pdf legal" data-keywords="text to pdf job letter biodata college assignment notes printable a4" class="tool-card glass-card p-4 rounded-2xl flex flex-col justify-between block group">
-                <div>
-                    <div class="w-10 h-10 rounded-xl bg-emerald-600/10 text-emerald-400 flex items-center justify-center text-xl mb-3 group-hover:scale-110 transition">📝</div>
-                    <h3 class="text-sm font-bold text-gray-100 group-hover:text-emerald-400 transition">Smart Text & Bio-Data to PDF</h3>
-                    <p class="text-xs text-gray-400 mt-1 line-clamp-2">Write formal job application letters, marriage bio-data, and notes with A4 print export.</p>
-                </div>
-                <div class="mt-4 pt-2.5 border-t border-gray-800/80 flex items-center justify-between text-[11px]">
-                    <span class="text-emerald-400 font-bold">Pre-built Templates</span>
-                    <span class="text-gray-500 group-hover:text-white transition">Open →</span>
-                </div>
-            </a>
+                <!-- Tool 19: Image Enlarger -->
+                <a href="tools/image-enlarger/" data-category="image" class="tool-item tool-card bg-white p-5 rounded-3xl border border-slate-200 shadow-sm hover:border-blue-500 hover:shadow-md flex flex-col justify-between">
+                    <div>
+                        <div class="w-10 h-10 rounded-2xl bg-indigo-50 text-indigo-600 flex items-center justify-center text-xl mb-3">🔍</div>
+                        <h3 class="text-sm font-black text-slate-900">Image Enlarger & Upscaler</h3>
+                        <p class="text-xs text-slate-500 mt-1 line-clamp-2">Upscale small photos 2X, 4X with high definition edge smoothing.</p>
+                    </div>
+                    <span class="text-[11px] font-bold text-blue-600 mt-4 flex items-center gap-1">Open Tool →</span>
+                </a>
 
-            <!-- Tool 21: Universal Image Converter -->
-            <a href="tools/image-converter/" data-category="image" data-keywords="image converter convert jpg to webp png to jpg webp converter quality compress" class="tool-card glass-card p-4 rounded-2xl flex flex-col justify-between block group">
-                <div>
-                    <div class="w-10 h-10 rounded-xl bg-cyan-600/10 text-cyan-400 flex items-center justify-center text-xl mb-3 group-hover:scale-110 transition">🔄</div>
-                    <h3 class="text-sm font-bold text-gray-100 group-hover:text-cyan-400 transition">Universal Image Converter</h3>
-                    <p class="text-xs text-gray-400 mt-1 line-clamp-2">Convert between WebP, PNG, JPG, and BMP with instant compression slider.</p>
-                </div>
-                <div class="mt-4 pt-2.5 border-t border-gray-800/80 flex items-center justify-between text-[11px]">
-                    <span class="text-cyan-400 font-bold">WebP / JPG / PNG</span>
-                    <span class="text-gray-500 group-hover:text-white transition">Open →</span>
-                </div>
-            </a>
+                <!-- Tool 20: Age Calculator -->
+                <a href="tools/age-calculator/" data-category="govt office" class="tool-item tool-card bg-white p-5 rounded-3xl border border-slate-200 shadow-sm hover:border-blue-500 hover:shadow-md flex flex-col justify-between">
+                    <div>
+                        <div class="w-10 h-10 rounded-2xl bg-blue-50 text-blue-600 flex items-center justify-center text-xl mb-3">🎂</div>
+                        <h3 class="text-sm font-black text-slate-900">Age & Cut-off Date Calculator</h3>
+                        <p class="text-xs text-slate-500 mt-1 line-clamp-2">Exact age in Years, Months, Days for SSC, UPSC & Railway forms.</p>
+                    </div>
+                    <span class="text-[11px] font-bold text-blue-600 mt-4 flex items-center gap-1">Open Tool →</span>
+                </a>
 
-            <!-- Tool 22: Image Enlarger / HD Enhancer -->
-            <a href="tools/image-enlarger/" data-category="image" data-keywords="image enlarger upscale photo 2x 4x hd enhancer sharpness clarity boost" class="tool-card glass-card p-4 rounded-2xl flex flex-col justify-between block group">
-                <div>
-                    <div class="w-10 h-10 rounded-xl bg-amber-600/10 text-amber-400 flex items-center justify-center text-xl mb-3 group-hover:scale-110 transition">🔍</div>
-                    <h3 class="text-sm font-bold text-gray-100 group-hover:text-amber-400 transition">Image Enlarger & HD Enhancer</h3>
-                    <p class="text-xs text-gray-400 mt-1 line-clamp-2">Upscale low-resolution photos up to 4X with smart edge-sharpening filters.</p>
-                </div>
-                <div class="mt-4 pt-2.5 border-t border-gray-800/80 flex items-center justify-between text-[11px]">
-                    <span class="text-amber-400 font-bold">2X to 4X HD</span>
-                    <span class="text-gray-500 group-hover:text-white transition">Open →</span>
-                </div>
-            </a>
+                <!-- Tool 21: CGPA to Percentage -->
+                <a href="tools/cgpa-to-percentage/" data-category="office govt" class="tool-item tool-card bg-white p-5 rounded-3xl border border-slate-200 shadow-sm hover:border-blue-500 hover:shadow-md flex flex-col justify-between">
+                    <div>
+                        <div class="w-10 h-10 rounded-2xl bg-indigo-50 text-indigo-600 flex items-center justify-center text-xl mb-3">🎓</div>
+                        <h3 class="text-sm font-black text-slate-900">CGPA to Percentage Converter</h3>
+                        <p class="text-xs text-slate-500 mt-1 line-clamp-2">Official CBSE (x 9.5), VTU, AKTU, and Mumbai University calculator.</p>
+                    </div>
+                    <span class="text-[11px] font-bold text-blue-600 mt-4 flex items-center gap-1">Open Tool →</span>
+                </a>
 
-            <!-- Tool 23: Standard QR Code Generator -->
-            <a href="tools/qr-generator/" data-category="legal" data-keywords="qr code generator wifi qr link text qr code generator hd download" class="tool-card glass-card p-4 rounded-2xl flex flex-col justify-between block group">
-                <div>
-                    <div class="w-10 h-10 rounded-xl bg-indigo-600/10 text-indigo-400 flex items-center justify-center text-xl mb-3 group-hover:scale-110 transition">🏁</div>
-                    <h3 class="text-sm font-bold text-gray-100 group-hover:text-indigo-400 transition">Universal QR Code Maker</h3>
-                    <p class="text-xs text-gray-400 mt-1 line-clamp-2">Generate high-resolution QR codes for websites, text, and WiFi networks.</p>
-                </div>
-                <div class="mt-4 pt-2.5 border-t border-gray-800/80 flex items-center justify-between text-[11px]">
-                    <span class="text-indigo-400 font-bold">Vector HD</span>
-                    <span class="text-gray-500 group-hover:text-white transition">Open →</span>
-                </div>
-            </a>
+                <!-- Tool 22: QR Generator -->
+                <a href="tools/qr-generator/" data-category="office" class="tool-item tool-card bg-white p-5 rounded-3xl border border-slate-200 shadow-sm hover:border-blue-500 hover:shadow-md flex flex-col justify-between">
+                    <div>
+                        <div class="w-10 h-10 rounded-2xl bg-indigo-50 text-indigo-600 flex items-center justify-center text-xl mb-3">🔲</div>
+                        <h3 class="text-sm font-black text-slate-900">Custom QR Code Generator</h3>
+                        <p class="text-xs text-slate-500 mt-1 line-clamp-2">Generate permanent HD QR codes for URLs, WiFi, phone, and text.</p>
+                    </div>
+                    <span class="text-[11px] font-bold text-blue-600 mt-4 flex items-center gap-1">Open Tool →</span>
+                </a>
 
+                <!-- Tool 23: Cash Memo / Receipt Maker -->
+                <a href="tools/receipt-maker/" data-category="office" class="tool-item tool-card bg-white p-5 rounded-3xl border border-slate-200 shadow-sm hover:border-blue-500 hover:shadow-md flex flex-col justify-between">
+                    <div>
+                        <div class="w-10 h-10 rounded-2xl bg-amber-50 text-amber-600 flex items-center justify-center text-xl mb-3">🧾</div>
+                        <h3 class="text-sm font-black text-slate-900">Cash Memo & Receipt Maker</h3>
+                        <p class="text-xs text-slate-500 mt-1 line-clamp-2">Generate fee receipts, coaching vouchers & rent payment slips.</p>
+                    </div>
+                    <span class="text-[11px] font-bold text-blue-600 mt-4 flex items-center gap-1">Open Tool →</span>
+                </a>
+
+                <!-- Tool 24: Universal Image Converter -->
+                <a href="tools/image-converter/" data-category="image" class="tool-item tool-card bg-white p-5 rounded-3xl border border-slate-200 shadow-sm hover:border-blue-500 hover:shadow-md flex flex-col justify-between">
+                    <div>
+                        <div class="w-10 h-10 rounded-2xl bg-amber-50 text-amber-600 flex items-center justify-center text-xl mb-3">🔄</div>
+                        <h3 class="text-sm font-black text-slate-900">Universal Image Converter</h3>
+                        <p class="text-xs text-slate-500 mt-1 line-clamp-2">Convert between WebP, PNG, JPG & BMP with compression control.</p>
+                    </div>
+                    <span class="text-[11px] font-bold text-blue-600 mt-4 flex items-center gap-1">Open Tool →</span>
+                </a>
+
+            </div>
         </div>
 
-        <!-- No Results Fallback -->
-        <div id="noResultsBox" class="hidden text-center py-16">
-            <div class="text-4xl mb-2">🔍</div>
-            <h4 class="text-base font-bold text-gray-300">No tools matched your search</h4>
-            <p class="text-xs text-gray-500 mt-1">Try searching for keywords like "compress", "photo", "pdf", or "invoice"</p>
-        </div>
+        <!-- Right Ad Sidebar (300x250 Sticky) -->
+        <aside class="w-full lg:w-80 shrink-0 space-y-4">
+            <div class="bg-white p-3 rounded-3xl border border-slate-200 shadow-sm text-center sticky top-20">
+                <span class="text-[10px] uppercase font-bold text-slate-400 block mb-1">Sponsored Advertisement</span>
+                <div class="flex items-center justify-center overflow-hidden min-h-[250px]">
+                    <script>atOptions = {'key':'ff2ed036da6ab41cbe4fbfbeba0d55fe','format':'iframe','height':250,'width':300,'params':{}};</script>
+                    <script src="https://www.highperformanceformat.com/ff2ed036da6ab41cbe4fbfbeba0d55fe/invoke.js"></script>
+                </div>
+            </div>
+        </aside>
 
-        <!-- Mid-Feed 300x250 Ad Banner -->
-        <div class="my-8 glass-card p-3 rounded-2xl flex items-center justify-center overflow-hidden max-w-md mx-auto">
-            <script>atOptions = {'key':'ff2ed036da6ab41cbe4fbfbeba0d55fe','format':'iframe','height':250,'width':300,'params':{}};</script>
-            <script src="https://www.highperformanceformat.com/ff2ed036da6ab41cbe4fbfbeba0d55fe/invoke.js"></script>
-        </div>
-
-        <!-- Bottom Native Banner -->
-        <div class="mt-6">
-            <script async="async" data-cfasync="false" src="https://pl30718421.effectivecpmnetwork.com/5a97a7a8933aa123ce85e87134bf64fa/invoke.js"></script>
-            <div id="container-5a97a7a8933aa123ce85e87134bf64fa"></div>
-        </div>
     </main>
 
     <!-- Footer -->
-    <footer class="border-t border-gray-800/80 bg-[#0b0f19] py-8 text-center text-xs text-gray-500 mt-8">
-        <div class="max-w-6xl mx-auto px-4 flex flex-col sm:flex-row items-center justify-between gap-4">
-            <p>© 2026 Visualixy (<a href="https://visualixy.in/" class="text-indigo-400 hover:underline">visualixy.in</a>). All rights reserved.</p>
-            <div class="flex items-center gap-4">
-                <a href="privacy-policy.html" class="hover:text-gray-300 transition">Privacy Policy</a>
-                <a href="https://visualixy.in/sitemap.xml" class="hover:text-gray-300 transition">Sitemap</a>
+    <footer class="border-t border-slate-200 bg-white py-8 mt-12 text-xs text-slate-500">
+        <div class="max-w-7xl mx-auto px-4 flex flex-col sm:flex-row items-center justify-between gap-4">
+            <p>© 2026 Visualixy. All rights reserved. 100% Client-Side Privacy Guaranteed.</p>
+            <div class="flex gap-4 font-bold">
+                <a href="privacy-policy.html" class="hover:text-blue-600">Privacy Policy</a>
+                <a href="sitemap.xml" class="hover:text-blue-600">Sitemap</a>
             </div>
         </div>
     </footer>
 
-    <!-- Search & Filter JS Logic -->
+    <!-- Filter & Search JS Logic -->
     <script>
-        let currentFilter = 'all';
-
-        function setCategoryFilter(category) {
-            currentFilter = category;
-            const buttons = document.querySelectorAll('.cat-filter-btn');
-            buttons.forEach(btn => {
-                btn.className = "cat-filter-btn px-3 py-1.5 rounded-xl font-bold bg-gray-900 border border-gray-800 text-gray-400 hover:text-white transition";
-            });
-            event.target.className = "cat-filter-btn px-3 py-1.5 rounded-xl font-bold bg-indigo-600 text-white transition";
-            filterTools();
-        }
+        let currentCategory = 'all';
 
         function filterTools() {
-            const query = document.getElementById('toolSearchInput').value.toLowerCase().trim();
-            const cards = document.querySelectorAll('.tool-card');
-            let visibleCount = 0;
+            const query = document.getElementById('toolSearch').value.toLowerCase().trim();
+            const items = document.querySelectorAll('.tool-item');
 
-            cards.forEach(card => {
-                const category = card.getAttribute('data-category') || '';
-                const keywords = card.getAttribute('data-keywords') || '';
-                const title = card.querySelector('h3').innerText.toLowerCase();
+            items.forEach(item => {
+                const text = item.innerText.toLowerCase();
+                const category = item.getAttribute('data-category');
+                
+                const matchesSearch = text.includes(query);
+                const matchesCat = (currentCategory === 'all') || category.includes(currentCategory);
 
-                const matchesCat = (currentFilter === 'all' || category.includes(currentFilter));
-                const matchesQuery = (!query || title.includes(query) || keywords.includes(query));
-
-                if (matchesCat && matchesQuery) {
-                    card.style.display = 'flex';
-                    visibleCount++;
+                if (matchesSearch && matchesCat) {
+                    item.style.display = 'flex';
                 } else {
-                    card.style.display = 'none';
+                    item.style.display = 'none';
                 }
             });
+        }
 
-            const noResults = document.getElementById('noResultsBox');
-            if (visibleCount === 0) noResults.classList.remove('hidden');
-            else noResults.classList.add('hidden');
+        function setCategory(cat, btn) {
+            currentCategory = cat;
+            document.querySelectorAll('.cat-btn').forEach(b => {
+                b.className = 'cat-btn font-bold px-3.5 py-1.5 rounded-xl bg-white text-slate-700 border border-slate-200 hover:bg-slate-50 transition';
+            });
+            btn.className = 'cat-btn active font-bold px-3.5 py-1.5 rounded-xl bg-blue-600 text-white shadow-sm transition';
+            filterTools();
         }
     </script>
 </body>

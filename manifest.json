@@ -1,21 +1,23 @@
 {
-  "name": "Visualixy - Document & Exam Utility Suite",
+  "name": "Visualixy - Free Document & PDF Utility Suite",
   "short_name": "Visualixy",
-  "start_url": "/",
+  "description": "Fast, private client-side document tools for photo resizing, PDF editing, resume building, and conversions.",
+  "start_url": "/index.html",
   "display": "standalone",
-  "background_color": "#080c15",
-  "theme_color": "#0f172a",
-  "description": "Private PDF Compression, Passport Photo Maker & Govt Exam Tools.",
+  "background_color": "#ffffff",
+  "theme_color": "#2563eb",
   "icons": [
     {
-      "src": "assets/icons/icon-192.png",
+      "src": "/assets/icon-192.png",
       "sizes": "192x192",
-      "type": "image/png"
+      "type": "image/png",
+      "purpose": "any maskable"
     },
     {
-      "src": "assets/icons/icon-512.png",
+      "src": "/assets/icon-512.png",
       "sizes": "512x512",
-      "type": "image/png"
+      "type": "image/png",
+      "purpose": "any maskable"
     }
   ]
 }

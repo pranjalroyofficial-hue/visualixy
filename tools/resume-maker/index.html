@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Free ATS Resume & CV Maker - Visualixy</title>
+    <meta name="description" content="Build professional ATS-friendly 1-page resumes for private and government job interviews for free. Instant A4 PDF export with 100% data privacy.">
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- html2pdf Engine -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
+
+    <!-- Visualixy Master Ads Engine -->
+    <script src="../../assets/js/ads.js"></script>
+
+    <style>
+        body { background-color: #f8fafc; color: #0f172a; font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; }
+        .tool-box { background: #ffffff; border: 1px solid #e2e8f0; border-radius: 1.5rem; }
+        .resume-paper { font-family: 'Times New Roman', Times, serif; }
+    </style>
+</head>
+<body class="min-h-screen flex flex-col justify-between antialiased pb-16 lg:pb-0">
+
+    <!-- Top Leaderboard Ad (728x90) -->
+    <div class="hidden lg:block w-full bg-slate-200/60 py-2 border-b border-slate-300">
+        <div class="max-w-6xl mx-auto text-center overflow-hidden">
+            <script>atOptions = {'key':'0cf435f486e59418568243ee21ba9dea','format':'iframe','height':90,'width':728,'params':{}};</script>
+            <script src="https://www.highperformanceformat.com/0cf435f486e59418568243ee21ba9dea/invoke.js"></script>
+        </div>
+    </div>
+
+    <!-- Header Navigation -->
+    <header class="bg-white border-b border-slate-200 sticky top-0 z-50 shadow-sm">
+        <div class="max-w-7xl mx-auto px-4 py-3 flex items-center justify-between">
+            <a href="../../" class="flex items-center gap-2">
+                <div class="w-8 h-8 rounded-xl bg-blue-600 flex items-center justify-center font-black text-lg text-white">V</div>
+                <span class="font-extrabold text-lg text-slate-900 tracking-tight">VISUALIXY</span>
+            </a>
+            <a href="../../" class="text-xs font-bold text-slate-600 bg-slate-100 px-3 py-1.5 rounded-xl hover:bg-blue-50 hover:text-blue-600 transition">← Back to All Tools</a>
+        </div>
+    </header>
+
+    <!-- Mobile Banner Ad (320x50) -->
+    <div class="lg:hidden w-full bg-slate-100 py-1 text-center border-b border-slate-200 overflow-hidden">
+        <script>atOptions = {'key':'ff2ed036da6ab41cbe4fbfbeba0d55fe','format':'iframe','height':50,'width':320,'params':{}};</script>
+        <script src="https://www.highperformanceformat.com/ff2ed036da6ab41cbe4fbfbeba0d55fe/invoke.js"></script>
+    </div>
+
+    <!-- Main Workspace -->
+    <main class="max-w-7xl mx-auto px-4 py-6 flex-1 w-full flex flex-col lg:flex-row gap-6">
+
+        <!-- Center Tool Panel -->
+        <div class="flex-1 min-w-0">
+            <div class="tool-box p-5 sm:p-8 shadow-sm">
+                
+                <!-- Tool Title Header -->
+                <div class="text-center max-w-lg mx-auto mb-6">
+                    <div class="inline-flex p-3 rounded-2xl bg-blue-50 text-blue-600 text-2xl mb-2">📄</div>
+                    <h1 class="text-xl sm:text-2xl font-black text-slate-900">ATS Resume & Bio-Data Maker</h1>
+                    <p class="text-xs text-slate-500 mt-1">1-Page Clean Formatted CV for Private & Govt Job Interviews.</p>
+                </div>
+
+                <!-- Input Grid -->
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6 items-start">
+                    
+                    <!-- Left Form -->
+                    <div class="space-y-4 bg-slate-50 p-4 sm:p-5 rounded-2xl border border-slate-200">
+                        <div>
+                            <label class="block text-xs font-bold text-slate-700 mb-1">Full Name *</label>
+                            <input type="text" id="rName" oninput="renderResume()" value="Rahul Kumar Sharma" class="w-full bg-white border border-slate-300 text-xs rounded-xl px-3 py-2 font-bold focus:outline-none focus:border-blue-500">
+                        </div>
+
+                        <div class="grid grid-cols-2 gap-2">
+                            <div>
+                                <label class="block text-xs font-bold text-slate-700 mb-1">Mobile *</label>
+                                <input type="text" id="rPhone" oninput="renderResume()" value="+91 98765 43210" class="w-full bg-white border border-slate-300 text-xs rounded-xl px-3 py-2 font-medium focus:outline-none">
+                            </div>
+                            <div>
+                                <label class="block text-xs font-bold text-slate-700 mb-1">Email *</label>
+                                <input type="email" id="rEmail" oninput="renderResume()" value="rahul.job@email.com" class="w-full bg-white border border-slate-300 text-xs rounded-xl px-3 py-2 font-medium focus:outline-none">
+                            </div>
+                        </div>
+
+                        <div>
+                            <label class="block text-xs font-bold text-slate-700 mb-1">Address / Location</label>
+                            <input type="text" id="rLocation" oninput="renderResume()" value="New Delhi, India" class="w-full bg-white border border-slate-300 text-xs rounded-xl px-3 py-2 font-medium focus:outline-none">
+                        </div>
+
+                        <div>
+                            <label class="block text-xs font-bold text-slate-700 mb-1">Career Objective</label>
+                            <textarea id="rObjective" oninput="renderResume()" rows="2" class="w-full bg-white border border-slate-300 text-xs rounded-xl p-2.5 font-medium focus:outline-none">Motivated and disciplined professional seeking an opportunity to contribute my skills toward organizational growth.</textarea>
+                        </div>
+
+                        <div>
+                            <label class="block text-xs font-bold text-slate-700 mb-1">Education (1 Line per Degree)</label>
+                            <textarea id="rEducation" oninput="renderResume()" rows="3" class="w-full bg-white border border-slate-300 text-xs rounded-xl p-2.5 font-medium focus:outline-none">Bachelor of Business Administration (BBA) — Gauhati University (2025)
+Higher Secondary (12th) — CBSE Board (82%)
+Matriculation (10th) — CBSE Board (86%)</textarea>
+                        </div>
+
+                        <div>
+                            <label class="block text-xs font-bold text-slate-700 mb-1">Key Skills & Experience</label>
+                            <textarea id="rSkills" oninput="renderResume()" rows="2" class="w-full bg-white border border-slate-300 text-xs rounded-xl p-2.5 font-medium focus:outline-none">Computer Basics (MS Excel, Word), Data Entry, Web Development, Fast Typing (40 WPM)</textarea>
+                        </div>
+                    </div>
+
+                    <!-- Right Live A4 Resume Paper -->
+                    <div class="flex flex-col items-center">
+                        <span class="text-xs font-bold text-slate-500 mb-2">Live 1-Page A4 Resume Layout</span>
+                        <div id="resumePaper" class="resume-paper w-full bg-white p-6 sm:p-8 rounded-xl border border-slate-300 shadow-md text-slate-900 text-xs leading-relaxed max-h-[520px] overflow-y-auto">
+                            <!-- Paper Header -->
+                            <div class="border-b-2 border-slate-800 pb-2 mb-3 text-center">
+                                <h2 id="pName" class="text-xl font-black uppercase tracking-wider text-slate-900">Rahul Kumar Sharma</h2>
+                                <p id="pContact" class="text-[11px] text-slate-600 mt-1">+91 98765 43210 • rahul.job@email.com • New Delhi, India</p>
+                            </div>
+
+                            <!-- Objective -->
+                            <div class="mb-3">
+                                <h3 class="text-xs font-black uppercase tracking-wider text-slate-800 border-b border-slate-300 pb-0.5 mb-1">Career Objective</h3>
+                                <p id="pObjective" class="text-[11px] text-slate-700 text-justify">Motivated and disciplined professional seeking an opportunity to contribute my skills toward organizational growth.</p>
+                            </div>
+
+                            <!-- Education -->
+                            <div class="mb-3">
+                                <h3 class="text-xs font-black uppercase tracking-wider text-slate-800 border-b border-slate-300 pb-0.5 mb-1">Education & Qualifications</h3>
+                                <ul id="pEducation" class="list-disc pl-4 text-[11px] text-slate-700 space-y-1"></ul>
+                            </div>
+
+                            <!-- Skills -->
+                            <div class="mb-3">
+                                <h3 class="text-xs font-black uppercase tracking-wider text-slate-800 border-b border-slate-300 pb-0.5 mb-1">Key Skills & Competencies</h3>
+                                <p id="pSkills" class="text-[11px] text-slate-700">Computer Basics, MS Office, Data Entry</p>
+                            </div>
+
+                            <!-- Declaration -->
+                            <div class="pt-2 border-t border-slate-200 mt-4 text-[10px] text-slate-500">
+                                <p>I hereby declare that all the details mentioned above are true and correct to the best of my knowledge.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+                <!-- Download Action Button -->
+                <div class="mt-6">
+                    <button id="downloadResumeBtn" onclick="downloadResumePdf()" class="w-full py-4 rounded-2xl bg-blue-600 hover:bg-blue-700 text-white font-black text-sm shadow-md transition flex items-center justify-center gap-2">
+                        <span>📥 Download 1-Page ATS Resume PDF</span>
+                    </button>
+                </div>
+
+            </div>
+        </div>
+
+        <!-- Right Ad Sidebar (300x250 Native Card) -->
+        <aside class="w-full lg:w-80 shrink-0 space-y-4">
+            <div class="bg-white p-2.5 rounded-3xl border border-slate-200 shadow-sm text-center">
+                <span class="text-[10px] uppercase font-bold text-slate-400 block mb-1">Sponsored</span>
+                <div class="flex items-center justify-center overflow-hidden min-h-[250px]">
+                    <script>atOptions = {'key':'ff2ed036da6ab41cbe4fbfbeba0d55fe','format':'iframe','height':250,'width':300,'params':{}};</script>
+                    <script src="https://www.highperformanceformat.com/ff2ed036da6ab41cbe4fbfbeba0d55fe/invoke.js"></script>
+                </div>
+            </div>
+        </aside>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="border-t border-slate-200 bg-white py-4 text-center text-xs text-slate-500">
+        <p>© 2026 Visualixy. All document processing stays 100% on your device.</p>
+    </footer>
+
+    <!-- Resume Engine -->
+    <script>
+        function renderResume() {
+            document.getElementById('pName').innerText = document.getElementById('rName').value || 'Full Name';
+            const phone = document.getElementById('rPhone').value;
+            const email = document.getElementById('rEmail').value;
+            const loc = document.getElementById('rLocation').value;
+            document.getElementById('pContact').innerText = `${phone} • ${email} • ${loc}`;
+            document.getElementById('pObjective').innerText = document.getElementById('rObjective').value;
+            document.getElementById('pSkills').innerText = document.getElementById('rSkills').value;
+
+            // Education List items
+            const eduList = document.getElementById('pEducation');
+            eduList.innerHTML = '';
+            const eduLines = document.getElementById('rEducation').value.split('\n');
+            eduLines.forEach(line => {
+                if (line.trim()) {
+                    const li = document.createElement('li');
+                    li.innerText = line.trim();
+                    eduList.appendChild(li);
+                }
+            });
+        }
+
+        function downloadResumePdf() {
+            const btn = document.getElementById('downloadResumeBtn');
+            const name = document.getElementById('rName').value.trim() || 'Resume';
+
+            window.triggerToolProcessAndDownload(btn, "Rendering Clean A4 ATS Resume", function() {
+                const element = document.getElementById('resumePaper');
+                const opt = {
+                    margin: 10,
+                    filename: `Visualixy_Resume_${name.replace(/\s+/g, '_')}.pdf`,
+                    image: { type: 'jpeg', quality: 0.98 },
+                    html2canvas: { scale: 2 },
+                    jsPDF: { unit: 'mm', format: 'a4', orientation: 'portrait' }
+                };
+                html2pdf().set(opt).from(element).save();
+            });
+        }
+
+        renderResume();
+    </script>
+</body>
+</html>

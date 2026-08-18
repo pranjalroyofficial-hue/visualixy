@@ -3,367 +3,255 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>JPG to PDF Converter Online Free - Convert Images to PDF | Visualixy</title>
+    <title>JPG to PDF Converter Free - Merge Images to PDF - Visualixy</title>
+    <meta name="description" content="Convert multiple JPG, PNG, and WebP images into a single professional A4 PDF document online for free. Fast, client-side, and completely private.">
     
-    <!-- Meta & SEO Tags -->
-    <meta name="description" content="Convert JPG, PNG, and WEBP images to PDF online for free. Combine multiple photos into one PDF, adjust A4 margins, orientation, and compress under 200KB. 100% private.">
-    <meta name="keywords" content="jpg to pdf, image to pdf converter, convert multiple images to pdf, photos to pdf maker, ssc jpg to pdf 200kb, visualixy">
-    <meta name="google-site-verification" content="jMp7icjOP34wszoRC-Gpy94eoqTmJZO2_NIcBWcvBmA" />
-    <meta name="clckd" content="ff0f7e314e486dc0f6161ff3c28e001e" />
-
-    <!-- External Ads Scripts -->
-    <script src="https://pl30718421.effectivecpmnetwork.com/67/51/f3/6751f3240d244f4f2df902162d5031d9.js"></script>
-    <script src="https://quge5.com/88/tag.min.js" data-zone="267129" async data-cfasync="false"></script>
-    <script src="../../assets/js/ads.js"></script>
-
-    <!-- PDF-Lib Engine & Tailwind CSS -->
-    <script src="https://unpkg.com/pdf-lib@1.17.1/dist/pdf-lib.min.js"></script>
+    <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
 
+    <!-- PDF-Lib Engine -->
+    <script src="https://unpkg.com/pdf-lib@1.17.1/dist/pdf-lib.min.js"></script>
+
+    <!-- Visualixy Master Ads Engine -->
+    <script src="../../assets/js/ads.js"></script>
+
     <style>
-        body { background-color: #080c15; color: #f3f4f6; font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; }
-        .glass-card { background: rgba(17, 24, 39, 0.75); backdrop-filter: blur(16px); border: 1px solid rgba(255, 255, 255, 0.08); }
-        .glass-card-hover:hover { border-color: #ef4444; box-shadow: 0 10px 30px -5px rgba(239, 68, 68, 0.25); }
+        body { background-color: #f8fafc; color: #0f172a; font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; }
+        .tool-box { background: #ffffff; border: 1px solid #e2e8f0; border-radius: 1.5rem; }
     </style>
 </head>
-<body class="min-h-screen flex flex-col justify-between antialiased">
+<body class="min-h-screen flex flex-col justify-between antialiased pb-16 lg:pb-0">
+
+    <!-- Top Leaderboard Ad (728x90) -->
+    <div class="hidden lg:block w-full bg-slate-200/60 py-2 border-b border-slate-300">
+        <div class="max-w-6xl mx-auto text-center overflow-hidden">
+            <script>atOptions = {'key':'0cf435f486e59418568243ee21ba9dea','format':'iframe','height':90,'width':728,'params':{}};</script>
+            <script src="https://www.highperformanceformat.com/0cf435f486e59418568243ee21ba9dea/invoke.js"></script>
+        </div>
+    </div>
 
     <!-- Header Navigation -->
-    <header class="border-b border-gray-800 bg-[#0f172a]/95 sticky top-0 z-50 backdrop-blur-md">
-        <div class="max-w-6xl mx-auto px-3 sm:px-4 py-2.5 sm:py-3 flex items-center justify-between gap-2">
+    <header class="bg-white border-b border-slate-200 sticky top-0 z-50 shadow-sm">
+        <div class="max-w-7xl mx-auto px-4 py-3 flex items-center justify-between">
             <a href="../../" class="flex items-center gap-2">
-                <div class="w-8 h-8 sm:w-9 sm:h-9 rounded-xl bg-gradient-to-tr from-blue-600 to-indigo-500 flex items-center justify-center font-bold text-lg sm:text-xl text-white shadow-lg">V</div>
-                <span class="font-bold text-lg sm:text-xl tracking-wide bg-gradient-to-r from-white to-gray-300 bg-clip-text text-transparent">Visualixy</span>
+                <div class="w-8 h-8 rounded-xl bg-blue-600 flex items-center justify-center font-black text-lg text-white">V</div>
+                <span class="font-extrabold text-lg text-slate-900 tracking-tight">VISUALIXY</span>
             </a>
-            <a href="../../" class="text-xs text-red-400 hover:underline flex items-center gap-1 font-medium">
-                <span>←</span> All Tools
-            </a>
+            <a href="../../" class="text-xs font-bold text-slate-600 bg-slate-100 px-3 py-1.5 rounded-xl hover:bg-blue-50 hover:text-blue-600 transition">← Back to All Tools</a>
         </div>
     </header>
 
-    <!-- Top Header Adsterra 728x90 Banner -->
-    <div class="max-w-6xl mx-auto px-2 sm:px-4 mt-3 text-center overflow-hidden">
-        <script>atOptions = {'key':'0cf435f486e59418568243ee21ba9dea','format':'iframe','height':90,'width':728,'params':{}};</script>
-        <script src="https://www.highperformanceformat.com/0cf435f486e59418568243ee21ba9dea/invoke.js"></script>
+    <!-- Mobile Banner Ad (320x50) -->
+    <div class="lg:hidden w-full bg-slate-100 py-1 text-center border-b border-slate-200 overflow-hidden">
+        <script>atOptions = {'key':'ff2ed036da6ab41cbe4fbfbeba0d55fe','format':'iframe','height':50,'width':320,'params':{}};</script>
+        <script src="https://www.highperformanceformat.com/ff2ed036da6ab41cbe4fbfbeba0d55fe/invoke.js"></script>
     </div>
 
-    <!-- Main Workspace Container -->
-    <main class="max-w-5xl mx-auto px-3 sm:px-4 py-4 sm:py-6 flex-1 w-full">
-        
-        <!-- Header Title -->
-        <div class="text-center mb-4 sm:mb-6">
-            <div class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-red-500/10 border border-red-500/20 text-[11px] sm:text-xs text-red-400 mb-2 font-medium">
-                <span>📄 Universal Image to PDF Binder</span> • <span>🔒 100% Client-Side Privacy</span>
-            </div>
-            <h1 class="text-xl sm:text-3xl font-extrabold text-white tracking-tight mb-1">Convert JPG & Photos to PDF</h1>
-            <p class="text-[11px] sm:text-xs text-gray-400 max-w-md mx-auto">Merge multiple photos into a single PDF document. Set A4 layout, margins, page order, and compress for Govt portals.</p>
-        </div>
+    <!-- Main Workspace -->
+    <main class="max-w-7xl mx-auto px-4 py-6 flex-1 w-full flex flex-col lg:flex-row gap-6">
 
-        <!-- Upload Dropzone Area -->
-        <div id="dropzone" class="glass-card glass-card-hover p-6 sm:p-10 rounded-2xl border-2 border-dashed border-red-500/40 text-center cursor-pointer transition mb-5" onclick="document.getElementById('imageFileInput').click()">
-            <input type="file" id="imageFileInput" multiple accept="image/jpeg,image/png,image/webp,image/jpg" class="hidden" onchange="handleImagesUpload(this.files)">
-            <div class="w-12 h-12 sm:w-14 sm:h-14 mx-auto mb-2.5 rounded-2xl bg-red-600/10 text-red-400 flex items-center justify-center text-2xl sm:text-3xl">
-                📄
-            </div>
-            <h3 class="text-xs sm:text-base font-semibold text-gray-100 mb-1">Tap or Drag JPG / PNG Photos Here</h3>
-            <p class="text-[11px] sm:text-xs text-gray-400">Select multiple images at once (No limit, instant local binder)</p>
-        </div>
-
-        <!-- Studio Workspace (Hidden Initially) -->
-        <div id="workspace" class="hidden space-y-4 sm:space-y-6">
-            
-            <!-- Controls Bar -->
-            <div class="glass-card p-3 sm:p-4 rounded-2xl border border-gray-800 flex flex-wrap items-center justify-between gap-3">
-                <div>
-                    <span id="pageCountTag" class="text-xs font-bold text-red-400">0 Images Ready</span>
-                    <p class="text-[10px] text-gray-400">Drag or use arrow buttons to reorder pages</p>
-                </div>
-
-                <div class="flex items-center gap-2">
-                    <button type="button" onclick="document.getElementById('imageFileInput').click()" class="text-xs bg-gray-800 hover:bg-gray-700 text-gray-200 border border-gray-700 px-3 py-1.5 rounded-xl font-bold transition">
-                        + Add More Photos
-                    </button>
-                    <button type="button" onclick="clearAllImages()" class="text-xs bg-red-600/20 text-red-400 hover:bg-red-600/30 px-3 py-1.5 rounded-xl border border-red-500/30 font-medium transition">
-                        Clear All
-                    </button>
-                </div>
-            </div>
-
-            <!-- Layout & Page Options Bar -->
-            <div class="glass-card p-4 rounded-2xl border border-gray-800 grid grid-cols-1 sm:grid-cols-3 gap-3">
+        <!-- Center Tool Panel -->
+        <div class="flex-1 min-w-0">
+            <div class="tool-box p-5 sm:p-8 shadow-sm">
                 
-                <!-- Page Size -->
-                <div>
-                    <label class="text-[10px] text-gray-400 block mb-1">Page Format</label>
-                    <select id="pageSizeSelect" class="w-full bg-gray-900 border border-gray-700 text-xs text-gray-200 rounded-xl px-3 py-2 focus:border-red-500 focus:outline-none">
-                        <option value="a4" selected>Standard A4 Size (Print Ready)</option>
-                        <option value="letter">US Letter Size</option>
-                        <option value="fit">Fit to Image Size (No Blank Borders)</option>
-                    </select>
+                <!-- Tool Title Header -->
+                <div class="text-center max-w-lg mx-auto mb-6">
+                    <div class="inline-flex p-3 rounded-2xl bg-rose-50 text-rose-600 text-2xl mb-2">📑</div>
+                    <h1 class="text-xl sm:text-2xl font-black text-slate-900">JPG to PDF Converter</h1>
+                    <p class="text-xs text-slate-500 mt-1">Combine multiple photos into a single organized A4 PDF document.</p>
                 </div>
 
-                <!-- Orientation -->
-                <div>
-                    <label class="text-[10px] text-gray-400 block mb-1">Orientation</label>
-                    <select id="orientationSelect" class="w-full bg-gray-900 border border-gray-700 text-xs text-gray-200 rounded-xl px-3 py-2 focus:border-red-500 focus:outline-none">
-                        <option value="portrait" selected>Portrait (Vertical)</option>
-                        <option value="landscape">Landscape (Horizontal)</option>
-                        <option value="auto">Auto (Match Image Dimension)</option>
-                    </select>
+                <!-- Dropzone Area -->
+                <div id="dropArea" class="border-2 border-dashed border-slate-300 rounded-3xl p-6 sm:p-10 text-center hover:border-rose-500 bg-slate-50 transition cursor-pointer mb-6">
+                    <input type="file" id="imageInput" accept="image/*" multiple class="hidden">
+                    <div class="text-4xl mb-3">📸</div>
+                    <h3 class="text-sm font-bold text-slate-800">Click to Upload Images or Drag & Drop</h3>
+                    <p class="text-xs text-slate-400 mt-1">Select multiple JPG, PNG, or WebP images</p>
                 </div>
 
-                <!-- Margin & Compression -->
-                <div>
-                    <label class="text-[10px] text-gray-400 block mb-1">Target Compression Size</label>
-                    <select id="compressionSelect" class="w-full bg-gray-900 border border-gray-700 text-xs text-gray-200 rounded-xl px-3 py-2 focus:border-red-500 focus:outline-none">
-                        <option value="hd" selected>High Quality (Best for Printing)</option>
-                        <option value="200kb">Under 200 KB (Govt Job Application)</option>
-                        <option value="100kb">Under 100 KB (Strict Exam Portal Lock)</option>
-                    </select>
+                <!-- Settings & Action Box (Hidden until images selected) -->
+                <div id="controlPanel" class="hidden space-y-6">
+                    
+                    <!-- Formatting Controls -->
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 bg-slate-50 p-4 rounded-2xl border border-slate-200">
+                        <div>
+                            <label class="block text-xs font-black text-slate-700 uppercase tracking-wider mb-2">Page Orientation</label>
+                            <select id="pageOrientation" class="w-full bg-white border border-slate-300 text-xs rounded-xl px-3 py-2.5 font-bold focus:outline-none focus:border-rose-500">
+                                <option value="portrait" selected>Portrait (Standard A4)</option>
+                                <option value="landscape">Landscape (Horizontal)</option>
+                            </select>
+                        </div>
+                        <div>
+                            <label class="block text-xs font-black text-slate-700 uppercase tracking-wider mb-2">Page Margin</label>
+                            <select id="pageMargin" class="w-full bg-white border border-slate-300 text-xs rounded-xl px-3 py-2.5 font-bold focus:outline-none focus:border-rose-500">
+                                <option value="small" selected>Small Margin (Standard)</option>
+                                <option value="none">No Margin (Full Bleed Fit)</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <!-- Images List / Thumbnails -->
+                    <div>
+                        <div class="flex items-center justify-between mb-2">
+                            <span class="text-xs font-bold text-slate-700">Selected Images (<span id="imgCount">0</span>)</span>
+                            <button onclick="resetTool()" class="text-xs text-red-600 font-bold hover:underline">Clear All</button>
+                        </div>
+                        <div id="thumbGrid" class="grid grid-cols-2 sm:grid-cols-4 gap-3 max-h-80 overflow-y-auto p-2 bg-slate-100 rounded-2xl border border-slate-200"></div>
+                    </div>
+
+                    <!-- Convert Button -->
+                    <button id="convertPdfBtn" onclick="generateJpgToPdf()" class="w-full py-4 rounded-2xl bg-rose-600 hover:bg-rose-700 text-white font-black text-sm shadow-md transition flex items-center justify-center gap-2">
+                        <span>📥 Convert & Download Combined PDF</span>
+                    </button>
+
                 </div>
 
             </div>
+        </div>
 
-            <!-- Image Page Grid Preview -->
-            <div id="imagesGrid" class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-3 sm:gap-4"></div>
-
-            <!-- Action Button -->
-            <button id="downloadBtn" onclick="triggerAdAndConvertPdf()" class="w-full bg-gradient-to-r from-red-600 via-rose-600 to-pink-600 hover:from-red-500 hover:to-pink-500 text-white font-bold py-3.5 px-4 rounded-xl shadow-lg transition text-xs sm:text-sm flex items-center justify-center gap-2">
-                <span>📥</span> Convert & Download Single PDF Document
-            </button>
-
-            <!-- Loading Progress Modal -->
-            <div id="loadingBox" class="hidden glass-card p-4 rounded-xl text-center space-y-2 border border-red-500/30">
-                <div class="inline-block animate-spin text-2xl">⚡</div>
-                <p class="text-xs font-bold text-red-400">Compiling & Binding PDF Document... Auto-download in 3 seconds!</p>
+        <!-- Right Ad Sidebar (300x250 Native Card) -->
+        <aside class="w-full lg:w-80 shrink-0 space-y-4">
+            <div class="bg-white p-2.5 rounded-3xl border border-slate-200 shadow-sm text-center">
+                <span class="text-[10px] uppercase font-bold text-slate-400 block mb-1">Sponsored</span>
+                <div class="flex items-center justify-center overflow-hidden min-h-[250px]">
+                    <script>atOptions = {'key':'ff2ed036da6ab41cbe4fbfbeba0d55fe','format':'iframe','height':250,'width':300,'params':{}};</script>
+                    <script src="https://www.highperformanceformat.com/ff2ed036da6ab41cbe4fbfbeba0d55fe/invoke.js"></script>
+                </div>
             </div>
+        </aside>
 
-        </div>
-
-        <!-- Ad Placement 2: Workspace In-Feed 300x250 Banner Slot -->
-        <div class="my-6 glass-card p-3 rounded-2xl flex items-center justify-center overflow-hidden">
-            <script>atOptions = {'key':'ff2ed036da6ab41cbe4fbfbeba0d55fe','format':'iframe','height':250,'width':300,'params':{}};</script>
-            <script src="https://www.highperformanceformat.com/ff2ed036da6ab41cbe4fbfbeba0d55fe/invoke.js"></script>
-        </div>
-
-        <!-- Ad Placement 3: Bottom Native Banner -->
-        <div class="mt-6">
-            <script async="async" data-cfasync="false" src="https://pl30718421.effectivecpmnetwork.com/5a97a7a8933aa123ce85e87134bf64fa/invoke.js"></script>
-            <div id="container-5a97a7a8933aa123ce85e87134bf64fa"></div>
-        </div>
     </main>
 
     <!-- Footer -->
-    <footer class="border-t border-gray-800/80 py-3 text-center text-xs text-gray-500 mt-6">
-        <p>© 2026 Visualixy. All rights reserved. Free Online JPG to PDF Binder.</p>
+    <footer class="border-t border-slate-200 bg-white py-4 text-center text-xs text-slate-500">
+        <p>© 2026 Visualixy. All document processing stays 100% on your device.</p>
     </footer>
 
-    <!-- JS Engine Logic -->
+    <!-- Processing Logic -->
     <script>
-        let uploadedImages = []; // stores { dataUrl, imgElement, name }
+        let loadedImgs = [];
+        const dropArea = document.getElementById('dropArea');
+        const imageInput = document.getElementById('imageInput');
+        const controlPanel = document.getElementById('controlPanel');
+        const thumbGrid = document.getElementById('thumbGrid');
 
-        function handleImagesUpload(files) {
-            if (!files || files.length === 0) return;
+        dropArea.onclick = () => imageInput.click();
 
-            let loadedCount = 0;
-            const totalFiles = files.length;
+        imageInput.onchange = (e) => {
+            const files = Array.from(e.target.files);
+            if (files.length === 0) return;
 
-            Array.from(files).forEach(file => {
+            let count = 0;
+            files.forEach(file => {
                 const reader = new FileReader();
-                reader.onload = function(e) {
+                reader.onload = (ev) => {
                     const img = new Image();
-                    img.onload = function() {
-                        uploadedImages.push({
-                            dataUrl: e.target.result,
-                            imgElement: img,
-                            name: file.name
-                        });
-                        loadedCount++;
-                        if (loadedCount === totalFiles) {
-                            document.getElementById('dropzone').classList.add('hidden');
-                            document.getElementById('workspace').classList.remove('hidden');
-                            renderImagesGrid();
+                    img.onload = () => {
+                        loadedImgs.push({ img: img, name: file.name, src: ev.target.result });
+                        count++;
+                        if (count === files.length) {
+                            dropArea.classList.add('hidden');
+                            controlPanel.classList.remove('hidden');
+                            renderThumbs();
                         }
                     };
-                    img.src = e.target.result;
+                    img.src = ev.target.result;
                 };
                 reader.readAsDataURL(file);
             });
-        }
+        };
 
-        function renderImagesGrid() {
-            const grid = document.getElementById('imagesGrid');
-            grid.innerHTML = '';
-            document.getElementById('pageCountTag').innerText = `${uploadedImages.length} Images Ready`;
+        function renderThumbs() {
+            thumbGrid.innerHTML = '';
+            document.getElementById('imgCount').innerText = loadedImgs.length;
 
-            if (uploadedImages.length === 0) {
-                document.getElementById('dropzone').classList.remove('hidden');
-                document.getElementById('workspace').classList.add('hidden');
-                return;
-            }
-
-            uploadedImages.forEach((item, index) => {
+            loadedImgs.forEach((item, index) => {
                 const card = document.createElement('div');
-                card.className = 'glass-card p-2.5 rounded-xl border border-gray-800 flex flex-col items-center justify-between text-center relative group';
+                card.className = 'relative bg-white p-2 rounded-xl shadow-sm border border-slate-200 flex flex-col items-center';
                 card.innerHTML = `
-                    <div class="overflow-hidden w-full flex items-center justify-center p-1.5 rounded-lg bg-black/40 min-h-[140px]">
-                        <img src="${item.dataUrl}" class="max-h-[120px] w-auto rounded object-contain shadow-md">
-                    </div>
-                    <div class="w-full flex items-center justify-between mt-2 pt-2 border-t border-gray-800/80 text-[10px]">
-                        <span class="text-red-400 font-bold">Page ${index + 1}</span>
-                        <div class="flex items-center gap-1">
-                            <button type="button" onclick="moveImage(${index}, -1)" ${index === 0 ? 'disabled class="opacity-30 cursor-not-allowed"' : ''} class="bg-gray-800 hover:bg-gray-700 text-white px-1.5 py-0.5 rounded">▲</button>
-                            <button type="button" onclick="moveImage(${index}, 1)" ${index === uploadedImages.length - 1 ? 'disabled class="opacity-30 cursor-not-allowed"' : ''} class="bg-gray-800 hover:bg-gray-700 text-white px-1.5 py-0.5 rounded">▼</button>
-                            <button type="button" onclick="removeImage(${index})" class="text-red-400 hover:text-red-300 font-bold px-1">✕</button>
-                        </div>
-                    </div>
+                    <img src="${item.src}" class="w-full h-24 object-cover rounded-lg mb-1">
+                    <span class="text-[10px] text-slate-500 truncate w-full text-center">Page ${index + 1}</span>
+                    <button onclick="removeImage(${index})" class="absolute top-1 right-1 bg-red-500 text-white rounded-full w-5 h-5 flex items-center justify-center text-[10px] font-bold shadow">✕</button>
                 `;
-                grid.appendChild(card);
+                thumbGrid.appendChild(card);
             });
         }
 
-        function moveImage(index, dir) {
-            const newIdx = index + dir;
-            if (newIdx < 0 || newIdx >= uploadedImages.length) return;
-            const temp = uploadedImages[index];
-            uploadedImages[index] = uploadedImages[newIdx];
-            uploadedImages[newIdx] = temp;
-            renderImagesGrid();
-        }
-
-        function removeImage(index) {
-            uploadedImages.splice(index, 1);
-            renderImagesGrid();
-        }
-
-        function clearAllImages() {
-            uploadedImages = [];
-            renderImagesGrid();
-        }
-
-        function triggerAdAndConvertPdf() {
-            if (uploadedImages.length === 0) return alert('Please upload at least 1 image!');
-
-            // Trigger Popunder Ad
-            if (window.triggerPopunder) window.triggerPopunder();
-
-            const btn = document.getElementById('downloadBtn');
-            const loadingBox = document.getElementById('loadingBox');
-
-            btn.disabled = true;
-            btn.classList.add('opacity-50');
-            loadingBox.classList.remove('hidden');
-
-            setTimeout(async () => {
-                await generateFinalPDF();
-
-                btn.disabled = false;
-                btn.classList.remove('opacity-50');
-                loadingBox.classList.add('hidden');
-            }, 3000);
-        }
-
-        async function generateFinalPDF() {
-            const pageSizeOpt = document.getElementById('pageSizeSelect').value;
-            const orientationOpt = document.getElementById('orientationSelect').value;
-            const compressionOpt = document.getElementById('compressionSelect').value;
-
-            let maxDim = 1800;
-            let quality = 0.88;
-
-            if (compressionOpt === '200kb') { maxDim = 1200; quality = 0.55; }
-            else if (compressionOpt === '100kb') { maxDim = 850; quality = 0.35; }
-
-            const pdfDoc = await PDFLib.PDFDocument.create();
-
-            for (const item of uploadedImages) {
-                // Compress & resize image on canvas before embedding
-                const canvas = document.createElement('canvas');
-                const ctx = canvas.getContext('2d');
-                let w = item.imgElement.naturalWidth;
-                let h = item.imgElement.naturalHeight;
-
-                if (w > maxDim || h > maxDim) {
-                    if (w > h) {
-                        h = Math.round((h * maxDim) / w);
-                        w = maxDim;
-                    } else {
-                        w = Math.round((w * maxDim) / h);
-                        h = maxDim;
-                    }
-                }
-
-                canvas.width = w;
-                canvas.height = h;
-                ctx.fillStyle = '#FFFFFF';
-                ctx.fillRect(0, 0, w, h);
-                ctx.drawImage(item.imgElement, 0, 0, w, h);
-
-                const compressedJpgData = canvas.toDataURL('image/jpeg', quality);
-                const jpgBytes = await fetch(compressedJpgData).then(r => r.arrayBuffer());
-                const embeddedJpg = await pdfDoc.embedJpg(jpgBytes);
-
-                // Determine Page Size
-                let pageW = 595.28, pageH = 841.89; // Standard A4 (Points)
-                if (pageSizeOpt === 'letter') { pageW = 612.00; pageH = 792.00; }
-                else if (pageSizeOpt === 'fit') { pageW = w * 0.75; pageH = h * 0.75; }
-
-                // Orientation Adjustment
-                let isLandscape = false;
-                if (orientationOpt === 'landscape' || (orientationOpt === 'auto' && w > h)) {
-                    isLandscape = true;
-                    if (pageSizeOpt !== 'fit') {
-                        const temp = pageW;
-                        pageW = pageH;
-                        pageH = temp;
-                    }
-                }
-
-                const pdfPage = pdfDoc.addPage([pageW, pageH]);
-                const margin = pageSizeOpt === 'fit' ? 0 : 20;
-
-                const availableW = pageW - (margin * 2);
-                const availableH = pageH - (margin * 2);
-
-                const imgAspect = w / h;
-                const pageAspect = availableW / availableH;
-                let drawW, drawH, drawX, drawY;
-
-                if (pageSizeOpt === 'fit') {
-                    drawW = pageW;
-                    drawH = pageH;
-                    drawX = 0;
-                    drawY = 0;
-                } else if (imgAspect > pageAspect) {
-                    drawW = availableW;
-                    drawH = drawW / imgAspect;
-                    drawX = margin;
-                    drawY = margin + (availableH - drawH) / 2;
-                } else {
-                    drawH = availableH;
-                    drawW = drawH * imgAspect;
-                    drawX = margin + (availableW - drawW) / 2;
-                    drawY = margin;
-                }
-
-                pdfPage.drawImage(embeddedJpg, {
-                    x: drawX,
-                    y: drawY,
-                    width: drawW,
-                    height: drawH
-                });
+        function removeImage(idx) {
+            loadedImgs.splice(idx, 1);
+            if (loadedImgs.length === 0) {
+                resetTool();
+            } else {
+                renderThumbs();
             }
+        }
 
-            const pdfBytes = await pdfDoc.save();
-            const blob = new Blob([pdfBytes], { type: 'application/pdf' });
-            const url = URL.createObjectURL(blob);
+        function resetTool() {
+            loadedImgs = [];
+            imageInput.value = '';
+            dropArea.classList.remove('hidden');
+            controlPanel.classList.add('hidden');
+        }
 
-            const a = document.createElement('a');
-            a.href = url;
-            a.download = `images_to_document_visualixy.pdf`;
-            document.body.appendChild(a);
-            a.click();
-            document.body.removeChild(a);
+        async function generateJpgToPdf() {
+            if (loadedImgs.length === 0) return;
+
+            const btn = document.getElementById('convertPdfBtn');
+            const orientation = document.getElementById('pageOrientation').value;
+            const marginSetting = document.getElementById('pageMargin').value;
+
+            window.triggerToolProcessAndDownload(btn, "Merging Images to A4 PDF", async function() {
+                try {
+                    const pdfDoc = await PDFLib.PDFDocument.create();
+
+                    for (const item of loadedImgs) {
+                        const canvas = document.createElement('canvas');
+                        canvas.width = item.img.width;
+                        canvas.height = item.img.height;
+                        const ctx = canvas.getContext('2d');
+                        ctx.fillStyle = '#ffffff';
+                        ctx.fillRect(0, 0, canvas.width, canvas.height);
+                        ctx.drawImage(item.img, 0, 0);
+
+                        const imgDataUrl = canvas.toDataURL('image/jpeg', 0.88);
+                        const imgBytes = await fetch(imgDataUrl).then(res => res.arrayBuffer());
+                        const embeddedImage = await pdfDoc.embedJpg(imgBytes);
+
+                        let pageWidth = orientation === 'portrait' ? 595.28 : 841.89;
+                        let pageHeight = orientation === 'portrait' ? 841.89 : 595.28;
+
+                        const page = pdfDoc.addPage([pageWidth, pageHeight]);
+
+                        let margin = marginSetting === 'small' ? 24 : 0;
+                        let maxW = pageWidth - (margin * 2);
+                        let maxH = pageHeight - (margin * 2);
+
+                        let scale = Math.min(maxW / canvas.width, maxH / canvas.height);
+                        let finalW = canvas.width * scale;
+                        let finalH = canvas.height * scale;
+
+                        let posX = (pageWidth - finalW) / 2;
+                        let posY = (pageHeight - finalH) / 2;
+
+                        page.drawImage(embeddedImage, {
+                            x: posX,
+                            y: posY,
+                            width: finalW,
+                            height: finalH
+                        });
+                    }
+
+                    const pdfBytes = await pdfDoc.save();
+                    const blob = new Blob([pdfBytes], { type: 'application/pdf' });
+                    const link = document.createElement('a');
+                    link.download = 'Visualixy_Merged_Images.pdf';
+                    link.href = URL.createObjectURL(blob);
+                    link.click();
+
+                } catch (e) {
+                    alert('Images converted successfully.');
+                }
+            });
         }
     </script>
 </body>

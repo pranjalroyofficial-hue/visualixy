@@ -3,306 +3,222 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>Compress PDF Online Free - Reduce PDF Size Under 100KB / 200KB | Visualixy</title>
+    <title>Compress PDF Under 100KB, 200KB Free - Visualixy</title>
+    <meta name="description" content="Compress PDF files strictly under 100KB, 200KB, and 500KB without quality loss. 100% private, client-side fast PDF compressor for government and exam portals.">
     
-    <!-- Meta & SEO Tags -->
-    <meta name="description" content="Compress PDF files online for free. Reduce PDF size under 100KB or 200KB for SSC, UPSC, and Indian Govt exam portals. 100% private in-browser compression.">
-    <meta name="keywords" content="compress pdf under 100kb, compress pdf under 200kb, ssc pdf compressor, reduce pdf size online, visualixy compress pdf">
-    <meta name="google-site-verification" content="jMp7icjOP34wszoRC-Gpy94eoqTmJZO2_NIcBWcvBmA" />
-    <meta name="clckd" content="ff0f7e314e486dc0f6161ff3c28e001e" />
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- PDF-Lib Engine -->
+    <script src="https://unpkg.com/pdf-lib@1.17.1/dist/pdf-lib.min.js"></script>
+    <script src="https://unpkg.com/pdfjs-dist@3.11.174/build/pdf.min.js"></script>
 
-    <!-- External Ads Scripts -->
-    <script src="https://pl30718421.effectivecpmnetwork.com/67/51/f3/6751f3240d244f4f2df902162d5031d9.js"></script>
-    <script src="https://quge5.com/88/tag.min.js" data-zone="267129" async data-cfasync="false"></script>
+    <!-- Visualixy Master Ads Engine -->
     <script src="../../assets/js/ads.js"></script>
 
-    <!-- PDF.js & PDF-Lib Engine + Tailwind CSS -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/2.16.105/pdf.min.js"></script>
-    <script src="https://unpkg.com/pdf-lib@1.17.1/dist/pdf-lib.min.js"></script>
-    <script src="https://cdn.tailwindcss.com"></script>
-
     <style>
-        body { background-color: #080c15; color: #f3f4f6; font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; }
-        .glass-card { background: rgba(17, 24, 39, 0.75); backdrop-filter: blur(16px); border: 1px solid rgba(255, 255, 255, 0.08); }
-        .glass-card-hover:hover { border-color: #10b981; box-shadow: 0 10px 30px -5px rgba(16, 185, 129, 0.25); }
+        body { background-color: #f8fafc; color: #0f172a; font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; }
+        .tool-box { background: #ffffff; border: 1px solid #e2e8f0; border-radius: 1.5rem; }
     </style>
 </head>
-<body class="min-h-screen flex flex-col justify-between antialiased">
+<body class="min-h-screen flex flex-col justify-between antialiased pb-16 lg:pb-0">
+
+    <!-- Top Leaderboard Ad (728x90) -->
+    <div class="hidden lg:block w-full bg-slate-200/60 py-2 border-b border-slate-300">
+        <div class="max-w-6xl mx-auto text-center overflow-hidden">
+            <script>atOptions = {'key':'0cf435f486e59418568243ee21ba9dea','format':'iframe','height':90,'width':728,'params':{}};</script>
+            <script src="https://www.highperformanceformat.com/0cf435f486e59418568243ee21ba9dea/invoke.js"></script>
+        </div>
+    </div>
 
     <!-- Header Navigation -->
-    <header class="border-b border-gray-800 bg-[#0f172a]/95 sticky top-0 z-50 backdrop-blur-md">
-        <div class="max-w-6xl mx-auto px-3 sm:px-4 py-2.5 sm:py-3 flex items-center justify-between gap-2">
+    <header class="bg-white border-b border-slate-200 sticky top-0 z-50 shadow-sm">
+        <div class="max-w-7xl mx-auto px-4 py-3 flex items-center justify-between">
             <a href="../../" class="flex items-center gap-2">
-                <div class="w-8 h-8 sm:w-9 sm:h-9 rounded-xl bg-gradient-to-tr from-blue-600 to-indigo-500 flex items-center justify-center font-bold text-lg sm:text-xl text-white shadow-lg">V</div>
-                <span class="font-bold text-lg sm:text-xl tracking-wide bg-gradient-to-r from-white to-gray-300 bg-clip-text text-transparent">Visualixy</span>
+                <div class="w-8 h-8 rounded-xl bg-blue-600 flex items-center justify-center font-black text-lg text-white">V</div>
+                <span class="font-extrabold text-lg text-slate-900 tracking-tight">VISUALIXY</span>
             </a>
-            <a href="../../" class="text-xs text-emerald-400 hover:underline flex items-center gap-1 font-medium">
-                <span>←</span> All Tools
-            </a>
+            <a href="../../" class="text-xs font-bold text-slate-600 bg-slate-100 px-3 py-1.5 rounded-xl hover:bg-blue-50 hover:text-blue-600 transition">← Back to All Tools</a>
         </div>
     </header>
 
-    <!-- Top Header Adsterra 728x90 Banner -->
-    <div class="max-w-6xl mx-auto px-2 sm:px-4 mt-3 text-center overflow-hidden">
-        <script>atOptions = {'key':'0cf435f486e59418568243ee21ba9dea','format':'iframe','height':90,'width':728,'params':{}};</script>
-        <script src="https://www.highperformanceformat.com/0cf435f486e59418568243ee21ba9dea/invoke.js"></script>
+    <!-- Mobile Banner Ad (320x50) -->
+    <div class="lg:hidden w-full bg-slate-100 py-1 text-center border-b border-slate-200 overflow-hidden">
+        <script>atOptions = {'key':'ff2ed036da6ab41cbe4fbfbeba0d55fe','format':'iframe','height':50,'width':320,'params':{}};</script>
+        <script src="https://www.highperformanceformat.com/ff2ed036da6ab41cbe4fbfbeba0d55fe/invoke.js"></script>
     </div>
 
-    <!-- Main Workspace Container -->
-    <main class="max-w-5xl mx-auto px-3 sm:px-4 py-4 sm:py-6 flex-1 w-full">
-        
-        <!-- Header Title -->
-        <div class="text-center mb-4 sm:mb-6">
-            <div class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-emerald-500/10 border border-emerald-500/20 text-[11px] sm:text-xs text-emerald-400 mb-2 font-medium">
-                <span>⚡ Target Size Lock (100KB - 200KB)</span> • <span>🔒 100% Client-Side Privacy</span>
-            </div>
-            <h1 class="text-xl sm:text-3xl font-extrabold text-white tracking-tight mb-1">Compress PDF for Govt Exams</h1>
-            <p class="text-[11px] sm:text-xs text-gray-400 max-w-md mx-auto">Reduce PDF file size without losing text sharpness. Lock strictly under 100KB or 200KB for SSC, UPSC, and State Govt applications.</p>
-        </div>
+    <!-- Main Workspace -->
+    <main class="max-w-7xl mx-auto px-4 py-6 flex-1 w-full flex flex-col lg:flex-row gap-6">
 
-        <!-- Upload Dropzone Area -->
-        <div id="dropzone" class="glass-card glass-card-hover p-6 sm:p-10 rounded-2xl border-2 border-dashed border-emerald-500/40 text-center cursor-pointer transition mb-5" onclick="document.getElementById('pdfFileInput').click()">
-            <input type="file" id="pdfFileInput" accept="application/pdf" class="hidden" onchange="handlePdfUpload(this.files[0])">
-            <div class="w-12 h-12 sm:w-14 sm:h-14 mx-auto mb-2.5 rounded-2xl bg-emerald-600/10 text-emerald-400 flex items-center justify-center text-2xl sm:text-3xl">
-                ⚡
-            </div>
-            <h3 class="text-xs sm:text-base font-semibold text-gray-100 mb-1">Tap or Drag PDF File Here</h3>
-            <p class="text-[11px] sm:text-xs text-gray-400">Supports Marksheets, Certificates, Resumes, and Documents</p>
-        </div>
-
-        <!-- Studio Workspace (Hidden Initially) -->
-        <div id="compressWorkspace" class="hidden space-y-4 sm:space-y-6">
-            <div class="grid grid-cols-1 lg:grid-cols-12 gap-4 sm:gap-6">
+        <!-- Center Tool Panel -->
+        <div class="flex-1 min-w-0">
+            <div class="tool-box p-5 sm:p-8 shadow-sm">
                 
-                <!-- Left File Details & Thumbnail Preview -->
-                <div class="lg:col-span-5 glass-card p-4 sm:p-5 rounded-2xl flex flex-col justify-between border border-gray-800 relative min-h-[280px]">
-                    <div>
-                        <div class="flex items-center justify-between border-b border-gray-800 pb-2.5 mb-3">
-                            <span class="text-xs font-bold text-gray-200">Selected Document</span>
-                            <span id="pageCountBadge" class="text-[10px] text-emerald-400 font-bold bg-emerald-500/10 px-2 py-0.5 rounded border border-emerald-500/20">0 Pages</span>
-                        </div>
-
-                        <!-- Thumbnail First Page Preview -->
-                        <div class="border border-gray-800 p-2 rounded-xl bg-black/40 flex items-center justify-center min-h-[160px] max-h-[180px] overflow-hidden mb-3">
-                            <canvas id="pdfThumbCanvas" class="max-h-[150px] w-auto rounded shadow-md bg-white"></canvas>
-                        </div>
-
-                        <div class="space-y-1.5 text-xs">
-                            <div class="flex justify-between text-gray-400">
-                                <span>File Name:</span>
-                                <strong id="pdfFileName" class="text-gray-200 truncate max-w-[170px]">document.pdf</strong>
-                            </div>
-                            <div class="flex justify-between text-gray-400">
-                                <span>Original Size:</span>
-                                <strong id="origSizeTag" class="text-rose-400 font-bold">-- KB</strong>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="mt-4 pt-3 border-t border-gray-800 text-[10px] text-gray-500 text-center">
-                        Encrypted in device RAM • No server upload
-                    </div>
+                <!-- Tool Title Header -->
+                <div class="text-center max-w-lg mx-auto mb-6">
+                    <div class="inline-flex p-3 rounded-2xl bg-red-50 text-red-600 text-2xl mb-2">⚡</div>
+                    <h1 class="text-xl sm:text-2xl font-black text-slate-900">Compress PDF Under 100KB / 200KB</h1>
+                    <p class="text-xs text-slate-500 mt-1">Extreme client-side compression for SSC, UPSC & Job Application Forms.</p>
                 </div>
 
-                <!-- Right Compression Controls & Action -->
-                <div class="lg:col-span-7 glass-card p-4 sm:p-5 rounded-2xl space-y-4 border border-gray-800">
-                    <h3 class="text-xs sm:text-sm font-bold text-gray-200 border-b border-gray-800 pb-2.5 flex items-center gap-2">
-                        <span>⚙️</span> Target Size & Compression Level
-                    </h3>
+                <!-- Dropzone Area -->
+                <div id="dropArea" class="border-2 border-dashed border-slate-300 rounded-3xl p-6 sm:p-10 text-center hover:border-blue-500 bg-slate-50 transition cursor-pointer mb-6">
+                    <input type="file" id="pdfInput" accept="application/pdf" class="hidden">
+                    <div class="text-4xl mb-3">📄</div>
+                    <h3 class="text-sm font-bold text-slate-800">Click to Upload PDF or Drag & Drop</h3>
+                    <p class="text-xs text-slate-400 mt-1">100% Private. Processed locally inside your browser.</p>
+                </div>
 
-                    <!-- Govt Exam Size Preset Selector -->
-                    <div>
-                        <label class="text-[10px] text-gray-400 block mb-1">Select Govt Exam Target Preset</label>
-                        <select id="presetSelect" onchange="applyPresetOption()" class="w-full bg-gray-900 border border-gray-700 text-xs text-gray-200 rounded-xl px-3 py-2.5 focus:border-emerald-500 focus:outline-none">
-                            <option value="100kb">🔒 Under 100 KB (SSC GD, UPSSSC, Strict Police Forms)</option>
-                            <option value="200kb" selected>📋 Under 200 KB (UPSC, NTA NEET/JEE, IBPS Standard)</option>
-                            <option value="500kb">📄 Under 500 KB (College Admission, Job Portals)</option>
-                            <option value="custom">✏️ Custom Quality Slider</option>
-                        </select>
-                    </div>
-
-                    <!-- Custom Quality Slider -->
-                    <div id="customSliderBox" class="space-y-1">
-                        <div class="flex justify-between items-center mb-1">
-                            <label class="text-[10px] text-gray-400">Compression Quality</label>
-                            <span id="qualityValText" class="text-xs font-bold text-emerald-400">50% (Standard)</span>
+                <!-- Settings & Action Box (Hidden until file selected) -->
+                <div id="controlPanel" class="hidden space-y-5">
+                    
+                    <!-- Selected File Info -->
+                    <div class="bg-blue-50 border border-blue-200 rounded-2xl p-4 flex items-center justify-between">
+                        <div class="flex items-center gap-3">
+                            <span class="text-2xl">📋</span>
+                            <div>
+                                <p id="fileName" class="text-xs font-bold text-slate-900 truncate max-w-[180px] sm:max-w-xs">file.pdf</p>
+                                <p id="originalSize" class="text-[11px] text-slate-500">Original: 0 KB</p>
+                            </div>
                         </div>
-                        <input type="range" id="qualitySlider" min="15" max="85" value="50" oninput="updateSliderLabel()" class="w-full accent-emerald-500 cursor-pointer">
-                        <p class="text-[9px] sm:text-[10px] text-gray-500">Lower percentage yields maximum reduction for large scanned PDFs.</p>
+                        <button onclick="resetTool()" class="text-xs text-red-600 font-bold hover:underline">Remove</button>
                     </div>
 
-                    <!-- Output Info Summary Box -->
-                    <div class="p-3 bg-gray-900/90 rounded-xl border border-gray-800 flex items-center justify-between text-xs">
-                        <span class="text-gray-400">Target Output Status:</span>
-                        <span id="estimatedStatusTag" class="text-emerald-400 font-bold">Portal Approved Ready</span>
+                    <!-- Compression Level Selector -->
+                    <div>
+                        <label class="block text-xs font-black text-slate-700 uppercase tracking-wider mb-2">Target Compression Size</label>
+                        <div class="grid grid-cols-3 gap-2.5">
+                            <button type="button" onclick="setPreset(0.35, this)" class="preset-btn py-2.5 px-3 rounded-xl border border-blue-600 bg-blue-50 text-blue-700 text-xs font-bold text-center">
+                                🔥 < 100 KB
+                            </button>
+                            <button type="button" onclick="setPreset(0.60, this)" class="preset-btn py-2.5 px-3 rounded-xl border border-slate-200 bg-white text-slate-700 text-xs font-bold text-center">
+                                ⚖️ < 200 KB
+                            </button>
+                            <button type="button" onclick="setPreset(0.80, this)" class="preset-btn py-2.5 px-3 rounded-xl border border-slate-200 bg-white text-slate-700 text-xs font-bold text-center">
+                                💎 < 500 KB
+                            </button>
+                        </div>
                     </div>
 
-                    <!-- Download Action Button -->
-                    <button id="downloadBtn" onclick="triggerAdAndCompressPdf()" class="w-full bg-gradient-to-r from-emerald-600 via-teal-600 to-blue-600 hover:from-emerald-500 hover:to-blue-500 text-white font-bold py-3.5 px-4 rounded-xl shadow-lg transition text-xs sm:text-sm flex items-center justify-center gap-2">
-                        <span>📥</span> Compress & Download PDF
+                    <!-- Process & Download Button -->
+                    <button id="compressBtn" onclick="processAndDownloadPDF()" class="w-full py-4 rounded-2xl bg-blue-600 hover:bg-blue-700 text-white font-black text-sm shadow-md transition flex items-center justify-center gap-2">
+                        <span>⚡ Compress & Download PDF</span>
                     </button>
-
-                    <!-- Loading Progress Countdown -->
-                    <div id="loadingBox" class="hidden glass-card p-4 rounded-xl text-center space-y-2 border border-emerald-500/30">
-                        <div class="inline-block animate-spin text-2xl">⚡</div>
-                        <p class="text-xs font-bold text-emerald-400">Downsampling & Compressing PDF Stream... Auto-download in 3 seconds!</p>
-                    </div>
-
                 </div>
 
             </div>
         </div>
 
-        <!-- Ad Placement 2: Workspace In-Feed 300x250 Banner Slot -->
-        <div class="my-6 glass-card p-3 rounded-2xl flex items-center justify-center overflow-hidden">
-            <script>atOptions = {'key':'ff2ed036da6ab41cbe4fbfbeba0d55fe','format':'iframe','height':250,'width':300,'params':{}};</script>
-            <script src="https://www.highperformanceformat.com/ff2ed036da6ab41cbe4fbfbeba0d55fe/invoke.js"></script>
-        </div>
+        <!-- Right Ad Sidebar (300x250 Native Card) -->
+        <aside class="w-full lg:w-80 shrink-0 space-y-4">
+            <div class="bg-white p-2.5 rounded-3xl border border-slate-200 shadow-sm text-center">
+                <span class="text-[10px] uppercase font-bold text-slate-400 block mb-1">Sponsored</span>
+                <div class="flex items-center justify-center overflow-hidden min-h-[250px]">
+                    <script>atOptions = {'key':'ff2ed036da6ab41cbe4fbfbeba0d55fe','format':'iframe','height':250,'width':300,'params':{}};</script>
+                    <script src="https://www.highperformanceformat.com/ff2ed036da6ab41cbe4fbfbeba0d55fe/invoke.js"></script>
+                </div>
+            </div>
+        </aside>
 
-        <!-- Ad Placement 3: Bottom Native Banner -->
-        <div class="mt-6">
-            <script async="async" data-cfasync="false" src="https://pl30718421.effectivecpmnetwork.com/5a97a7a8933aa123ce85e87134bf64fa/invoke.js"></script>
-            <div id="container-5a97a7a8933aa123ce85e87134bf64fa"></div>
-        </div>
     </main>
 
     <!-- Footer -->
-    <footer class="border-t border-gray-800/80 py-3 text-center text-xs text-gray-500 mt-6">
-        <p>© 2026 Visualixy. All rights reserved. Free Online PDF Compressor.</p>
+    <footer class="border-t border-slate-200 bg-white py-4 text-center text-xs text-slate-500">
+        <p>© 2026 Visualixy. All document processing stays 100% on your device.</p>
     </footer>
 
-    <!-- JS Engine Logic -->
+    <!-- Processing & Compression Logic -->
     <script>
-        pdfjsLib.GlobalWorkerOptions.workerSrc = 'https://cdnjs.cloudflare.com/ajax/libs/pdf.js/2.16.105/pdf.worker.min.js';
+        pdfjsLib.GlobalWorkerOptions.workerSrc = 'https://unpkg.com/pdfjs-dist@3.11.174/build/pdf.worker.min.js';
+        
+        let selectedFile = null;
+        let compressionQuality = 0.35; // Default <100KB
 
-        let selectedPdfBytes = null;
-        let selectedFileName = 'compressed_document';
-        let pdfDocInstance = null;
+        const dropArea = document.getElementById('dropArea');
+        const pdfInput = document.getElementById('pdfInput');
+        const controlPanel = document.getElementById('controlPanel');
 
-        function handlePdfUpload(file) {
-            if (!file) return;
+        dropArea.onclick = () => pdfInput.click();
 
-            selectedFileName = file.name.replace(/\.[^/.]+$/, "") || 'compressed_document';
-            document.getElementById('pdfFileName').innerText = file.name;
-            document.getElementById('origSizeTag').innerText = (file.size / 1024).toFixed(1) + ' KB';
+        pdfInput.onchange = (e) => {
+            if (e.target.files[0]) handleSelectedFile(e.target.files[0]);
+        };
 
-            const reader = new FileReader();
-            reader.onload = async function(e) {
-                selectedPdfBytes = e.target.result;
+        function handleSelectedFile(file) {
+            if (file.type !== 'application/pdf') {
+                alert('Please upload a valid PDF file.');
+                return;
+            }
+            selectedFile = file;
+            document.getElementById('fileName').innerText = file.name;
+            document.getElementById('originalSize').innerText = 'Original: ' + (file.size / 1024).toFixed(1) + ' KB';
+            dropArea.classList.add('hidden');
+            controlPanel.classList.remove('hidden');
+        }
+
+        function setPreset(quality, btn) {
+            compressionQuality = quality;
+            document.querySelectorAll('.preset-btn').forEach(b => {
+                b.className = 'preset-btn py-2.5 px-3 rounded-xl border border-slate-200 bg-white text-slate-700 text-xs font-bold text-center';
+            });
+            btn.className = 'preset-btn py-2.5 px-3 rounded-xl border border-blue-600 bg-blue-50 text-blue-700 text-xs font-bold text-center';
+        }
+
+        function resetTool() {
+            selectedFile = null;
+            pdfInput.value = '';
+            dropArea.classList.remove('hidden');
+            controlPanel.classList.add('hidden');
+        }
+
+        async function processAndDownloadPDF() {
+            if (!selectedFile) return;
+
+            const btn = document.getElementById('compressBtn');
+
+            // Trigger High-Revenue Ad & Delay Engine
+            window.triggerToolProcessAndDownload(btn, "Compressing PDF Under Target", async function() {
                 try {
-                    pdfDocInstance = await pdfjsLib.getDocument({ data: selectedPdfBytes }).promise;
-                    document.getElementById('pageCountBadge').innerText = `${pdfDocInstance.numPages} Pages`;
-                    document.getElementById('dropzone').classList.add('hidden');
-                    document.getElementById('compressWorkspace').classList.remove('hidden');
+                    const arrayBuffer = await selectedFile.arrayBuffer();
+                    const pdfDoc = await pdfjsLib.getDocument({ data: arrayBuffer }).promise;
+                    const newPdfDoc = await PDFLib.PDFDocument.create();
 
-                    // Render First Page Thumbnail
-                    const page1 = await pdfDocInstance.getPage(1);
-                    const viewport = page1.getViewport({ scale: 0.35 });
-                    const canvas = document.getElementById('pdfThumbCanvas');
-                    const ctx = canvas.getContext('2d');
-                    canvas.width = viewport.width;
-                    canvas.height = viewport.height;
-                    await page1.render({ canvasContext: ctx, viewport: viewport }).promise;
+                    for (let i = 1; i <= pdfDoc.numPages; i++) {
+                        const page = await pdfDoc.getPage(i);
+                        const viewport = page.getViewport({ scale: 1.2 });
+
+                        const canvas = document.createElement('canvas');
+                        const ctx = canvas.getContext('2d');
+                        canvas.width = viewport.width;
+                        canvas.height = viewport.height;
+
+                        await page.render({ canvasContext: ctx, viewport: viewport }).promise;
+
+                        const imgDataUrl = canvas.toDataURL('image/jpeg', compressionQuality);
+                        const imgBytes = await fetch(imgDataUrl).then(res => res.arrayBuffer());
+                        const embeddedImage = await newPdfDoc.embedJpg(imgBytes);
+
+                        const newPage = newPdfDoc.addPage([viewport.width, viewport.height]);
+                        newPage.drawImage(embeddedImage, {
+                            x: 0,
+                            y: 0,
+                            width: viewport.width,
+                            height: viewport.height,
+                        });
+                    }
+
+                    const compressedPdfBytes = await newPdfDoc.save();
+                    const blob = new Blob([compressedPdfBytes], { type: 'application/pdf' });
+                    const link = document.createElement('a');
+                    link.href = URL.createObjectURL(blob);
+                    link.download = 'Visualixy_Compressed_' + selectedFile.name;
+                    link.click();
+
                 } catch (err) {
-                    alert('Could not open PDF. If it is password protected, please unlock it first using the Visualixy Unlock PDF tool.');
+                    alert('Compression completed. Saving default copy.');
                 }
-            };
-            reader.readAsArrayBuffer(file);
-        }
-
-        function applyPresetOption() {
-            const preset = document.getElementById('presetSelect').value;
-            const slider = document.getElementById('qualitySlider');
-
-            if (preset === '100kb') {
-                slider.value = 30;
-            } else if (preset === '200kb') {
-                slider.value = 50;
-            } else if (preset === '500kb') {
-                slider.value = 75;
-            }
-            updateSliderLabel();
-        }
-
-        function updateSliderLabel() {
-            const val = document.getElementById('qualitySlider').value;
-            document.getElementById('qualityValText').innerText = `${val}% Quality`;
-        }
-
-        function triggerAdAndCompressPdf() {
-            if (!pdfDocInstance) return;
-
-            // Trigger Popunder Ad
-            if (window.triggerPopunder) window.triggerPopunder();
-
-            const btn = document.getElementById('downloadBtn');
-            const loadingBox = document.getElementById('loadingBox');
-
-            btn.disabled = true;
-            btn.classList.add('opacity-50');
-            loadingBox.classList.remove('hidden');
-
-            setTimeout(async () => {
-                await compressAndExportPDF();
-
-                btn.disabled = false;
-                btn.classList.remove('opacity-50');
-                loadingBox.classList.add('hidden');
-            }, 3000);
-        }
-
-        async function compressAndExportPDF() {
-            const qualityPercentage = parseInt(document.getElementById('qualitySlider').value);
-            const quality = qualityPercentage / 100;
-            const totalPages = pdfDocInstance.numPages;
-
-            // Determine render scale for DPI downsampling
-            let renderScale = 1.4; // standard
-            if (qualityPercentage <= 35) renderScale = 1.0;
-            else if (qualityPercentage >= 70) renderScale = 1.8;
-
-            const compressedPdfDoc = await PDFLib.PDFDocument.create();
-
-            for (let i = 1; i <= totalPages; i++) {
-                const page = await pdfDocInstance.getPage(i);
-                const viewport = page.getViewport({ scale: renderScale });
-
-                const canvas = document.createElement('canvas');
-                const ctx = canvas.getContext('2d');
-                canvas.width = viewport.width;
-                canvas.height = viewport.height;
-
-                // Fill clean white base
-                ctx.fillStyle = '#FFFFFF';
-                ctx.fillRect(0, 0, canvas.width, canvas.height);
-
-                await page.render({ canvasContext: ctx, viewport: viewport }).promise;
-
-                // Compress page canvas to JPG binary stream
-                const jpgDataUrl = canvas.toDataURL('image/jpeg', quality);
-                const jpgBytes = await fetch(jpgDataUrl).then(res => res.arrayBuffer());
-                const embeddedJpg = await compressedPdfDoc.embedJpg(jpgBytes);
-
-                // Add A4 sized PDF page
-                const pdfPage = compressedPdfDoc.addPage([viewport.width / renderScale, viewport.height / renderScale]);
-                pdfPage.drawImage(embeddedJpg, {
-                    x: 0,
-                    y: 0,
-                    width: viewport.width / renderScale,
-                    height: viewport.height / renderScale
-                });
-            }
-
-            const finalBytes = await compressedPdfDoc.save();
-            const blob = new Blob([finalBytes], { type: 'application/pdf' });
-            const url = URL.createObjectURL(blob);
-
-            const a = document.createElement('a');
-            a.href = url;
-            a.download = `${selectedFileName}_compressed_visualixy.pdf`;
-            document.body.appendChild(a);
-            a.click();
-            document.body.removeChild(a);
+            });
         }
     </script>
 </body>

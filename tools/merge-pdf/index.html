@@ -3,266 +3,204 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>Merge PDF Online Free - Combine Multiple PDF Files | Visualixy</title>
+    <title>Merge PDF Files Free - Combine PDF Online - Visualixy</title>
+    <meta name="description" content="Merge multiple PDF files into one document online for free. Fast, private, and secure client-side PDF combiner for certificates, marksheets, and reports.">
     
-    <!-- Meta & SEO Tags -->
-    <meta name="description" content="Merge multiple PDF files into one document online for free. Combine marksheets, certificates, and reports with custom page ordering. 100% private in-browser tool.">
-    <meta name="keywords" content="merge pdf online free, combine pdf files, join multiple pdf into one, merge marksheets to single pdf, visualixy merge pdf">
-    <meta name="google-site-verification" content="jMp7icjOP34wszoRC-Gpy94eoqTmJZO2_NIcBWcvBmA" />
-    <meta name="clckd" content="ff0f7e314e486dc0f6161ff3c28e001e" />
-
-    <!-- External Ads Scripts -->
-    <script src="https://pl30718421.effectivecpmnetwork.com/67/51/f3/6751f3240d244f4f2df902162d5031d9.js"></script>
-    <script src="https://quge5.com/88/tag.min.js" data-zone="267129" async data-cfasync="false"></script>
-    <script src="../../assets/js/ads.js"></script>
-
-    <!-- PDF-Lib & PDF.js Engines + Tailwind CSS -->
-    <script src="https://unpkg.com/pdf-lib@1.17.1/dist/pdf-lib.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/2.16.105/pdf.min.js"></script>
+    <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
 
+    <!-- PDF-Lib Engine -->
+    <script src="https://unpkg.com/pdf-lib@1.17.1/dist/pdf-lib.min.js"></script>
+
+    <!-- Visualixy Master Ads Engine -->
+    <script src="../../assets/js/ads.js"></script>
+
     <style>
-        body { background-color: #080c15; color: #f3f4f6; font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; }
-        .glass-card { background: rgba(17, 24, 39, 0.75); backdrop-filter: blur(16px); border: 1px solid rgba(255, 255, 255, 0.08); }
-        .glass-card-hover:hover { border-color: #8b5cf6; box-shadow: 0 10px 30px -5px rgba(139, 92, 246, 0.25); }
+        body { background-color: #f8fafc; color: #0f172a; font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; }
+        .tool-box { background: #ffffff; border: 1px solid #e2e8f0; border-radius: 1.5rem; }
     </style>
 </head>
-<body class="min-h-screen flex flex-col justify-between antialiased">
+<body class="min-h-screen flex flex-col justify-between antialiased pb-16 lg:pb-0">
+
+    <!-- Top Leaderboard Ad (728x90) -->
+    <div class="hidden lg:block w-full bg-slate-200/60 py-2 border-b border-slate-300">
+        <div class="max-w-6xl mx-auto text-center overflow-hidden">
+            <script>atOptions = {'key':'0cf435f486e59418568243ee21ba9dea','format':'iframe','height':90,'width':728,'params':{}};</script>
+            <script src="https://www.highperformanceformat.com/0cf435f486e59418568243ee21ba9dea/invoke.js"></script>
+        </div>
+    </div>
 
     <!-- Header Navigation -->
-    <header class="border-b border-gray-800 bg-[#0f172a]/95 sticky top-0 z-50 backdrop-blur-md">
-        <div class="max-w-6xl mx-auto px-3 sm:px-4 py-2.5 sm:py-3 flex items-center justify-between gap-2">
+    <header class="bg-white border-b border-slate-200 sticky top-0 z-50 shadow-sm">
+        <div class="max-w-7xl mx-auto px-4 py-3 flex items-center justify-between">
             <a href="../../" class="flex items-center gap-2">
-                <div class="w-8 h-8 sm:w-9 sm:h-9 rounded-xl bg-gradient-to-tr from-blue-600 to-indigo-500 flex items-center justify-center font-bold text-lg sm:text-xl text-white shadow-lg">V</div>
-                <span class="font-bold text-lg sm:text-xl tracking-wide bg-gradient-to-r from-white to-gray-300 bg-clip-text text-transparent">Visualixy</span>
+                <div class="w-8 h-8 rounded-xl bg-blue-600 flex items-center justify-center font-black text-lg text-white">V</div>
+                <span class="font-extrabold text-lg text-slate-900 tracking-tight">VISUALIXY</span>
             </a>
-            <a href="../../" class="text-xs text-purple-400 hover:underline flex items-center gap-1 font-medium">
-                <span>←</span> All Tools
-            </a>
+            <a href="../../" class="text-xs font-bold text-slate-600 bg-slate-100 px-3 py-1.5 rounded-xl hover:bg-blue-50 hover:text-blue-600 transition">← Back to All Tools</a>
         </div>
     </header>
 
-    <!-- Top Header Adsterra 728x90 Banner -->
-    <div class="max-w-6xl mx-auto px-2 sm:px-4 mt-3 text-center overflow-hidden">
-        <script>atOptions = {'key':'0cf435f486e59418568243ee21ba9dea','format':'iframe','height':90,'width':728,'params':{}};</script>
-        <script src="https://www.highperformanceformat.com/0cf435f486e59418568243ee21ba9dea/invoke.js"></script>
+    <!-- Mobile Banner Ad (320x50) -->
+    <div class="lg:hidden w-full bg-slate-100 py-1 text-center border-b border-slate-200 overflow-hidden">
+        <script>atOptions = {'key':'ff2ed036da6ab41cbe4fbfbeba0d55fe','format':'iframe','height':50,'width':320,'params':{}};</script>
+        <script src="https://www.highperformanceformat.com/ff2ed036da6ab41cbe4fbfbeba0d55fe/invoke.js"></script>
     </div>
 
-    <!-- Main Workspace Container -->
-    <main class="max-w-5xl mx-auto px-3 sm:px-4 py-4 sm:py-6 flex-1 w-full">
-        
-        <!-- Header Title -->
-        <div class="text-center mb-4 sm:mb-6">
-            <div class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-purple-500/10 border border-purple-500/20 text-[11px] sm:text-xs text-purple-400 mb-2 font-medium">
-                <span>🧩 Multi-PDF Document Binder</span> • <span>🔒 100% Client-Side Privacy</span>
-            </div>
-            <h1 class="text-xl sm:text-3xl font-extrabold text-white tracking-tight mb-1">Merge Multiple PDF Files</h1>
-            <p class="text-[11px] sm:text-xs text-gray-400 max-w-md mx-auto">Combine marksheets, certificates, Aadhaar, and job application documents into a single organized PDF file.</p>
-        </div>
+    <!-- Main Workspace -->
+    <main class="max-w-7xl mx-auto px-4 py-6 flex-1 w-full flex flex-col lg:flex-row gap-6">
 
-        <!-- Upload Dropzone Area -->
-        <div id="dropzone" class="glass-card glass-card-hover p-6 sm:p-10 rounded-2xl border-2 border-dashed border-purple-500/40 text-center cursor-pointer transition mb-5" onclick="document.getElementById('pdfInput').click()">
-            <input type="file" id="pdfInput" multiple accept="application/pdf" class="hidden" onchange="handlePdfFiles(this.files)">
-            <div class="w-12 h-12 sm:w-14 sm:h-14 mx-auto mb-2.5 rounded-2xl bg-purple-600/10 text-purple-400 flex items-center justify-center text-2xl sm:text-3xl">
-                🧩
-            </div>
-            <h3 class="text-xs sm:text-base font-semibold text-gray-100 mb-1">Tap or Drag Multiple PDF Files Here</h3>
-            <p class="text-[11px] sm:text-xs text-gray-400">Select 2 or more PDF documents (Marksheets, ID Cards, Reports)</p>
-        </div>
-
-        <!-- Studio Workspace (Hidden Initially) -->
-        <div id="mergeWorkspace" class="hidden space-y-4 sm:space-y-6">
-            
-            <!-- Controls Bar -->
-            <div class="glass-card p-3 sm:p-4 rounded-2xl border border-gray-800 flex flex-wrap items-center justify-between gap-3">
-                <div>
-                    <span id="fileCountBadge" class="text-xs font-bold text-purple-400">0 PDF Files Loaded</span>
-                    <p id="totalPageCountTag" class="text-[10px] text-gray-400 mt-0.5">Total Pages: 0 Pages</p>
+        <!-- Center Tool Panel -->
+        <div class="flex-1 min-w-0">
+            <div class="tool-box p-5 sm:p-8 shadow-sm">
+                
+                <!-- Tool Title Header -->
+                <div class="text-center max-w-lg mx-auto mb-6">
+                    <div class="inline-flex p-3 rounded-2xl bg-purple-50 text-purple-600 text-2xl mb-2">🧩</div>
+                    <h1 class="text-xl sm:text-2xl font-black text-slate-900">Merge PDF Files</h1>
+                    <p class="text-xs text-slate-500 mt-1">Combine multiple certificates, resumes, and reports into a single PDF.</p>
                 </div>
 
-                <div class="flex items-center gap-2">
-                    <button type="button" onclick="document.getElementById('pdfInput').click()" class="text-xs bg-gray-800 hover:bg-gray-700 text-gray-200 border border-gray-700 px-3 py-1.5 rounded-xl font-bold transition">
-                        + Add More PDFs
+                <!-- Dropzone Area -->
+                <div id="dropArea" class="border-2 border-dashed border-slate-300 rounded-3xl p-6 sm:p-10 text-center hover:border-purple-500 bg-slate-50 transition cursor-pointer mb-6">
+                    <input type="file" id="pdfInput" accept="application/pdf" multiple class="hidden">
+                    <div class="text-4xl mb-3">📑</div>
+                    <h3 class="text-sm font-bold text-slate-800">Click to Select Multiple PDF Files or Drag & Drop</h3>
+                    <p class="text-xs text-slate-400 mt-1">100% Private. Processed directly inside your browser.</p>
+                </div>
+
+                <!-- Selected Files & Actions Panel -->
+                <div id="controlPanel" class="hidden space-y-6">
+                    
+                    <div class="flex items-center justify-between">
+                        <span class="text-xs font-bold text-slate-700">Files to Merge (<span id="fileCount">0</span>)</span>
+                        <div class="flex gap-2">
+                            <button onclick="document.getElementById('pdfInput').click()" class="text-xs font-bold text-purple-600 bg-purple-50 px-3 py-1.5 rounded-xl border border-purple-200 hover:bg-purple-600 hover:text-white transition">+ Add More</button>
+                            <button onclick="resetTool()" class="text-xs font-bold text-red-600 hover:underline">Clear All</button>
+                        </div>
+                    </div>
+
+                    <!-- File Items List -->
+                    <div id="fileList" class="space-y-2.5 max-h-80 overflow-y-auto p-2 bg-slate-100 rounded-2xl border border-slate-200"></div>
+
+                    <!-- Action Button -->
+                    <button id="mergeBtn" onclick="processAndMergePDFs()" class="w-full py-4 rounded-2xl bg-purple-600 hover:bg-purple-700 text-white font-black text-sm shadow-md transition flex items-center justify-center gap-2">
+                        <span>⚡ Merge & Download PDF</span>
                     </button>
-                    <button type="button" onclick="clearAllFiles()" class="text-xs bg-red-600/20 text-red-400 hover:bg-red-600/30 px-3 py-1.5 rounded-xl border border-red-500/30 font-medium transition">
-                        Clear All
-                    </button>
+
+                </div>
+
+            </div>
+        </div>
+
+        <!-- Right Ad Sidebar (300x250 Native Card) -->
+        <aside class="w-full lg:w-80 shrink-0 space-y-4">
+            <div class="bg-white p-2.5 rounded-3xl border border-slate-200 shadow-sm text-center">
+                <span class="text-[10px] uppercase font-bold text-slate-400 block mb-1">Sponsored</span>
+                <div class="flex items-center justify-center overflow-hidden min-h-[250px]">
+                    <script>atOptions = {'key':'ff2ed036da6ab41cbe4fbfbeba0d55fe','format':'iframe','height':250,'width':300,'params':{}};</script>
+                    <script src="https://www.highperformanceformat.com/ff2ed036da6ab41cbe4fbfbeba0d55fe/invoke.js"></script>
                 </div>
             </div>
+        </aside>
 
-            <!-- PDF Files Order List -->
-            <div class="space-y-2.5" id="pdfListContainer"></div>
-
-            <!-- Action Button -->
-            <button id="downloadBtn" onclick="triggerAdAndMergePdfs()" class="w-full bg-gradient-to-r from-purple-600 via-indigo-600 to-blue-600 hover:from-purple-500 hover:to-blue-500 text-white font-bold py-3.5 px-4 rounded-xl shadow-lg transition text-xs sm:text-sm flex items-center justify-center gap-2">
-                <span>📥</span> Merge & Download Combined PDF
-            </button>
-
-            <!-- Loading Progress Modal -->
-            <div id="loadingBox" class="hidden glass-card p-4 rounded-xl text-center space-y-2 border border-purple-500/30">
-                <div class="inline-block animate-spin text-2xl">⚡</div>
-                <p class="text-xs font-bold text-purple-400">Merging All PDF Pages... Auto-download in 3 seconds!</p>
-            </div>
-
-        </div>
-
-        <!-- Ad Placement 2: Workspace In-Feed 300x250 Banner Slot -->
-        <div class="my-6 glass-card p-3 rounded-2xl flex items-center justify-center overflow-hidden">
-            <script>atOptions = {'key':'ff2ed036da6ab41cbe4fbfbeba0d55fe','format':'iframe','height':250,'width':300,'params':{}};</script>
-            <script src="https://www.highperformanceformat.com/ff2ed036da6ab41cbe4fbfbeba0d55fe/invoke.js"></script>
-        </div>
-
-        <!-- Ad Placement 3: Bottom Native Banner -->
-        <div class="mt-6">
-            <script async="async" data-cfasync="false" src="https://pl30718421.effectivecpmnetwork.com/5a97a7a8933aa123ce85e87134bf64fa/invoke.js"></script>
-            <div id="container-5a97a7a8933aa123ce85e87134bf64fa"></div>
-        </div>
     </main>
 
     <!-- Footer -->
-    <footer class="border-t border-gray-800/80 py-3 text-center text-xs text-gray-500 mt-6">
-        <p>© 2026 Visualixy. All rights reserved. Free Online Multi-PDF Merger.</p>
+    <footer class="border-t border-slate-200 bg-white py-4 text-center text-xs text-slate-500">
+        <p>© 2026 Visualixy. All document processing stays 100% on your device.</p>
     </footer>
 
-    <!-- JS Engine Logic -->
+    <!-- Merge Processing Logic -->
     <script>
-        pdfjsLib.GlobalWorkerOptions.workerSrc = 'https://cdnjs.cloudflare.com/ajax/libs/pdf.js/2.16.105/pdf.worker.min.js';
+        let pdfFiles = [];
+        const dropArea = document.getElementById('dropArea');
+        const pdfInput = document.getElementById('pdfInput');
+        const controlPanel = document.getElementById('controlPanel');
+        const fileList = document.getElementById('fileList');
 
-        let pdfFileList = []; // stores { file, name, size, pageCount, bytes }
+        dropArea.onclick = () => pdfInput.click();
 
-        async function handlePdfFiles(files) {
-            if (!files || files.length === 0) return;
+        pdfInput.onchange = (e) => {
+            const files = Array.from(e.target.files);
+            if (files.length === 0) return;
 
-            for (const file of Array.from(files)) {
-                if (file.type !== 'application/pdf' && !file.name.toLowerCase().endsWith('.pdf')) continue;
-
-                const arrayBuffer = await file.arrayBuffer();
-                let pages = 1;
-                try {
-                    const doc = await pdfjsLib.getDocument({ data: arrayBuffer }).promise;
-                    pages = doc.numPages;
-                } catch (e) {
-                    pages = 1;
+            files.forEach(file => {
+                if (file.type === 'application/pdf') {
+                    pdfFiles.push(file);
                 }
-
-                pdfFileList.push({
-                    file: file,
-                    name: file.name,
-                    sizeKB: (file.size / 1024).toFixed(1),
-                    pageCount: pages,
-                    bytes: arrayBuffer
-                });
-            }
-
-            document.getElementById('dropzone').classList.add('hidden');
-            document.getElementById('mergeWorkspace').classList.remove('hidden');
-            renderPdfList();
-        }
-
-        function renderPdfList() {
-            const container = document.getElementById('pdfListContainer');
-            container.innerHTML = '';
-
-            if (pdfFileList.length === 0) {
-                document.getElementById('dropzone').classList.remove('hidden');
-                document.getElementById('mergeWorkspace').classList.add('hidden');
-                return;
-            }
-
-            let totalPages = 0;
-
-            pdfFileList.forEach((item, index) => {
-                totalPages += item.pageCount;
-                const row = document.createElement('div');
-                row.className = 'glass-card p-3 rounded-xl border border-gray-800 flex items-center justify-between gap-2.5 transition';
-                row.innerHTML = `
-                    <div class="flex items-center gap-2.5 truncate max-w-[65%] sm:max-w-[75%]">
-                        <div class="w-7 h-7 rounded-lg bg-purple-500/20 text-purple-400 flex items-center justify-center font-bold text-xs shrink-0">
-                            ${index + 1}
-                        </div>
-                        <div class="truncate">
-                            <h4 class="text-xs font-bold text-gray-200 truncate">${item.name}</h4>
-                            <p class="text-[10px] text-gray-400">${item.sizeKB} KB • <span class="text-purple-400 font-semibold">${item.pageCount} Pages</span></p>
-                        </div>
-                    </div>
-
-                    <div class="flex items-center gap-1 shrink-0">
-                        <button type="button" onclick="movePdf(${index}, -1)" ${index === 0 ? 'disabled class="opacity-30 cursor-not-allowed text-xs p-1.5"' : 'class="bg-gray-800 hover:bg-gray-700 text-white text-xs p-1.5 rounded-lg transition"'} title="Move Up">▲</button>
-                        <button type="button" onclick="movePdf(${index}, 1)" ${index === pdfFileList.length - 1 ? 'disabled class="opacity-30 cursor-not-allowed text-xs p-1.5"' : 'class="bg-gray-800 hover:bg-gray-700 text-white text-xs p-1.5 rounded-lg transition"'} title="Move Down">▼</button>
-                        <button type="button" onclick="removePdf(${index})" class="text-red-400 hover:text-red-300 text-xs p-1.5 rounded-lg transition font-bold" title="Delete">✕</button>
-                    </div>
-                `;
-                container.appendChild(row);
             });
 
-            document.getElementById('fileCountBadge').innerText = `${pdfFileList.length} PDF Files Loaded`;
-            document.getElementById('totalPageCountTag').innerText = `Total Pages: ${totalPages} Pages in Combined Document`;
-        }
-
-        function movePdf(index, dir) {
-            const newIndex = index + dir;
-            if (newIndex < 0 || newIndex >= pdfFileList.length) return;
-            const temp = pdfFileList[index];
-            pdfFileList[index] = pdfFileList[newIndex];
-            pdfFileList[newIndex] = temp;
-            renderPdfList();
-        }
-
-        function removePdf(index) {
-            pdfFileList.splice(index, 1);
-            renderPdfList();
-        }
-
-        function clearAllFiles() {
-            pdfFileList = [];
-            renderPdfList();
-        }
-
-        function triggerAdAndMergePdfs() {
-            if (pdfFileList.length < 2) return alert('Please upload at least 2 PDF files to merge!');
-
-            // Trigger Popunder Ad
-            if (window.triggerPopunder) window.triggerPopunder();
-
-            const btn = document.getElementById('downloadBtn');
-            const loadingBox = document.getElementById('loadingBox');
-
-            btn.disabled = true;
-            btn.classList.add('opacity-50');
-            loadingBox.classList.remove('hidden');
-
-            setTimeout(async () => {
-                await executeMerge();
-
-                btn.disabled = false;
-                btn.classList.remove('opacity-50');
-                loadingBox.classList.add('hidden');
-            }, 3000);
-        }
-
-        async function executeMerge() {
-            const mergedPdf = await PDFLib.PDFDocument.create();
-
-            for (const item of pdfFileList) {
-                try {
-                    const pdf = await PDFLib.PDFDocument.load(item.bytes);
-                    const copiedPages = await mergedPdf.copyPages(pdf, pdf.getPageIndices());
-                    copiedPages.forEach(page => mergedPdf.addPage(page));
-                } catch (e) {
-                    console.error("Could not read file:", item.name);
-                }
+            if (pdfFiles.length > 0) {
+                dropArea.classList.add('hidden');
+                controlPanel.classList.remove('hidden');
+                renderFileList();
             }
+        };
 
-            const mergedBytes = await mergedPdf.save();
-            const blob = new Blob([mergedBytes], { type: 'application/pdf' });
-            const url = URL.createObjectURL(blob);
+        function renderFileList() {
+            fileList.innerHTML = '';
+            document.getElementById('fileCount').innerText = pdfFiles.length;
 
-            const a = document.createElement('a');
-            a.href = url;
-            a.download = `merged_documents_visualixy.pdf`;
-            document.body.appendChild(a);
-            a.click();
-            document.body.removeChild(a);
+            pdfFiles.forEach((file, index) => {
+                const item = document.createElement('div');
+                item.className = 'bg-white p-3 rounded-xl border border-slate-200 flex items-center justify-between shadow-sm';
+                item.innerHTML = `
+                    <div class="flex items-center gap-3 min-w-0">
+                        <span class="w-6 h-6 rounded-lg bg-purple-50 text-purple-600 flex items-center justify-center font-bold text-xs shrink-0">${index + 1}</span>
+                        <div class="truncate">
+                            <p class="text-xs font-bold text-slate-900 truncate">${file.name}</p>
+                            <p class="text-[10px] text-slate-400">${(file.size / 1024).toFixed(1)} KB</p>
+                        </div>
+                    </div>
+                    <button onclick="removePdf(${index})" class="text-red-500 hover:text-red-700 font-bold text-xs p-1 ml-2">✕</button>
+                `;
+                fileList.appendChild(item);
+            });
+        }
+
+        function removePdf(idx) {
+            pdfFiles.splice(idx, 1);
+            if (pdfFiles.length === 0) {
+                resetTool();
+            } else {
+                renderFileList();
+            }
+        }
+
+        function resetTool() {
+            pdfFiles = [];
+            pdfInput.value = '';
+            dropArea.classList.remove('hidden');
+            controlPanel.classList.add('hidden');
+        }
+
+        async function processAndMergePDFs() {
+            if (pdfFiles.length === 0) return;
+
+            const btn = document.getElementById('mergeBtn');
+            window.triggerToolProcessAndDownload(btn, "Merging PDF Documents", async function() {
+                try {
+                    const mergedPdf = await PDFLib.PDFDocument.create();
+
+                    for (const file of pdfFiles) {
+                        const arrayBuffer = await file.arrayBuffer();
+                        const pdfDoc = await PDFLib.PDFDocument.load(arrayBuffer);
+                        const copiedPages = await mergedPdf.copyPages(pdfDoc, pdfDoc.getPageIndices());
+                        copiedPages.forEach((page) => mergedPdf.addPage(page));
+                    }
+
+                    const mergedPdfBytes = await mergedPdf.save();
+                    const blob = new Blob([mergedPdfBytes], { type: 'application/pdf' });
+                    const link = document.createElement('a');
+                    link.href = URL.createObjectURL(blob);
+                    link.download = 'Visualixy_Merged_Document.pdf';
+                    link.click();
+
+                } catch (err) {
+                    alert('Error merging PDFs. Please check if any uploaded PDF is password protected.');
+                }
+            });
         }
     </script>
 </body>

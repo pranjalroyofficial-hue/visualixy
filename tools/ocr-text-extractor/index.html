@@ -3,293 +3,195 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>OCR Image to Text Converter Online Free - Scanned Photo to Word/TXT | Visualixy</title>
+    <title>OCR Text Extractor Free (Image to Text / Word) - Visualixy</title>
+    <meta name="description" content="Extract editable Hindi & English text from images, receipts, books, and scanned documents. 100% client-side privacy with instant copy and text export.">
     
-    <!-- Meta & SEO Tags -->
-    <meta name="description" content="Extract text from scanned images, books, and documents online for free. Supports English and Hindi OCR. Copy text or download as Word/TXT. 100% private.">
-    <meta name="keywords" content="ocr image to text, photo se text nikale, extract text from image online, hindi ocr converter, scanned pdf to text, visualixy ocr">
-    <meta name="google-site-verification" content="jMp7icjOP34wszoRC-Gpy94eoqTmJZO2_NIcBWcvBmA" />
-    <meta name="clckd" content="ff0f7e314e486dc0f6161ff3c28e001e" />
-
-    <!-- External Ads Scripts -->
-    <script src="https://pl30718421.effectivecpmnetwork.com/67/51/f3/6751f3240d244f4f2df902162d5031d9.js"></script>
-    <script src="https://quge5.com/88/tag.min.js" data-zone="267129" async data-cfasync="false"></script>
-    <script src="../../assets/js/ads.js"></script>
-
-    <!-- Tesseract.js OCR Engine & Tailwind CSS -->
-    <script src="https://cdn.jsdelivr.net/npm/tesseract.js@4/dist/tesseract.min.js"></script>
+    <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
 
+    <!-- Tesseract OCR Engine -->
+    <script src="https://cdn.jsdelivr.net/npm/tesseract.js@4/dist/tesseract.min.js"></script>
+
+    <!-- Visualixy Master Ads Engine -->
+    <script src="../../assets/js/ads.js"></script>
+
     <style>
-        body { background-color: #080c15; color: #f3f4f6; font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; }
-        .glass-card { background: rgba(17, 24, 39, 0.75); backdrop-filter: blur(16px); border: 1px solid rgba(255, 255, 255, 0.08); }
-        .glass-card-hover:hover { border-color: #14b8a6; box-shadow: 0 10px 30px -5px rgba(20, 184, 166, 0.25); }
-        .custom-scrollbar::-webkit-scrollbar { width: 6px; height: 6px; }
-        .custom-scrollbar::-webkit-scrollbar-thumb { background: #374151; border-radius: 4px; }
+        body { background-color: #f8fafc; color: #0f172a; font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; }
+        .tool-box { background: #ffffff; border: 1px solid #e2e8f0; border-radius: 1.5rem; }
     </style>
 </head>
-<body class="min-h-screen flex flex-col justify-between antialiased">
+<body class="min-h-screen flex flex-col justify-between antialiased pb-16 lg:pb-0">
+
+    <!-- Top Leaderboard Ad (728x90) -->
+    <div class="hidden lg:block w-full bg-slate-200/60 py-2 border-b border-slate-300">
+        <div class="max-w-6xl mx-auto text-center overflow-hidden">
+            <script>atOptions = {'key':'0cf435f486e59418568243ee21ba9dea','format':'iframe','height':90,'width':728,'params':{}};</script>
+            <script src="https://www.highperformanceformat.com/0cf435f486e59418568243ee21ba9dea/invoke.js"></script>
+        </div>
+    </div>
 
     <!-- Header Navigation -->
-    <header class="border-b border-gray-800 bg-[#0f172a]/95 sticky top-0 z-50 backdrop-blur-md">
-        <div class="max-w-6xl mx-auto px-3 sm:px-4 py-2.5 sm:py-3 flex items-center justify-between gap-2">
+    <header class="bg-white border-b border-slate-200 sticky top-0 z-50 shadow-sm">
+        <div class="max-w-7xl mx-auto px-4 py-3 flex items-center justify-between">
             <a href="../../" class="flex items-center gap-2">
-                <div class="w-8 h-8 sm:w-9 sm:h-9 rounded-xl bg-gradient-to-tr from-blue-600 to-indigo-500 flex items-center justify-center font-bold text-lg sm:text-xl text-white shadow-lg">V</div>
-                <span class="font-bold text-lg sm:text-xl tracking-wide bg-gradient-to-r from-white to-gray-300 bg-clip-text text-transparent">Visualixy</span>
+                <div class="w-8 h-8 rounded-xl bg-blue-600 flex items-center justify-center font-black text-lg text-white">V</div>
+                <span class="font-extrabold text-lg text-slate-900 tracking-tight">VISUALIXY</span>
             </a>
-            <a href="../../" class="text-xs text-teal-400 hover:underline flex items-center gap-1 font-medium">
-                <span>←</span> All Tools
-            </a>
+            <a href="../../" class="text-xs font-bold text-slate-600 bg-slate-100 px-3 py-1.5 rounded-xl hover:bg-blue-50 hover:text-blue-600 transition">← Back to All Tools</a>
         </div>
     </header>
 
-    <!-- Top Header Adsterra 728x90 Banner -->
-    <div class="max-w-6xl mx-auto px-2 sm:px-4 mt-3 text-center overflow-hidden">
-        <script>atOptions = {'key':'0cf435f486e59418568243ee21ba9dea','format':'iframe','height':90,'width':728,'params':{}};</script>
-        <script src="https://www.highperformanceformat.com/0cf435f486e59418568243ee21ba9dea/invoke.js"></script>
+    <!-- Mobile Banner Ad (320x50) -->
+    <div class="lg:hidden w-full bg-slate-100 py-1 text-center border-b border-slate-200 overflow-hidden">
+        <script>atOptions = {'key':'ff2ed036da6ab41cbe4fbfbeba0d55fe','format':'iframe','height':50,'width':320,'params':{}};</script>
+        <script src="https://www.highperformanceformat.com/ff2ed036da6ab41cbe4fbfbeba0d55fe/invoke.js"></script>
     </div>
 
-    <!-- Main Workspace Container -->
-    <main class="max-w-6xl mx-auto px-3 sm:px-4 py-4 sm:py-6 flex-1 w-full">
-        
-        <!-- Header Title -->
-        <div class="text-center mb-4 sm:mb-6">
-            <div class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-teal-500/10 border border-teal-500/20 text-[11px] sm:text-xs text-teal-400 mb-2 font-medium">
-                <span>🔍 AI Optical Character Recognition (OCR)</span> • <span>🔒 100% Client-Side Privacy</span>
-            </div>
-            <h1 class="text-xl sm:text-3xl font-extrabold text-white tracking-tight mb-1">OCR Image to Text & Word Extractor</h1>
-            <p class="text-[11px] sm:text-xs text-gray-400 max-w-md mx-auto">Extract text from photos of books, notes, marksheet, and receipts with instant English & Hindi character support.</p>
-        </div>
+    <!-- Main Workspace -->
+    <main class="max-w-7xl mx-auto px-4 py-6 flex-1 w-full flex flex-col lg:flex-row gap-6">
 
-        <!-- Upload Dropzone Area -->
-        <div id="dropzone" class="glass-card glass-card-hover p-6 sm:p-10 rounded-2xl border-2 border-dashed border-teal-500/40 text-center cursor-pointer transition mb-5" onclick="document.getElementById('imageFileInput').click()">
-            <input type="file" id="imageFileInput" accept="image/*" class="hidden" onchange="handleImageFile(this.files[0])">
-            <div class="w-12 h-12 sm:w-14 sm:h-14 mx-auto mb-2.5 rounded-2xl bg-teal-600/10 text-teal-400 flex items-center justify-center text-2xl sm:text-3xl">
-                🔍
-            </div>
-            <h3 class="text-xs sm:text-base font-semibold text-gray-100 mb-1">Tap or Drag Image to Extract Text</h3>
-            <p class="text-[11px] sm:text-xs text-gray-400">Supports JPG, PNG, WEBP, and scanned document photos</p>
-        </div>
-
-        <!-- Studio Workspace (Hidden Initially) -->
-        <div id="ocrWorkspace" class="hidden space-y-4 sm:space-y-6">
-            <div class="grid grid-cols-1 lg:grid-cols-12 gap-4 sm:gap-6">
+        <!-- Center Tool Panel -->
+        <div class="flex-1 min-w-0">
+            <div class="tool-box p-5 sm:p-8 shadow-sm">
                 
-                <!-- Left Source Image & Language Controls Column -->
-                <div class="lg:col-span-5 space-y-4">
-                    <div class="glass-card p-4 rounded-2xl border border-gray-800 space-y-3.5">
-                        <div class="flex items-center justify-between border-b border-gray-800 pb-2.5">
-                            <span class="text-xs font-bold text-gray-200">Source Photo Preview</span>
-                            <button onclick="resetImage()" class="text-[10px] text-red-400 hover:underline">Change Photo</button>
-                        </div>
+                <!-- Tool Title Header -->
+                <div class="text-center max-w-lg mx-auto mb-6">
+                    <div class="inline-flex p-3 rounded-2xl bg-teal-50 text-teal-600 text-2xl mb-2">🔍</div>
+                    <h1 class="text-xl sm:text-2xl font-black text-slate-900">OCR Image to Text Extractor</h1>
+                    <p class="text-xs text-slate-500 mt-1">Extract editable text from scanned documents, photos, and notes in Hindi & English.</p>
+                </div>
 
-                        <!-- Image Preview Box -->
-                        <div class="border border-gray-800 p-2 rounded-xl bg-black/40 flex items-center justify-center max-h-[220px] overflow-hidden">
-                            <img id="previewImg" class="max-h-[200px] w-auto rounded object-contain shadow-md">
-                        </div>
+                <!-- Dropzone Area -->
+                <div id="dropArea" class="border-2 border-dashed border-slate-300 rounded-3xl p-6 sm:p-10 text-center hover:border-teal-500 bg-slate-50 transition cursor-pointer mb-6">
+                    <input type="file" id="imageInput" accept="image/*" class="hidden">
+                    <div class="text-4xl mb-3">📸</div>
+                    <h3 class="text-sm font-bold text-slate-800">Click to Upload Image or Drag & Drop</h3>
+                    <p class="text-xs text-slate-400 mt-1">Supports JPG, PNG & WebP (Processed locally)</p>
+                </div>
 
-                        <!-- OCR Language Selector -->
+                <!-- Settings & Action Box (Hidden until image selected) -->
+                <div id="controlPanel" class="hidden space-y-5">
+                    
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4 items-center bg-slate-50 p-4 rounded-2xl border border-slate-200">
                         <div>
-                            <label class="text-[10px] text-gray-400 block mb-1 font-medium">Document Language</label>
-                            <select id="ocrLangSelect" class="w-full bg-gray-900 border border-gray-700 text-xs text-gray-200 rounded-xl px-3 py-2 focus:border-teal-500 focus:outline-none">
-                                <option value="eng" selected>English (Latin Standard)</option>
-                                <option value="hin">Hindi (Devanagari Script)</option>
-                                <option value="eng+hin">Bilingual (English + Hindi)</option>
+                            <label class="block text-xs font-black text-slate-700 uppercase tracking-wider mb-1">OCR Language Mode</label>
+                            <select id="ocrLang" class="w-full bg-white border border-slate-300 text-xs rounded-xl px-3 py-2.5 font-bold focus:outline-none focus:border-teal-500">
+                                <option value="eng" selected>English Language</option>
+                                <option value="hin">Hindi (हिन्दी) + English</option>
                             </select>
                         </div>
-
-                        <!-- Start OCR Button -->
-                        <button id="extractBtn" onclick="runClientOcr()" class="w-full bg-gradient-to-r from-teal-600 to-emerald-600 hover:from-teal-500 hover:to-emerald-500 text-white font-bold py-3 px-4 rounded-xl shadow-lg transition text-xs sm:text-sm flex items-center justify-center gap-2">
-                            <span>⚡</span> Extract Text with AI Engine
-                        </button>
-
-                        <!-- Live Progress Bar -->
-                        <div id="progressBox" class="hidden space-y-1.5 pt-2">
-                            <div class="flex justify-between text-[10px] text-teal-400 font-bold">
-                                <span id="progressStatus">Recognizing characters...</span>
-                                <span id="progressPercent">0%</span>
-                            </div>
-                            <div class="w-full bg-gray-800 h-2 rounded-full overflow-hidden">
-                                <div id="progressBar" class="bg-teal-500 h-full w-0 transition-all duration-200"></div>
-                            </div>
+                        <div class="flex items-center justify-between">
+                            <span id="fileName" class="text-xs font-bold text-slate-700 truncate max-w-[160px]">image.jpg</span>
+                            <button onclick="resetTool()" class="text-xs text-red-600 font-bold hover:underline">Change Image</button>
                         </div>
                     </div>
-                </div>
 
-                <!-- Right Extracted Text Editor & Export Actions Column -->
-                <div class="lg:col-span-7 space-y-4">
-                    <div class="glass-card p-4 sm:p-5 rounded-2xl space-y-3.5 border border-gray-800">
-                        <div class="flex items-center justify-between border-b border-gray-800 pb-2.5">
-                            <span class="text-xs font-bold text-gray-200 flex items-center gap-1.5">
-                                <span>📄</span> Extracted Editable Text
-                            </span>
-                            <span id="charCountTag" class="text-[10px] text-gray-400 font-medium">0 Characters</span>
+                    <!-- Process Button -->
+                    <button id="extractBtn" onclick="runOcrExtraction()" class="w-full py-4 rounded-2xl bg-teal-600 hover:bg-teal-700 text-white font-black text-sm shadow-md transition flex items-center justify-center gap-2">
+                        <span>⚡ Extract Editable Text</span>
+                    </button>
+
+                    <!-- Result Box -->
+                    <div id="resultBox" class="hidden space-y-3">
+                        <div class="flex items-center justify-between">
+                            <span class="text-xs font-black uppercase text-slate-600">Extracted Text</span>
+                            <div class="flex gap-2">
+                                <button onclick="copyExtractedText()" class="text-xs font-bold text-blue-600 bg-blue-50 px-3 py-1.5 rounded-xl border border-blue-200 hover:bg-blue-600 hover:text-white transition">📋 Copy</button>
+                                <button onclick="downloadTextFile()" class="text-xs font-bold text-emerald-600 bg-emerald-50 px-3 py-1.5 rounded-xl border border-emerald-200 hover:bg-emerald-600 hover:text-white transition">💾 Save .TXT</button>
+                            </div>
                         </div>
-
-                        <!-- Textarea Result Editor -->
-                        <textarea id="ocrOutputText" rows="11" oninput="updateCounts()" placeholder="Extracted text will appear here automatically. You can edit, format, or fix spelling directly..." class="w-full bg-gray-900/90 border border-gray-700 text-xs text-gray-200 rounded-xl p-3 focus:border-teal-500 focus:outline-none leading-relaxed custom-scrollbar"></textarea>
-
-                        <!-- Action Buttons Grid -->
-                        <div class="grid grid-cols-3 gap-2">
-                            <button type="button" onclick="copyExtractedText()" class="py-2 px-2.5 bg-gray-900 hover:bg-gray-800 border border-gray-700 rounded-xl text-xs font-bold text-gray-200 transition flex items-center justify-center gap-1">
-                                <span>📋</span> Copy Text
-                            </button>
-                            <button type="button" onclick="triggerAdAndDownloadDoc('txt')" class="py-2 px-2.5 bg-gray-900 hover:bg-gray-800 border border-gray-700 rounded-xl text-xs font-bold text-gray-200 transition flex items-center justify-center gap-1">
-                                <span>📝</span> Save as TXT
-                            </button>
-                            <button type="button" onclick="triggerAdAndDownloadDoc('doc')" class="py-2 px-2.5 bg-gradient-to-r from-teal-600 to-blue-600 hover:from-teal-500 hover:to-blue-500 rounded-xl text-xs font-bold text-white transition flex items-center justify-center gap-1 shadow-md">
-                                <span>📄</span> Save as Word (.doc)
-                            </button>
-                        </div>
-
-                        <!-- Loading Progress Modal for Ads -->
-                        <div id="loadingBox" class="hidden glass-card p-4 rounded-xl text-center space-y-2 border border-teal-500/30">
-                            <div class="inline-block animate-spin text-2xl">⚡</div>
-                            <p class="text-xs font-bold text-teal-400">Preparing Document File... Auto-download in 3 seconds!</p>
-                        </div>
+                        <textarea id="extractedText" rows="8" class="w-full bg-white border border-slate-300 rounded-2xl p-4 text-xs font-medium text-slate-800 focus:outline-none focus:border-teal-500 leading-relaxed"></textarea>
                     </div>
+
                 </div>
 
             </div>
         </div>
 
-        <!-- Ad Placement 2: Workspace In-Feed 300x250 Banner Slot -->
-        <div class="my-6 glass-card p-3 rounded-2xl flex items-center justify-center overflow-hidden">
-            <script>atOptions = {'key':'ff2ed036da6ab41cbe4fbfbeba0d55fe','format':'iframe','height':250,'width':300,'params':{}};</script>
-            <script src="https://www.highperformanceformat.com/ff2ed036da6ab41cbe4fbfbeba0d55fe/invoke.js"></script>
-        </div>
+        <!-- Right Ad Sidebar (300x250 Native Card) -->
+        <aside class="w-full lg:w-80 shrink-0 space-y-4">
+            <div class="bg-white p-2.5 rounded-3xl border border-slate-200 shadow-sm text-center">
+                <span class="text-[10px] uppercase font-bold text-slate-400 block mb-1">Sponsored</span>
+                <div class="flex items-center justify-center overflow-hidden min-h-[250px]">
+                    <script>atOptions = {'key':'ff2ed036da6ab41cbe4fbfbeba0d55fe','format':'iframe','height':250,'width':300,'params':{}};</script>
+                    <script src="https://www.highperformanceformat.com/ff2ed036da6ab41cbe4fbfbeba0d55fe/invoke.js"></script>
+                </div>
+            </div>
+        </aside>
 
-        <!-- Ad Placement 3: Bottom Native Banner -->
-        <div class="mt-6">
-            <script async="async" data-cfasync="false" src="https://pl30718421.effectivecpmnetwork.com/5a97a7a8933aa123ce85e87134bf64fa/invoke.js"></script>
-            <div id="container-5a97a7a8933aa123ce85e87134bf64fa"></div>
-        </div>
     </main>
 
     <!-- Footer -->
-    <footer class="border-t border-gray-800/80 py-3 text-center text-xs text-gray-500 mt-6">
-        <p>© 2026 Visualixy. All rights reserved. Free Online OCR Image to Text Studio.</p>
+    <footer class="border-t border-slate-200 bg-white py-4 text-center text-xs text-slate-500">
+        <p>© 2026 Visualixy. All document processing stays 100% on your device.</p>
     </footer>
 
-    <!-- JS Engine Logic -->
+    <!-- OCR Engine Logic -->
     <script>
-        let currentImageSource = null;
-        let sourceFileName = 'extracted_text';
+        let currentFile = null;
+        const dropArea = document.getElementById('dropArea');
+        const imageInput = document.getElementById('imageInput');
+        const controlPanel = document.getElementById('controlPanel');
+        const resultBox = document.getElementById('resultBox');
+        const extractedText = document.getElementById('extractedText');
 
-        function handleImageFile(file) {
-            if (!file) return;
-            sourceFileName = file.name.substring(0, file.name.lastIndexOf('.')) || 'extracted_text';
+        dropArea.onclick = () => imageInput.click();
 
-            const reader = new FileReader();
-            reader.onload = function(e) {
-                currentImageSource = e.target.result;
-                document.getElementById('previewImg').src = currentImageSource;
-                document.getElementById('dropzone').classList.add('hidden');
-                document.getElementById('ocrWorkspace').classList.remove('hidden');
-                document.getElementById('ocrOutputText').value = '';
-                updateCounts();
-            };
-            reader.readAsDataURL(file);
-        }
-
-        function resetImage() {
-            document.getElementById('imageFileInput').value = '';
-            document.getElementById('dropzone').classList.remove('hidden');
-            document.getElementById('ocrWorkspace').classList.add('hidden');
-        }
-
-        function updateCounts() {
-            const text = document.getElementById('ocrOutputText').value;
-            document.getElementById('charCountTag').innerText = `${text.length} Characters • ${text.trim() ? text.trim().split(/\s+/).length : 0} Words`;
-        }
-
-        async function runClientOcr() {
-            if (!currentImageSource) return;
-
-            const lang = document.getElementById('ocrLangSelect').value;
-            const btn = document.getElementById('extractBtn');
-            const progressBox = document.getElementById('progressBox');
-            const progressStatus = document.getElementById('progressStatus');
-            const progressPercent = document.getElementById('progressPercent');
-            const progressBar = document.getElementById('progressBar');
-
-            btn.disabled = true;
-            btn.classList.add('opacity-50');
-            progressBox.classList.remove('hidden');
-
-            try {
-                const worker = await Tesseract.createWorker({
-                    logger: m => {
-                        if (m.status === 'recognizing text') {
-                            const pct = Math.round(m.progress * 100);
-                            progressStatus.innerText = 'Recognizing characters...';
-                            progressPercent.innerText = pct + '%';
-                            progressBar.style.width = pct + '%';
-                        } else if (m.status) {
-                            progressStatus.innerText = m.status;
-                        }
-                    }
-                });
-
-                await worker.loadLanguage(lang);
-                await worker.initialize(lang);
-                const ret = await worker.recognize(currentImageSource);
-                
-                document.getElementById('ocrOutputText').value = ret.data.text || 'No readable text detected in this image.';
-                updateCounts();
-                await worker.terminate();
-
-                progressStatus.innerText = 'Completed!';
-                progressPercent.innerText = '100%';
-                progressBar.style.width = '100%';
-            } catch (err) {
-                alert('OCR engine encountered an error. Please ensure the image is clear.');
-            } finally {
-                btn.disabled = false;
-                btn.classList.remove('opacity-50');
+        imageInput.onchange = (e) => {
+            if (e.target.files[0]) {
+                currentFile = e.target.files[0];
+                document.getElementById('fileName').innerText = currentFile.name;
+                dropArea.classList.add('hidden');
+                controlPanel.classList.remove('hidden');
             }
+        };
+
+        function resetTool() {
+            currentFile = null;
+            imageInput.value = '';
+            resultBox.classList.add('hidden');
+            dropArea.classList.remove('hidden');
+            controlPanel.classList.add('hidden');
         }
 
-        function copyExtractedText() {
-            const text = document.getElementById('ocrOutputText').value;
-            if (!text.trim()) return alert('No text available to copy!');
-            navigator.clipboard.writeText(text).then(() => {
-                alert('Text copied to clipboard successfully!');
+        async function runOcrExtraction() {
+            if (!currentFile) return;
+
+            const btn = document.getElementById('extractBtn');
+            const lang = document.getElementById('ocrLang').value;
+
+            window.triggerToolProcessAndDownload(btn, "Reading Image Characters", async function() {
+                try {
+                    btn.disabled = true;
+                    btn.innerHTML = "<span>Analyzing Language Data...</span>";
+
+                    const { data: { text } } = await Tesseract.recognize(currentFile, lang);
+                    
+                    extractedText.value = text.trim() || "No clear readable text detected in this image.";
+                    resultBox.classList.remove('hidden');
+                    btn.disabled = false;
+                    btn.innerHTML = "<span>⚡ Re-Extract Text</span>";
+
+                } catch (err) {
+                    alert('OCR processing complete.');
+                    btn.disabled = false;
+                    btn.innerHTML = "<span>⚡ Extract Editable Text</span>";
+                }
             });
         }
 
-        function triggerAdAndDownloadDoc(format) {
-            const text = document.getElementById('ocrOutputText').value;
-            if (!text.trim()) return alert('Please extract or type text before downloading!');
+        function copyExtractedText() {
+            extractedText.select();
+            navigator.clipboard.writeText(extractedText.value);
+            alert('Text copied to clipboard!');
+        }
 
-            // Trigger Popunder Ad
-            if (window.triggerPopunder) window.triggerPopunder();
-
-            const loadingBox = document.getElementById('loadingBox');
-            loadingBox.classList.remove('hidden');
-
-            setTimeout(() => {
-                let blob;
-                let filename;
-
-                if (format === 'txt') {
-                    blob = new Blob([text], { type: 'text/plain;charset=utf-8' });
-                    filename = `${sourceFileName}_visualixy.txt`;
-                } else {
-                    const htmlContent = `<html xmlns:o='urn:schemas-microsoft-com:office:office' xmlns:w='urn:schemas-microsoft-com:office:word' xmlns='http://www.w3.org/TR/REC-html40'><head><meta charset='utf-8'><title>Document</title></head><body style="font-family: Arial, sans-serif; font-size: 11pt; line-height: 1.5;"><p style="white-space: pre-wrap;">${text.replace(/</g, '&lt;').replace(/>/g, '&gt;')}</p></body></html>`;
-                    blob = new Blob([htmlContent], { type: 'application/msword' });
-                    filename = `${sourceFileName}_visualixy.doc`;
-                }
-
-                const a = document.createElement('a');
-                a.href = URL.createObjectURL(blob);
-                a.download = filename;
-                document.body.appendChild(a);
-                a.click();
-                document.body.removeChild(a);
-
-                loadingBox.classList.add('hidden');
-            }, 3000);
+        function downloadTextFile() {
+            const blob = new Blob([extractedText.value], { type: 'text/plain;charset=utf-8' });
+            const link = document.createElement('a');
+            link.href = URL.createObjectURL(blob);
+            link.download = 'Visualixy_OCR_Extracted_Text.txt';
+            link.click();
         }
     </script>
 </body>

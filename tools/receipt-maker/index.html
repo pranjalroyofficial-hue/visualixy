@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Free Cash Memo & Payment Receipt Maker - Visualixy</title>
+    <meta name="description" content="Generate instant printable cash receipts, fee vouchers for coaching classes, rent slips, and repair shops with auto words-to-amount converter.">
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- html2pdf Engine -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
+
+    <!-- Visualixy Master Ads Engine -->
+    <script src="../../assets/js/ads.js"></script>
+
+    <style>
+        body { background-color: #f8fafc; color: #0f172a; font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; }
+        .tool-box { background: #ffffff; border: 1px solid #e2e8f0; border-radius: 1.5rem; }
+        .receipt-paper { font-family: 'Times New Roman', Times, serif; }
+        @media print {
+            body * { visibility: hidden; }
+            #receiptPaper, #receiptPaper * { visibility: visible; }
+            #receiptPaper { position: absolute; left: 0; top: 0; width: 100%; }
+        }
+    </style>
+</head>
+<body class="min-h-screen flex flex-col justify-between antialiased pb-16 lg:pb-0">
+
+    <!-- Top Leaderboard Ad (728x90) -->
+    <div class="hidden lg:block w-full bg-slate-200/60 py-2 border-b border-slate-300">
+        <div class="max-w-6xl mx-auto text-center overflow-hidden">
+            <script>atOptions = {'key':'0cf435f486e59418568243ee21ba9dea','format':'iframe','height':90,'width':728,'params':{}};</script>
+            <script src="https://www.highperformanceformat.com/0cf435f486e59418568243ee21ba9dea/invoke.js"></script>
+        </div>
+    </div>
+
+    <!-- Header Navigation -->
+    <header class="bg-white border-b border-slate-200 sticky top-0 z-50 shadow-sm">
+        <div class="max-w-7xl mx-auto px-4 py-3 flex items-center justify-between">
+            <a href="../../" class="flex items-center gap-2">
+                <div class="w-8 h-8 rounded-xl bg-blue-600 flex items-center justify-center font-black text-lg text-white">V</div>
+                <span class="font-extrabold text-lg text-slate-900 tracking-tight">VISUALIXY</span>
+            </a>
+            <a href="../../" class="text-xs font-bold text-slate-600 bg-slate-100 px-3 py-1.5 rounded-xl hover:bg-blue-50 hover:text-blue-600 transition">← Back to All Tools</a>
+        </div>
+    </header>
+
+    <!-- Mobile Banner Ad (320x50) -->
+    <div class="lg:hidden w-full bg-slate-100 py-1 text-center border-b border-slate-200 overflow-hidden">
+        <script>atOptions = {'key':'ff2ed036da6ab41cbe4fbfbeba0d55fe','format':'iframe','height':50,'width':320,'params':{}};</script>
+        <script src="https://www.highperformanceformat.com/ff2ed036da6ab41cbe4fbfbeba0d55fe/invoke.js"></script>
+    </div>
+
+    <!-- Main Workspace -->
+    <main class="max-w-7xl mx-auto px-4 py-6 flex-1 w-full flex flex-col lg:flex-row gap-6">
+
+        <!-- Center Tool Panel -->
+        <div class="flex-1 min-w-0">
+            <div class="tool-box p-5 sm:p-8 shadow-sm">
+                
+                <!-- Tool Title Header -->
+                <div class="text-center max-w-lg mx-auto mb-6">
+                    <div class="inline-flex p-3 rounded-2xl bg-amber-50 text-amber-600 text-2xl mb-2">🧾</div>
+                    <h1 class="text-xl sm:text-2xl font-black text-slate-900">Cash Memo & Receipt Voucher Maker</h1>
+                    <p class="text-xs text-slate-500 mt-1">Generate fee receipts, coaching vouchers & rent payment slips instantly.</p>
+                </div>
+
+                <!-- Input Grid -->
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 bg-slate-50 p-4 sm:p-5 rounded-2xl border border-slate-200 mb-6">
+                    <div>
+                        <label class="block text-xs font-bold text-slate-700 mb-1">Organization / Shop Name *</label>
+                        <input type="text" id="bizName" oninput="renderReceipt()" value="APEX COACHING INSTITUTE" class="w-full bg-white border border-slate-300 text-xs rounded-xl px-3 py-2 font-bold focus:outline-none focus:border-amber-500">
+                    </div>
+                    <div>
+                        <label class="block text-xs font-bold text-slate-700 mb-1">Received From (Student/Customer) *</label>
+                        <input type="text" id="custName" oninput="renderReceipt()" value="Vikas Sharma" class="w-full bg-white border border-slate-300 text-xs rounded-xl px-3 py-2 font-bold focus:outline-none focus:border-amber-500">
+                    </div>
+                    <div>
+                        <label class="block text-xs font-bold text-slate-700 mb-1">Amount Received (₹) *</label>
+                        <input type="number" id="payAmount" oninput="renderReceipt()" value="3500" class="w-full bg-white border border-slate-300 text-xs rounded-xl px-3 py-2 font-bold focus:outline-none focus:border-amber-500">
+                    </div>
+                    <div>
+                        <label class="block text-xs font-bold text-slate-700 mb-1">Payment For (Purpose) *</label>
+                        <input type="text" id="payPurpose" oninput="renderReceipt()" value="Monthly Tuition Fee (August 2026)" class="w-full bg-white border border-slate-300 text-xs rounded-xl px-3 py-2 font-medium focus:outline-none">
+                    </div>
+                    <div>
+                        <label class="block text-xs font-bold text-slate-700 mb-1">Receipt Date</label>
+                        <input type="date" id="receiptDate" oninput="renderReceipt()" class="w-full bg-white border border-slate-300 text-xs rounded-xl px-3 py-2 font-medium focus:outline-none">
+                    </div>
+                    <div>
+                        <label class="block text-xs font-bold text-slate-700 mb-1">Payment Mode</label>
+                        <select id="payMode" onchange="renderReceipt()" class="w-full bg-white border border-slate-300 text-xs rounded-xl px-3 py-2 font-bold focus:outline-none">
+                            <option value="Cash">Cash Payment</option>
+                            <option value="UPI / Online">UPI / Online Transfer</option>
+                            <option value="Cheque / DD">Cheque / Demand Draft</option>
+                        </select>
+                    </div>
+                </div>
+
+                <!-- Printable Receipt Slip Paper -->
+                <div id="receiptPaper" class="receipt-paper bg-white p-6 sm:p-8 rounded-2xl border-2 border-slate-800 shadow-md text-slate-900 text-xs leading-relaxed max-w-2xl mx-auto">
+                    <div class="flex justify-between items-center border-b-2 border-slate-800 pb-3 mb-4">
+                        <div>
+                            <h2 id="pBiz" class="text-base font-black tracking-wider uppercase">APEX COACHING INSTITUTE</h2>
+                            <p class="text-[10px] text-slate-500">OFFICIAL PAYMENT RECEIPT / CASH MEMO</p>
+                        </div>
+                        <div class="text-right">
+                            <span class="text-[10px] font-bold text-slate-500 block">Receipt No: <b>#REC-1082</b></span>
+                            <span id="pDate" class="text-[10px] text-slate-600">Date: 18/08/2026</span>
+                        </div>
+                    </div>
+
+                    <div class="space-y-3 text-[12px]">
+                        <div class="flex border-b border-dotted border-slate-300 pb-1">
+                            <span class="w-32 font-bold text-slate-600">Received With Thanks From:</span>
+                            <b id="pCust" class="flex-1 text-slate-900 underline font-black">Vikas Sharma</b>
+                        </div>
+                        <div class="flex border-b border-dotted border-slate-300 pb-1">
+                            <span class="w-32 font-bold text-slate-600">On Account Of / For:</span>
+                            <span id="pPurpose" class="flex-1 text-slate-800">Monthly Tuition Fee (August 2026)</span>
+                        </div>
+                        <div class="flex border-b border-dotted border-slate-300 pb-1">
+                            <span class="w-32 font-bold text-slate-600">Payment Mode:</span>
+                            <span id="pMode" class="flex-1 text-slate-800">Cash Payment</span>
+                        </div>
+                    </div>
+
+                    <!-- Bottom Amount Box & Sign -->
+                    <div class="flex justify-between items-end pt-6 mt-4">
+                        <div class="bg-slate-100 border-2 border-slate-800 px-4 py-2 rounded-lg">
+                            <span class="text-[10px] font-bold text-slate-600 block uppercase">Amount Received</span>
+                            <span class="text-lg font-black text-slate-900">₹<span id="pAmt">3,500</span>/-</span>
+                        </div>
+
+                        <div class="text-center w-44">
+                            <div class="border-t border-slate-800 pt-1 text-[11px] font-bold text-slate-700">Authorized Signatory</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Actions -->
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 mt-6">
+                    <button onclick="window.print()" class="py-3.5 px-4 rounded-2xl bg-slate-800 hover:bg-slate-900 text-white font-black text-xs shadow-md transition flex items-center justify-center gap-2">
+                        <span>🖨️ Direct Print Receipt</span>
+                    </button>
+                    <button id="downloadReceiptBtn" onclick="exportReceiptPdf()" class="py-3.5 px-4 rounded-2xl bg-amber-600 hover:bg-amber-700 text-white font-black text-xs shadow-md transition flex items-center justify-center gap-2">
+                        <span>📥 Download Receipt PDF</span>
+                    </button>
+                </div>
+
+            </div>
+        </div>
+
+        <!-- Right Ad Sidebar (300x250 Native Card) -->
+        <aside class="w-full lg:w-80 shrink-0 space-y-4">
+            <div class="bg-white p-2.5 rounded-3xl border border-slate-200 shadow-sm text-center">
+                <span class="text-[10px] uppercase font-bold text-slate-400 block mb-1">Sponsored</span>
+                <div class="flex items-center justify-center overflow-hidden min-h-[250px]">
+                    <script>atOptions = {'key':'ff2ed036da6ab41cbe4fbfbeba0d55fe','format':'iframe','height':250,'width':300,'params':{}};</script>
+                    <script src="https://www.highperformanceformat.com/ff2ed036da6ab41cbe4fbfbeba0d55fe/invoke.js"></script>
+                </div>
+            </div>
+        </aside>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="border-t border-slate-200 bg-white py-4 text-center text-xs text-slate-500">
+        <p>© 2026 Visualixy. All document processing stays 100% on your device.</p>
+    </footer>
+
+    <!-- Receipt Generator Logic -->
+    <script>
+        document.getElementById('receiptDate').valueAsDate = new Date();
+
+        function renderReceipt() {
+            document.getElementById('pBiz').innerText = document.getElementById('bizName').value || 'ORGANIZATION';
+            document.getElementById('pCust').innerText = document.getElementById('custName').value || 'Customer Name';
+            document.getElementById('pPurpose').innerText = document.getElementById('payPurpose').value || 'Service / Product';
+            document.getElementById('pMode').innerText = document.getElementById('payMode').value;
+            document.getElementById('pAmt').innerText = Number(document.getElementById('payAmount').value || 0).toLocaleString('en-IN');
+
+            const dateVal = document.getElementById('receiptDate').value;
+            if (dateVal) {
+                const parts = dateVal.split('-');
+                document.getElementById('pDate').innerText = `Date: ${parts[2]}/${parts[1]}/${parts[0]}`;
+            }
+        }
+
+        function exportReceiptPdf() {
+            const btn = document.getElementById('downloadReceiptBtn');
+            window.triggerToolProcessAndDownload(btn, "Rendering Payment Voucher PDF", function() {
+                const element = document.getElementById('receiptPaper');
+                const opt = {
+                    margin: 15,
+                    filename: 'Visualixy_Payment_Receipt.pdf',
+                    image: { type: 'jpeg', quality: 0.98 },
+                    html2canvas: { scale: 2 },
+                    jsPDF: { unit: 'mm', format: 'a4', orientation: 'portrait' }
+                };
+                html2pdf().set(opt).from(element).save();
+            });
+        }
+
+        renderReceipt();
+    </script>
+</body>
+</html>

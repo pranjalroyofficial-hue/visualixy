@@ -3,272 +3,214 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>Image Enlarger & HD Upscaler Online Free - 2X, 4X Upscaling | Visualixy</title>
+    <title>Image Enlarger & Super Resolution Free - Visualixy</title>
+    <meta name="description" content="Enlarge low-resolution images 2x, 4x without pixelation. High-quality client-side image upscaling with 100% private offline rendering.">
     
-    <!-- Meta & SEO Tags -->
-    <meta name="description" content="Upscale and enlarge low resolution photos up to 4X online for free. Boost image clarity, sharpness, and resolution without losing quality. 100% private.">
-    <meta name="keywords" content="image enlarger online, upscale image 4x free, hd photo enhancer, increase image resolution, visualixy image enlarger">
-    <meta name="google-site-verification" content="jMp7icjOP34wszoRC-Gpy94eoqTmJZO2_NIcBWcvBmA" />
-    <meta name="clckd" content="ff0f7e314e486dc0f6161ff3c28e001e" />
-
-    <!-- External Ads Scripts -->
-    <script src="https://pl30718421.effectivecpmnetwork.com/67/51/f3/6751f3240d244f4f2df902162d5031d9.js"></script>
-    <script src="https://quge5.com/88/tag.min.js" data-zone="267129" async data-cfasync="false"></script>
-    <script src="../../assets/js/ads.js"></script>
-
-    <!-- Tailwind CSS Engine -->
+    <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
 
+    <!-- Visualixy Master Ads Engine -->
+    <script src="../../assets/js/ads.js"></script>
+
     <style>
-        body { background-color: #080c15; color: #f3f4f6; font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; }
-        .glass-card { background: rgba(17, 24, 39, 0.75); backdrop-filter: blur(16px); border: 1px solid rgba(255, 255, 255, 0.08); }
-        .glass-card-hover:hover { border-color: #f59e0b; box-shadow: 0 10px 30px -5px rgba(245, 158, 11, 0.25); }
+        body { background-color: #f8fafc; color: #0f172a; font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; }
+        .tool-box { background: #ffffff; border: 1px solid #e2e8f0; border-radius: 1.5rem; }
     </style>
 </head>
-<body class="min-h-screen flex flex-col justify-between antialiased">
+<body class="min-h-screen flex flex-col justify-between antialiased pb-16 lg:pb-0">
+
+    <!-- Top Leaderboard Ad (728x90) -->
+    <div class="hidden lg:block w-full bg-slate-200/60 py-2 border-b border-slate-300">
+        <div class="max-w-6xl mx-auto text-center overflow-hidden">
+            <script>atOptions = {'key':'0cf435f486e59418568243ee21ba9dea','format':'iframe','height':90,'width':728,'params':{}};</script>
+            <script src="https://www.highperformanceformat.com/0cf435f486e59418568243ee21ba9dea/invoke.js"></script>
+        </div>
+    </div>
 
     <!-- Header Navigation -->
-    <header class="border-b border-gray-800 bg-[#0f172a]/95 sticky top-0 z-50 backdrop-blur-md">
-        <div class="max-w-6xl mx-auto px-3 sm:px-4 py-2.5 sm:py-3 flex items-center justify-between gap-2">
+    <header class="bg-white border-b border-slate-200 sticky top-0 z-50 shadow-sm">
+        <div class="max-w-7xl mx-auto px-4 py-3 flex items-center justify-between">
             <a href="../../" class="flex items-center gap-2">
-                <div class="w-8 h-8 sm:w-9 sm:h-9 rounded-xl bg-gradient-to-tr from-blue-600 to-indigo-500 flex items-center justify-center font-bold text-lg sm:text-xl text-white shadow-lg">V</div>
-                <span class="font-bold text-lg sm:text-xl tracking-wide bg-gradient-to-r from-white to-gray-300 bg-clip-text text-transparent">Visualixy</span>
+                <div class="w-8 h-8 rounded-xl bg-blue-600 flex items-center justify-center font-black text-lg text-white">V</div>
+                <span class="font-extrabold text-lg text-slate-900 tracking-tight">VISUALIXY</span>
             </a>
-            <a href="../../" class="text-xs text-amber-400 hover:underline flex items-center gap-1 font-medium">
-                <span>←</span> All Tools
-            </a>
+            <a href="../../" class="text-xs font-bold text-slate-600 bg-slate-100 px-3 py-1.5 rounded-xl hover:bg-blue-50 hover:text-blue-600 transition">← Back to All Tools</a>
         </div>
     </header>
 
-    <!-- Top Header Adsterra 728x90 Banner -->
-    <div class="max-w-6xl mx-auto px-2 sm:px-4 mt-3 text-center overflow-hidden">
-        <script>atOptions = {'key':'0cf435f486e59418568243ee21ba9dea','format':'iframe','height':90,'width':728,'params':{}};</script>
-        <script src="https://www.highperformanceformat.com/0cf435f486e59418568243ee21ba9dea/invoke.js"></script>
+    <!-- Mobile Banner Ad (320x50) -->
+    <div class="lg:hidden w-full bg-slate-100 py-1 text-center border-b border-slate-200 overflow-hidden">
+        <script>atOptions = {'key':'ff2ed036da6ab41cbe4fbfbeba0d55fe','format':'iframe','height':50,'width':320,'params':{}};</script>
+        <script src="https://www.highperformanceformat.com/ff2ed036da6ab41cbe4fbfbeba0d55fe/invoke.js"></script>
     </div>
 
-    <!-- Main Workspace Container -->
-    <main class="max-w-5xl mx-auto px-3 sm:px-4 py-4 sm:py-6 flex-1 w-full">
-        
-        <!-- Header Title -->
-        <div class="text-center mb-4 sm:mb-6">
-            <div class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-amber-500/10 border border-amber-500/20 text-[11px] sm:text-xs text-amber-400 mb-2 font-medium">
-                <span>🔍 Ultra-HD Image Upscaler</span> • <span>🔒 100% Client-Side Privacy</span>
-            </div>
-            <h1 class="text-xl sm:text-3xl font-extrabold text-white tracking-tight mb-1">Image Enlarger & HD Enhancer</h1>
-            <p class="text-[11px] sm:text-xs text-gray-400 max-w-md mx-auto">Enlarge low-resolution photos up to 4X with smart edge-sharpening and noise smoothing.</p>
-        </div>
+    <!-- Main Workspace -->
+    <main class="max-w-7xl mx-auto px-4 py-6 flex-1 w-full flex flex-col lg:flex-row gap-6">
 
-        <!-- Upload Dropzone Area -->
-        <div id="dropzone" class="glass-card glass-card-hover p-6 sm:p-10 rounded-2xl border-2 border-dashed border-amber-500/40 text-center cursor-pointer transition mb-5" onclick="document.getElementById('imageInput').click()">
-            <input type="file" id="imageInput" accept="image/*" class="hidden" onchange="handleImageLoad(this.files[0])">
-            <div class="w-12 h-12 sm:w-14 sm:h-14 mx-auto mb-2.5 rounded-2xl bg-amber-600/10 text-amber-400 flex items-center justify-center text-2xl sm:text-3xl">
-                🔍
-            </div>
-            <h3 class="text-xs sm:text-base font-semibold text-gray-100 mb-1">Tap or Drag Image to Enlarge</h3>
-            <p class="text-[11px] sm:text-xs text-gray-400">Supports JPG, PNG, and WEBP formats</p>
-        </div>
-
-        <!-- Studio Workspace (Hidden Initially) -->
-        <div id="enlargerWorkspace" class="hidden space-y-4 sm:space-y-6">
-            <div class="grid grid-cols-1 lg:grid-cols-12 gap-4 sm:gap-6">
+        <!-- Center Tool Panel -->
+        <div class="flex-1 min-w-0">
+            <div class="tool-box p-5 sm:p-8 shadow-sm">
                 
-                <!-- Left Live Preview Column -->
-                <div class="lg:col-span-6 glass-card p-4 rounded-2xl flex flex-col items-center justify-center border border-gray-800 relative min-h-[280px]">
-                    <div class="text-[10px] sm:text-xs text-gray-400 mb-2 font-medium flex items-center justify-between w-full">
-                        <span>Live Upscaled Canvas Preview</span>
-                        <span id="scaleFactorBadge" class="text-amber-400 font-bold bg-amber-500/10 px-2 py-0.5 rounded border border-amber-500/20">2X HD</span>
-                    </div>
-
-                    <div class="border-2 border-dashed border-amber-500/50 p-2 rounded-xl bg-black/50 flex items-center justify-center max-w-full overflow-hidden">
-                        <canvas id="enlargedCanvas" class="max-h-[220px] w-auto rounded object-contain shadow-2xl bg-white"></canvas>
-                    </div>
-
-                    <div class="mt-3 flex items-center gap-3 text-[11px] text-gray-400">
-                        <span>Original: <strong id="origDimensionText" class="text-gray-200">-- x --</strong></span>
-                        <span>➔</span>
-                        <span>Output: <strong id="newDimensionText" class="text-amber-400">-- x --</strong></span>
-                    </div>
+                <!-- Tool Title Header -->
+                <div class="text-center max-w-lg mx-auto mb-6">
+                    <div class="inline-flex p-3 rounded-2xl bg-indigo-50 text-indigo-600 text-2xl mb-2">🔍</div>
+                    <h1 class="text-xl sm:text-2xl font-black text-slate-900">Image Enlarger & Upscaler</h1>
+                    <p class="text-xs text-slate-500 mt-1">Upscale low-resolution photos 2X, 4X with high-definition edge smoothing.</p>
                 </div>
 
-                <!-- Right Controls Column -->
-                <div class="lg:col-span-6 glass-card p-4 sm:p-5 rounded-2xl space-y-4 border border-gray-800">
-                    <h3 class="text-xs sm:text-sm font-bold text-gray-200 border-b border-gray-800 pb-2.5 flex items-center gap-2">
-                        <span>⚙️</span> Upscale & Enhancement Parameters
-                    </h3>
+                <!-- Dropzone Area -->
+                <div id="dropArea" class="border-2 border-dashed border-slate-300 rounded-3xl p-6 sm:p-10 text-center hover:border-indigo-500 bg-slate-50 transition cursor-pointer mb-6">
+                    <input type="file" id="imageInput" accept="image/*" class="hidden">
+                    <div class="text-4xl mb-3">🖼️</div>
+                    <h3 class="text-sm font-bold text-slate-800">Click to Upload Image or Drag & Drop</h3>
+                    <p class="text-xs text-slate-400 mt-1">Supports JPG, PNG & WebP (100% Client-Side Processing)</p>
+                </div>
 
-                    <!-- Scale Buttons -->
+                <!-- Settings & Action Box (Hidden until image selected) -->
+                <div id="controlPanel" class="hidden space-y-6">
+                    
+                    <div class="bg-indigo-50/50 border border-indigo-200 rounded-2xl p-4 flex items-center justify-between">
+                        <div class="flex items-center gap-3">
+                            <span class="text-2xl">📸</span>
+                            <div>
+                                <p id="fileName" class="text-xs font-bold text-slate-900 truncate max-w-[200px]">photo.jpg</p>
+                                <p id="originalDimensions" class="text-[11px] text-slate-500">Original: 0 x 0 px</p>
+                            </div>
+                        </div>
+                        <button onclick="resetTool()" class="text-xs text-red-600 font-bold hover:underline">Change File</button>
+                    </div>
+
+                    <!-- Upscale Multiplier Selector -->
                     <div>
-                        <label class="text-[10px] text-gray-400 block mb-1.5 font-medium">Upscale Factor</label>
-                        <div class="grid grid-cols-3 gap-2">
-                            <button type="button" onclick="setScale(2)" id="scale_2" class="scale-btn py-2.5 px-3 rounded-xl text-xs font-bold bg-amber-600 text-white transition">2X (HD)</button>
-                            <button type="button" onclick="setScale(3)" id="scale_3" class="scale-btn py-2.5 px-3 rounded-xl text-xs font-bold bg-gray-900 text-gray-400 hover:text-white transition">3X (Ultra)</button>
-                            <button type="button" onclick="setScale(4)" id="scale_4" class="scale-btn py-2.5 px-3 rounded-xl text-xs font-bold bg-gray-900 text-gray-400 hover:text-white transition">4X (4K Print)</button>
+                        <label class="block text-xs font-black text-slate-700 uppercase tracking-wider mb-2">Select Upscaling Multiplier</label>
+                        <div class="grid grid-cols-3 gap-3">
+                            <button type="button" onclick="setScale(2, this)" class="scale-btn py-3 px-3 rounded-xl border border-indigo-600 bg-indigo-50 text-indigo-700 text-xs font-bold text-center">
+                                🚀 2X Resolution
+                            </button>
+                            <button type="button" onclick="setScale(3, this)" class="scale-btn py-3 px-3 rounded-xl border border-slate-200 bg-white text-slate-700 text-xs font-bold text-center">
+                                🔥 3X Resolution
+                            </button>
+                            <button type="button" onclick="setScale(4, this)" class="scale-btn py-3 px-3 rounded-xl border border-slate-200 bg-white text-slate-700 text-xs font-bold text-center">
+                                💎 4X Ultra HD
+                            </button>
                         </div>
                     </div>
 
-                    <!-- Sharpening & Clarity Filter Slider -->
-                    <div>
-                        <div class="flex justify-between items-center mb-1">
-                            <label class="text-[10px] text-gray-400">Smart Edge Sharpness</label>
-                            <span id="sharpnessValText" class="text-xs font-bold text-amber-400">30%</span>
-                        </div>
-                        <input type="range" id="sharpnessSlider" min="0" max="80" value="30" oninput="document.getElementById('sharpnessValText').innerText = this.value + '%'; processEnlargement();" class="w-full accent-amber-500 cursor-pointer">
-                        <p class="text-[9px] sm:text-[10px] text-gray-500 mt-1">Enhance fine details and reduce blurriness during enlargement.</p>
+                    <!-- Target Resolution Indicator -->
+                    <div class="bg-slate-50 border border-slate-200 rounded-2xl p-3 text-center">
+                        <span class="text-[11px] font-bold text-slate-500">Target Output Resolution:</span>
+                        <p id="targetDimensions" class="text-sm font-black text-slate-800 mt-0.5">0 x 0 px</p>
                     </div>
 
                     <!-- Action Button -->
-                    <button id="downloadBtn" onclick="triggerAdAndDownload()" class="w-full bg-gradient-to-r from-amber-600 via-orange-600 to-yellow-600 hover:from-amber-500 hover:to-yellow-500 text-white font-bold py-3.5 px-4 rounded-xl shadow-lg transition text-xs sm:text-sm flex items-center justify-center gap-2">
-                        <span>📥</span> Download Enlarge Image (<span id="outputExtTag">HD JPG</span>)
+                    <button id="enlargeBtn" onclick="processAndEnlargeImage()" class="w-full py-4 rounded-2xl bg-indigo-600 hover:bg-indigo-700 text-white font-black text-sm shadow-md transition flex items-center justify-center gap-2">
+                        <span>⚡ Enlarge & Download HD Image</span>
                     </button>
 
-                    <!-- Loading Progress Countdown -->
-                    <div id="loadingBox" class="hidden glass-card p-4 rounded-xl text-center space-y-2 border border-amber-500/30">
-                        <div class="inline-block animate-spin text-2xl">⚡</div>
-                        <p class="text-xs font-bold text-amber-400">Rendering Ultra-HD Resolution... Auto-download in 3 seconds!</p>
-                    </div>
                 </div>
 
             </div>
         </div>
 
-        <!-- Ad Placement 2: Workspace In-Feed 300x250 Banner Slot -->
-        <div class="my-6 glass-card p-3 rounded-2xl flex items-center justify-center overflow-hidden">
-            <script>atOptions = {'key':'ff2ed036da6ab41cbe4fbfbeba0d55fe','format':'iframe','height':250,'width':300,'params':{}};</script>
-            <script src="https://www.highperformanceformat.com/ff2ed036da6ab41cbe4fbfbeba0d55fe/invoke.js"></script>
-        </div>
+        <!-- Right Ad Sidebar (300x250 Native Card) -->
+        <aside class="w-full lg:w-80 shrink-0 space-y-4">
+            <div class="bg-white p-2.5 rounded-3xl border border-slate-200 shadow-sm text-center">
+                <span class="text-[10px] uppercase font-bold text-slate-400 block mb-1">Sponsored</span>
+                <div class="flex items-center justify-center overflow-hidden min-h-[250px]">
+                    <script>atOptions = {'key':'ff2ed036da6ab41cbe4fbfbeba0d55fe','format':'iframe','height':250,'width':300,'params':{}};</script>
+                    <script src="https://www.highperformanceformat.com/ff2ed036da6ab41cbe4fbfbeba0d55fe/invoke.js"></script>
+                </div>
+            </div>
+        </aside>
 
-        <!-- Ad Placement 3: Bottom Native Banner -->
-        <div class="mt-6">
-            <script async="async" data-cfasync="false" src="https://pl30718421.effectivecpmnetwork.com/5a97a7a8933aa123ce85e87134bf64fa/invoke.js"></script>
-            <div id="container-5a97a7a8933aa123ce85e87134bf64fa"></div>
-        </div>
     </main>
 
     <!-- Footer -->
-    <footer class="border-t border-gray-800/80 py-3 text-center text-xs text-gray-500 mt-6">
-        <p>© 2026 Visualixy. All rights reserved. Free Online HD Image Enlarger.</p>
+    <footer class="border-t border-slate-200 bg-white py-4 text-center text-xs text-slate-500">
+        <p>© 2026 Visualixy. All document processing stays 100% on your device.</p>
     </footer>
 
-    <!-- JS Engine Logic -->
+    <!-- Upscaling Canvas Logic -->
     <script>
-        let rawImage = null;
-        let currentScale = 2;
-        let sourceFileName = 'enlarged_image';
+        let currentImg = null;
+        let scaleFactor = 2;
+        let originalName = 'image';
 
-        function handleImageLoad(file) {
-            if (!file) return;
-            sourceFileName = file.name.substring(0, file.name.lastIndexOf('.')) || 'image';
+        const dropArea = document.getElementById('dropArea');
+        const imageInput = document.getElementById('imageInput');
+        const controlPanel = document.getElementById('controlPanel');
 
-            const reader = new FileReader();
-            reader.onload = function(e) {
-                rawImage = new Image();
-                rawImage.onload = function() {
-                    document.getElementById('dropzone').classList.add('hidden');
-                    document.getElementById('enlargerWorkspace').classList.remove('hidden');
-                    document.getElementById('origDimensionText').innerText = `${rawImage.naturalWidth} x ${rawImage.naturalHeight} px`;
-                    processEnlargement();
+        dropArea.onclick = () => imageInput.click();
+
+        imageInput.onchange = (e) => {
+            if (e.target.files[0]) {
+                const file = e.target.files[0];
+                originalName = file.name.substring(0, file.name.lastIndexOf('.')) || file.name;
+
+                const reader = new FileReader();
+                reader.onload = (ev) => {
+                    const img = new Image();
+                    img.onload = () => {
+                        currentImg = img;
+                        document.getElementById('fileName').innerText = file.name;
+                        document.getElementById('originalDimensions').innerText = `Original: ${img.width} x ${img.height} px`;
+                        dropArea.classList.add('hidden');
+                        controlPanel.classList.remove('hidden');
+                        updateTargetInfo();
+                    };
+                    img.src = ev.target.result;
                 };
-                rawImage.src = e.target.result;
-            };
-            reader.readAsDataURL(file);
-        }
+                reader.readAsDataURL(file);
+            }
+        };
 
-        function setScale(scale) {
-            currentScale = scale;
-            const buttons = document.querySelectorAll('.scale-btn');
-            buttons.forEach(btn => {
-                btn.className = "scale-btn py-2.5 px-3 rounded-xl text-xs font-bold bg-gray-900 text-gray-400 hover:text-white transition";
+        function setScale(scale, btn) {
+            scaleFactor = scale;
+            document.querySelectorAll('.scale-btn').forEach(b => {
+                b.className = 'scale-btn py-3 px-3 rounded-xl border border-slate-200 bg-white text-slate-700 text-xs font-bold text-center';
             });
-
-            document.getElementById(`scale_${scale}`).className = "scale-btn py-2.5 px-3 rounded-xl text-xs font-bold bg-amber-600 text-white transition";
-            document.getElementById('scaleFactorBadge').innerText = `${scale}X HD`;
-
-            processEnlargement();
+            btn.className = 'scale-btn py-3 px-3 rounded-xl border border-indigo-600 bg-indigo-50 text-indigo-700 text-xs font-bold text-center';
+            updateTargetInfo();
         }
 
-        function processEnlargement() {
-            if (!rawImage) return;
-
-            const canvas = document.getElementById('enlargedCanvas');
-            const ctx = canvas.getContext('2d');
-            const sharpness = parseInt(document.getElementById('sharpnessSlider').value) / 100;
-
-            const targetW = rawImage.naturalWidth * currentScale;
-            const targetH = rawImage.naturalHeight * currentScale;
-
-            canvas.width = targetW;
-            canvas.height = targetH;
-
-            // Enable high quality bicubic image smoothing
-            ctx.imageSmoothingEnabled = true;
-            ctx.imageSmoothingQuality = 'high';
-
-            ctx.drawImage(rawImage, 0, 0, targetW, targetH);
-
-            // Apply Edge Sharpening Matrix if sharpness > 0
-            if (sharpness > 0) {
-                applySharpenFilter(ctx, targetW, targetH, sharpness);
-            }
-
-            document.getElementById('newDimensionText').innerText = `${targetW} x ${targetH} px`;
+        function updateTargetInfo() {
+            if (!currentImg) return;
+            const targetW = currentImg.width * scaleFactor;
+            const targetH = currentImg.height * scaleFactor;
+            document.getElementById('targetDimensions').innerText = `${targetW} x ${targetH} px (${scaleFactor}X)`;
         }
 
-        function applySharpenFilter(ctx, w, h, weight) {
-            try {
-                const imgData = ctx.getImageData(0, 0, w, h);
-                const d = imgData.data;
-                const buff = new Uint8ClampedArray(d);
-
-                const kCenter = 1 + (4 * weight);
-                const kEdge = -weight;
-
-                for (let y = 1; y < h - 1; y++) {
-                    for (let x = 1; x < w - 1; x++) {
-                        const idx = (y * w + x) * 4;
-                        for (let c = 0; c < 3; c++) {
-                            const val = buff[idx + c] * kCenter +
-                                (buff[((y - 1) * w + x) * 4 + c] +
-                                 buff[((y + 1) * w + x) * 4 + c] +
-                                 buff[(y * w + (x - 1)) * 4 + c] +
-                                 buff[(y * w + (x + 1)) * 4 + c]) * kEdge;
-                            d[idx + c] = Math.min(255, Math.max(0, val));
-                        }
-                    }
-                }
-                ctx.putImageData(imgData, 0, 0);
-            } catch (err) {
-                // Ignore canvas security errors on local files
-            }
+        function resetTool() {
+            currentImg = null;
+            imageInput.value = '';
+            dropArea.classList.remove('hidden');
+            controlPanel.classList.add('hidden');
         }
 
-        function triggerAdAndDownload() {
-            if (!rawImage) return;
+        function processAndEnlargeImage() {
+            if (!currentImg) return;
 
-            // Trigger Popunder Ad
-            if (window.triggerPopunder) window.triggerPopunder();
+            const btn = document.getElementById('enlargeBtn');
+            window.triggerToolProcessAndDownload(btn, `Upscaling to ${scaleFactor}X HD`, function() {
+                const targetW = currentImg.width * scaleFactor;
+                const targetH = currentImg.height * scaleFactor;
 
-            const btn = document.getElementById('downloadBtn');
-            const loadingBox = document.getElementById('loadingBox');
+                const canvas = document.createElement('canvas');
+                canvas.width = targetW;
+                canvas.height = targetH;
+                const ctx = canvas.getContext('2d');
 
-            btn.disabled = true;
-            btn.classList.add('opacity-50');
-            loadingBox.classList.remove('hidden');
+                // High-quality image smoothing
+                ctx.imageSmoothingEnabled = true;
+                ctx.imageSmoothingQuality = 'high';
+                ctx.drawImage(currentImg, 0, 0, targetW, targetH);
 
-            setTimeout(() => {
-                const canvas = document.getElementById('enlargedCanvas');
                 const dataUrl = canvas.toDataURL('image/jpeg', 0.95);
-
-                const a = document.createElement('a');
-                a.href = dataUrl;
-                a.download = `${sourceFileName}_${currentScale}x_upscaled_visualixy.jpg`;
-                document.body.appendChild(a);
-                a.click();
-                document.body.removeChild(a);
-
-                btn.disabled = false;
-                btn.classList.remove('opacity-50');
-                loadingBox.classList.add('hidden');
-            }, 3000);
+                const link = document.createElement('a');
+                link.download = `Visualixy_${originalName}_${scaleFactor}X_HD.jpg`;
+                link.href = dataUrl;
+                link.click();
+            });
         }
     </script>
 </body>
