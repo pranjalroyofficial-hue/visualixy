@@ -4,15 +4,47 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <title>Visualixy - Free Online Document, PDF & Image Tools Hub</title>
-    <meta name="description" content="All-in-one free document utility suite. Compress images to 20KB, resize PAN card photos, unlock Aadhaar PDF, convert Word to PDF, and generate ATS resumes instantly.">
+    <meta name="description" content="All-in-one free document utility suite. Compress images to 20KB, resize PAN card photos, unlock PDF documents, convert Word to PDF, and generate ATS resumes instantly.">
     <link rel="canonical" href="https://visualixy.in/">
     <link rel="manifest" href="manifest.json">
     <meta name="theme-color" content="#2563eb">
 
+    <!-- Social & Open Graph Meta Tags -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Visualixy - Free Document, PDF & Photo Tools Hub">
+    <meta property="og:description" content="Resize photos to 20KB, compress PDFs, unlock documents, and generate resumes online. 100% free and private.">
+    <meta property="og:url" content="https://visualixy.in/">
+
+    <!-- Indian Local Search (GEO) Meta Tags -->
+    <meta name="geo.region" content="IN">
+    <meta name="geo.placename" content="India">
+
+    <!-- Schema.org JSON-LD Structured Data for Google SEO -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebApplication",
+      "name": "Visualixy",
+      "url": "https://visualixy.in",
+      "applicationCategory": "UtilitiesApplication",
+      "operatingSystem": "All",
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "INR"
+      },
+      "areaServed": {
+        "@type": "Country",
+        "name": "India"
+      },
+      "description": "Free online document utility suite for photo resizing, PDF compression, SSC govt job form formatting, and ATS resume creation."
+    }
+    </script>
+
     <!-- Tailwind CSS CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
 
-    <!-- Master Ads Engine -->
+    <!-- Master Clean Ads Engine -->
     <script src="assets/js/ads.js"></script>
 
     <style>
@@ -63,7 +95,7 @@
             Fast Document, Photo & PDF Tools Suite
         </h1>
         <p class="text-xs sm:text-sm text-slate-500 max-w-2xl mx-auto mt-2">
-            Resize photos to 20KB, convert formats, unlock Aadhaar, create ATS resumes, and combine documents directly on your device.
+            Resize photos to 20KB, convert formats, unlock documents, create ATS resumes, and combine files directly on your device.
         </p>
 
         <!-- Search Bar & Filters -->
@@ -87,7 +119,7 @@
     <!-- Main Workspace Layout -->
     <main class="max-w-7xl mx-auto px-4 py-6 w-full flex flex-col lg:flex-row gap-6">
 
-        <!-- Left Tools Grid (26 Tools Dynamic) -->
+        <!-- Left Tools Grid (All Dynamic Tools) -->
         <div class="flex-1 min-w-0">
             <div id="toolsGrid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
                 
@@ -175,8 +207,8 @@
                 <a href="tools/unlock-pdf/" data-category="pdf govt" class="tool-item tool-card bg-white p-5 rounded-3xl border border-slate-200 shadow-sm hover:border-blue-500 hover:shadow-md flex flex-col justify-between">
                     <div>
                         <div class="w-10 h-10 rounded-2xl bg-rose-50 text-rose-600 flex items-center justify-center text-xl mb-3">🔓</div>
-                        <h3 class="text-sm font-black text-slate-900">Unlock PDF & e-Aadhaar</h3>
-                        <p class="text-xs text-slate-500 mt-1 line-clamp-2">Remove password protection from e-Aadhaar and bank statements.</p>
+                        <h3 class="text-sm font-black text-slate-900">Unlock PDF Password</h3>
+                        <p class="text-xs text-slate-500 mt-1 line-clamp-2">Remove password protection from electronic documents and bank statements.</p>
                     </div>
                     <span class="text-[11px] font-bold text-blue-600 mt-4 flex items-center gap-1">Open Tool →</span>
                 </a>
@@ -371,7 +403,7 @@
                 const category = item.getAttribute('data-category');
                 
                 const matchesSearch = text.includes(query);
-                const matchesCat = (currentCategory === 'all') || category.includes(currentCategory);
+                const matchesCat = (currentCategory === 'all') || (category && category.includes(currentCategory));
 
                 if (matchesSearch && matchesCat) {
                     item.style.display = 'flex';
