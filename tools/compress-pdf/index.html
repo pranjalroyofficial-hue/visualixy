@@ -9,7 +9,7 @@
     <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
     
-    <!-- PDF-Lib Engine -->
+    <!-- PDF-Lib & PDF.js Engines -->
     <script src="https://unpkg.com/pdf-lib@1.17.1/dist/pdf-lib.min.js"></script>
     <script src="https://unpkg.com/pdfjs-dist@3.11.174/build/pdf.min.js"></script>
 
@@ -89,14 +89,14 @@
                     <div>
                         <label class="block text-xs font-black text-slate-700 uppercase tracking-wider mb-2">Target Compression Size</label>
                         <div class="grid grid-cols-3 gap-2.5">
-                            <button type="button" onclick="setPreset(0.35, this)" class="preset-btn py-2.5 px-3 rounded-xl border border-blue-600 bg-blue-50 text-blue-700 text-xs font-bold text-center">
-                                🔥 < 100 KB
+                            <button type="button" onclick="setPreset(0.35, 1.0, this)" class="preset-btn py-2.5 px-3 rounded-xl border border-blue-600 bg-blue-50 text-blue-700 text-xs font-bold text-center">
+                                🔥 &lt; 100 KB
                             </button>
-                            <button type="button" onclick="setPreset(0.60, this)" class="preset-btn py-2.5 px-3 rounded-xl border border-slate-200 bg-white text-slate-700 text-xs font-bold text-center">
-                                ⚖️ < 200 KB
+                            <button type="button" onclick="setPreset(0.55, 1.2, this)" class="preset-btn py-2.5 px-3 rounded-xl border border-slate-200 bg-white text-slate-700 text-xs font-bold text-center">
+                                ⚖️ &lt; 200 KB
                             </button>
-                            <button type="button" onclick="setPreset(0.80, this)" class="preset-btn py-2.5 px-3 rounded-xl border border-slate-200 bg-white text-slate-700 text-xs font-bold text-center">
-                                💎 < 500 KB
+                            <button type="button" onclick="setPreset(0.75, 1.5, this)" class="preset-btn py-2.5 px-3 rounded-xl border border-slate-200 bg-white text-slate-700 text-xs font-bold text-center">
+                                💎 &lt; 500 KB
                             </button>
                         </div>
                     </div>
@@ -133,7 +133,8 @@
         pdfjsLib.GlobalWorkerOptions.workerSrc = 'https://unpkg.com/pdfjs-dist@3.11.174/build/pdf.worker.min.js';
         
         let selectedFile = null;
-        let compressionQuality = 0.35; // Default <100KB
+        let compressionQuality = 0.35;
+        let renderScale = 1.0;
 
         const dropArea = document.getElementById('dropArea');
         const pdfInput = document.getElementById('pdfInput');
@@ -157,8 +158,9 @@
             controlPanel.classList.remove('hidden');
         }
 
-        function setPreset(quality, btn) {
+        function setPreset(quality, scale, btn) {
             compressionQuality = quality;
+            renderScale = scale;
             document.querySelectorAll('.preset-btn').forEach(b => {
                 b.className = 'preset-btn py-2.5 px-3 rounded-xl border border-slate-200 bg-white text-slate-700 text-xs font-bold text-center';
             });
@@ -172,12 +174,22 @@
             controlPanel.classList.add('hidden');
         }
 
+        function dataURItoUint8Array(dataURI) {
+            const byteString = atob(dataURI.split(',')[1]);
+            const mimeString = dataURI.split(',')[0].split(':')[1].split(';')[0];
+            const ab = new ArrayBuffer(byteString.length);
+            const ia = new Uint8Array(ab);
+            for (let i = 0; i < byteString.length; i++) {
+                ia[i] = byteString.charCodeAt(i);
+            }
+            return ia;
+        }
+
         async function processAndDownloadPDF() {
             if (!selectedFile) return;
 
             const btn = document.getElementById('compressBtn');
 
-            // Trigger High-Revenue Ad & Delay Engine
             window.triggerToolProcessAndDownload(btn, "Compressing PDF Under Target", async function() {
                 try {
                     const arrayBuffer = await selectedFile.arrayBuffer();
@@ -186,7 +198,7 @@
 
                     for (let i = 1; i <= pdfDoc.numPages; i++) {
                         const page = await pdfDoc.getPage(i);
-                        const viewport = page.getViewport({ scale: 1.2 });
+                        const viewport = page.getViewport({ scale: renderScale });
 
                         const canvas = document.createElement('canvas');
                         const ctx = canvas.getContext('2d');
@@ -196,7 +208,7 @@
                         await page.render({ canvasContext: ctx, viewport: viewport }).promise;
 
                         const imgDataUrl = canvas.toDataURL('image/jpeg', compressionQuality);
-                        const imgBytes = await fetch(imgDataUrl).then(res => res.arrayBuffer());
+                        const imgBytes = dataURItoUint8Array(imgDataUrl);
                         const embeddedImage = await newPdfDoc.embedJpg(imgBytes);
 
                         const newPage = newPdfDoc.addPage([viewport.width, viewport.height]);
@@ -216,7 +228,7 @@
                     link.click();
 
                 } catch (err) {
-                    alert('Compression completed. Saving default copy.');
+                    alert('Compression failed. Please try a different target size.');
                 }
             });
         }
