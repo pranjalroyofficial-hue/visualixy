@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Signature Background Remover & Inverter - Visualixy</title>
+    <meta name="description" content="Make signature background pure white and ink dark black or blue for SSC, UPSC, and state government online job forms.">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="../../assets/js/ads.js"></script>
+    <style>
+        body { background-color: #f8fafc; color: #0f172a; font-family: system-ui, -apple-system, sans-serif; }
+        .tool-card { background: #ffffff; border: 1px solid #e2e8f0; border-radius: 1.5rem; }
+    </style>
+</head>
+<body class="min-h-screen flex flex-col justify-between antialiased pb-16 lg:pb-0">
+
+    <div class="hidden lg:block w-full bg-slate-200/60 py-2 border-b border-slate-300">
+        <div class="max-w-6xl mx-auto text-center overflow-hidden">
+            <script>atOptions = {'key':'0cf435f486e59418568243ee21ba9dea','format':'iframe','height':90,'width':728,'params':{}};</script>
+            <script src="https://www.highperformanceformat.com/0cf435f486e59418568243ee21ba9dea/invoke.js"></script>
+        </div>
+    </div>
+
+    <header class="bg-white border-b border-slate-200 sticky top-0 z-50 shadow-sm">
+        <div class="max-w-7xl mx-auto px-4 py-3 flex items-center justify-between">
+            <a href="../../" class="flex items-center gap-2">
+                <div class="w-8 h-8 rounded-xl bg-blue-600 flex items-center justify-center font-black text-lg text-white">V</div>
+                <span class="font-extrabold text-lg text-slate-900 tracking-tight">VISUALIXY</span>
+            </a>
+            <a href="../../" class="text-xs font-bold text-slate-600 bg-slate-100 px-3 py-1.5 rounded-xl hover:bg-blue-50 hover:text-blue-600 transition">← Back to All Tools</a>
+        </div>
+    </header>
+
+    <main class="max-w-7xl mx-auto px-4 py-6 flex-1 w-full flex flex-col lg:flex-row gap-6">
+        <div class="flex-1 min-w-0">
+            <div class="tool-card p-5 sm:p-8 shadow-sm">
+                
+                <div class="text-center max-w-lg mx-auto mb-6">
+                    <div class="inline-flex p-3 rounded-2xl bg-indigo-50 text-indigo-600 text-2xl mb-2">✍️</div>
+                    <h1 class="text-xl sm:text-2xl font-black text-slate-900">Signature Background Remover</h1>
+                    <p class="text-xs text-slate-500 mt-1">Clean photo shadow, turn background pure white and make ink crystal clear for exam forms.</p>
+                </div>
+
+                <div id="dropArea" onclick="document.getElementById('sigInput').click()" class="border-2 border-dashed border-slate-300 rounded-3xl p-6 sm:p-10 text-center hover:border-blue-500 bg-slate-50 transition cursor-pointer mb-6">
+                    <input type="file" id="sigInput" accept="image/*" class="hidden">
+                    <div class="text-4xl mb-3">📄</div>
+                    <h3 class="text-sm font-bold text-slate-800">Upload Signature Photo</h3>
+                    <p class="text-xs text-slate-400 mt-1">Supports camera shots with shadow or gray background</p>
+                </div>
+
+                <div id="editorPanel" class="hidden space-y-6">
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6 items-center">
+                        <div class="space-y-4">
+                            <div>
+                                <label class="block text-xs font-black text-slate-700 uppercase mb-1">Ink Color</label>
+                                <select id="inkColor" onchange="processSignature()" class="w-full bg-slate-50 border border-slate-300 rounded-xl px-3.5 py-2.5 text-xs font-bold">
+                                    <option value="black">Dark Black Ink</option>
+                                    <option value="blue">Royal Blue Ink</option>
+                                </select>
+                            </div>
+                            <div>
+                                <label class="block text-xs font-black text-slate-700 uppercase mb-1">Background Cleanliness</label>
+                                <input type="range" id="threshold" min="120" max="220" value="160" oninput="processSignature()" class="w-full accent-blue-600">
+                            </div>
+                        </div>
+                        <div class="flex flex-col items-center justify-center p-4 bg-slate-100 border border-slate-200 rounded-2xl">
+                            <canvas id="sigCanvas" class="max-w-[220px] rounded border border-slate-300 bg-white shadow-md"></canvas>
+                        </div>
+                    </div>
+
+                    <button id="downloadBtn" onclick="downloadSig()" class="w-full py-4 rounded-2xl bg-blue-600 hover:bg-blue-700 text-white font-black text-xs shadow-md transition flex items-center justify-center gap-2">
+                        <span>⚡ Download Clean Signature JPG</span>
+                    </button>
+                </div>
+
+            </div>
+        </div>
+
+        <aside class="w-full lg:w-80 shrink-0 space-y-4">
+            <div class="bg-white p-2.5 rounded-3xl border border-slate-200 shadow-sm text-center">
+                <span class="text-[10px] uppercase font-bold text-slate-400 block mb-1">Sponsored</span>
+                <div class="flex items-center justify-center overflow-hidden min-h-[250px]">
+                    <script>atOptions = {'key':'ff2ed036da6ab41cbe4fbfbeba0d55fe','format':'iframe','height':250,'width':300,'params':{}};</script>
+                    <script src="https://www.highperformanceformat.com/ff2ed036da6ab41cbe4fbfbeba0d55fe/invoke.js"></script>
+                </div>
+            </div>
+        </aside>
+    </main>
+
+    <script>
+        let rawImg = null;
+        const canvas = document.getElementById('sigCanvas');
+
+        document.getElementById('sigInput').onchange = (e) => {
+            if (e.target.files[0]) {
+                const reader = new FileReader();
+                reader.onload = (event) => {
+                    const img = new Image();
+                    img.onload = () => {
+                        rawImg = img;
+                        document.getElementById('dropArea').classList.add('hidden');
+                        document.getElementById('editorPanel').classList.remove('hidden');
+                        processSignature();
+                    };
+                    img.src = event.target.result;
+                };
+                reader.readAsDataURL(e.target.files[0]);
+            }
+        };
+
+        function processSignature() {
+            if (!rawImg) return;
+            const ctx = canvas.getContext('2d');
+            canvas.width = rawImg.width;
+            canvas.height = rawImg.height;
+
+            ctx.drawImage(rawImg, 0, 0);
+            const imgData = ctx.getImageData(0, 0, canvas.width, canvas.height);
+            const data = imgData.data;
+            const threshold = parseInt(document.getElementById('threshold').value);
+            const ink = document.getElementById('inkColor').value;
+
+            for (let i = 0; i < data.length; i += 4) {
+                let avg = (data[i] + data[i+1] + data[i+2]) / 3;
+                if (avg > threshold) {
+                    // Make White background
+                    data[i] = 255; data[i+1] = 255; data[i+2] = 255;
+                } else {
+                    // Make Ink Color
+                    if (ink === 'blue') {
+                        data[i] = 10; data[i+1] = 40; data[i+2] = 160;
+                    } else {
+                        data[i] = 10; data[i+1] = 10; data[i+2] = 10;
+                    }
+                }
+            }
+            ctx.putImageData(imgData, 0, 0);
+        }
+
+        function downloadSig() {
+            const btn = document.getElementById('downloadBtn');
+            window.triggerToolProcessAndDownload(btn, "Optimizing Signature", function() {
+                const link = document.createElement('a');
+                link.href = canvas.toDataURL('image/jpeg', 0.92);
+                link.download = "Visualixy_Clean_Signature.jpg";
+                link.click();
+            });
+        }
+    </script>
+</body>
+</html>

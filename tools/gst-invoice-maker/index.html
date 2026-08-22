@@ -2,32 +2,18 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>Free GST Invoice & Cash Bill Maker - Visualixy</title>
-    <meta name="description" content="Generate professional GST & Non-GST cash bills online for free. Auto calculate CGST, SGST, IGST tax with instant print and A4 PDF export.">
-    
-    <!-- Tailwind CSS -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GST & Cash Bill Invoice Generator - Visualixy</title>
+    <meta name="description" content="Generate professional GST invoices and cash memos for small business, shops, and freelancers instantly as printable PDF.">
     <script src="https://cdn.tailwindcss.com"></script>
-
-    <!-- html2pdf Engine -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
-
-    <!-- Visualixy Master Ads Engine -->
     <script src="../../assets/js/ads.js"></script>
-
     <style>
-        body { background-color: #f8fafc; color: #0f172a; font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; }
-        .tool-box { background: #ffffff; border: 1px solid #e2e8f0; border-radius: 1.5rem; }
-        @media print {
-            body * { visibility: hidden; }
-            #invoicePaper, #invoicePaper * { visibility: visible; }
-            #invoicePaper { position: absolute; left: 0; top: 0; width: 100%; }
-        }
+        body { background-color: #f8fafc; color: #0f172a; font-family: system-ui, -apple-system, sans-serif; }
+        .tool-card { background: #ffffff; border: 1px solid #e2e8f0; border-radius: 1.5rem; }
     </style>
 </head>
 <body class="min-h-screen flex flex-col justify-between antialiased pb-16 lg:pb-0">
 
-    <!-- Top Leaderboard Ad (728x90) -->
     <div class="hidden lg:block w-full bg-slate-200/60 py-2 border-b border-slate-300">
         <div class="max-w-6xl mx-auto text-center overflow-hidden">
             <script>atOptions = {'key':'0cf435f486e59418568243ee21ba9dea','format':'iframe','height':90,'width':728,'params':{}};</script>
@@ -35,7 +21,6 @@
         </div>
     </div>
 
-    <!-- Header Navigation -->
     <header class="bg-white border-b border-slate-200 sticky top-0 z-50 shadow-sm">
         <div class="max-w-7xl mx-auto px-4 py-3 flex items-center justify-between">
             <a href="../../" class="flex items-center gap-2">
@@ -46,243 +31,151 @@
         </div>
     </header>
 
-    <!-- Mobile Banner Ad (320x50) -->
-    <div class="lg:hidden w-full bg-slate-100 py-1 text-center border-b border-slate-200 overflow-hidden">
-        <script>atOptions = {'key':'ff2ed036da6ab41cbe4fbfbeba0d55fe','format':'iframe','height':50,'width':320,'params':{}};</script>
-        <script src="https://www.highperformanceformat.com/ff2ed036da6ab41cbe4fbfbeba0d55fe/invoke.js"></script>
-    </div>
-
-    <!-- Main Workspace -->
     <main class="max-w-7xl mx-auto px-4 py-6 flex-1 w-full flex flex-col lg:flex-row gap-6">
-
-        <!-- Center Tool Panel -->
         <div class="flex-1 min-w-0">
-            <div class="tool-box p-5 sm:p-8 shadow-sm">
+            <div class="tool-card p-5 sm:p-8 shadow-sm space-y-6">
                 
-                <!-- Tool Title Header -->
-                <div class="text-center max-w-lg mx-auto mb-6">
-                    <div class="inline-flex p-3 rounded-2xl bg-indigo-50 text-indigo-600 text-2xl mb-2">🧾</div>
+                <div class="text-center max-w-lg mx-auto">
+                    <div class="inline-flex p-3 rounded-2xl bg-amber-50 text-amber-600 text-2xl mb-2">🧾</div>
                     <h1 class="text-xl sm:text-2xl font-black text-slate-900">GST Invoice & Cash Bill Maker</h1>
-                    <p class="text-xs text-slate-500 mt-1">Generate professional Tax Invoices with auto CGST/SGST calculations.</p>
+                    <p class="text-xs text-slate-500 mt-1">Create tax invoices and cash receipts for your store or freelance services instantly.</p>
                 </div>
 
-                <!-- Input Controls Section -->
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-4 bg-slate-50 p-4 sm:p-5 rounded-2xl border border-slate-200 mb-6">
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
                     <div>
-                        <label class="block text-xs font-bold text-slate-700 mb-1">Your Business / Shop Name *</label>
-                        <input type="text" id="bizName" oninput="updateInvoice()" value="Gupta Electronics & Cyber Cafe" class="w-full bg-white border border-slate-300 text-xs rounded-xl px-3 py-2 font-bold focus:outline-none focus:border-indigo-500">
-                    </div>
-                    <div>
-                        <label class="block text-xs font-bold text-slate-700 mb-1">GSTIN Number (Optional)</label>
-                        <input type="text" id="bizGst" oninput="updateInvoice()" placeholder="e.g. 18AABCU9603R1ZM" class="w-full bg-white border border-slate-300 text-xs rounded-xl px-3 py-2 font-bold uppercase focus:outline-none focus:border-indigo-500">
+                        <label class="block text-xs font-black text-slate-700 uppercase mb-1">Business Name</label>
+                        <input type="text" id="bName" value="Roy Digital Services" class="w-full bg-slate-50 border border-slate-300 rounded-xl px-3.5 py-2.5 text-xs font-bold focus:bg-white focus:outline-none focus:border-blue-600">
                     </div>
                     <div>
-                        <label class="block text-xs font-bold text-slate-700 mb-1">Customer Name *</label>
-                        <input type="text" id="custName" oninput="updateInvoice()" value="Walk-in Customer" class="w-full bg-white border border-slate-300 text-xs rounded-xl px-3 py-2 font-bold focus:outline-none focus:border-indigo-500">
+                        <label class="block text-xs font-black text-slate-700 uppercase mb-1">Customer Name</label>
+                        <input type="text" id="cName" value="Rahul Sharma" class="w-full bg-slate-50 border border-slate-300 rounded-xl px-3.5 py-2.5 text-xs font-bold focus:bg-white focus:outline-none focus:border-blue-600">
+                    </div>
+                </div>
+
+                <div class="grid grid-cols-1 sm:grid-cols-3 gap-4">
+                    <div>
+                        <label class="block text-xs font-black text-slate-700 uppercase mb-1">Item Description</label>
+                        <input type="text" id="itemName" value="Form Filling & Photo Print" class="w-full bg-slate-50 border border-slate-300 rounded-xl px-3.5 py-2.5 text-xs font-bold focus:bg-white focus:outline-none focus:border-blue-600">
                     </div>
                     <div>
-                        <label class="block text-xs font-bold text-slate-700 mb-1">Invoice Date & Number</label>
-                        <div class="flex gap-2">
-                            <input type="text" id="invNo" oninput="updateInvoice()" value="INV-001" class="w-1/2 bg-white border border-slate-300 text-xs rounded-xl px-3 py-2 font-bold focus:outline-none">
-                            <input type="date" id="invDate" oninput="updateInvoice()" class="w-1/2 bg-white border border-slate-300 text-xs rounded-xl px-3 py-2 font-bold focus:outline-none">
-                        </div>
+                        <label class="block text-xs font-black text-slate-700 uppercase mb-1">Price (₹)</label>
+                        <input type="number" id="itemPrice" value="150" class="w-full bg-slate-50 border border-slate-300 rounded-xl px-3.5 py-2.5 text-xs font-bold focus:bg-white focus:outline-none focus:border-blue-600">
+                    </div>
+                    <div>
+                        <label class="block text-xs font-black text-slate-700 uppercase mb-1">GST Rate (%)</label>
+                        <select id="gstRate" class="w-full bg-slate-50 border border-slate-300 rounded-xl px-3.5 py-2.5 text-xs font-bold focus:bg-white focus:outline-none focus:border-blue-600">
+                            <option value="0">0% (Cash Memo)</option>
+                            <option value="5">5% GST</option>
+                            <option value="18" selected>18% GST</option>
+                        </select>
                     </div>
                 </div>
 
-                <!-- Items Table Input -->
-                <div class="mb-6">
-                    <div class="flex items-center justify-between mb-2">
-                        <span class="text-xs font-bold text-slate-700">Billing Items</span>
-                        <button onclick="addItemRow()" class="text-xs bg-indigo-50 text-indigo-600 font-bold px-3 py-1.5 rounded-xl border border-indigo-200 hover:bg-indigo-600 hover:text-white transition">+ Add Item</button>
-                    </div>
-                    <div id="itemsContainer" class="space-y-2">
-                        <!-- Dynamic Item Rows -->
-                    </div>
-                </div>
-
-                <!-- Live Printable Invoice Paper -->
-                <div id="invoicePaper" class="bg-white p-6 sm:p-8 rounded-2xl border border-slate-300 shadow-md text-slate-900 text-xs">
-                    <div class="flex justify-between items-start border-b border-slate-200 pb-4 mb-4">
-                        <div>
-                            <h2 id="paperBizName" class="text-lg font-black text-indigo-700">Gupta Electronics</h2>
-                            <p id="paperBizGst" class="text-[11px] text-slate-500">GSTIN: Not Applicable</p>
-                        </div>
-                        <div class="text-right">
-                            <span class="text-xs font-black uppercase bg-indigo-100 text-indigo-800 px-2.5 py-1 rounded-md">TAX INVOICE</span>
-                            <p id="paperInvNo" class="font-bold text-slate-700 mt-1.5">No: INV-001</p>
-                            <p id="paperInvDate" class="text-[11px] text-slate-500">Date: 18/08/2026</p>
-                        </div>
-                    </div>
-
-                    <div class="mb-4">
-                        <span class="text-[10px] uppercase font-bold text-slate-400">Billed To:</span>
-                        <p id="paperCustName" class="font-bold text-sm text-slate-800">Walk-in Customer</p>
-                    </div>
-
-                    <!-- Items Display Table -->
-                    <table class="w-full text-left border-collapse mb-4">
-                        <thead>
-                            <tr class="bg-slate-100 border-y border-slate-200 text-[11px] font-black text-slate-600">
-                                <th class="py-2 px-2">Item Description</th>
-                                <th class="py-2 px-2 text-center">Qty</th>
-                                <th class="py-2 px-2 text-right">Price (₹)</th>
-                                <th class="py-2 px-2 text-right">Total (₹)</th>
-                            </tr>
-                        </thead>
-                        <tbody id="paperItemsBody"></tbody>
-                    </table>
-
-                    <!-- Calculation Totals -->
-                    <div class="flex justify-end">
-                        <div class="w-64 space-y-1.5 text-right font-medium">
-                            <div class="flex justify-between text-slate-600">
-                                <span>Subtotal:</span>
-                                <span id="subTotalVal">₹0.00</span>
-                            </div>
-                            <div class="flex justify-between text-slate-600">
-                                <span>CGST (9%):</span>
-                                <span id="cgstVal">₹0.00</span>
-                            </div>
-                            <div class="flex justify-between text-slate-600">
-                                <span>SGST (9%):</span>
-                                <span id="sgstVal">₹0.00</span>
-                            </div>
-                            <div class="flex justify-between text-sm font-black text-slate-900 border-t border-slate-300 pt-1.5">
-                                <span>Grand Total:</span>
-                                <span id="grandTotalVal">₹0.00</span>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="mt-8 pt-4 border-t border-slate-200 text-center text-[10px] text-slate-400">
-                        Thank you for your business! • Computer Generated Invoice
-                    </div>
-                </div>
-
-                <!-- Download & Print Actions -->
-                <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 mt-6">
-                    <button onclick="window.print()" class="py-3.5 px-4 rounded-2xl bg-slate-800 hover:bg-slate-900 text-white font-black text-xs shadow-md transition flex items-center justify-center gap-2">
-                        <span>🖨️ Direct Print Invoice</span>
-                    </button>
-                    <button id="downloadPdfBtn" onclick="exportInvoicePdf()" class="py-3.5 px-4 rounded-2xl bg-indigo-600 hover:bg-indigo-700 text-white font-black text-xs shadow-md transition flex items-center justify-center gap-2">
-                        <span>📥 Download Invoice PDF</span>
-                    </button>
-                </div>
+                <button id="printBtn" onclick="generateInvoicePDF()" class="w-full py-4 rounded-2xl bg-blue-600 hover:bg-blue-700 text-white font-black text-xs shadow-md transition flex items-center justify-center gap-2">
+                    <span>⚡ Print / Download Invoice (PDF)</span>
+                </button>
 
             </div>
         </div>
 
-        <!-- Right Ad Sidebar (300x250 Native Card) -->
         <aside class="w-full lg:w-80 shrink-0 space-y-4">
             <div class="bg-white p-2.5 rounded-3xl border border-slate-200 shadow-sm text-center">
                 <span class="text-[10px] uppercase font-bold text-slate-400 block mb-1">Sponsored</span>
                 <div class="flex items-center justify-center overflow-hidden min-h-[250px]">
-                    <script>atOptions = {'key':'ff2ed036da6ab41cbe4fbfbeba0d55fe','format':'iframe','height':250,'width':300,'params':{}};</script>
+                    <script>atOptions = {'key':'0cf435f486e59418568243ee21ba9dea','format':'iframe','height':250,'width':300,'params':{}};</script>
                     <script src="https://www.highperformanceformat.com/ff2ed036da6ab41cbe4fbfbeba0d55fe/invoke.js"></script>
                 </div>
             </div>
         </aside>
-
     </main>
 
-    <!-- Footer -->
-    <footer class="border-t border-slate-200 bg-white py-4 text-center text-xs text-slate-500">
-        <p>© 2026 Visualixy. All document processing stays 100% on your device.</p>
-    </footer>
-
-    <!-- Invoice Generator Logic -->
     <script>
-        document.getElementById('invDate').valueAsDate = new Date();
+        function generateInvoicePDF() {
+            const btn = document.getElementById('printBtn');
+            const bName = document.getElementById('bName').value.trim() || "Business Store";
+            const cName = document.getElementById('cName').value.trim() || "Valued Customer";
+            const item = document.getElementById('itemName').value.trim() || "Service/Item";
+            const price = parseFloat(document.getElementById('itemPrice').value) || 0;
+            const gst = parseFloat(document.getElementById('gstRate').value) || 0;
 
-        let items = [
-            { desc: 'Passport Photo Printing (8 Pcs)', qty: 1, price: 50 },
-            { desc: 'Online Form Submission Charge', qty: 1, price: 100 }
-        ];
+            const taxAmount = (price * gst) / 100;
+            const total = price + taxAmount;
 
-        function renderItemInputs() {
-            const container = document.getElementById('itemsContainer');
-            container.innerHTML = '';
-            items.forEach((item, index) => {
-                const row = document.createElement('div');
-                row.className = 'flex gap-2 items-center';
-                row.innerHTML = `
-                    <input type="text" value="${item.desc}" oninput="items[${index}].desc=this.value; updateInvoice()" placeholder="Description" class="flex-1 bg-white border border-slate-300 text-xs rounded-xl px-3 py-2 font-medium focus:outline-none">
-                    <input type="number" value="${item.qty}" oninput="items[${index}].qty=Number(this.value); updateInvoice()" placeholder="Qty" class="w-16 bg-white border border-slate-300 text-xs rounded-xl px-2 py-2 text-center font-bold focus:outline-none">
-                    <input type="number" value="${item.price}" oninput="items[${index}].price=Number(this.value); updateInvoice()" placeholder="Price" class="w-24 bg-white border border-slate-300 text-xs rounded-xl px-2 py-2 text-right font-bold focus:outline-none">
-                    <button onclick="removeItemRow(${index})" class="text-red-500 font-bold px-2 py-1 text-sm hover:text-red-700">✕</button>
-                `;
-                container.appendChild(row);
+            const printContent = `
+                <!DOCTYPE html>
+                <html>
+                <head>
+                    <title>Invoice - ${bName}</title>
+                    <style>
+                        body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; padding: 40px; color: #1e293b; }
+                        .inv-header { display: flex; justify-content: space-between; border-bottom: 2px solid #e2e8f0; padding-bottom: 15px; margin-bottom: 20px; }
+                        table { width: 100%; border-collapse: collapse; margin-top: 25px; }
+                        th, td { border: 1px solid #cbd5e1; padding: 12px; text-align: left; font-size: 14px; }
+                        th { background-color: #f1f5f9; }
+                        .total-box { margin-top: 25px; text-align: right; }
+                        .footer-note { margin-top: 60px; font-size: 12px; color: #94a3b8; text-align: center; }
+                    </style>
+                </head>
+                <body>
+                    <div class="inv-header">
+                        <div>
+                            <h2 style="margin:0; color:#2563eb;">TAX INVOICE / CASH MEMO</h2>
+                            <p style="margin:5px 0; font-weight:bold;">${bName}</p>
+                        </div>
+                        <div style="text-align:right;">
+                            <p style="margin:2px 0;"><b>Date:</b> ${new Date().toLocaleDateString('en-GB')}</p>
+                            <p style="margin:2px 0;"><b>Bill To:</b> ${cName}</p>
+                        </div>
+                    </div>
+
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Item Description</th>
+                                <th>Base Price</th>
+                                <th>GST Rate</th>
+                                <th>Total</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>${item}</td>
+                                <td>₹${price.toFixed(2)}</td>
+                                <td>${gst}% (₹${taxAmount.toFixed(2)})</td>
+                                <td><b>₹${total.toFixed(2)}</b></td>
+                            </tr>
+                        </tbody>
+                    </table>
+
+                    <div class="total-box">
+                        <h3>Grand Total Payable: ₹${total.toFixed(2)}</h3>
+                    </div>
+
+                    <div class="footer-note">
+                        <p>Generated via Visualixy.in • 100% Client-Side Privacy Guaranteed</p>
+                    </div>
+
+                    <script>
+                        window.onload = function() {
+                            window.print();
+                        };
+                    <\/script>
+                </body>
+                </html>
+            `;
+
+            // Trigger Ads Engine & Launch Print Window
+            window.triggerToolProcessAndDownload(btn, "Generating Official Invoice", function() {
+                const printWindow = window.open('', '_blank');
+                if (printWindow) {
+                    printWindow.document.open();
+                    printWindow.document.write(printContent);
+                    printWindow.document.close();
+                } else {
+                    alert("Please allow popups for printing invoice.");
+                }
             });
         }
-
-        function addItemRow() {
-            items.push({ desc: 'New Service / Product', qty: 1, price: 0 });
-            renderItemInputs();
-            updateInvoice();
-        }
-
-        function removeItemRow(idx) {
-            if (items.length > 1) {
-                items.splice(idx, 1);
-                renderItemInputs();
-                updateInvoice();
-            }
-        }
-
-        function updateInvoice() {
-            document.getElementById('paperBizName').innerText = document.getElementById('bizName').value || 'Business Name';
-            const gst = document.getElementById('bizGst').value.trim();
-            document.getElementById('paperBizGst').innerText = gst ? `GSTIN: ${gst}` : 'GSTIN: Not Applicable';
-            document.getElementById('paperCustName').innerText = document.getElementById('custName').value || 'Customer';
-            document.getElementById('paperInvNo').innerText = `No: ${document.getElementById('invNo').value || 'INV-001'}`;
-            document.getElementById('paperInvDate').innerText = `Date: ${document.getElementById('invDate').value}`;
-
-            let subtotal = 0;
-            const tbody = document.getElementById('paperItemsBody');
-            tbody.innerHTML = '';
-
-            items.forEach(it => {
-                const total = (it.qty || 0) * (it.price || 0);
-                subtotal += total;
-                const tr = document.createElement('tr');
-                tr.className = 'border-b border-slate-100';
-                tr.innerHTML = `
-                    <td class="py-2 px-2 font-medium text-slate-800">${it.desc}</td>
-                    <td class="py-2 px-2 text-center text-slate-600">${it.qty}</td>
-                    <td class="py-2 px-2 text-right text-slate-600">₹${it.price.toFixed(2)}</td>
-                    <td class="py-2 px-2 text-right font-bold text-slate-900">₹${total.toFixed(2)}</td>
-                `;
-                tbody.appendChild(tr);
-            });
-
-            const hasGst = !!gst;
-            const cgst = hasGst ? (subtotal * 0.09) : 0;
-            const sgst = hasGst ? (subtotal * 0.09) : 0;
-            const grandTotal = subtotal + cgst + sgst;
-
-            document.getElementById('subTotalVal').innerText = `₹${subtotal.toFixed(2)}`;
-            document.getElementById('cgstVal').innerText = hasGst ? `₹${cgst.toFixed(2)}` : '₹0.00 (Exempt)';
-            document.getElementById('sgstVal').innerText = hasGst ? `₹${sgst.toFixed(2)}` : '₹0.00 (Exempt)';
-            document.getElementById('grandTotalVal').innerText = `₹${grandTotal.toFixed(2)}`;
-        }
-
-        function exportInvoicePdf() {
-            const btn = document.getElementById('downloadPdfBtn');
-            window.triggerToolProcessAndDownload(btn, "Rendering Tax Invoice PDF", function() {
-                const element = document.getElementById('invoicePaper');
-                const opt = {
-                    margin: 10,
-                    filename: `Visualixy_Invoice_${document.getElementById('invNo').value || 'bill'}.pdf`,
-                    image: { type: 'jpeg', quality: 0.98 },
-                    html2canvas: { scale: 2 },
-                    jsPDF: { unit: 'mm', format: 'a4', orientation: 'portrait' }
-                };
-                html2pdf().set(opt).from(element).save();
-            });
-        }
-
-        renderItemInputs();
-        updateInvoice();
     </script>
 </body>
 </html>

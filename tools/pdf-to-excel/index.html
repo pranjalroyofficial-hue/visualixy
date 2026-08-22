@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>PDF to Excel & CSV Converter Online Free - Visualixy</title>
+    <meta name="description" content="Extract tables and text from PDF documents to Excel (.xlsx) and CSV spreadsheets instantly. 100% Client-Side Private PDF converter.">
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- PDF.js Engine -->
+    <script src="https://unpkg.com/pdfjs-dist@3.11.174/build/pdf.min.js"></script>
+    
+    <!-- SheetJS (Excel Engine) -->
+    <script src="https://cdn.jsdelivr.net/npm/xlsx@0.18.5/dist/xlsx.full.min.js"></script>
+
+    <!-- Master Ads Engine -->
+    <script src="../../assets/js/ads.js"></script>
+
+    <style>
+        body { background-color: #f8fafc; color: #0f172a; font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; }
+        .tool-card { background: #ffffff; border: 1px solid #e2e8f0; border-radius: 1.5rem; }
+    </style>
+</head>
+<body class="min-h-screen flex flex-col justify-between antialiased pb-16 lg:pb-0">
+
+    <!-- Top Leaderboard Ad (728x90) -->
+    <div class="hidden lg:block w-full bg-slate-200/60 py-2 border-b border-slate-300">
+        <div class="max-w-6xl mx-auto text-center overflow-hidden">
+            <script>atOptions = {'key':'0cf435f486e59418568243ee21ba9dea','format':'iframe','height':90,'width':728,'params':{}};</script>
+            <script src="https://www.highperformanceformat.com/0cf435f486e59418568243ee21ba9dea/invoke.js"></script>
+        </div>
+    </div>
+
+    <!-- Header Navigation -->
+    <header class="bg-white border-b border-slate-200 sticky top-0 z-50 shadow-sm">
+        <div class="max-w-7xl mx-auto px-4 py-3 flex items-center justify-between">
+            <a href="../../" class="flex items-center gap-2">
+                <div class="w-8 h-8 rounded-xl bg-blue-600 flex items-center justify-center font-black text-lg text-white">V</div>
+                <span class="font-extrabold text-lg text-slate-900 tracking-tight">VISUALIXY</span>
+            </a>
+            <a href="../../" class="text-xs font-bold text-slate-600 bg-slate-100 px-3 py-1.5 rounded-xl hover:bg-blue-50 hover:text-blue-600 transition">← Back to All Tools</a>
+        </div>
+    </header>
+
+    <!-- Mobile Banner Ad (320x50) -->
+    <div class="lg:hidden w-full bg-slate-100 py-1 text-center border-b border-slate-200 overflow-hidden">
+        <script>atOptions = {'key':'ff2ed036da6ab41cbe4fbfbeba0d55fe','format':'iframe','height':50,'width':320,'params':{}};</script>
+        <script src="https://www.highperformanceformat.com/ff2ed036da6ab41cbe4fbfbeba0d55fe/invoke.js"></script>
+    </div>
+
+    <!-- Main Workspace -->
+    <main class="max-w-7xl mx-auto px-4 py-6 flex-1 w-full flex flex-col lg:flex-row gap-6">
+
+        <!-- Left Tool Area -->
+        <div class="flex-1 min-w-0">
+            <div class="tool-card p-5 sm:p-8 shadow-sm">
+                
+                <div class="text-center max-w-lg mx-auto mb-6">
+                    <div class="inline-flex p-3 rounded-2xl bg-emerald-50 text-emerald-600 text-2xl mb-2">📊</div>
+                    <h1 class="text-xl sm:text-2xl font-black text-slate-900">PDF to Excel / CSV Converter</h1>
+                    <p class="text-xs text-slate-500 mt-1">Convert bank statements, marksheets, and tables from PDF directly into editable spreadsheets.</p>
+                </div>
+
+                <!-- Drop Area -->
+                <div id="dropArea" class="border-2 border-dashed border-slate-300 rounded-3xl p-6 sm:p-10 text-center hover:border-emerald-500 bg-slate-50 transition cursor-pointer mb-6">
+                    <input type="file" id="pdfInput" accept="application/pdf" class="hidden">
+                    <div class="text-4xl mb-3">📑</div>
+                    <h3 class="text-sm font-bold text-slate-800">Upload PDF Document</h3>
+                    <p class="text-xs text-slate-400 mt-1">100% Private Client-Side Conversion • No Server Upload</p>
+                </div>
+
+                <!-- Processing & Export Controls -->
+                <div id="controlPanel" class="hidden space-y-6">
+                    
+                    <!-- File Summary -->
+                    <div class="bg-emerald-50 border border-emerald-200 rounded-2xl p-4 flex items-center justify-between">
+                        <div class="flex items-center gap-3">
+                            <span class="text-2xl">📋</span>
+                            <div>
+                                <p id="fileName" class="text-xs font-bold text-slate-900 truncate max-w-[200px] sm:max-w-xs">document.pdf</p>
+                                <p id="pageCount" class="text-[11px] text-slate-600">Pages: Calculating...</p>
+                            </div>
+                        </div>
+                        <button onclick="resetTool()" class="text-xs text-red-600 font-bold hover:underline">Remove</button>
+                    </div>
+
+                    <!-- Output Format Selector -->
+                    <div>
+                        <label class="block text-xs font-black text-slate-700 uppercase tracking-wider mb-2">Select Spreadsheet Format</label>
+                        <div class="grid grid-cols-2 gap-3">
+                            <button type="button" onclick="setExportFormat('xlsx', this)" class="format-btn active py-3 px-4 rounded-xl border border-emerald-600 bg-emerald-50 text-emerald-700 text-xs font-black text-center flex items-center justify-center gap-2">
+                                <span>📗 Excel (.XLSX)</span>
+                            </button>
+                            <button type="button" onclick="setExportFormat('csv', this)" class="format-btn py-3 px-4 rounded-xl border border-slate-200 bg-white text-slate-700 text-xs font-black text-center flex items-center justify-center gap-2">
+                                <span>📄 CSV Format</span>
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Live Extracted Data Preview Box -->
+                    <div>
+                        <label class="block text-xs font-black text-slate-700 uppercase tracking-wider mb-2">Extracted Table Preview (First 5 Rows)</label>
+                        <div class="overflow-x-auto border border-slate-200 rounded-2xl max-h-48 bg-slate-50 p-2">
+                            <table id="previewTable" class="w-full text-[11px] text-left border-collapse">
+                                <tbody id="tableBody" class="divide-y divide-slate-200"></tbody>
+                            </table>
+                        </div>
+                    </div>
+
+                    <!-- Download Trigger Button -->
+                    <button id="convertBtn" onclick="exportSpreadsheet()" class="w-full py-4 rounded-2xl bg-emerald-600 hover:bg-emerald-700 text-white font-black text-sm shadow-md transition flex items-center justify-center gap-2">
+                        <span>⚡ Convert & Download Spreadsheet</span>
+                    </button>
+
+                </div>
+
+            </div>
+        </div>
+
+        <!-- Right Ad Sidebar (300x250 Native Card) -->
+        <aside class="w-full lg:w-80 shrink-0 space-y-4">
+            <div class="bg-white p-2.5 rounded-3xl border border-slate-200 shadow-sm text-center">
+                <span class="text-[10px] uppercase font-bold text-slate-400 block mb-1">Sponsored</span>
+                <div class="flex items-center justify-center overflow-hidden min-h-[250px]">
+                    <script>atOptions = {'key':'ff2ed036da6ab41cbe4fbfbeba0d55fe','format':'iframe','height':250,'width':300,'params':{}};</script>
+                    <script src="https://www.highperformanceformat.com/ff2ed036da6ab41cbe4fbfbeba0d55fe/invoke.js"></script>
+                </div>
+            </div>
+        </aside>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="border-t border-slate-200 bg-white py-4 text-center text-xs text-slate-500">
+        <p>© 2026 Visualixy. All document processing stays 100% on your device.</p>
+    </footer>
+
+    <!-- Conversion & Extraction Logic -->
+    <script>
+        pdfjsLib.GlobalWorkerOptions.workerSrc = 'https://unpkg.com/pdfjs-dist@3.11.174/build/pdf.worker.min.js';
+
+        let extractedRows = [];
+        let exportFormat = 'xlsx';
+        let currentFile = null;
+
+        const dropArea = document.getElementById('dropArea');
+        const pdfInput = document.getElementById('pdfInput');
+        const controlPanel = document.getElementById('controlPanel');
+
+        dropArea.onclick = () => pdfInput.click();
+
+        pdfInput.onchange = (e) => {
+            if (e.target.files[0]) handlePDF(e.target.files[0]);
+        };
+
+        async function handlePDF(file) {
+            if (file.type !== 'application/pdf') {
+                alert('Please upload a valid PDF document.');
+                return;
+            }
+
+            currentFile = file;
+            document.getElementById('fileName').innerText = file.name;
+            dropArea.classList.add('hidden');
+            controlPanel.classList.remove('hidden');
+
+            const arrayBuffer = await file.arrayBuffer();
+            const pdf = await pdfjsLib.getDocument({ data: arrayBuffer }).promise;
+            document.getElementById('pageCount').innerText = `Total Pages: ${pdf.numPages}`;
+
+            extractedRows = [];
+
+            // Extract table and row-based text across pages
+            for (let pageNum = 1; pageNum <= pdf.numPages; pageNum++) {
+                const page = await pdf.getPage(pageNum);
+                const textContent = await page.getTextContent();
+                
+                // Group items by Y coordinate (Row Line Detection)
+                const lineMap = {};
+                textContent.items.forEach(item => {
+                    const y = Math.round(item.transform[5]); // Y coordinate
+                    if (!lineMap[y]) lineMap[y] = [];
+                    lineMap[y].push({ x: item.transform[4], str: item.str.trim() });
+                });
+
+                // Sort lines from top to bottom
+                const sortedY = Object.keys(lineMap).sort((a, b) => b - a);
+
+                sortedY.forEach(y => {
+                    // Sort items horizontally within the row
+                    const rowItems = lineMap[y].sort((a, b) => a.x - b.x).map(i => i.str).filter(s => s.length > 0);
+                    if (rowItems.length > 0) {
+                        extractedRows.push(rowItems);
+                    }
+                });
+            }
+
+            renderPreview();
+        }
+
+        function renderPreview() {
+            const tableBody = document.getElementById('tableBody');
+            tableBody.innerHTML = '';
+
+            const previewSlice = extractedRows.slice(0, 5);
+            previewSlice.forEach(row => {
+                const tr = document.createElement('tr');
+                row.forEach(cell => {
+                    const td = document.createElement('td');
+                    td.className = 'px-3 py-1.5 border border-slate-200 bg-white font-medium truncate max-w-[120px]';
+                    td.innerText = cell;
+                    tr.appendChild(td);
+                });
+                tableBody.appendChild(tr);
+            });
+        }
+
+        function setExportFormat(fmt, btn) {
+            exportFormat = fmt;
+            document.querySelectorAll('.format-btn').forEach(b => {
+                b.className = 'format-btn py-3 px-4 rounded-xl border border-slate-200 bg-white text-slate-700 text-xs font-black text-center flex items-center justify-center gap-2';
+            });
+            btn.className = 'format-btn active py-3 px-4 rounded-xl border border-emerald-600 bg-emerald-50 text-emerald-700 text-xs font-black text-center flex items-center justify-center gap-2';
+        }
+
+        function resetTool() {
+            extractedRows = [];
+            currentFile = null;
+            pdfInput.value = '';
+            dropArea.classList.remove('hidden');
+            controlPanel.classList.add('hidden');
+        }
+
+        function exportSpreadsheet() {
+            if (extractedRows.length === 0) {
+                alert('No tabular text found to export.');
+                return;
+            }
+
+            const btn = document.getElementById('convertBtn');
+
+            // Trigger Ads Engine with Realistic Process Delay
+            window.triggerToolProcessAndDownload(btn, "Generating Structured Spreadsheet", function() {
+                const worksheet = XLSX.utils.aoa_to_sheet(extractedRows);
+                const workbook = XLSX.utils.book_new();
+                XLSX.utils.book_append_sheet(workbook, worksheet, "Extracted Data");
+
+                const baseName = currentFile.name.replace(/\.[^/.]+$/, "");
+
+                if (exportFormat === 'xlsx') {
+                    XLSX.writeFile(workbook, `Visualixy_${baseName}.xlsx`);
+                } else {
+                    XLSX.writeFile(workbook, `Visualixy_${baseName}.csv`);
+                }
+            });
+        }
+    </script>
+</body>
+</html>
