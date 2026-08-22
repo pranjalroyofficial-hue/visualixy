@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>ID Card Front & Back A4 Sheet Printer - Visualixy</title>
+    <meta name="description" content="Combine front and back of Identity Cards on a single printable A4 sheet with cutting margins. 100% free and private.">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="../../assets/js/ads.js"></script>
+    <style>
+        body { background-color: #f8fafc; color: #0f172a; font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; }
+        .tool-card { background: #ffffff; border: 1px solid #e2e8f0; border-radius: 1.5rem; }
+    </style>
+</head>
+<body class="min-h-screen flex flex-col justify-between antialiased pb-16 lg:pb-0">
+
+    <div class="hidden lg:block w-full bg-slate-200/60 py-2 border-b border-slate-300">
+        <div class="max-w-6xl mx-auto text-center overflow-hidden">
+            <script>atOptions = {'key':'0cf435f486e59418568243ee21ba9dea','format':'iframe','height':90,'width':728,'params':{}};</script>
+            <script src="https://www.highperformanceformat.com/0cf435f486e59418568243ee21ba9dea/invoke.js"></script>
+        </div>
+    </div>
+
+    <header class="bg-white border-b border-slate-200 sticky top-0 z-50 shadow-sm">
+        <div class="max-w-7xl mx-auto px-4 py-3 flex items-center justify-between">
+            <a href="../../" class="flex items-center gap-2">
+                <div class="w-8 h-8 rounded-xl bg-blue-600 flex items-center justify-center font-black text-lg text-white">V</div>
+                <span class="font-extrabold text-lg text-slate-900 tracking-tight">VISUALIXY</span>
+            </a>
+            <a href="../../" class="text-xs font-bold text-slate-600 bg-slate-100 px-3 py-1.5 rounded-xl hover:bg-blue-50 hover:text-blue-600 transition">← Back to All Tools</a>
+        </div>
+    </header>
+
+    <main class="max-w-7xl mx-auto px-4 py-6 flex-1 w-full flex flex-col lg:flex-row gap-6">
+        <div class="flex-1 min-w-0">
+            <div class="tool-card p-5 sm:p-8 shadow-sm">
+                
+                <div class="text-center max-w-lg mx-auto mb-6">
+                    <div class="inline-flex p-3 rounded-2xl bg-indigo-50 text-indigo-600 text-2xl mb-2">🪪</div>
+                    <h1 class="text-xl sm:text-2xl font-black text-slate-900">ID Card Front & Back A4 Printer</h1>
+                    <p class="text-xs text-slate-500 mt-1">Combine Front & Back side of any identity card on a single A4 printable page with cutting guidelines.</p>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-6">
+                    <div onclick="document.getElementById('frontInput').click()" class="border-2 border-dashed border-slate-300 rounded-2xl p-5 text-center bg-slate-50 hover:border-blue-500 cursor-pointer">
+                        <input type="file" id="frontInput" accept="image/*" class="hidden" onchange="loadFile(this, 'front')">
+                        <div class="text-3xl mb-1">🪪</div>
+                        <h4 class="text-xs font-bold text-slate-800" id="frontLabel">Upload Front Side</h4>
+                        <p class="text-[10px] text-slate-400">Card Front Image</p>
+                    </div>
+
+                    <div onclick="document.getElementById('backInput').click()" class="border-2 border-dashed border-slate-300 rounded-2xl p-5 text-center bg-slate-50 hover:border-blue-500 cursor-pointer">
+                        <input type="file" id="backInput" accept="image/*" class="hidden" onchange="loadFile(this, 'back')">
+                        <div class="text-3xl mb-1">🔄</div>
+                        <h4 class="text-xs font-bold text-slate-800" id="backLabel">Upload Back Side</h4>
+                        <p class="text-[10px] text-slate-400">Card Back Image</p>
+                    </div>
+                </div>
+
+                <div id="previewArea" class="hidden space-y-6">
+                    <div class="flex flex-col items-center justify-center p-4 bg-slate-100 border border-slate-200 rounded-2xl">
+                        <canvas id="a4Canvas" class="max-w-[240px] border border-slate-300 shadow-xl bg-white rounded"></canvas>
+                        <span class="text-[11px] font-bold text-slate-500 mt-2">Standard A4 Printable Canvas (300 DPI)</span>
+                    </div>
+
+                    <div class="flex gap-3">
+                        <button onclick="location.reload()" class="w-1/3 py-3.5 rounded-2xl bg-slate-100 hover:bg-slate-200 text-slate-700 font-bold text-xs transition">Reset</button>
+                        <button id="downloadA4Btn" onclick="downloadA4Sheet()" class="flex-1 py-3.5 rounded-2xl bg-blue-600 hover:bg-blue-700 text-white font-black text-xs shadow-md transition flex items-center justify-center gap-2">
+                            <span>⚡ Download Printable A4 Sheet</span>
+                        </button>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+        <aside class="w-full lg:w-80 shrink-0 space-y-4">
+            <div class="bg-white p-2.5 rounded-3xl border border-slate-200 shadow-sm text-center">
+                <span class="text-[10px] uppercase font-bold text-slate-400 block mb-1">Sponsored</span>
+                <div class="flex items-center justify-center overflow-hidden min-h-[250px]">
+                    <script>atOptions = {'key':'ff2ed036da6ab41cbe4fbfbeba0d55fe','format':'iframe','height':250,'width':300,'params':{}};</script>
+                    <script src="https://www.highperformanceformat.com/ff2ed036da6ab41cbe4fbfbeba0d55fe/invoke.js"></script>
+                </div>
+            </div>
+        </aside>
+    </main>
+
+    <script>
+        let frontImg = null;
+        let backImg = null;
+
+        function loadFile(input, side) {
+            if (input.files[0]) {
+                const reader = new FileReader();
+                reader.onload = (e) => {
+                    const img = new Image();
+                    img.onload = () => {
+                        if (side === 'front') {
+                            frontImg = img;
+                            document.getElementById('frontLabel').innerText = "✓ Front Loaded";
+                        } else {
+                            backImg = img;
+                            document.getElementById('backLabel').innerText = "✓ Back Loaded";
+                        }
+                        if (frontImg && backImg) {
+                            document.getElementById('previewArea').classList.remove('hidden');
+                            renderA4();
+                        }
+                    };
+                    img.src = e.target.result;
+                };
+                reader.readAsDataURL(input.files[0]);
+            }
+        }
+
+        function renderA4() {
+            const canvas = document.getElementById('a4Canvas');
+            const ctx = canvas.getContext('2d');
+
+            // A4 Ratio (1240 x 1754 px)
+            canvas.width = 1240;
+            canvas.height = 1754;
+
+            ctx.fillStyle = "#ffffff";
+            ctx.fillRect(0, 0, canvas.width, canvas.height);
+
+            // Card Standard Dimensions
+            const cardW = 600;
+            const cardH = 380;
+            const posX = (canvas.width - cardW) / 2;
+
+            // Front Card
+            const posY1 = 200;
+            ctx.drawImage(frontImg, posX, posY1, cardW, cardH);
+            ctx.strokeStyle = "#94a3b8";
+            ctx.lineWidth = 2;
+            ctx.strokeRect(posX, posY1, cardW, cardH);
+
+            // Back Card
+            const posY2 = posY1 + cardH + 100;
+            ctx.drawImage(backImg, posX, posY2, cardW, cardH);
+            ctx.strokeRect(posX, posY2, cardW, cardH);
+
+            // Cut Line Indicator
+            ctx.setLineDash([8, 6]);
+            ctx.strokeStyle = "#cbd5e1";
+            ctx.beginPath();
+            ctx.moveTo(100, posY1 + cardH + 50);
+            ctx.lineTo(canvas.width - 100, posY1 + cardH + 50);
+            ctx.stroke();
+            ctx.setLineDash([]);
+
+            // Label Text
+            ctx.fillStyle = "#94a3b8";
+            ctx.font = "bold 18px sans-serif";
+            ctx.textAlign = "center";
+            ctx.fillText("✂️ Fold or Cut Along the Dotted Line", canvas.width / 2, posY1 + cardH + 55);
+        }
+
+        function downloadA4Sheet() {
+            const btn = document.getElementById('downloadA4Btn');
+            window.triggerToolProcessAndDownload(btn, "Rendering High-Res A4 Sheet", function() {
+                const canvas = document.getElementById('a4Canvas');
+                const link = document.createElement('a');
+                link.href = canvas.toDataURL('image/jpeg', 0.95);
+                link.download = "Visualixy_ID_Card_A4_Print.jpg";
+                link.click();
+            });
+        }
+    </script>
+</body>
+</html>

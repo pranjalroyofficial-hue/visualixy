@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Add Page Numbers to PDF Free - Visualixy</title>
+    <meta name="description" content="Add custom page numbers, header stamps, and Bates numbering to PDF documents online. 100% Client-Side.">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/pdf-lib@1.17.1/dist/pdf-lib.min.js"></script>
+    <script src="../../assets/js/ads.js"></script>
+    <style>
+        body { background-color: #f8fafc; color: #0f172a; font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; }
+        .tool-card { background: #ffffff; border: 1px solid #e2e8f0; border-radius: 1.5rem; }
+    </style>
+</head>
+<body class="min-h-screen flex flex-col justify-between antialiased pb-16 lg:pb-0">
+
+    <div class="hidden lg:block w-full bg-slate-200/60 py-2 border-b border-slate-300">
+        <div class="max-w-6xl mx-auto text-center overflow-hidden">
+            <script>atOptions = {'key':'0cf435f486e59418568243ee21ba9dea','format':'iframe','height':90,'width':728,'params':{}};</script>
+            <script src="https://www.highperformanceformat.com/0cf435f486e59418568243ee21ba9dea/invoke.js"></script>
+        </div>
+    </div>
+
+    <header class="bg-white border-b border-slate-200 sticky top-0 z-50 shadow-sm">
+        <div class="max-w-7xl mx-auto px-4 py-3 flex items-center justify-between">
+            <a href="../../" class="flex items-center gap-2">
+                <div class="w-8 h-8 rounded-xl bg-blue-600 flex items-center justify-center font-black text-lg text-white">V</div>
+                <span class="font-extrabold text-lg text-slate-900 tracking-tight">VISUALIXY</span>
+            </a>
+            <a href="../../" class="text-xs font-bold text-slate-600 bg-slate-100 px-3 py-1.5 rounded-xl hover:bg-blue-50 hover:text-blue-600 transition">← Back to All Tools</a>
+        </div>
+    </header>
+
+    <main class="max-w-7xl mx-auto px-4 py-6 flex-1 w-full flex flex-col lg:flex-row gap-6">
+        <div class="flex-1 min-w-0">
+            <div class="tool-card p-5 sm:p-8 shadow-sm">
+                
+                <div class="text-center max-w-lg mx-auto mb-6">
+                    <div class="inline-flex p-3 rounded-2xl bg-purple-50 text-purple-600 text-2xl mb-2">🔢</div>
+                    <h1 class="text-xl sm:text-2xl font-black text-slate-900">Add Page Numbers to PDF</h1>
+                    <p class="text-xs text-slate-500 mt-1">Insert custom page numbers, header prefix, and formatting across all pages in seconds.</p>
+                </div>
+
+                <div id="dropArea" onclick="document.getElementById('pdfInput').click()" class="border-2 border-dashed border-slate-300 rounded-3xl p-6 sm:p-10 text-center hover:border-blue-500 bg-slate-50 transition cursor-pointer mb-6">
+                    <input type="file" id="pdfInput" accept="application/pdf" class="hidden">
+                    <div class="text-4xl mb-3">📑</div>
+                    <h3 class="text-sm font-bold text-slate-800">Select PDF File</h3>
+                    <p class="text-xs text-slate-400 mt-1">Processed locally on device</p>
+                </div>
+
+                <div id="settingsPanel" class="hidden space-y-4">
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                        <div>
+                            <label class="block text-xs font-black text-slate-700 uppercase mb-1">Number Format</label>
+                            <select id="numFormat" class="w-full bg-slate-50 border border-slate-300 rounded-xl px-3.5 py-2.5 text-xs font-bold focus:bg-white focus:outline-none focus:border-blue-600">
+                                <option value="simple">Page {n}</option>
+                                <option value="total">Page {n} of {total}</option>
+                                <option value="raw">{n}</option>
+                            </select>
+                        </div>
+
+                        <div>
+                            <label class="block text-xs font-black text-slate-700 uppercase mb-1">Position</label>
+                            <select id="numPos" class="w-full bg-slate-50 border border-slate-300 rounded-xl px-3.5 py-2.5 text-xs font-bold focus:bg-white focus:outline-none focus:border-blue-600">
+                                <option value="bottom-center">Bottom Center</option>
+                                <option value="bottom-right">Bottom Right</option>
+                                <option value="top-right">Top Right (Header)</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <button id="stampBtn" onclick="stampAndDownload()" class="w-full py-4 rounded-2xl bg-blue-600 hover:bg-blue-700 text-white font-black text-xs shadow-md transition flex items-center justify-center gap-2">
+                        <span>⚡ Add Numbers & Download PDF</span>
+                    </button>
+                </div>
+
+            </div>
+        </div>
+
+        <aside class="w-full lg:w-80 shrink-0 space-y-4">
+            <div class="bg-white p-2.5 rounded-3xl border border-slate-200 shadow-sm text-center">
+                <span class="text-[10px] uppercase font-bold text-slate-400 block mb-1">Sponsored</span>
+                <div class="flex items-center justify-center overflow-hidden min-h-[250px]">
+                    <script>atOptions = {'key':'0cf435f486e59418568243ee21ba9dea','format':'iframe','height':250,'width':300,'params':{}};</script>
+                    <script src="https://www.highperformanceformat.com/ff2ed036da6ab41cbe4fbfbeba0d55fe/invoke.js"></script>
+                </div>
+            </div>
+        </aside>
+    </main>
+
+    <script>
+        let rawBytes = null;
+        let originalFileName = "Document.pdf";
+
+        document.getElementById('pdfInput').onchange = async (e) => {
+            if (e.target.files[0]) {
+                const file = e.target.files[0];
+                originalFileName = file.name;
+                rawBytes = await file.arrayBuffer();
+                document.getElementById('dropArea').classList.add('hidden');
+                document.getElementById('settingsPanel').classList.remove('hidden');
+            }
+        };
+
+        async function stampAndDownload() {
+            if (!rawBytes) return;
+            const btn = document.getElementById('stampBtn');
+
+            window.triggerToolProcessAndDownload(btn, "Injecting Page Numbers", async function() {
+                try {
+                    const pdfDoc = await PDFLib.PDFDocument.load(rawBytes);
+                    const pages = pdfDoc.getPages();
+                    const total = pages.length;
+                    const format = document.getElementById('numFormat').value;
+                    const pos = document.getElementById('numPos').value;
+
+                    for (let i = 0; i < total; i++) {
+                        const page = pages[i];
+                        const { width, height } = page.getSize();
+                        let text = `Page ${i + 1}`;
+                        if (format === 'total') text = `Page ${i + 1} of ${total}`;
+                        if (format === 'raw') text = `${i + 1}`;
+
+                        let x = width / 2 - 25;
+                        let y = 20;
+
+                        if (pos === 'bottom-right') { x = width - 85; y = 20; }
+                        if (pos === 'top-right') { x = width - 85; y = height - 25; }
+
+                        page.drawText(text, {
+                            x: x,
+                            y: y,
+                            size: 10,
+                            color: PDFLib.rgb(0.2, 0.2, 0.2),
+                        });
+                    }
+
+                    const numberedPdf = await pdfDoc.save();
+                    const blob = new Blob([numberedPdf], { type: 'application/pdf' });
+                    const link = document.createElement('a');
+                    link.href = URL.createObjectURL(blob);
+                    link.download = `Numbered_${originalFileName}`;
+                    link.click();
+                } catch(e) {
+                    alert("Error processing PDF.");
+                }
+            });
+        }
+    </script>
+</body>
+</html>
